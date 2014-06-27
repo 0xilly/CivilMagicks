@@ -1,10 +1,14 @@
 package us.illyohs.civilmagicks;
 
-import net.minecraftforge.common.DimensionManager;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import us.illyohs.civilmagicks.common.block.ModBlock;
+import us.illyohs.civilmagicks.common.civil.CivilRegistry;
+import us.illyohs.civilmagicks.common.civil.CivilStatus;
+import us.illyohs.civilmagicks.common.civil.RegCivilObjects;
 import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.lib.LibInfo;
-import us.illyohs.civilmagicks.world.CivilWorldProvider;
+import us.illyohs.civilmagicks.common.tile.TileHomeCore;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -32,13 +36,16 @@ public class CivilMagicks {
     @EventHandler
     public void init(FMLInitializationEvent event) {
     	proxy.registerTileEntitys();
-    	DimensionManager.registerProviderType(demID, CivilWorldProvider.class, false);
-    	DimensionManager.registerDimension(demID, demID);
+//    	DimensionManager.registerProviderType(demID, CivilWorldProvider.class, false);
+//    	DimensionManager.registerDimension(demID, demID);
+    	
+    	
     	
     }
 
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-
+    	RegCivilObjects.blocks();
+    	
     }
 }
