@@ -1,4 +1,4 @@
-package us.illyohs.civilmagicks.common.civil;
+package us.illyohs.civilmagicks.api;
 
 public enum CivilStatus {
 	CIVILIZED,
