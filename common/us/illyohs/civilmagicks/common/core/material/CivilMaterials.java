@@ -8,21 +8,15 @@
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
  *
  * 
- * Class created on ?
+ * Class created on Jun 29, 2014 at 8:08:25 PM
  * 
  */
-package us.illyohs.civilmagicks.client;
+package us.illyohs.civilmagicks.common.core.material;
 
-import us.illyohs.civilmagicks.common.lib.IProxy;
+import net.minecraft.block.material.Material;
 
-public class ClientProxy implements IProxy {
-
-	@Override
-	public void registerModelsRenederers() {
-
-	}
-
-	@Override
-	public void registerTileEntitys() {} //NO OP
+public class CivilMaterials {
+	
+	public static Material starry = new StarryMaterial();
 
 }

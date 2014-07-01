@@ -11,18 +11,10 @@
  * Class created on ?
  * 
  */
-package us.illyohs.civilmagicks.client;
+package us.illyohs.civilmagicks.client.lib;
 
-import us.illyohs.civilmagicks.common.lib.IProxy;
-
-public class ClientProxy implements IProxy {
-
-	@Override
-	public void registerModelsRenederers() {
-
-	}
-
-	@Override
-	public void registerTileEntitys() {} //NO OP
-
+public class LibId {
+	
+	public static int BOOK_CIVILTOME = 0;
+	
 }

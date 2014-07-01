@@ -11,18 +11,16 @@
  * Class created on ?
  * 
  */
-package us.illyohs.civilmagicks.client;
+package us.illyohs.civilmagicks.common.block;
 
-import us.illyohs.civilmagicks.common.lib.IProxy;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 
-public class ClientProxy implements IProxy {
+public class BlockCage extends Block {
 
-	@Override
-	public void registerModelsRenederers() {
-
+	public BlockCage() {
+		super(Material.rock);
+		// TODO Auto-generated constructor stub
 	}
-
-	@Override
-	public void registerTileEntitys() {} //NO OP
 
 }

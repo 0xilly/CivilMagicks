@@ -1,14 +1,22 @@
+/**
+ * This class was created by Anthony Anderson(Lord Illyohs)
+ * It is distributed as part of CivilMagicks
+ * Source Code: https://github.com/LordIllyohs/CivilMagicks
+ *
+ * CivilMagicks is Open Source and distributed under a
+ * Attribution-NonCommercial-ShareAlike 3.0 Unported license.
+ * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+ *
+ * 
+ * Class created on ?
+ * 
+ */
 package us.illyohs.civilmagicks;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import us.illyohs.civilmagicks.common.block.ModBlock;
-import us.illyohs.civilmagicks.common.civil.CivilRegistry;
-import us.illyohs.civilmagicks.common.civil.CivilStatus;
-import us.illyohs.civilmagicks.common.civil.RegCivilObjects;
+import us.illyohs.civilmagicks.common.core.RegCivilObjects;
 import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.lib.LibInfo;
-import us.illyohs.civilmagicks.common.tile.TileHomeCore;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -36,16 +44,14 @@ public class CivilMagicks {
     @EventHandler
     public void init(FMLInitializationEvent event) {
     	proxy.registerTileEntitys();
-//    	DimensionManager.registerProviderType(demID, CivilWorldProvider.class, false);
-//    	DimensionManager.registerDimension(demID, demID);
-    	
+    	RegCivilObjects.nonModblocks();
     	
     	
     }
 
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-    	RegCivilObjects.blocks();
+    	
     	
     }
 }

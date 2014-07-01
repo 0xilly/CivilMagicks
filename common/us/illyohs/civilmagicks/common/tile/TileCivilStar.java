@@ -8,21 +8,13 @@
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
  *
  * 
- * Class created on ?
+ * Class created on Jun 29, 2014 at 9:00:55 PM
  * 
  */
-package us.illyohs.civilmagicks.client;
+package us.illyohs.civilmagicks.common.tile;
 
-import us.illyohs.civilmagicks.common.lib.IProxy;
+import net.minecraft.tileentity.TileEntity;
 
-public class ClientProxy implements IProxy {
-
-	@Override
-	public void registerModelsRenederers() {
-
-	}
-
-	@Override
-	public void registerTileEntitys() {} //NO OP
+public class TileCivilStar extends TileEntity {
 
 }

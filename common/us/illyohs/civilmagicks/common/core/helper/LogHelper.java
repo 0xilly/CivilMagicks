@@ -1,4 +1,17 @@
-package us.illyohs.civilmagicks.common.helper;
+/**
+ * This class was created by Anthony Anderson(Lord Illyohs)
+ * It is distributed as part of CivilMagicks
+ * Source Code: https://github.com/LordIllyohs/CivilMagicks
+ *
+ * CivilMagicks is Open Source and distributed under a
+ * Attribution-NonCommercial-ShareAlike 3.0 Unported license.
+ * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+ *
+ * 
+ * Class created on ?
+ * 
+ */
+package us.illyohs.civilmagicks.common.core.helper;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -15,7 +28,7 @@ public class LogHelper {
     }
 
     public static void debug(Object obj) {
-        log(Level.DEBUG, "[" + LibInfo.MOD_NAME + "] " + obj.toString());
+        log(Level.INFO, "[" + LibInfo.MOD_NAME + " DEBUG] " + obj.toString());
     }
 
     public static void warn(Object obj) {
