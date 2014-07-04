@@ -23,7 +23,7 @@ public class TileCivilStar extends TileEntity {
 	}
 	
 	public void updateEntity() {
-		Sta
+//		Sta
 	}
 
 }
