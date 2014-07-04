@@ -15,7 +15,6 @@ package us.illyohs.civilmagicks.api;
 
 import java.util.HashMap;
 
-import cpw.mods.fml.common.FMLLog;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import us.illyohs.civilmagicks.common.core.helper.LogHelper;

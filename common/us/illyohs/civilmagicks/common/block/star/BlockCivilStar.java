@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 public class BlockCivilStar extends BlockStar implements ITileEntityProvider {
 	
 	public BlockCivilStar() {
-//		this.setBlockBounds(1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F);
+		
 	}
 
 	@Override

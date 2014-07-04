@@ -24,17 +24,22 @@ public class BlockStar extends Block {
 
 	public BlockStar() {
 		this(CivilMaterials.starry);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public BlockStar(Material material){
 		super(material);
 		this.setCreativeTab(CreativeTabs.tabBrewing);
+		this.setBlockBounds(0.25F, 0.25F, 0.25F, 0.75F, 0.75F, 0.75F);
 	}
 	
 	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_, int x, int y, int z) {
         return null;
     }
+	
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
 
 }
