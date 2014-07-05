@@ -17,23 +17,26 @@ import java.util.HashMap;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraftforge.fluids.Fluid;
 import us.illyohs.civilmagicks.common.core.helper.LogHelper;
 
 public class CivilRegistry {
 	
-	public static HashMap<Object, CivilStatus> civilRegistry = new HashMap<Object, CivilStatus>();
+	private static HashMap<Object, CivilStatus> civilRegistry = new HashMap<Object, CivilStatus>();
 	
 	/**
 	 * This registers the status of a blocks/item in the civilRegistry
-	 * @param object Blocks/Items
+	 * Only BLOCkS, ITEMS, and FLUIDS my be registered in the civilRegistry the game will crash if you don't register things correctly
+	 * @param object Blocks/Items/Fluid
 	 * @param CivilStatus @see CivilStatus
 	 */
-	public static void registerStatus(Object object, CivilStatus civilstatus) {
-		if (object instanceof Block || object instanceof Item) {
+	public static void registerStatus(Object object, CivilStatus civilstatus) { //FIXME: Add a option meta value or just wait for blocks states in 1.8?
+		if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
 			civilRegistry.put(object, civilstatus);
-			System.out.println(object.toString() + " has been registerd in the civil registery as " + civilstatus.toString());
+			System.out.println(object.toString() + " has been registered in the civil registery as " + civilstatus.toString());
 		} else {
-			LogHelper.fatal("YOU CAN ONLY REGISTER BLOCKS AND ITEMS INTO THE CIVILREGISTRY FIX THIS MEOW!!!!");
+			System.err.println("YOU CAN ONLY REGISTER BLOCKS, ITEMS, and FLUIDS INTO THE CIVILREGISTRY FIX THIS MEOW!!!! \n");
+			throw new IllegalArgumentException();
 		}
 
 	}

@@ -14,6 +14,8 @@
 package us.illyohs.civilmagicks.common.block;
 
 import us.illyohs.civilmagicks.common.block.star.BlockCivilStar;
+import us.illyohs.civilmagicks.common.tile.TileCivilStar;
+import us.illyohs.civilmagicks.common.tile.TileHomeCore;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 

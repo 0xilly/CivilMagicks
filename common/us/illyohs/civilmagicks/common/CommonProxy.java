@@ -26,7 +26,8 @@ public class CommonProxy implements IProxy {
 	@Override
 	public void registerTileEntitys() {
 		GameRegistry.registerTileEntity(TileHomeCore.class, "TileHomeCore");
-		GameRegistry.registerTileEntity(TileCivilStar.class, "CivilStar");
+		GameRegistry.registerTileEntity(TileCivilStar.class, "TileCivilStar");
+		
 	}
 
 }

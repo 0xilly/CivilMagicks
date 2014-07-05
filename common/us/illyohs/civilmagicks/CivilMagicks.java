@@ -39,13 +39,14 @@ public class CivilMagicks {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
     	ModBlock.init();
+    	proxy.registerTileEntitys();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-    	proxy.registerTileEntitys();
     	proxy.ModelsRenederers();
     	RegCivilObjects.nonModblocks();
+    	RegCivilObjects.nonModItems();
     	
     	
     }

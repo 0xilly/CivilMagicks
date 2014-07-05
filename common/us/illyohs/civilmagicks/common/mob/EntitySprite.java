@@ -14,14 +14,23 @@
 package us.illyohs.civilmagicks.common.mob;
 
 import net.minecraft.entity.EntityFlying;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.world.World;
 
 public class EntitySprite extends EntityFlying implements IMob {
 
-	public EntitySprite(World p_i1587_1_) {
-		super(p_i1587_1_);
-		// TODO Auto-generated constructor stub
+	public EntitySprite(World world) {
+		super(world);
+		
+	}
+	
+	@Override
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
+		
 	}
 
 }
