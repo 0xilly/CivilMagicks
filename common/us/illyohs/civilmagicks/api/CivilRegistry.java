@@ -35,7 +35,7 @@ public class CivilRegistry {
 			civilRegistry.put(object, civilstatus);
 			System.out.println(object.toString() + " has been registered in the civil registery as " + civilstatus.toString());
 		} else {
-			System.err.println("YOU CAN ONLY REGISTER BLOCKS, ITEMS, and FLUIDS INTO THE CIVILREGISTRY FIX THIS MEOW!!!! \n");
+			System.err.println("YOU CAN ONLY REGISTER BLOCKS, ITEMS, and FLUIDS INTO THE CIVILREGISTRY FIX THIS! \n");
 			throw new IllegalArgumentException();
 		}
 

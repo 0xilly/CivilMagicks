@@ -15,6 +15,7 @@ package us.illyohs.civilmagicks.common;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import us.illyohs.civilmagicks.common.lib.IProxy;
+import us.illyohs.civilmagicks.common.tile.TileAccumulator;
 import us.illyohs.civilmagicks.common.tile.TileCivilStar;
 import us.illyohs.civilmagicks.common.tile.TileHomeCore;
 
@@ -27,6 +28,7 @@ public class CommonProxy implements IProxy {
 	public void registerTileEntitys() {
 		GameRegistry.registerTileEntity(TileHomeCore.class, "TileHomeCore");
 		GameRegistry.registerTileEntity(TileCivilStar.class, "TileCivilStar");
+		GameRegistry.registerTileEntity(TileAccumulator.class, "TileAccumulator");
 		
 	}
 

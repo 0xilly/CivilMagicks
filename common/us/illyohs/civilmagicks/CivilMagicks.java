@@ -15,6 +15,7 @@ package us.illyohs.civilmagicks;
 
 import us.illyohs.civilmagicks.common.block.ModBlock;
 import us.illyohs.civilmagicks.common.core.RegCivilObjects;
+import us.illyohs.civilmagicks.common.item.ModItem;
 import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.lib.LibInfo;
 import cpw.mods.fml.common.Mod;
@@ -38,7 +39,11 @@ public class CivilMagicks {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+    	   	
     	ModBlock.init();
+    	
+    	ModItem.init();
+    	
     	proxy.registerTileEntitys();
     }
 

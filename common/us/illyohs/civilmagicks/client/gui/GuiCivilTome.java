@@ -18,25 +18,25 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 
 public class GuiCivilTome extends GuiScreen {
-	
+
 	int xSize = 214;
-    int ySize = 180;
-    int left, top;
+	int ySize = 180;
+	int left, top;
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LibAssets.CIVILTOME);
+	private static final ResourceLocation TEXTURE = new ResourceLocation(LibAssets.CIVILTOME);
 
-    @Override
-    public void initGui() {
-        super.initGui();
-    }
+	@Override
+	public void initGui() {
+		super.initGui();
+	}
 
-    @Override
-    public void drawScreen(int par1, int par2, float par3) {
+	@Override
+	public void drawScreen(int par1, int par2, float par3) {
 
-    }
+	}
 
-    public boolean doesGuiPauseGame() {
-        return false;
-    }
+	public boolean doesGuiPauseGame() {
+		return false;
+	}
 
 }

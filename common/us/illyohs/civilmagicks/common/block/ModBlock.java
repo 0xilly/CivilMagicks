@@ -25,6 +25,8 @@ public class ModBlock {
 	public static Block cage;
 	
 	public static Block civilStar;
+	
+	public static Block accumulator;
 
 	public static void init() {
 		
@@ -33,6 +35,8 @@ public class ModBlock {
 		
 		civilStar = new BlockCivilStar();
 		
+		accumulator = new BlockAccumulator();
+		
 		GameReg();
 		
 	}
@@ -40,6 +44,7 @@ public class ModBlock {
 	private static void GameReg() {
 		GameRegistry.registerBlock(homeCore, "HomeCore");
 		GameRegistry.registerBlock(civilStar, "civilStar");
+		GameRegistry.registerBlock(accumulator, "Accumulator");
 		
 	}
 
