@@ -28,18 +28,19 @@ public class LogHelper {
     }
 
     public static void debug(Object obj) {
-        log(Level.INFO, "[" + LibInfo.MOD_NAME + " DEBUG] " + obj.toString());
+        log(Level.DEBUG, obj.toString());
+//        "[" + LibInfo.MOD_NAME + " DEBUG] " +
     }
 
     public static void warn(Object obj) {
-        log(Level.WARN, "[" + LibInfo.MOD_NAME + "] " + obj.toString());
+        log(Level.WARN, obj.toString());
     }
 
     public static void info(Object obj) {
-        log(Level.INFO, "[" + LibInfo.MOD_NAME + "] " + obj.toString());
+        log(Level.INFO,  obj.toString());
     }
 
     public static void fatal(Object obj) {
-        log(Level.FATAL, "[" + LibInfo.MOD_NAME + "] " + obj.toString());
+        log(Level.FATAL, obj.toString());
     }
 }

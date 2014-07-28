@@ -26,6 +26,9 @@ public class LibAssets {
 
     //Blocks
     public static final String TEMP = BLIT + "temp";
+    
+    //Modles
+    public static final String BREWCHAMER = MODELS + "woodslate.png";
 
     //Items
 

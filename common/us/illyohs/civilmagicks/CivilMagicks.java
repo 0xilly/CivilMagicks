@@ -40,7 +40,7 @@ public class CivilMagicks {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
     	   	
-    	ModBlock.init();
+    	ModBlock.initCivil();;
     	
     	ModItem.init();
     	
@@ -51,7 +51,7 @@ public class CivilMagicks {
     public void init(FMLInitializationEvent event) {
     	proxy.ModelsRenederers();
     	RegCivilObjects.nonModblocks();
-    	RegCivilObjects.nonModItems();
+//    	RegCivilObjects.nonModItems();
     	
     	
     }

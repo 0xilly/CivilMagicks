@@ -15,9 +15,11 @@ package us.illyohs.civilmagicks.client;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import us.illyohs.civilmagicks.client.render.tile.RenderAccumulator;
+import us.illyohs.civilmagicks.client.render.tile.RenderBrewChamber;
 import us.illyohs.civilmagicks.client.render.tile.RenderCivilStar;
 import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.tile.TileAccumulator;
+import us.illyohs.civilmagicks.common.tile.TileBrewChamber;
 import us.illyohs.civilmagicks.common.tile.TileCivilStar;
 
 public class ClientProxy implements IProxy {
@@ -26,6 +28,7 @@ public class ClientProxy implements IProxy {
 	public void ModelsRenederers() {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileCivilStar.class, new RenderCivilStar());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileAccumulator.class, new RenderAccumulator());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileBrewChamber.class, new RenderBrewChamber());
 
 	}
 

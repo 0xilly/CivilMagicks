@@ -14,8 +14,11 @@
 package us.illyohs.civilmagicks.common.block;
 
 import us.illyohs.civilmagicks.common.block.star.BlockCivilStar;
+import us.illyohs.civilmagicks.common.block.tea.BlockBrewChamber;
+import us.illyohs.civilmagicks.common.lib.LibAddons;
 import us.illyohs.civilmagicks.common.tile.TileCivilStar;
 import us.illyohs.civilmagicks.common.tile.TileHomeCore;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 
@@ -27,8 +30,10 @@ public class ModBlock {
 	public static Block civilStar;
 	
 	public static Block accumulator;
+	
+	public static Block brewChamber;
 
-	public static void init() {
+	public static void initCivil() {
 		
 		homeCore = new BlockHomeCore();
 		cage = new BlockCage();
@@ -37,14 +42,24 @@ public class ModBlock {
 		
 		accumulator = new BlockAccumulator();
 		
-		GameReg();
+		brewChamber = new BlockBrewChamber();
+		
+		gameRegCivil();
 		
 	}
+	
+	
+	public static void initThaumcraft() {
+		if(Loader.isModLoaded(LibAddons.Thaumcraft)) {
+			
+		}
+	}
 
-	private static void GameReg() {
+	private static void gameRegCivil() {
 		GameRegistry.registerBlock(homeCore, "HomeCore");
 		GameRegistry.registerBlock(civilStar, "civilStar");
 		GameRegistry.registerBlock(accumulator, "Accumulator");
+		GameRegistry.registerBlock(brewChamber, "BrewChamber");
 		
 	}
 

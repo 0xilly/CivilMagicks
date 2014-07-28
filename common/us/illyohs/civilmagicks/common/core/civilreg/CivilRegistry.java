@@ -11,7 +11,7 @@
  * Class created on ?
  * 
  */
-package us.illyohs.civilmagicks.api;
+package us.illyohs.civilmagicks.common.core.civilreg;
 
 import java.util.HashMap;
 
@@ -22,24 +22,25 @@ import us.illyohs.civilmagicks.common.core.helper.LogHelper;
 
 public class CivilRegistry {
 	
-	private static HashMap<Object, CivilStatus> civilRegistry = new HashMap<Object, CivilStatus>();
+	public static HashMap<Object, CivilInfo> civilRegistry = new HashMap<Object, CivilInfo>();
 	
 	/**
 	 * This registers the status of a blocks/item in the civilRegistry
 	 * Only BLOCkS, ITEMS, and FLUIDS my be registered in the civilRegistry the game will crash if you don't register things correctly
 	 * @param object Blocks/Items/Fluid
+	 * @param meta meta value of a block/item
 	 * @param CivilStatus @see CivilStatus
 	 */
-	public static void registerStatus(Object object, CivilStatus civilstatus) { //FIXME: Add a option meta value or just wait for blocks states in 1.8?
+	
+	public static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
 		if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-			civilRegistry.put(object, civilstatus);
-			System.out.println(object.toString() + " has been registered in the civil registery as " + civilstatus.toString());
+			civilRegistry.put(civilstatus, new CivilInfo(object, meta));
+			LogHelper.info(object.toString()+":"+ meta + " has been register in the civil registry as " + civilstatus.toString());
 		} else {
-			System.err.println("YOU CAN ONLY REGISTER BLOCKS, ITEMS, and FLUIDS INTO THE CIVILREGISTRY FIX THIS! \n");
+			LogHelper.fatal("YOU CAN ONLY REGISTER BLOCKS, ITEMS, and FLUIDS INTO THE CIVILREGISTRY FIX THIS NOW!");
 			throw new IllegalArgumentException();
 		}
-
+		
 	}
-	
-	
+
 }
