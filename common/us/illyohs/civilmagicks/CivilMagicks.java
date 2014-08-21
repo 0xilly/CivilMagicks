@@ -15,6 +15,8 @@ package us.illyohs.civilmagicks;
 
 import us.illyohs.civilmagicks.common.block.ModBlock;
 import us.illyohs.civilmagicks.common.core.RegCivilObjects;
+import us.illyohs.civilmagicks.common.core.civilreg.CivilRegistry;
+//import us.illyohs.civilmagicks.common.core.RegCivilObjects;
 import us.illyohs.civilmagicks.common.item.ModItem;
 import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.lib.LibInfo;
@@ -50,15 +52,13 @@ public class CivilMagicks {
     @EventHandler
     public void init(FMLInitializationEvent event) {
     	proxy.ModelsRenederers();
-    	RegCivilObjects.nonModblocks();
-//    	RegCivilObjects.nonModItems();
-    	
     	
     }
 
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-    	
+    	RegCivilObjects.nonModObjects();
+    	RegCivilObjects.nonModObjects();
     	
     }
 }

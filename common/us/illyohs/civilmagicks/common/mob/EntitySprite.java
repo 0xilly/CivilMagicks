@@ -13,6 +13,7 @@
  */
 package us.illyohs.civilmagicks.common.mob;
 
+import us.illyohs.civilmagicks.common.lib.LibInfo;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.IMob;
@@ -20,17 +21,21 @@ import net.minecraft.world.World;
 
 public class EntitySprite extends EntityFlying implements IMob {
 
-	public EntitySprite(World world) {
-		super(world);
-		
-	}
-	
-	@Override
-	protected void applyEntityAttributes() {
-		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
-		
-	}
+    public EntitySprite(World world) {
+        super(world);
+
+    }
+
+    @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
+        
+    }
+    
+    protected String getLivingSound() {
+        return LibInfo.MOD_ID+":";
+    }
 
 }

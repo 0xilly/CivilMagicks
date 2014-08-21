@@ -29,7 +29,7 @@ public class ModBlock {
 	
 	public static Block civilStar;
 	
-	public static Block accumulator;
+	public static Block summoningChamber;
 	
 	public static Block brewChamber;
 
@@ -40,7 +40,7 @@ public class ModBlock {
 		
 		civilStar = new BlockCivilStar();
 		
-		accumulator = new BlockAccumulator();
+		summoningChamber = new BlockSummoningChamber();
 		
 		brewChamber = new BlockBrewChamber();
 		
@@ -58,7 +58,7 @@ public class ModBlock {
 	private static void gameRegCivil() {
 		GameRegistry.registerBlock(homeCore, "HomeCore");
 		GameRegistry.registerBlock(civilStar, "civilStar");
-		GameRegistry.registerBlock(accumulator, "Accumulator");
+		GameRegistry.registerBlock(summoningChamber, "summoningChamber");
 		GameRegistry.registerBlock(brewChamber, "BrewChamber");
 		
 	}

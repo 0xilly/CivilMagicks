@@ -13,10 +13,22 @@
  */
 package us.illyohs.civilmagicks.client.render.mob;
 
-/**
- * @author anthony
- *
- */
-public class RenderSprite {
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+
+public class RenderSprite extends Render {
+
+    @Override
+    public void doRender(Entity entity, double x,  double y, double z, float f, float tick) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    protected ResourceLocation getEntityTexture(Entity p_110775_1_) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 }

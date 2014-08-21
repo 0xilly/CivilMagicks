@@ -13,7 +13,6 @@
  */
 package us.illyohs.civilmagicks.client;
 
-import cpw.mods.fml.client.registry.ClientRegistry;
 import us.illyohs.civilmagicks.client.render.tile.RenderAccumulator;
 import us.illyohs.civilmagicks.client.render.tile.RenderBrewChamber;
 import us.illyohs.civilmagicks.client.render.tile.RenderCivilStar;
@@ -21,18 +20,20 @@ import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.tile.TileAccumulator;
 import us.illyohs.civilmagicks.common.tile.TileBrewChamber;
 import us.illyohs.civilmagicks.common.tile.TileCivilStar;
+import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy implements IProxy {
 
-	@Override
-	public void ModelsRenederers() {
-		ClientRegistry.bindTileEntitySpecialRenderer(TileCivilStar.class, new RenderCivilStar());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileAccumulator.class, new RenderAccumulator());
-		ClientRegistry.bindTileEntitySpecialRenderer(TileBrewChamber.class, new RenderBrewChamber());
+    @Override
+    public void ModelsRenederers() {
+        ClientRegistry.bindTileEntitySpecialRenderer(TileCivilStar.class, new RenderCivilStar());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileAccumulator.class, new RenderAccumulator());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileBrewChamber.class, new RenderBrewChamber());
+//        MinecraftForgeClient.registerItemRenderer(Mo, renderer);
 
-	}
+    }
 
-	@Override
-	public void registerTileEntitys() {} //NO OP
+    @Override
+    public void registerTileEntitys() {} //NO OP
 
 }

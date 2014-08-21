@@ -13,15 +13,31 @@
  */
 package us.illyohs.civilmagicks.common.item;
 
+import us.illyohs.civilmagicks.common.lib.LibInfo;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
 public class ModItem {
 	
 	public static Item manaKeep;
 	
+	public static Item wand;
+	
+	public static Item callingWhistle;
+	
 	public static void init() {
-		// TODO Auto-generated method stub
+	    
+//	    wand = Iteme
+	    
+	    callingWhistle = new ItemCallingWhistle();
+	    
+	    gameReg();
 		
 	}
+
+    private static void gameReg() {
+        GameRegistry.registerItem(callingWhistle, LibInfo.MOD_ID + "callingwhsitle");
+        
+    }
 
 }

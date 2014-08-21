@@ -1,6 +1,7 @@
 #Blocks
 
 #Item
+item.civilmagicks:whistle.name=[WIP] Whistle of calling
 
 #TileEntity
 tile.cmks:homecore.name=[WIP] HomeCore
