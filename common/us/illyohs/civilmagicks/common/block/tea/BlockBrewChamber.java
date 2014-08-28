@@ -26,7 +26,7 @@ public class BlockBrewChamber extends BlockContainer {
 	public BlockBrewChamber() {
 		super(Material.glass);
 		setCreativeTab(CreativeTabs.tabBrewing);
-		setBlockName(LibInfo.MOD_ID + "brewchambert");
+		setBlockName(LibInfo.MOD_ID + ":brewchamber");
 	}
 
 	@Override

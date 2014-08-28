@@ -19,7 +19,7 @@ import net.minecraft.block.material.Material;
 public class BlockCage extends Block {
 
 	public BlockCage() {
-		super(Material.rock);
+	    super(Material.rock);
 		// TODO Auto-generated constructor stub
 	}
 

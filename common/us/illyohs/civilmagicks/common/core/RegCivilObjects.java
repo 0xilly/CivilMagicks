@@ -15,7 +15,7 @@ package us.illyohs.civilmagicks.common.core;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import thaumcraft.common.config.ConfigBlocks;
+//import thaumcraft.common.config.ConfigBlocks;
 import us.illyohs.civilmagicks.common.block.ModBlock;
 import us.illyohs.civilmagicks.common.core.civilreg.CivilRegistry;
 import us.illyohs.civilmagicks.common.core.civilreg.CivilStatus;
@@ -307,8 +307,8 @@ public class RegCivilObjects {
     }
 
     	public static void Thaumcraft() {
-    	    CivilRegistry.registerStatus(ConfigBlocks.blockAiry, 0, CivilStatus.CIVILIZED);
-    	    CivilRegistry.registerStatus(ConfigBlocks.blockArcaneDoor, 0, CivilStatus.CIVILIZED);
+//    	    CivilRegistry.registerStatus(ConfigBlocks.blockAiry, 0, CivilStatus.CIVILIZED);
+//    	    CivilRegistry.registerStatus(ConfigBlocks.blockArcaneDoor, 0, CivilStatus.CIVILIZED);
     	}
 
 }

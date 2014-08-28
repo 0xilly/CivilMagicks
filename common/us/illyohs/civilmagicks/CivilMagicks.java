@@ -47,6 +47,9 @@ public class CivilMagicks {
     	ModItem.init();
     	
     	proxy.registerTileEntitys();
+    	
+    	RegCivilObjects.nonModObjects();
+    	RegCivilObjects.nonModObjects();
     }
 
     @EventHandler
@@ -57,8 +60,7 @@ public class CivilMagicks {
 
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-    	RegCivilObjects.nonModObjects();
-    	RegCivilObjects.nonModObjects();
+
     	
     }
 }

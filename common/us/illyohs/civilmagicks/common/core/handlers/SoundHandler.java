@@ -21,5 +21,6 @@ public class SoundHandler {
     
     public static void whisle(World world, EntityPlayer player, float volume ,float pitch){
         world.playSoundAtEntity(player,(LibInfo.MOD_ID + ":spriteknowledge1"), volume, pitch);
-}
+        
+    }
 }

@@ -18,56 +18,56 @@ import net.minecraft.client.model.ModelRenderer;
 
 public class ModelBrewChamber extends ModelBase {
 	
-	ModelRenderer Base;
-	ModelRenderer Wall1;
-	ModelRenderer Wall2;
-	ModelRenderer Wall3;
-	ModelRenderer Wall4;
+    ModelRenderer Base;
+    ModelRenderer Wall1;
+    ModelRenderer Wall2;
+    ModelRenderer Wall3;
+    ModelRenderer Wall4;
 	
 	public ModelBrewChamber() {
+	    
+	    textureHeight = 64;
+	    textureWidth = 64;
 		
-		textureHeight = 64;
-		textureWidth = 64;
+        Base =  new ModelRenderer(this, 0, 0);
+        Base.addBox(-7f, 0f, -7f, 14, 1, 14);
+        Base.setRotationPoint(0f, 23f, 0);
+        setRotation(Base, 0f, 0f, 0f);
+
+        Wall1 = new ModelRenderer(this, 0, 0);
+        Wall1.addBox(-7f, -15f, -7f, 1, 15, 14);
+        Wall1.setRotationPoint(0f, 23f, 0);
+        setRotation(Base, 0f, 0f, 0f);
 		
-		Base =  new ModelRenderer(this, 0, 0);
-		Base.addBox(-7f, 0f, -7f, 14, 1, 14);
-		Base.setRotationPoint(0f, 23f, 0);
-		setRotation(Base, 0f, 0f, 0f);
-		
-		Wall1 = new ModelRenderer(this, 0, 0);
-		Wall1.addBox(-7f, -15f, -7f, 1, 16, 14);
-		Wall1.setRotationPoint(0f, 23f, 0);
-		setRotation(Base, 0f, 0f, 0f);
-		
-		Wall2 = new ModelRenderer(this, 0, 8);
-        Wall2.addBox(7f, -15f, -7f, 1, 16, 14);
+        Wall2 = new ModelRenderer(this, 0, 0);
+        Wall2.addBox(6f, -15f, -7f, 1, 15, 14);
         Wall2.setRotationPoint(0f, 23f, 0);
         setRotation(Base, 0f, 0f, 0f);
         
-        Wall3 = new ModelRenderer(this, 0, 8);
-        Wall3.addBox(-7f, -15f, 6f, 14, 16, 1);
+        Wall3 = new ModelRenderer(this, 0, 3);
+        Wall3.addBox(-6f, -15f, 6f, 12, 15, 1);
         Wall3.setRotationPoint(0f, 23f, 0);
         setRotation(Base, 0f, 0f, 0f);
         
-        Wall4 = new ModelRenderer(this, 0, 8);
-        Wall4.addBox(-7f, -15f, -7f, 14, 16, 1);
+        Wall4 = new ModelRenderer(this, 0, 3);
+        Wall4.addBox(-6f, -15f, -7f, 12, 15, 1);
         Wall4.setRotationPoint(0f, 23f, 0);
         setRotation(Base, 0f, 0f, 0f);
 		
 	}
 
 	public void render(float f) {
-		Base.render(f);
-		Wall1.render(f);
-		Wall2.render(f);
-		Wall3.render(f);
-		Wall4.render(f);
+	    Base.render(f);
+	    Wall1.render(f);
+	    Wall2.render(f);
+	    Wall3.render(f);
+	    Wall4.render(f);
 	}
-
+	
 	private void setRotation(ModelRenderer model, float x, float y, float z) {
-		model.rotateAngleX = x;
-		model.rotateAngleY = y;
-		model.rotateAngleZ = z;
+	    model.rotateAngleX = x;
+	    model.rotateAngleY = y;
+	    model.rotateAngleZ = z;
 
 	}
 

@@ -1,7 +1,8 @@
 #Blocks
+tile.civilmagicks:brewchamber.name=[WIP] Brewchamber
 
 #Item
 item.civilmagicks:whistle.name=[WIP] Whistle of calling
 
 #TileEntity
-tile.cmks:homecore.name=[WIP] HomeCore
+tile.civilmagicks:homecore.name=[WIP] HomeCore
