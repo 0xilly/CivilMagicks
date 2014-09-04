@@ -23,7 +23,7 @@ import us.illyohs.civilmagicks.common.block.ModBlock;
 import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.tile.TileAccumulator;
 import us.illyohs.civilmagicks.common.tile.TileBrewChamber;
-import us.illyohs.civilmagicks.common.tile.TileCivilStar;
+import us.illyohs.civilmagicks.common.tile.star.TileCivilStar;
 import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy implements IProxy {

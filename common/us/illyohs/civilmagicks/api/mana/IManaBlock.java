@@ -8,21 +8,18 @@
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
  *
  * 
- * Class created on Jul 28, 2014 at 2:54:02 PM
+ * Class created on Sep 3, 2014 at 2:46:39 PM
  * 
  */
-package us.illyohs.civilmagicks.common.core.civilreg;
+package us.illyohs.civilmagicks.api.mana;
 
-public class CivilInfo {
-	
-	public Object object;
-	public int meta;
-	
-	public CivilInfo(Object object, int meta) {
-		this.object = object;
-		this.meta = meta;
-		
-	}
-	
-
+public interface IManaBlock {
+    
+    public int currentMana(int current);
+    
+    public int maxMana(int max);
+    
+    public int minMana(int min);
+    
+    public ManaType canCollet();
 }

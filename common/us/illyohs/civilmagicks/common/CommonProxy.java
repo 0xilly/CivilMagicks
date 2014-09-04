@@ -17,8 +17,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.tile.TileAccumulator;
 import us.illyohs.civilmagicks.common.tile.TileBrewChamber;
-import us.illyohs.civilmagicks.common.tile.TileCivilStar;
 import us.illyohs.civilmagicks.common.tile.TileHomeCore;
+import us.illyohs.civilmagicks.common.tile.star.TileCivilStar;
 
 public class CommonProxy implements IProxy {
 

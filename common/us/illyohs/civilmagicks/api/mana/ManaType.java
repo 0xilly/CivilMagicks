@@ -11,7 +11,7 @@
  * Class created on Jul 9, 2014 at 9:08:46 PM
  * 
  */
-package us.illyohs.civilmagicks.common.core.mana;
+package us.illyohs.civilmagicks.api.mana;
 
 public enum ManaType {
 	BALANCE, DARK, LIGHT;

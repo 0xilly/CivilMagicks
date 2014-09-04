@@ -13,6 +13,7 @@
  */
 package us.illyohs.civilmagicks.common.block.tea;
 
+import us.illyohs.civilmagicks.client.lib.LibAssets;
 import us.illyohs.civilmagicks.common.lib.LibInfo;
 import us.illyohs.civilmagicks.common.tile.TileBrewChamber;
 import net.minecraft.block.BlockContainer;
@@ -27,6 +28,8 @@ public class BlockBrewChamber extends BlockContainer {
 		super(Material.glass);
 		setCreativeTab(CreativeTabs.tabBrewing);
 		setBlockName(LibInfo.MOD_ID + ":brewchamber");
+		setBlockTextureName(LibAssets.SLATE);
+		setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f); //TODO: Need to get the block bounds correctly
 	}
 
 	@Override

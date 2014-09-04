@@ -35,7 +35,7 @@ public class EntitySprite extends EntityFlying implements IMob {
     }
     
     protected String getLivingSound() {
-        return LibInfo.MOD_ID+":";
+        return LibInfo.MOD_ID+":spirtechime";
     }
 
 }

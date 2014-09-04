@@ -13,14 +13,12 @@
  */
 package us.illyohs.civilmagicks.common.block;
 
+import net.minecraft.block.Block;
 import us.illyohs.civilmagicks.common.block.star.BlockCivilStar;
 import us.illyohs.civilmagicks.common.block.tea.BlockBrewChamber;
 import us.illyohs.civilmagicks.common.lib.LibAddons;
-import us.illyohs.civilmagicks.common.tile.TileCivilStar;
-import us.illyohs.civilmagicks.common.tile.TileHomeCore;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
 
 public class ModBlock {
 	

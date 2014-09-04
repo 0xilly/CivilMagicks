@@ -8,22 +8,9 @@
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
  *
  * 
- * Class created on Jun 29, 2014 at 9:00:55 PM
+ * Class created on Sep 3, 2014 at 2:14:56 PM
  * 
  */
-package us.illyohs.civilmagicks.common.tile;
-
-import us.illyohs.civilmagicks.client.fx.StarFx;
-import net.minecraft.tileentity.TileEntity;
-
-public class TileCivilStar extends TileEntity {
-	
-	public TileCivilStar() {
-		
-	}
-	
-	public void updateEntity() {
-//		Sta
-	}
-
-}
+@API(owner = "civilmagicks", provides = "CivilMagicks|API", apiVersion = "0.1")
+package us.illyohs.civilmagicks.api;
+import cpw.mods.fml.common.API;

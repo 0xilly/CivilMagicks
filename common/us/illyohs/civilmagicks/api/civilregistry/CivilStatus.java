@@ -11,7 +11,7 @@
  * Class created on ?
  * 
  */
-package us.illyohs.civilmagicks.common.core.civilreg;
+package us.illyohs.civilmagicks.api.civilregistry;
 
 public enum CivilStatus {
 	CIVILIZED,
