@@ -13,8 +13,8 @@
  */
 package us.illyohs.civilmagicks.common.block;
 
-import us.illyohs.civilmagicks.client.render.tile.TileSummoningChamber;
 import us.illyohs.civilmagicks.common.lib.LibInfo;
+import us.illyohs.civilmagicks.common.tile.TileSummoningChamber;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;

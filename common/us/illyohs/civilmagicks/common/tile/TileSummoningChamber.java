@@ -11,7 +11,7 @@
  * Class created on Aug 10, 2014 at 11:09:24 PM
  * 
  */
-package us.illyohs.civilmagicks.client.render.tile;
+package us.illyohs.civilmagicks.common.tile;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

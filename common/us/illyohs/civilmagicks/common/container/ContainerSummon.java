@@ -15,7 +15,7 @@ package us.illyohs.civilmagicks.common.container;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
-import us.illyohs.civilmagicks.client.render.tile.TileSummoningChamber;
+import us.illyohs.civilmagicks.common.tile.TileSummoningChamber;
 
 public class ContainerSummon extends Container {
     
