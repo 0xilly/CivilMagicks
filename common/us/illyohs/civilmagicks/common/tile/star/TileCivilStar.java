@@ -13,7 +13,6 @@
  */
 package us.illyohs.civilmagicks.common.tile.star;
 
-import us.illyohs.civilmagicks.client.fx.StarFx;
 import net.minecraft.tileentity.TileEntity;
 
 public class TileCivilStar extends TileEntity {
@@ -22,8 +21,5 @@ public class TileCivilStar extends TileEntity {
 		
 	}
 	
-	public void updateEntity() {
-//		Sta
-	}
 
 }

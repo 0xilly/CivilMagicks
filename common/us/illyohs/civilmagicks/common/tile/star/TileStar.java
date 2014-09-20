@@ -13,16 +13,26 @@
  */
 package us.illyohs.civilmagicks.common.tile.star;
 
+import us.illyohs.azathoth.world.WorldXYZ;
 import us.illyohs.civilmagicks.api.mana.IManaBlock;
 import us.illyohs.civilmagicks.api.mana.IManaCollector;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 
 public class TileStar extends TileEntity implements IManaBlock, IManaCollector {
     
-
     public TileStar() {
 
+    }
+    
+    @Override
+    public void updateEntity() {
+        if(!worldObj.isRemote) {
+            WorldXYZ coords;
+//            BiomeGenBase base = world.player.chunkCoordYgetWorldChunkManager().getBiomeGenAt(coords.posX, coords.posY);
+        }
     }
 
     @Override

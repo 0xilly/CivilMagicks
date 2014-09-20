@@ -26,7 +26,7 @@ public class StarryMaterial extends Material {
 	
 	@Override
 	public boolean isToolNotRequired() {
-		return true;
+		return false;
 	}
 	
 }

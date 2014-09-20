@@ -30,6 +30,7 @@ public class BlockStar extends Block {
 		super(material);
 		this.setCreativeTab(CreativeTabs.tabBrewing);
 		this.setBlockBounds(0.25F, 0.25F, 0.25F, 0.75F, 0.75F, 0.75F);
+		this.setTickRandomly(true);
 		
 	}
 	

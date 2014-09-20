@@ -8,12 +8,13 @@
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
  *
  * 
- * Class created on Sep 3, 2014 at 2:09:47 PM
+ * Class created on Sep 5, 2014 at 7:08:38 PM
  * 
  */
-package us.illyohs.civilmagicks.api;
+package us.illyohs.civilmagicks.common.tile;
 
+import net.minecraft.tileentity.TileEntity;
 
-public class CivilMagicksAPI {
-    
+public class TileTeaTank extends TileEntity {
+
 }

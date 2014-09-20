@@ -16,6 +16,7 @@ package us.illyohs.civilmagicks.common.block;
 import net.minecraft.block.Block;
 import us.illyohs.civilmagicks.common.block.star.BlockCivilStar;
 import us.illyohs.civilmagicks.common.block.tea.BlockBrewChamber;
+import us.illyohs.civilmagicks.common.block.tea.BlockTeaTank;
 import us.illyohs.civilmagicks.common.lib.LibAddons;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -30,6 +31,7 @@ public class ModBlock {
 	public static Block summoningChamber;
 	
 	public static Block brewChamber;
+	public static Block teaTank;
 
 	public static void initCivil() {
 		
@@ -41,6 +43,7 @@ public class ModBlock {
 		summoningChamber = new BlockSummoningChamber();
 		
 		brewChamber = new BlockBrewChamber();
+		teaTank = new BlockTeaTank();
 		
 		gameRegCivil();
 		
@@ -58,6 +61,7 @@ public class ModBlock {
 		GameRegistry.registerBlock(civilStar, "civilStar");
 		GameRegistry.registerBlock(summoningChamber, "summoningChamber");
 		GameRegistry.registerBlock(brewChamber, "BrewChamber");
+		GameRegistry.registerBlock(teaTank, "teaTank");
 		
 	}
 

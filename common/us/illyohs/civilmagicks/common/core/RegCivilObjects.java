@@ -15,15 +15,11 @@ package us.illyohs.civilmagicks.common.core;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import us.illyohs.civilmagicks.api.CivilMagicksAPI;
+import us.illyohs.civilmagicks.api.civilregistry.CivilRegistry;
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 //import thaumcraft.common.config.ConfigBlocks;
-import us.illyohs.civilmagicks.common.block.ModBlock;
-import us.illyohs.civilmagicks.common.item.ModItem;
 
 public class RegCivilObjects {
-
-
 
     public static void nonModObjects() {
 
@@ -301,7 +297,6 @@ public class RegCivilObjects {
          */
         //Civilized
 //        CivilRegistry.registerItem(ModItem.callingWhistle, 0, CivilStatus.CIVILIZED);
-        CivilMagicksAPI.registerBlock(ModBlock.civilStar, 0, CivilStatus.CIVILIZED);
 
     }
 

@@ -25,11 +25,16 @@ public class ModItem {
 	
 	public static Item callingWhistle;
 	
+	public static Item temp;
+	
 	public static void init() {
 	    
 //	    wand = Iteme
 	    
 	    callingWhistle = new ItemCallingWhistle();
+	    
+	    temp = new TempItem();
+	    
 	    
 	    gameReg();
 		
@@ -37,6 +42,7 @@ public class ModItem {
 
     private static void gameReg() {
         GameRegistry.registerItem(callingWhistle, LibInfo.MOD_ID + "callingwhsitle");
+        GameRegistry.registerItem(temp, LibInfo.MOD_ID + "temps");
         
     }
 

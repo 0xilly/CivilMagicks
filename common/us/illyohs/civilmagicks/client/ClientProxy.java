@@ -19,10 +19,12 @@ import us.illyohs.civilmagicks.client.render.item.ItemRenderBrewChamber;
 import us.illyohs.civilmagicks.client.render.tile.RenderAccumulator;
 import us.illyohs.civilmagicks.client.render.tile.RenderBrewChamber;
 import us.illyohs.civilmagicks.client.render.tile.RenderCivilStar;
+import us.illyohs.civilmagicks.client.render.tile.RenderTileTank;
 import us.illyohs.civilmagicks.common.block.ModBlock;
 import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.tile.TileAccumulator;
 import us.illyohs.civilmagicks.common.tile.TileBrewChamber;
+import us.illyohs.civilmagicks.common.tile.TileTeaTank;
 import us.illyohs.civilmagicks.common.tile.star.TileCivilStar;
 import cpw.mods.fml.client.registry.ClientRegistry;
 
@@ -34,6 +36,7 @@ public class ClientProxy implements IProxy {
         ClientRegistry.bindTileEntitySpecialRenderer(TileCivilStar.class, new RenderCivilStar());
         ClientRegistry.bindTileEntitySpecialRenderer(TileAccumulator.class, new RenderAccumulator());
         ClientRegistry.bindTileEntitySpecialRenderer(TileBrewChamber.class, new RenderBrewChamber());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileTeaTank.class, new RenderTileTank());
         
         //Render Items
         MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(ModBlock.brewChamber), new ItemRenderBrewChamber());

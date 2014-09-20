@@ -23,6 +23,5 @@ public class CivilInfo {
 		this.meta = meta;
 		
 	}
-	
 
 }

@@ -13,8 +13,6 @@
  */
 package us.illyohs.civilmagicks.common.item;
 
-import java.awt.List;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
@@ -39,38 +37,38 @@ public class ItemCallingWhistle extends Item {
         setUnlocalizedName(LibInfo.MOD_ID + ":whistle");
     }
 
-    @Override
-    public void onCreated(ItemStack is, World world, EntityPlayer player) {
-        is.stackTagCompound = new NBTTagCompound();
-        is.stackTagCompound.setString("master", player.getDisplayName());
-        is.stackTagCompound.setString("UUID", player.getUniqueID().toString());
-        is.stackTagCompound.setBoolean("activated", false);
-    }
-
-    @Override
-    public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player) {
-        if (is.stackTagCompound != null) {
-            String master = is.stackTagCompound.getString("master");
-            String id = is.stackTagCompound.getString(player.getUniqueID().toString());
-            boolean activated = is.stackTagCompound.getBoolean("activated");
-            if (id == player.getUniqueID().toString() && activated == false) {
-                is.stackTagCompound.setBoolean("activated", true);
-                player.addChatComponentMessage(new ChatComponentText("The Aether grants your request"));
-
-                SoundHandler.whisle(world, player, 1.5f, 1.0f);
-
-            } else if (id == player.getUniqueID().toString() && activated == true) {
-                is.stackTagCompound.setBoolean("activated", false);
-                player.addChatComponentMessage(new ChatComponentText( "The Aether grants your request"));
-            } else {
-                player.addChatComponentMessage(new ChatComponentText( "The Aether rejects your greedy attempt to activate these goggles. Please return to the rightful owner" + " " + master));
-            }
-        } else {
-            SoundHandler.whisle(world, player, 1.0f, 0.01f);
-        }
-        return is;
-
-    }
+//    @Override
+//    public void onCreated(ItemStack is, World world, EntityPlayer player) {
+//        is.stackTagCompound = new NBTTagCompound();
+//        is.stackTagCompound.setString("master", player.getDisplayName());
+//        is.stackTagCompound.setString("UUID", player.getUniqueID().toString());
+//        is.stackTagCompound.setBoolean("activated", false);
+//    }
+//
+//    @Override
+//    public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player) {
+//        if (is.stackTagCompound != null) {
+//            String master = is.stackTagCompound.getString("master");
+//            String id = is.stackTagCompound.getString(player.getUniqueID().toString());
+//            boolean activated = is.stackTagCompound.getBoolean("activated");
+//            if (id == player.getUniqueID().toString() && activated == false) {
+//                is.stackTagCompound.setBoolean("activated", true);
+//                player.addChatComponentMessage(new ChatComponentText("The Aether grants your request"));
+//
+//                SoundHandler.whisle(world, player, 1.5f, 1.0f);
+//
+//            } else if (id == player.getUniqueID().toString() && activated == true) {
+//                is.stackTagCompound.setBoolean("activated", false);
+//                player.addChatComponentMessage(new ChatComponentText( "The Aether grants your request"));
+//            } else {
+//                player.addChatComponentMessage(new ChatComponentText( "The Aether rejects your greedy attempt to activate these goggles. Please return to the rightful owner" + " " + master));
+//            }
+//        } else {
+//            SoundHandler.whisle(world, player, 1.0f, 0.01f);
+//        }
+//        return is;
+//
+//    }
 
 //    @SuppressWarnings({ "rawtypes", "unchecked" })
 //    @Override

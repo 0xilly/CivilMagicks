@@ -13,8 +13,8 @@
  */
 package us.illyohs.civilmagicks;
 
+import us.illyohs.civilmagicks.api.civilregistry.CivilRegistry;
 import us.illyohs.civilmagicks.common.block.ModBlock;
-import us.illyohs.civilmagicks.common.core.CivilRegistry;
 import us.illyohs.civilmagicks.common.core.RegCivilObjects;
 //import us.illyohs.civilmagicks.common.core.RegCivilObjects;
 import us.illyohs.civilmagicks.common.item.ModItem;

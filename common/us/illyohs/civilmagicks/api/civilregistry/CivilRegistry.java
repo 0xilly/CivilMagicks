@@ -11,15 +11,14 @@
  * Class created on ?
  * 
  */
-package us.illyohs.civilmagicks.common.core;
+package us.illyohs.civilmagicks.api.civilregistry;
 
 import java.util.HashMap;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.fluids.Fluid;
-import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
-import us.illyohs.civilmagicks.common.core.helper.LogHelper;
+import us.illyohs.civilmagicks.common.core.CivilInfo;
 
 public class CivilRegistry {
 	
@@ -32,13 +31,11 @@ public class CivilRegistry {
 	 * @param meta meta value of a block/item
 	 * @param CivilStatus @see CivilStatus
 	 */
-	
+
 	private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
 		if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
 			civilRegistry.put(civilstatus, new CivilInfo(object, meta));
-			LogHelper.info(object.toString()+":"+ meta + " has been register in the civil registry as " + civilstatus.toString());
 		} else {
-			LogHelper.fatal("YOU CAN ONLY REGISTER BLOCKS, ITEMS, and FLUIDS INTO THE CIVILREGISTRY FIX THIS NOW!");
 			throw new IllegalArgumentException();
 		}
 		
@@ -51,5 +48,6 @@ public class CivilRegistry {
 	public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
 	    registerStatus(item, meta, civilstatus);
 	}
+	
 
 }
