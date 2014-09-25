@@ -18,5 +18,6 @@ public interface IProxy {
 	public abstract void ModelsRenederers();
 	
 	public abstract void registerTileEntitys();
-
+	
+	public abstract void registerMobs();
 }

@@ -44,6 +44,9 @@ public class ClientProxy implements IProxy {
     }
 
     @Override
-    public void registerTileEntitys() {} //NO OP
+    public void registerTileEntitys() {} /* NO OP */
+
+    @Override
+    public void registerMobs() {} /* NO OP */
 
 }

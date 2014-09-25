@@ -56,6 +56,7 @@ public class CivilMagicks {
     @EventHandler
     public void init(FMLInitializationEvent event) {
     	proxy.ModelsRenederers();
+    	proxy.registerMobs();
     	
     }
 
