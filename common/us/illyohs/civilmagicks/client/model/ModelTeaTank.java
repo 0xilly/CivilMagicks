@@ -1,15 +1,27 @@
 /**
- * This class was created by Anthony Anderson(Lord Illyohs)
- * It is distributed as part of CivilMagicks
- * Source Code: https://github.com/LordIllyohs/CivilMagicks
+ * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
+ * All rights reserved.
  *
- * CivilMagicks is Open Source and distributed under a
- * Attribution-NonCommercial-ShareAlike 3.0 Unported license.
- * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
  *
- * 
- * Class created on Sep 5, 2014 at 4:00:02 PM
- * 
+ * * Redistributions of source code must retain the above copyright notice, this
+ *   list of conditions and the following disclaimer.
+ *
+ * * Redistributions in binary form must reproduce the above copyright notice,
+ *   this list of conditions and the following disclaimer in the documentation
+ *   and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package us.illyohs.civilmagicks.client.model;
 
@@ -30,7 +42,7 @@ public class ModelTeaTank extends ModelBase {
         textureHeight = 64;
         textureWidth = 64;
 
-        Base =  new ModelRenderer(this, 0, 0);
+        Base = new ModelRenderer(this, 0, 0);
         Base.addBox(-7f, 0f, -7f, 14, 1, 14);
         Base.setRotationPoint(0f, 23f, 0);
         setRotation(Base, 0f, 0f, 0f);
@@ -54,8 +66,8 @@ public class ModelTeaTank extends ModelBase {
         Wall4.addBox(-6f, -15f, -7f, 12, 15, 1);
         Wall4.setRotationPoint(0f, 23f, 0);
         setRotation(Wall4, 0f, 0f, 0f);
-        
-        Top =  new ModelRenderer(this, 0, 0);
+
+        Top = new ModelRenderer(this, 0, 0);
         Top.addBox(-7f, 0f, -7f, 14, 1, 14);
         Top.setRotationPoint(0f, 23f, 0);
         setRotation(Top, 0f, 0f, 0f);

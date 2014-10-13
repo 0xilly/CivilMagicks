@@ -1,15 +1,27 @@
 /**
- * This class was created by Anthony Anderson(Lord Illyohs)
- * It is distributed as part of CivilMagicks
- * Source Code: https://github.com/LordIllyohs/CivilMagicks
+ * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
+ * All rights reserved.
  *
- * CivilMagicks is Open Source and distributed under a
- * Attribution-NonCommercial-ShareAlike 3.0 Unported license.
- * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
  *
- * 
- * Class created on ?
- * 
+ * * Redistributions of source code must retain the above copyright notice, this
+ *   list of conditions and the following disclaimer.
+ *
+ * * Redistributions in binary form must reproduce the above copyright notice,
+ *   this list of conditions and the following disclaimer in the documentation
+ *   and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package us.illyohs.civilmagicks.common.core;
 
@@ -17,6 +29,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import us.illyohs.civilmagicks.api.civilregistry.CivilRegistry;
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
+
 //import thaumcraft.common.config.ConfigBlocks;
 
 public class RegCivilObjects {
@@ -26,7 +39,7 @@ public class RegCivilObjects {
         /**
          * Blocks
          */
-        //Civilized
+        // Civilized
         CivilRegistry.registerBlock(Blocks.acacia_stairs, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerBlock(Blocks.oak_stairs, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerBlock(Blocks.oak_stairs, 0, CivilStatus.CIVILIZED);
@@ -56,13 +69,13 @@ public class RegCivilObjects {
         CivilRegistry.registerBlock(Blocks.nether_brick, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerBlock(Blocks.beacon, 0, CivilStatus.CIVILIZED);
 
-        //Uncivilized
+        // Uncivilized
         CivilRegistry.registerBlock(Blocks.anvil, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.dirt, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.lava, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.flowing_lava, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.cobblestone, 0, CivilStatus.UNCIVILIZED);
-        CivilRegistry.registerBlock(Blocks.stone, 0, CivilStatus.UNCIVILIZED); //NOTE: not sure if this should be uncivilized is it to common to be civilized?
+        CivilRegistry.registerBlock(Blocks.stone, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.gravel, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.grass, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.tallgrass, 0, CivilStatus.UNCIVILIZED);
@@ -89,7 +102,7 @@ public class RegCivilObjects {
         CivilRegistry.registerBlock(Blocks.wooden_door, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.ice, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.packed_ice, 0, CivilStatus.UNCIVILIZED);
-        CivilRegistry.registerBlock(Blocks.bed, 0, CivilStatus.UNCIVILIZED); //NOTE: Could this be civilized?
+        CivilRegistry.registerBlock(Blocks.bed, 0, CivilStatus.UNCIVILIZED); //?
         CivilRegistry.registerBlock(Blocks.piston, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.piston_extension, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerBlock(Blocks.piston_head, 0, CivilStatus.UNCIVILIZED);
@@ -111,7 +124,7 @@ public class RegCivilObjects {
         /**
          * Items
          */
-        //Civilized
+        // Civilized
         CivilRegistry.registerItem(Items.apple, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.book, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.brewing_stand, 0, CivilStatus.CIVILIZED);
@@ -124,18 +137,18 @@ public class RegCivilObjects {
         CivilRegistry.registerItem(Items.chainmail_leggings, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.cauldron, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.clock, 0, CivilStatus.CIVILIZED);
-        CivilRegistry.registerItem(Items.compass, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_axe, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_boots, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_chestplate, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_helmet, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_hoe, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_horse_armor, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_leggings, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_pickaxe, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_shovel, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized? 
-        CivilRegistry.registerItem(Items.diamond_sword, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
+        CivilRegistry.registerItem(Items.compass, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_axe, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_boots, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_chestplate, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_helmet, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_hoe, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_horse_armor, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_leggings, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_pickaxe, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_shovel, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.diamond_sword, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.dye, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.emerald, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.enchanted_book, 0, CivilStatus.CIVILIZED);
@@ -146,27 +159,27 @@ public class RegCivilObjects {
         CivilRegistry.registerItem(Items.flower_pot, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.ghast_tear, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.glass_bottle, 0, CivilStatus.CIVILIZED);
-        CivilRegistry.registerItem(Items.gold_ingot, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
+        CivilRegistry.registerItem(Items.gold_ingot, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.gold_nugget, 0, CivilStatus.CIVILIZED);
-        CivilRegistry.registerItem(Items.golden_apple, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_boots, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_carrot, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_chestplate, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_helmet, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_hoe, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_horse_armor, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_leggings, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_leggings, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_pickaxe, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_shovel, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
-        CivilRegistry.registerItem(Items.golden_sword, 0, CivilStatus.CIVILIZED); //NOTE: Should this be civilized?
+        CivilRegistry.registerItem(Items.golden_apple, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_boots, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_carrot, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_chestplate, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_helmet, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_hoe, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_horse_armor, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_leggings, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_leggings, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_pickaxe, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_shovel, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.golden_sword, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.item_frame, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.lead, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.map, 0, CivilStatus.CIVILIZED);
-        CivilRegistry.registerItem(Items.milk_bucket, 0, CivilStatus.CIVILIZED); //Note: MILK IS ALWAYS CIVIL :P
-        CivilRegistry.registerItem(Items.netherbrick, 0, CivilStatus.CIVILIZED); //Note: Should this be civilized?
+        CivilRegistry.registerItem(Items.milk_bucket, 0, CivilStatus.CIVILIZED);
+        CivilRegistry.registerItem(Items.netherbrick, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.name_tag, 0, CivilStatus.CIVILIZED);
-        CivilRegistry.registerItem(Items.nether_star, 0, CivilStatus.CIVILIZED); //Note: Should this be civilized?
+        CivilRegistry.registerItem(Items.nether_star, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.painting, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.paper, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.quartz, 0, CivilStatus.CIVILIZED);
@@ -187,7 +200,7 @@ public class RegCivilObjects {
         CivilRegistry.registerItem(Items.writable_book, 0, CivilStatus.CIVILIZED);
         CivilRegistry.registerItem(Items.written_book, 0, CivilStatus.CIVILIZED);
 
-        //Uncivilized
+        // Uncivilized
         CivilRegistry.registerItem(Items.wooden_axe, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.wooden_door, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.wooden_hoe, 0, CivilStatus.UNCIVILIZED);
@@ -198,13 +211,13 @@ public class RegCivilObjects {
         CivilRegistry.registerItem(Items.arrow, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.blaze_powder, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.blaze_rod, 0, CivilStatus.UNCIVILIZED);
-        CivilRegistry.registerItem(Items.bed, 0, CivilStatus.UNCIVILIZED); //NOTE: Should this be uncivilized? 
-        CivilRegistry.registerItem(Items.boat, 0, CivilStatus.UNCIVILIZED); //NOTE: Should this be uncivilized?
+        CivilRegistry.registerItem(Items.bed, 0, CivilStatus.UNCIVILIZED);
+        CivilRegistry.registerItem(Items.boat, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.bone, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.bow, 0, CivilStatus.UNCIVILIZED);
-        CivilRegistry.registerItem(Items.bowl, 0, CivilStatus.UNCIVILIZED); //NOTE: Should this be uncivilized?
+        CivilRegistry.registerItem(Items.bowl, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.bread, 0, CivilStatus.UNCIVILIZED);
-        CivilRegistry.registerItem(Items.bucket, 0, CivilStatus.UNCIVILIZED); //Note: Should this be uncivilized?
+        CivilRegistry.registerItem(Items.bucket, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.carrot_on_a_stick, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.carrot, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.chest_minecart, 0, CivilStatus.UNCIVILIZED);
@@ -248,7 +261,7 @@ public class RegCivilObjects {
         CivilRegistry.registerItem(Items.leather_helmet, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.leather_chestplate, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.leather_leggings, 0, CivilStatus.UNCIVILIZED);
-        CivilRegistry.registerItem(Items.magma_cream, 0, CivilStatus.UNCIVILIZED); //NOTE: Should this be uncivilized?
+        CivilRegistry.registerItem(Items.magma_cream, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.melon, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.melon_seeds, 0, CivilStatus.UNCIVILIZED);
         CivilRegistry.registerItem(Items.minecart, 0, CivilStatus.UNCIVILIZED);
@@ -284,25 +297,30 @@ public class RegCivilObjects {
     }
 
     public static void ModObjects() {
-        
+
         /**
          * Blocks
          */
-        //Civilized
-//        CivilRegistry.registerBlock(ModBlock.civilStar, 0, CivilStatus.CIVILIZED);
-//        CivilRegistry.registerBlock(ModBlock.brewChamber, 0, CivilStatus.CIVILIZED);
-        
+        // Civilized
+        // CivilRegistry.registerBlock(ModBlock.civilStar, 0,
+        // CivilStatus.CIVILIZED);
+        // CivilRegistry.registerBlock(ModBlock.brewChamber, 0,
+        // CivilStatus.CIVILIZED);
+
         /**
          * Items
          */
-        //Civilized
-//        CivilRegistry.registerItem(ModItem.callingWhistle, 0, CivilStatus.CIVILIZED);
+        // Civilized
+        // CivilRegistry.registerItem(ModItem.callingWhistle, 0,
+        // CivilStatus.CIVILIZED);
 
     }
 
-    	public static void Thaumcraft() {
-//    	    CivilRegistry.registerStatus(ConfigBlocks.blockAiry, 0, CivilStatus.CIVILIZED);
-//    	    CivilRegistry.registerStatus(ConfigBlocks.blockArcaneDoor, 0, CivilStatus.CIVILIZED);
-    	}
+    public static void Thaumcraft() {
+        // CivilRegistry.registerStatus(ConfigBlocks.blockAiry, 0,
+        // CivilStatus.CIVILIZED);
+        // CivilRegistry.registerStatus(ConfigBlocks.blockArcaneDoor, 0,
+        // CivilStatus.CIVILIZED);
+    }
 
 }

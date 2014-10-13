@@ -23,38 +23,16 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.item;
+package us.illyohs.civilmagicks.common.core;
 
-import us.illyohs.civilmagicks.common.lib.LibInfo;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.Item;
+public class CivilObject {
 
-public class ModItem {
+    public Object object;
+    public int meta;
 
-    public static Item manaKeep;
-
-    public static Item wand;
-
-    public static Item callingWhistle;
-
-    public static Item temp;
-
-    public static void init() {
-
-        // wand = Iteme
-
-        callingWhistle = new ItemCallingWhistle();
-
-        temp = new TempItem();
-
-        gameReg();
-
-    }
-
-    private static void gameReg() {
-        GameRegistry.registerItem(callingWhistle, LibInfo.MOD_ID
-                + "callingwhsitle");
-        GameRegistry.registerItem(temp, LibInfo.MOD_ID + "temps");
+    public CivilObject(Object object, int meta) {
+        this.object = object;
+        this.meta = meta;
 
     }
 

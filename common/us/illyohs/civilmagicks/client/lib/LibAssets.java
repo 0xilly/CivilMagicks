@@ -1,44 +1,56 @@
 /**
- * This class was created by Anthony Anderson(Lord Illyohs)
- * It is distributed as part of CivilMagicks
- * Source Code: https://github.com/LordIllyohs/CivilMagicks
+ * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
+ * All rights reserved.
  *
- * CivilMagicks is Open Source and distributed under a
- * Attribution-NonCommercial-ShareAlike 3.0 Unported license.
- * (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
  *
- * 
- * Class created on ?
- * 
+ * * Redistributions of source code must retain the above copyright notice, this
+ *   list of conditions and the following disclaimer.
+ *
+ * * Redistributions in binary form must reproduce the above copyright notice,
+ *   this list of conditions and the following disclaimer in the documentation
+ *   and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package us.illyohs.civilmagicks.client.lib;
 
 import us.illyohs.civilmagicks.common.lib.LibInfo;
 
 public class LibAssets {
-	
-	//Roots
+
+    // Roots
     private static final String ASSET = LibInfo.MOD_ID.toLowerCase();
     private static final String BLIT = ASSET + ":";
     private static final String GUI = ASSET + ":textures/gui/";
     private static final String MODELS = "textures/models/";
     private static final String FX = "textures/fx/";
 
-    //Blocks
+    // Blocks
     public static final String TEMP = BLIT + "temp";
     public static final String TEABASEFLOW = BLIT + "tempteaflow";
     public static final String TEABASESTILL = BLIT + "tempteastill";
     public static final String SLATE = BLIT + "slate";
-    
-    //Modles
+
+    // Modles
     public static final String BREWCHAMER = MODELS + "woodslate.png";
 
-    //Items
+    // Items
 
-    //GUIs
+    // GUIs
     public static final String CIVILTOME = GUI + "civiltome.png";
-    
-    //FX
+
+    // FX
     public static final String FLARE = FX + "flare.png";
 
 }
