@@ -27,11 +27,63 @@ package us.illyohs.civilmagicks.api.mana;
 
 public interface IManaBlock {
 
+    /**
+     * The current amount of mana a block has
+     * 
+     * @param current
+     * @return
+     */
     public int currentMana(int current);
 
+    /**
+     * The maximum amount of mana a tile can hold
+     * 
+     * @param max
+     * @return
+     */
     public int maxMana(int max);
 
+    /**
+     * The minimum amount of mana an item cans hold
+     * 
+     * @param min
+     * @return
+     * 
+     *         Note from Anthony: Why?!?! A friend told me to add this...
+     *         apparently she has plans don't really see the point
+     */
     public int minMana(int min);
 
-    public ManaType canCollet();
+    /**
+     * The maximum amount of mana a block can transfer
+     * 
+     * @param max
+     * @return
+     */
+    public int maxTransfer(int max);
+
+    /**
+     * The minimum amount of mana a Block can transfer
+     * 
+     * @param min
+     * @return
+     */
+    public int minTransfer(int min);
+
+    /**
+     * The type of mana the block can accept
+     * 
+     * @param type
+     * @return
+     */
+    public ManaType canAccept(ManaType type);
+
+    /**
+     * The type of mana the Block can send
+     * 
+     * @param type
+     * @return
+     */
+    public ManaType canSend(ManaType type);
+
 }

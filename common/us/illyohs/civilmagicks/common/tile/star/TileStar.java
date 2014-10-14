@@ -32,20 +32,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
-public class TileStar extends TileEntity implements IManaBlock, IManaCollector {
+public class TileStar extends TileEntity implements IManaBlock{
 
     public TileStar() {
 
-    }
-
-    @Override
-    public void updateEntity() {
-        if (!worldObj.isRemote) {
-            // WorldXYZ coords;
-            // BiomeGenBase base =
-            // world.player.chunkCoordYgetWorldChunkManager().getBiomeGenAt(coords.posX,
-            // coords.posY);
-        }
     }
 
     @Override
@@ -53,19 +43,34 @@ public class TileStar extends TileEntity implements IManaBlock, IManaCollector {
         return 0;
     }
 
+
     @Override
     public int maxMana(int max) {
-        return 100;
-    }
-
-    @Override
-    public int minMana(int min) {
-
         return 0;
     }
 
     @Override
-    public ManaType canCollet() {
+    public int minMana(int min) {
+        return 0;
+    }
+
+    @Override
+    public int maxTransfer(int max) {
+        return 0;
+    }
+
+    @Override
+    public int minTransfer(int min) {
+        return 0;
+    }
+
+    @Override
+    public ManaType canAccept(ManaType type) {
+        return null;
+    }
+
+    @Override
+    public ManaType canSend(ManaType type) {
         return null;
     }
 

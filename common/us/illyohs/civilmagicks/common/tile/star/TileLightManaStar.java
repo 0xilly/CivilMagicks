@@ -25,12 +25,7 @@
  */
 package us.illyohs.civilmagicks.common.tile.star;
 
-import us.illyohs.civilmagicks.api.mana.ManaType;
 
 public class TileLightManaStar extends TileStar {
 
-    @Override
-    public ManaType canCollet() {
-        return ManaType.LIGHT;
-    }
 }

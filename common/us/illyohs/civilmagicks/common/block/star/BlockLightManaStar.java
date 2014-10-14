@@ -34,7 +34,7 @@ import us.illyohs.civilmagicks.common.tile.star.TileLightManaStar;
 public class BlockLightManaStar extends BlockStar implements ITileEntityProvider {
 
     public BlockLightManaStar() {
-        setBlockName(LibInfo.MOD_ID + "lightmanastar");
+        setBlockName(LibInfo.MOD_ID + "lightstar");
 
     }
 

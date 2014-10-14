@@ -34,10 +34,7 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlock {
-
-    public static Block homeCore;
-    public static Block cage;
-
+    
     public static Block civilStar;
 
     public static Block summoningChamber;
@@ -47,12 +44,8 @@ public class ModBlock {
 
     public static void initCivil() {
 
-        homeCore = new BlockHomeCore();
-        cage = new BlockCage();
 
         civilStar = new BlockCivilStar();
-
-        summoningChamber = new BlockSummoningChamber();
 
         brewChamber = new BlockBrewChamber();
         teaTank = new BlockTeaTank();
@@ -61,14 +54,7 @@ public class ModBlock {
 
     }
 
-    public static void initThaumcraft() {
-        if (Loader.isModLoaded(LibAddons.Thaumcraft)) {
-
-        }
-    }
-
     private static void gameRegCivil() {
-        GameRegistry.registerBlock(homeCore, "HomeCore");
         GameRegistry.registerBlock(civilStar, "civilStar");
         GameRegistry.registerBlock(summoningChamber, "summoningChamber");
         GameRegistry.registerBlock(brewChamber, "BrewChamber");

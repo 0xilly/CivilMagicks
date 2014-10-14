@@ -6,11 +6,11 @@
  * modification, are permitted provided that the following conditions are met:
  *
  * * Redistributions of source code must retain the above copyright notice, this
- *   list of conditions and the following disclaimer.
+ * list of conditions and the following disclaimer.
  *
  * * Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -23,43 +23,25 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.block;
+package us.illyohs.civilmagicks.common.block.nodes;
 
+import us.illyohs.civilmagicks.common.lib.LibInfo;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import us.illyohs.civilmagicks.common.lib.LibInfo;
-import us.illyohs.civilmagicks.common.tile.TileHomeCore;
 
-public class BlockHomeCore extends BlockContainer {
+public class ManaRing extends BlockContainer{
 
-    public BlockHomeCore() {
+    public ManaRing() {
         super(Material.rock);
-        this.setCreativeTab(CreativeTabs.tabFood);
-        this.setHardness(6000.0F);
-        this.setHarvestLevel("Diamond", 3);
-        this.setResistance(6000000.0F);
-        this.setBlockTextureName(LibInfo.MOD_ID + ":homecore");
-        this.setBlockName(LibInfo.MOD_ID + ":homecore");
+        this.setBlockName(LibInfo.MOD_ID+":manaring");
     }
 
     @Override
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8,
-            float par9) {
-        TileHomeCore thc = (TileHomeCore) world.getTileEntity(x, y, y);
-        if (!world.isRemote) {
-            // world.setBlock(x, y, x, p_147465_4_, p_147465_5_, p_147465_6_)
-        }
-
-        return false;
-    }
-
-    @Override
-    public TileEntity createNewTileEntity(World var1, int var2) {
-        return new TileHomeCore();
+    public TileEntity createNewTileEntity(World world, int meta) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

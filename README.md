@@ -6,7 +6,7 @@ Only for the most of civilized sorcerers
 =========
 
 ##License
-CivilMagcks is licensed under the [The BSD 2-Clause License](https://github.com/Runix-Minecraft/Azathoth/blob/master/LICENSE)
+CivilMagcks is licensed under the [The BSD 2-Clause License](https://github.com/LordIllyohs/CivilMagicks/blob/master/LICENSE)
 
 =========
 ##Contributing
@@ -18,8 +18,8 @@ CivilMagcks is licensed under the [The BSD 2-Clause License](https://github.com/
     * __DO NOT ADD MULTIPLE FEATURES IN A SINGLE PR__ please add one feature per PR.
     * Please squash your commits and signoff your commit.
       * The reason for squashing commits is to make it easier to track changes
-      * By signing off on the commit you are acknowledging that I "Anthony Anderson(Lord Illyohs)" may re-license the
-        codebase.
+      * By signing off on the commit you are acknowledging that 
+        I "Anthony Anderson(Lord Illyohs)" may re-license the codebase at anytime
 
 
 ==========

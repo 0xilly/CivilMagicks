@@ -25,37 +25,32 @@
  */
 package us.illyohs.civilmagicks.common;
 
-import net.minecraft.entity.EnumCreatureType;
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import us.illyohs.civilmagicks.common.lib.IProxy;
 import us.illyohs.civilmagicks.common.mob.EntitySprite;
 import us.illyohs.civilmagicks.common.tile.TileAccumulator;
 import us.illyohs.civilmagicks.common.tile.TileBrewChamber;
 import us.illyohs.civilmagicks.common.tile.TileHomeCore;
 import us.illyohs.civilmagicks.common.tile.star.TileCivilStar;
+import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CommonProxy implements IProxy {
 
     @Override
-    public void ModelsRenederers() {
-    }// NO OP
+    public void ModelsRenederers() {}// NO OP
 
     @Override
     public void registerTileEntitys() {
         GameRegistry.registerTileEntity(TileHomeCore.class, "TileHomeCore");
         GameRegistry.registerTileEntity(TileCivilStar.class, "TileCivilStar");
-        GameRegistry.registerTileEntity(TileAccumulator.class,
-                "TileAccumulator");
-        GameRegistry.registerTileEntity(TileBrewChamber.class,
-                "TileBrewChamber");
+        GameRegistry.registerTileEntity(TileAccumulator.class, "TileAccumulator");
+        GameRegistry.registerTileEntity(TileBrewChamber.class, "TileBrewChamber");
 
     }
 
     @Override
     public void registerMobs() {
-        EntityRegistry.registerModEntity(EntitySprite.class, "sprite", 0, this,
-                80, 1, true);
+        EntityRegistry.registerModEntity(EntitySprite.class, "sprite", 0, this, 80, 1, true);
     }
 
 }
