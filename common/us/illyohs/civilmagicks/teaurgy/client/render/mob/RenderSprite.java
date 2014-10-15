@@ -23,45 +23,25 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.teaurgy.client.render.mob;
 
-import java.util.HashMap;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fluids.Fluid;
+public class RenderSprite extends Render {
 
-public class CivilRegistry {
-
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
-
-    private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
-        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
-        } else {
-            throw new IllegalArgumentException();
-        }
+    @Override
+    public void doRender(Entity entity, double x, double y, double z, float f,
+            float tick) {
+        // TODO Auto-generated method stub
 
     }
 
-    /**
-     * This registers Blocks into the civilregistry
-     * @param block
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
-        registerStatus(block, meta, civilstatus);
-    }
-
-    /**
-     * This Registers items into the civilregistry 
-     * @param item
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
-        registerStatus(item, meta, civilstatus);
+    @Override
+    protected ResourceLocation getEntityTexture(Entity p_110775_1_) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

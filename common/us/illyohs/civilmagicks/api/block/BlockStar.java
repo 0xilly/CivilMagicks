@@ -23,45 +23,42 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.api.block;
 
-import java.util.HashMap;
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.Material;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.world.World;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fluids.Fluid;
+import us.illyohs.civilmagicks.api.material.CivilMaterials;
 
-public class CivilRegistry {
+public class BlockStar extends BlockContainer {
 
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
+    public BlockStar() {
+        this(CivilMaterials.starry);
+    }
 
-    private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
-        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
-        } else {
-            throw new IllegalArgumentException();
-        }
+    public BlockStar(Material material) {
+        super(material);
+        this.setBlockBounds(0.25F, 0.25F, 0.25F, 0.75F, 0.75F, 0.75F);
+        this.setTickRandomly(true);
 
     }
 
-    /**
-     * This registers Blocks into the civilregistry
-     * @param block
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
-        registerStatus(block, meta, civilstatus);
+    @Override
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
+        return null;
     }
 
-    /**
-     * This Registers items into the civilregistry 
-     * @param item
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
-        registerStatus(item, meta, civilstatus);
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
+    }
+
+    @Override
+    public TileEntity createNewTileEntity(World world, int meta) {
+        return null;
     }
 
 }

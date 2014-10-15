@@ -23,45 +23,31 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.lore.client.mob;
 
-import java.util.HashMap;
+import us.illyohs.civilmagicks.core.lib.LibInfo;
+import net.minecraft.entity.EntityFlying;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.monster.IMob;
+import net.minecraft.world.World;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fluids.Fluid;
+public class EntitySprite extends EntityFlying implements IMob {
 
-public class CivilRegistry {
-
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
-
-    private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
-        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
-        } else {
-            throw new IllegalArgumentException();
-        }
+    public EntitySprite(World world) {
+        super(world);
 
     }
 
-    /**
-     * This registers Blocks into the civilregistry
-     * @param block
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
-        registerStatus(block, meta, civilstatus);
+    @Override
+    protected void applyEntityAttributes() {
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
+
     }
 
-    /**
-     * This Registers items into the civilregistry 
-     * @param item
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
-        registerStatus(item, meta, civilstatus);
+    protected String getLivingSound() {
+        return LibInfo.MOD_ID + ":spirtechime";
     }
 
 }

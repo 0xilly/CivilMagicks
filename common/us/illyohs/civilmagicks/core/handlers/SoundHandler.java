@@ -23,45 +23,16 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.core.handlers;
 
-import java.util.HashMap;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+import us.illyohs.civilmagicks.core.lib.LibInfo;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fluids.Fluid;
+public class SoundHandler {
 
-public class CivilRegistry {
-
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
-
-    private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
-        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
-        } else {
-            throw new IllegalArgumentException();
-        }
+    public static void whisle(World world, EntityPlayer player, float volume, float pitch) {
+        world.playSoundAtEntity(player, (LibInfo.MOD_ID + ":spriteknowledge1"), volume, pitch);
 
     }
-
-    /**
-     * This registers Blocks into the civilregistry
-     * @param block
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
-        registerStatus(block, meta, civilstatus);
-    }
-
-    /**
-     * This Registers items into the civilregistry 
-     * @param item
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
-        registerStatus(item, meta, civilstatus);
-    }
-
 }

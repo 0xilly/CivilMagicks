@@ -23,45 +23,48 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.core;
 
-import java.util.HashMap;
+import us.illyohs.azathoth.pulsar.config.ForgeCFG;
+import us.illyohs.azathoth.pulsar.control.PulseManager;
+import us.illyohs.civilmagicks.core.lib.LibInfo;
+import us.illyohs.civilmagicks.magicks.Magicks;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fluids.Fluid;
+@Mod(modid = LibInfo.MOD_ID, name = LibInfo.MOD_NAME, version = LibInfo.VERSION)
+public class CivilMagicks {
 
-public class CivilRegistry {
+    @Instance
+    public static CivilMagicks instance;
 
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
+//    public static PulseManager puls = new PulseManager(LibInfo.MOD_ID, new ForgeCFG("CivilPulses",
+//            "Dont disable these unless you want some wierd randomness to happen"));
 
-    private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
-        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
-        } else {
-            throw new IllegalArgumentException();
-        }
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+
+//        puls.registerPulse(new Magicks());
+//
+//        puls.preInit(event);
 
     }
 
-    /**
-     * This registers Blocks into the civilregistry
-     * @param block
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
-        registerStatus(block, meta, civilstatus);
+    @EventHandler
+    public void init(FMLInitializationEvent event) {
+
+//        puls.init(event);
+
     }
 
-    /**
-     * This Registers items into the civilregistry 
-     * @param item
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
-        registerStatus(item, meta, civilstatus);
-    }
+    @EventHandler
+    public void postinit(FMLPostInitializationEvent event) {
 
+//        puls.postInit(event);
+
+    }
 }

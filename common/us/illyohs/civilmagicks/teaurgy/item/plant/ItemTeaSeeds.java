@@ -23,45 +23,20 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.civilregistry;
-
-import java.util.HashMap;
+package us.illyohs.civilmagicks.teaurgy.item.plant;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fluids.Fluid;
+import net.minecraft.item.ItemSeeds;
 
-public class CivilRegistry {
-
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
-
-    private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
-        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
-        } else {
-            throw new IllegalArgumentException();
-        }
-
-    }
+public class ItemTeaSeeds extends ItemSeeds {
 
     /**
-     * This registers Blocks into the civilregistry
-     * @param block
-     * @param meta
-     * @param civilstatus
+     * @param p_i45352_1_
+     * @param p_i45352_2_
      */
-    public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
-        registerStatus(block, meta, civilstatus);
-    }
-
-    /**
-     * This Registers items into the civilregistry 
-     * @param item
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
-        registerStatus(item, meta, civilstatus);
+    public ItemTeaSeeds(Block p_i45352_1_, Block p_i45352_2_) {
+        super(p_i45352_1_, p_i45352_2_);
+        // TODO Auto-generated constructor stub
     }
 
 }

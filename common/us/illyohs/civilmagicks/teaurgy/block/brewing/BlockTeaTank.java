@@ -23,45 +23,44 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.teaurgy.block.brewing;
 
-import java.util.HashMap;
-
+import us.illyohs.civilmagicks.core.lib.LibInfo;
+import us.illyohs.civilmagicks.teaurgy.tile.TileTeaTank;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fluids.Fluid;
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
-public class CivilRegistry {
+public class BlockTeaTank extends Block implements ITileEntityProvider {
 
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
+    public BlockTeaTank() {
+        super(Material.glass);
+        setBlockName(LibInfo.MOD_ID + ":teatank");
+        setCreativeTab(CreativeTabs.tabBrewing);
+    }
 
-    private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
-        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
-        } else {
-            throw new IllegalArgumentException();
-        }
+    @Override
+    public TileEntity createNewTileEntity(World world, int meta) {
+        return new TileTeaTank();
+    }
+
+    @Override
+    public boolean renderAsNormalBlock() {
+        return false;
 
     }
 
-    /**
-     * This registers Blocks into the civilregistry
-     * @param block
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
-        registerStatus(block, meta, civilstatus);
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
     }
 
-    /**
-     * This Registers items into the civilregistry 
-     * @param item
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
-        registerStatus(item, meta, civilstatus);
+    @Override
+    public int getRenderType() {
+        return -1;
     }
 
 }

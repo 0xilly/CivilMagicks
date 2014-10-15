@@ -23,45 +23,44 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.teaurgy.client.render.tile;
 
-import java.util.HashMap;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.tileentity.TileEntitySignRenderer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ResourceLocation;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fluids.Fluid;
+import org.lwjgl.opengl.GL11;
 
-public class CivilRegistry {
+import us.illyohs.civilmagicks.core.lib.LibAssets;
+import us.illyohs.civilmagicks.core.lib.LibInfo;
+import us.illyohs.civilmagicks.teaurgy.client.model.ModelBrewChamber;
 
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
+public class RenderBrewChamber extends TileEntitySignRenderer {
 
-    private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
-        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
-        } else {
-            throw new IllegalArgumentException();
-        }
+    private ModelBrewChamber model;
 
+    public RenderBrewChamber() {
+        model = new ModelBrewChamber();
     }
 
-    /**
-     * This registers Blocks into the civilregistry
-     * @param block
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
-        registerStatus(block, meta, civilstatus);
-    }
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LibInfo.MOD_ID, LibAssets.BREWCHAMER);
 
-    /**
-     * This Registers items into the civilregistry 
-     * @param item
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
-        registerStatus(item, meta, civilstatus);
+    @Override
+    public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick) {
+//        TileBrewChamber tbc = (TileBrewChamber) tile;
+
+        GL11.glPushMatrix();
+
+        GL11.glTranslated((float) x + 0.5, (float) y + 1.5, (float) z + 0.5);
+        GL11.glScalef(1F, -1F, -1F);
+        Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
+        model.render(.0625F);
+        GL11.glScalef(1F, -1F, -1F);
+        GL11.glBlendFunc(0, 1);
+        GL11.glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
+        GL11.glPopMatrix();
+
     }
 
 }

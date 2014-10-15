@@ -23,45 +23,36 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.magicks.client.model;
 
-import java.util.HashMap;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fluids.Fluid;
+public class ModelWand extends ModelBase {
 
-public class CivilRegistry {
+    ModelRenderer Wand;
 
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
+    public ModelWand() {
+        textureHeight = 32;
+        textureWidth = 32;
 
-    private static void registerStatus(Object object, int meta, CivilStatus civilstatus) {
-        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
-        } else {
-            throw new IllegalArgumentException();
-        }
+        Wand = new ModelRenderer(this, 0, 0);
+        Wand.addBox(-1f, -15f, 1f, 2, 30, 2);
+        Wand.setRotationPoint(6f, 10f, 0f);
+        Wand.setTextureSize(32, 32);
+        setRotation(Wand, -1.07818F, 0F, 0F);
+    }
+
+    public void render(float f) {
+        Wand.render(f);
 
     }
 
-    /**
-     * This registers Blocks into the civilregistry
-     * @param block
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
-        registerStatus(block, meta, civilstatus);
-    }
+    private void setRotation(ModelRenderer model, float x, float y, float z) {
+        model.rotateAngleX = x;
+        model.rotateAngleY = y;
+        model.rotateAngleZ = z;
 
-    /**
-     * This Registers items into the civilregistry 
-     * @param item
-     * @param meta
-     * @param civilstatus
-     */
-    public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
-        registerStatus(item, meta, civilstatus);
     }
 
 }
