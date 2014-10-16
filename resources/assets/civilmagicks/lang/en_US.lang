@@ -1,10 +1,9 @@
 #Blocks
-tile.civilmagicks:brewchamber.name=[WIP] Brewchamber
+tile.civilmagicks:homecore.name=[WIP] HomeCore
+tile.civilmagicks:manaring.name=[WIP] Mana Ring
+tile.civilmagicks:lightstar.name=[WIP] Star of light
+tile.civilmagicks:manapylon.name=[WIP] Mana Pylon
 
 #Item
 item.civilmagicks:whistle.name=[WIP] Whistle of calling
 
-#TileEntity
-tile.civilmagicks:homecore.name=[WIP] HomeCore
-tile.civilmagicks:manaring.name=[WIP] Mana Ring
-tile.civilmagicks:lightstar.name=[WIP] Star of light
