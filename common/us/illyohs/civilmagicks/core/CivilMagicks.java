@@ -42,22 +42,22 @@ public class CivilMagicks {
     @Instance
     public static CivilMagicks instance;
 
-//    public static PulseManager puls = new PulseManager(LibInfo.MOD_ID, new ForgeCFG("CivilPulses",
-//            "Dont disable these unless you want some wierd randomness to happen"));
+    public static PulseManager puls = new PulseManager(LibInfo.MOD_ID, new ForgeCFG("CivilPulses",
+            "Dont disable these unless you want some wierd randomness to happen"));
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-//        puls.registerPulse(new Magicks());
-//
-//        puls.preInit(event);
+        puls.registerPulse(new Magicks());
+
+        puls.preInit(event);
 
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
 
-//        puls.init(event);
+        puls.init(event);
 
     }
 
