@@ -41,7 +41,7 @@ public class RenderCivilStar extends TileEntitySpecialRenderer {
 
     // private static ResourceLocation star = LibAssets.FLARE;
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LibInfo.MOD_ID, "textures/fx/flare.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LibInfo.MOD_ID, "textures/fx/starflare.png");
 
     @Override
     public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick) {
@@ -52,17 +52,26 @@ public class RenderCivilStar extends TileEntitySpecialRenderer {
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glColor3f(2.5f, 0.0f, 0.5f);
         tess.startDrawingQuads();
-
-        tess.addVertexWithUV(0, 0, 0, 0, 0);
-        tess.addVertexWithUV(0, 1, 0, 0, 1);
-        tess.addVertexWithUV(1, 1, 0, 1, 1);
-        tess.addVertexWithUV(1, 0, 0, 1, 0);
-        tess.addVertexWithUV(0, 0, 0, 0, 0);
-        tess.addVertexWithUV(1, 0, 0, 1, 0);
-        tess.addVertexWithUV(1, 1, 0, 1, 1);
-        tess.addVertexWithUV(0, 1, 0, 0, 1);
-
+        
+        tess.addVertexWithUV(0.1875, 7.0 / 16.0, 0.8125, 0.0, 1.0);
+        tess.addVertexWithUV(0.8125, 7.0 / 16.0, 0.8125, 1.0, 1.0);
+        tess.addVertexWithUV(0.8125, 7.0 / 16.0, 0.1875, 1.0, 0.0);
+        tess.addVertexWithUV(0.1875, 7.0 / 16.0, 0.1875, 0.0, 0.0);
+        
         tess.draw();
+        
+//        tess.startDrawingQuads();
+//
+//        tess.addVertexWithUV(0, 0, 0, 0, 0);
+//        tess.addVertexWithUV(0, 1, 0, 0, 1);
+//        tess.addVertexWithUV(1, 1, 0, 1, 1);
+//        tess.addVertexWithUV(1, 0, 0, 1, 0);
+//        tess.addVertexWithUV(0, 0, 0, 0, 0);
+//        tess.addVertexWithUV(1, 0, 0, 1, 0);
+//        tess.addVertexWithUV(1, 1, 0, 1, 1);
+//        tess.addVertexWithUV(0, 1, 0, 0, 1);
+//
+//        tess.draw();
         GL11.glDisable(GL11.GL_BLEND);
         GL11.glPopMatrix();
 
