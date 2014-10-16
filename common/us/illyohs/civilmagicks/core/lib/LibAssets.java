@@ -25,6 +25,9 @@
  */
 package us.illyohs.civilmagicks.core.lib;
 
+import net.minecraft.util.ResourceLocation;
+
+import us.illyohs.civilmagicks.core.helper.ResourceLocationHelper;
 
 public class LibAssets {
 
@@ -43,6 +46,7 @@ public class LibAssets {
 
     // Modles
     public static final String BREWCHAMER = MODELS + "woodslate.png";
+    public static final ResourceLocation PYLON_MANA = ResourceLocationHelper.getOBJAsset("pylon");
 
     // Items
 
