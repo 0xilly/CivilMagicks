@@ -22,3 +22,5 @@ setupidea.bat
 /assets
 /lib/
 /libs/
+
+*.blend

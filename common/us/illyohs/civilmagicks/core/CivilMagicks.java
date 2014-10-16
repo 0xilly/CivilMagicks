@@ -64,7 +64,7 @@ public class CivilMagicks {
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
 
-//        puls.postInit(event);
+        puls.postInit(event);
 
     }
 }
