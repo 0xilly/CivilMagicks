@@ -23,38 +23,39 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.core.lib;
+package us.illyohs.civilmagicks.magicks.client.render.tile;
 
-import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
-import us.illyohs.civilmagicks.core.helper.ResourceLocationHelper;
+import cpw.mods.fml.client.FMLClientHandler;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.tileentity.TileEntity;
+import us.illyohs.civilmagicks.core.lib.LibAssets;
+import us.illyohs.civilmagicks.magicks.client.model.ModelManaPylon;
+import us.illyohs.civilmagicks.magicks.tile.nodes.TileNodeManaPylon;
 
-public class LibAssets {
+public class RenderTileManaPylon extends TileEntitySpecialRenderer {
 
-    // Roots
-    private static final String ASSET = LibInfo.MOD_ID.toLowerCase();
-    private static final String BLIT = ASSET + ":";
-    private static final String GUI = ASSET + ":textures/gui/";
-    private static final String MODELS = "textures/models/";
-    private static final String FX = "textures/fx/";
-
-    // Blocks
-    public static final String TEMP = BLIT + "temp";
-    public static final String TEABASEFLOW = BLIT + "tempteaflow";
-    public static final String TEABASESTILL = BLIT + "tempteastill";
-    public static final String SLATE = BLIT + "slate";
-
-    // Modles
-    public static final String BREWCHAMER = MODELS + "woodslate.png";
-    public static final ResourceLocation WOOD_SLATE = ResourceLocationHelper.getModelAsset("woodslate");
-    public static final ResourceLocation PYLON_MANA = ResourceLocationHelper.getOBJAsset("pylon");
-
-    // Items
-
-    // GUIs
-    public static final String CIVILTOME = GUI + "civiltome.png";
-
-    // FX
-    public static final String FLARE = FX + "flare.png";
+    private ModelManaPylon pylon;
+    
+    public RenderTileManaPylon() {
+        pylon = new ModelManaPylon();
+    }
+    
+    @Override
+    public void renderTileEntityAt(TileEntity tile, double x, double y, double z,float tick) {
+        TileNodeManaPylon tnmp = (TileNodeManaPylon) tile;
+        
+        GL11.glPushMatrix();
+        GL11.glTranslated((float)x + 0.5, (float)y + 0.0, (float)z + 0.5);
+        GL11.glScalef(1.0f, -1.0f, -1.0f);
+        
+        pylon.render();
+        
+        this.bindTexture(LibAssets.WOOD_SLATE);
+        
+        GL11.glPopMatrix();
+        
+    }
 
 }

@@ -6,11 +6,11 @@
  * modification, are permitted provided that the following conditions are met:
  *
  * * Redistributions of source code must retain the above copyright notice, this
- * list of conditions and the following disclaimer.
+ *   list of conditions and the following disclaimer.
  *
  * * Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
+ *   this list of conditions and the following disclaimer in the documentation
+ *   and/or other materials provided with the distribution.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -25,13 +25,17 @@
  */
 package us.illyohs.civilmagicks.magicks.proxy;
 
-import us.illyohs.civilmagicks.core.lib.IProxy;
+import cpw.mods.fml.client.registry.ClientRegistry;
 
-public class MagicksClientProxy implements IProxy{
+import us.illyohs.civilmagicks.core.lib.IProxy;
+import us.illyohs.civilmagicks.magicks.client.render.tile.RenderTileManaPylon;
+import us.illyohs.civilmagicks.magicks.tile.nodes.TileNodeManaPylon;
+
+public class MagicksClientProxy implements IProxy {
 
     @Override
-    public void ModelsRenederers() {
-    
+    public void bindModelsAndTextures() {
+        ClientRegistry.bindTileEntitySpecialRenderer(TileNodeManaPylon.class, new RenderTileManaPylon());
     }
 
     @Override

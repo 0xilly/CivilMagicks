@@ -25,16 +25,20 @@
  */
 package us.illyohs.civilmagicks.magicks.proxy;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+
 import us.illyohs.civilmagicks.core.lib.IProxy;
+import us.illyohs.civilmagicks.core.lib.LibInfo;
+import us.illyohs.civilmagicks.magicks.tile.nodes.TileNodeManaPylon;
 
 public class MagicksCommonProxy implements IProxy {
 
     @Override
-    public void ModelsRenederers() {} /* NO OP */
+    public void bindModelsAndTextures() {} /* NO OP */
 
     @Override
     public void registerTileEntitys() {
-
+        GameRegistry.registerTileEntity(TileNodeManaPylon.class, LibInfo.MOD_ID + ":TileNodeManaPylon");
     }
 
     @Override

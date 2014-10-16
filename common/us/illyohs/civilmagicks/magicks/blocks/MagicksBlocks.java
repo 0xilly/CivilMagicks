@@ -25,17 +25,32 @@
  */
 package us.illyohs.civilmagicks.magicks.blocks;
 
+import net.minecraft.block.Block;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+
 import us.illyohs.civilmagicks.api.block.BlockStar;
+import us.illyohs.civilmagicks.core.lib.LibInfo;
 import us.illyohs.civilmagicks.magicks.blocks.node.NodeLightStar;
+import us.illyohs.civilmagicks.magicks.blocks.node.NodeManaPylon;
 
 public class MagicksBlocks {
 	
 	public static BlockStar star;
 	
+	public static Block manaPylon;
+	
 	public static void init() {
 	    
 	    star = new NodeLightStar();
+	    
+	    manaPylon = new NodeManaPylon();
 		
+	    gameReg();
 	}
+
+    private static void gameReg() {
+        GameRegistry.registerBlock(manaPylon, LibInfo.MOD_ID + "NodeManaPylon");
+    }
 
 }

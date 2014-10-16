@@ -25,19 +25,21 @@
  */
 package us.illyohs.civilmagicks.magicks;
 
-import us.illyohs.azathoth.pulsar.pulse.Handler;
-import us.illyohs.azathoth.pulsar.pulse.Pulse;
-import us.illyohs.civilmagicks.core.helper.LogHelper;
-import us.illyohs.civilmagicks.core.lib.IProxy;
-import us.illyohs.civilmagicks.core.lib.LibInfo;
-import us.illyohs.civilmagicks.magicks.civil.RegisterBlocks;
-import us.illyohs.civilmagicks.magicks.civil.RegisterItems;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry.ObjectHolder;
+
+import us.illyohs.azathoth.pulsar.pulse.Handler;
+import us.illyohs.azathoth.pulsar.pulse.Pulse;
+import us.illyohs.civilmagicks.core.helper.LogHelper;
+import us.illyohs.civilmagicks.core.lib.IProxy;
+import us.illyohs.civilmagicks.core.lib.LibInfo;
+import us.illyohs.civilmagicks.magicks.blocks.MagicksBlocks;
+import us.illyohs.civilmagicks.magicks.civil.RegisterBlocks;
+import us.illyohs.civilmagicks.magicks.civil.RegisterItems;
 
 @ObjectHolder(LibInfo.MOD_ID)
 @Pulse(id = "CivilMagicks|Magicks", description = "The magicks module for CivilMagicks")
@@ -53,6 +55,8 @@ public class Magicks {
     @Handler
     public void preInit(FMLPreInitializationEvent event) {
         
+        MagicksBlocks.init();
+        
         LogHelper.info("[Magkicks] Registering CivilBlocks");
         RegisterBlocks.reg();
         
@@ -63,7 +67,8 @@ public class Magicks {
     
     @Handler
     public void init(FMLInitializationEvent event) {
-        
+        proxy.registerTileEntitys();
+        proxy.bindModelsAndTextures();
     }
     
     @Handler

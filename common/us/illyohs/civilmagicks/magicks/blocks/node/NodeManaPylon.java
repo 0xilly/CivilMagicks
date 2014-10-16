@@ -23,13 +23,38 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.core.lib;
+package us.illyohs.civilmagicks.magicks.blocks.node;
 
-public interface IProxy {
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import us.illyohs.civilmagicks.core.lib.LibInfo;
+import us.illyohs.civilmagicks.magicks.tile.nodes.TileNodeManaPylon;
 
-    public abstract void bindModelsAndTextures();
+public class NodeManaPylon extends BlockContainer {
 
-    public abstract void registerTileEntitys();
+    public NodeManaPylon() {
+        super(Material.rock);
+        setBlockName(LibInfo.MOD_ID+ ":manapylon");
+//        setTickRandomly(tre)
+        setCreativeTab(CreativeTabs.tabBrewing);
+    }
 
-    public abstract void registerMobs();
+    @Override
+    public TileEntity createNewTileEntity(World world, int meta) {
+        return new TileNodeManaPylon();
+    }
+    
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
+    }
+    
+    @Override
+    public int getRenderType() {
+        return -1;
+    }
+
 }
