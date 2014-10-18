@@ -28,50 +28,43 @@ package us.illyohs.civilmagicks.magicks.client.render.tile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import us.illyohs.civilmagicks.core.lib.LibAssets;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
 
-public class RenderCivilStar extends TileEntitySpecialRenderer {
+public class RenderLightStar extends TileEntitySpecialRenderer {
 
-    // private static ResourceLocation star = LibAssets.FLARE;
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LibInfo.MOD_ID, "textures/fx/starflare.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LibInfo.MOD_ID, "textures/fx/starflares.png");
 
     @Override
     public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick) {
+        
         this.bindTexture(TEXTURE);
         Tessellator tess = Tessellator.instance;
         GL11.glPushMatrix();
         GL11.glTranslated(x, y + 1, z);
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glColor3f(2.5f, 0.0f, 0.5f);
+//        Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
+
         tess.startDrawingQuads();
-        
-        tess.addVertexWithUV(0.1875, 7.0 / 16.0, 0.8125, 0.0, 1.0);
-        tess.addVertexWithUV(0.8125, 7.0 / 16.0, 0.8125, 1.0, 1.0);
-        tess.addVertexWithUV(0.8125, 7.0 / 16.0, 0.1875, 1.0, 0.0);
-        tess.addVertexWithUV(0.1875, 7.0 / 16.0, 0.1875, 0.0, 0.0);
-        
+
+        tess.addVertexWithUV(0, 0, 0, 0, 0);
+        tess.addVertexWithUV(0, 1, 0, 0, 1);
+        tess.addVertexWithUV(1, 1, 0, 1, 1);
+        tess.addVertexWithUV(1, 0, 0, 1, 0);
+        tess.addVertexWithUV(0, 0, 0, 0, 0);
+        tess.addVertexWithUV(1, 0, 0, 1, 0);
+        tess.addVertexWithUV(1, 1, 0, 1, 1);
+        tess.addVertexWithUV(0, 1, 0, 0, 1);
+
         tess.draw();
         
-//        tess.startDrawingQuads();
-//
-//        tess.addVertexWithUV(0, 0, 0, 0, 0);
-//        tess.addVertexWithUV(0, 1, 0, 0, 1);
-//        tess.addVertexWithUV(1, 1, 0, 1, 1);
-//        tess.addVertexWithUV(1, 0, 0, 1, 0);
-//        tess.addVertexWithUV(0, 0, 0, 0, 0);
-//        tess.addVertexWithUV(1, 0, 0, 1, 0);
-//        tess.addVertexWithUV(1, 1, 0, 1, 1);
-//        tess.addVertexWithUV(0, 1, 0, 0, 1);
-//
-//        tess.draw();
+        
         GL11.glDisable(GL11.GL_BLEND);
         GL11.glPopMatrix();
 

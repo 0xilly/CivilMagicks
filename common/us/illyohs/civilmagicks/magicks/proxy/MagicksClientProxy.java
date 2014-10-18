@@ -26,9 +26,10 @@
 package us.illyohs.civilmagicks.magicks.proxy;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
-
 import us.illyohs.civilmagicks.core.lib.IProxy;
+import us.illyohs.civilmagicks.magicks.client.render.tile.RenderLightStar;
 import us.illyohs.civilmagicks.magicks.client.render.tile.RenderTileManaPylon;
+import us.illyohs.civilmagicks.magicks.tile.nodes.TileLightStar;
 import us.illyohs.civilmagicks.magicks.tile.nodes.TileNodeManaPylon;
 
 public class MagicksClientProxy implements IProxy {
@@ -36,6 +37,7 @@ public class MagicksClientProxy implements IProxy {
     @Override
     public void bindModelsAndTextures() {
         ClientRegistry.bindTileEntitySpecialRenderer(TileNodeManaPylon.class, new RenderTileManaPylon());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileLightStar.class , new RenderLightStar());
     }
 
     @Override

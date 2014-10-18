@@ -43,6 +43,7 @@ public class LibAssets {
     public static final String TEABASEFLOW = BLIT + "tempteaflow";
     public static final String TEABASESTILL = BLIT + "tempteastill";
     public static final String SLATE = BLIT + "slate";
+    public static final String BLANK = BLIT + "blank";
 
     // Modles
     public static final String BREWCHAMER = MODELS + "woodslate.png";

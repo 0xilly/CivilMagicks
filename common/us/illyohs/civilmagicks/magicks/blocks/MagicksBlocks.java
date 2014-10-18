@@ -36,13 +36,13 @@ import us.illyohs.civilmagicks.magicks.blocks.node.NodeManaPylon;
 
 public class MagicksBlocks {
 	
-	public static BlockStar star;
+	public static BlockStar starLight;
 	
 	public static Block manaPylon;
 	
 	public static void init() {
 	    
-	    star = new NodeLightStar();
+	    starLight = new NodeLightStar();
 	    
 	    manaPylon = new NodeManaPylon();
 		
@@ -50,7 +50,9 @@ public class MagicksBlocks {
 	}
 
     private static void gameReg() {
-        GameRegistry.registerBlock(manaPylon, LibInfo.MOD_ID + "NodeManaPylon");
+        GameRegistry.registerBlock(starLight, LibInfo.MOD_ID + ":StarLight");
+        
+        GameRegistry.registerBlock(manaPylon, LibInfo.MOD_ID + ":NodeManaPylon");
     }
 
 }

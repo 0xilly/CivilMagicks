@@ -25,8 +25,10 @@
  */
 package us.illyohs.civilmagicks.magicks.blocks.node;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
 import us.illyohs.civilmagicks.api.block.BlockStar;
+import us.illyohs.civilmagicks.core.lib.LibAssets;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
 import us.illyohs.civilmagicks.magicks.tile.nodes.TileLightStar;
 
@@ -34,6 +36,8 @@ public class NodeLightStar extends BlockStar {
 
     public NodeLightStar() {
         setBlockName(LibInfo.MOD_ID + ":lightstar");
+        setCreativeTab(CreativeTabs.tabBrewing);
+        setBlockTextureName(LibAssets.BLANK);
     }
     
     @Override
