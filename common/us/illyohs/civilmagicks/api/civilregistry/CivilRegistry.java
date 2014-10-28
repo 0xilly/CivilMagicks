@@ -52,6 +52,7 @@ public class CivilRegistry {
      */
     public static void registerBlock(Block block, int meta, CivilStatus civilstatus) {
         registerStatus(block, meta, civilstatus);
+        System.out.println(block.getUnlocalizedName() + ":"+ meta + ", status: "+ civilstatus);
     }
 
     /**
@@ -62,6 +63,7 @@ public class CivilRegistry {
      */
     public static void registerItem(Item item, int meta, CivilStatus civilstatus) {
         registerStatus(item, meta, civilstatus);
+        System.out.println(item.getUnlocalizedName() + ":"+ meta + ", status: "+ civilstatus);
     }
 
 }
