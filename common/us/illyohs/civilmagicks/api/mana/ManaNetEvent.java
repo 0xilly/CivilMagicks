@@ -25,9 +25,29 @@
  */
 package us.illyohs.civilmagicks.api.mana;
 
-public enum ManaType {
-    NEUTRAL, DARK, LIGHT;
+import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
+import net.minecraft.tileentity.TileEntity;
+import cpw.mods.fml.common.eventhandler.Event;
 
-    public static final ManaType[] TYPE = ManaType.values();
+public class ManaNetEvent extends Event {
+    
+    public final TileEntity tile;
+    public final ActionType actionType;
+    public final CivilStatus civilStatus;
+    public final ManaType manaType;
+    
+    /**
+     * 
+     */
+    public ManaNetEvent(TileEntity tile, ManaType manaType, ActionType actionType, CivilStatus civilStatus) {
+        this.tile = tile;
+        this.manaType = manaType;
+        this.actionType = actionType;
+        this.civilStatus = civilStatus;
+    }
+    
+    public enum ActionType {
+        SEND, RECEIVE
+    }
 
 }
