@@ -65,5 +65,21 @@ public class CivilRegistry {
         registerStatus(item, meta, civilstatus);
         System.out.println(item.getUnlocalizedName() + ":"+ meta + ", status: "+ civilstatus);
     }
+    
+    public static void registerCivilizedBlock(Block block, int meta) {
+        registerStatus(block, meta, CivilStatus.CIVILIZED);
+    }
+    
+    public static void registerUnCivilizedBlock(Block block, int meta) {
+        registerStatus(block, meta, CivilStatus.UNCIVILIZED);
+    }
+    
+    public static void registerCivilizedItem(Item item, int meta) {
+        registerStatus(item, meta, CivilStatus.CIVILIZED);
+    }
+    
+    public static void registerUnCivilizedItem(Item item, int meta) {
+        registerStatus(item, meta, CivilStatus.UNCIVILIZED);
+    }
 
 }

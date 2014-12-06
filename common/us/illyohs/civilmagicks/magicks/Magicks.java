@@ -34,12 +34,10 @@ import cpw.mods.fml.common.registry.GameRegistry.ObjectHolder;
 
 import us.illyohs.azathoth.pulsar.pulse.Handler;
 import us.illyohs.azathoth.pulsar.pulse.Pulse;
-import us.illyohs.civilmagicks.core.helper.LogHelper;
+
 import us.illyohs.civilmagicks.core.lib.IProxy;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
 import us.illyohs.civilmagicks.magicks.blocks.MagicksBlocks;
-import us.illyohs.civilmagicks.magicks.civil.RegisterBlocks;
-import us.illyohs.civilmagicks.magicks.civil.RegisterItems;
 
 @ObjectHolder(LibInfo.MOD_ID)
 @Pulse(id = "CivilMagicks|Magicks", description = "The magicks module for CivilMagicks")
@@ -57,11 +55,6 @@ public class Magicks {
         
         MagicksBlocks.init();
         
-        LogHelper.info("[Magkicks] Registering CivilBlocks");
-        RegisterBlocks.reg();
-        
-        LogHelper.info("[Magkicks] Registering CivilItems");
-        RegisterItems.reg();
         
     }
     

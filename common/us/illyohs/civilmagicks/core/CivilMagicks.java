@@ -27,6 +27,8 @@ package us.illyohs.civilmagicks.core;
 
 import us.illyohs.azathoth.pulsar.config.ForgeCFG;
 import us.illyohs.azathoth.pulsar.control.PulseManager;
+import us.illyohs.civilmagicks.core.civilreg.RegisterBlocks;
+import us.illyohs.civilmagicks.core.civilreg.RegisterItems;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
 import us.illyohs.civilmagicks.magicks.Magicks;
 import cpw.mods.fml.common.Mod;
@@ -43,7 +45,7 @@ public class CivilMagicks {
     public static CivilMagicks instance;
 
     public static PulseManager puls = new PulseManager(LibInfo.MOD_ID, new ForgeCFG("CivilPulses",
-            "Dont disable these unless you want some wierd randomness to happen"));
+            "Don't disable these unless you want some wierd randomnes to happen"));
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -51,6 +53,8 @@ public class CivilMagicks {
         puls.registerPulse(new Magicks());
 
         puls.preInit(event);
+        RegisterBlocks.reg();
+        RegisterItems.reg();
 
     }
 
