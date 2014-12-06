@@ -31,10 +31,10 @@ import cpw.mods.fml.common.eventhandler.Event;
 
 public class ManaNetEvent extends Event {
     
-    public final TileEntity tile;
-    public final ActionType actionType;
-    public final CivilStatus civilStatus;
-    public final ManaType manaType;
+    public TileEntity tile;
+    public ActionType actionType;
+    public CivilStatus civilStatus;
+    public ManaType manaType;
     
     /**
      * 
