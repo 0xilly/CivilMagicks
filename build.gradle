@@ -71,3 +71,15 @@ processResources {
         archives deobfJar
     }
 }
+
+repositories {
+    mavenCentral()
+    ivy {
+        name "Azathoth"
+        artifactPattern "http://addons.cursecdn.com/files/2221/167/[module]-[revision].[ext]"
+    }
+}
+
+dependencies {
+    compile name: 'Azathoth', version: '1.7.10-0.5.f5787d2.beta-DEV', ext: 'jar'
+}
