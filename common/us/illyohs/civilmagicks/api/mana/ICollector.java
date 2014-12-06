@@ -25,34 +25,10 @@
  */
 package us.illyohs.civilmagicks.api.mana;
 
-import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
-
-public interface IManaBlock {
-
-    /**
-     * The current amount of mana a block has
-     * 
-     * @param current
-     * @return
-     */
-    public int currentMana(int current);
-
-    /**
-     * The minimum amount of mana a Block can transfer
-     * 
-     * @param min
-     * @return
-     */
-
-    public ManaType canAccept(ManaType type);
-
-    /**
-     * The type of mana the Block can send
-     * 
-     * @param type
-     * @return
-     */
-
-    public CivilStatus civilStatus(CivilStatus status);
+/**
+ * This interface can only be imlimented on a IManaBlock TileEntity
+ * This allows fot the passive collection of mana 
+ */
+public interface ICollector {
 
 }

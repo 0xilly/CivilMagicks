@@ -25,6 +25,10 @@
  */
 package us.illyohs.civilmagicks.api.mana;
 
-public interface ICanCollectMana {
-
+public interface IManaMover extends IManaBlock {
+    
+    public int addMana();
+    
+    public ManaType changeManaType();
+    
 }

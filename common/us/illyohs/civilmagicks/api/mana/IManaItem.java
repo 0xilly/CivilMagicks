@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
+a * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,33 +26,18 @@
 package us.illyohs.civilmagicks.api.mana;
 
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
+import net.minecraft.item.ItemStack;
 
-public interface IManaBlock {
+public interface IManaItem {
+    
 
-    /**
-     * The current amount of mana a block has
-     * 
-     * @param current
-     * @return
-     */
-    public int currentMana(int current);
+    public int getCurrentMana(ItemStack is);
 
-    /**
-     * The minimum amount of mana a Block can transfer
-     * 
-     * @param min
-     * @return
-     */
+    public int setCurrentMana(ItemStack is, int current);
 
-    public ManaType canAccept(ManaType type);
-
-    /**
-     * The type of mana the Block can send
-     * 
-     * @param type
-     * @return
-     */
-
-    public CivilStatus civilStatus(CivilStatus status);
-
+    public int getMaxMana(ItemStack is, int max);
+    
+    public CivilStatus setCivilStatus(ItemStack is, CivilStatus status);
+    
+    public CivilStatus getCivilStatus(ItemStack is);
 }
