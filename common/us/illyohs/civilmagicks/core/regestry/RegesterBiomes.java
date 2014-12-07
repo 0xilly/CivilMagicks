@@ -39,8 +39,8 @@ public class RegesterBiomes {
         CivilMagicksAPI.registerDarkBiome(BiomeGenBase.coldTaiga);
         CivilMagicksAPI.registerDarkBiome(BiomeGenBase.coldTaigaHills);
         CivilMagicksAPI.registerDarkBiome(BiomeGenBase.hell);
-        CivilMagicksAPI.registerDarkBiome(BiomeGenBase.taiga);
-        CivilMagicksAPI.registerDarkBiome(BiomeGenBase.taigaHills);
+        CivilMagicksAPI.registerDarkBiome(BiomeGenBase.taiga); //Neutral?
+        CivilMagicksAPI.registerDarkBiome(BiomeGenBase.taigaHills); //Neutral?
         CivilMagicksAPI.registerDarkBiome(BiomeGenBase.swampland);
         CivilMagicksAPI.registerDarkBiome(BiomeGenBase.roofedForest);
         
@@ -58,8 +58,8 @@ public class RegesterBiomes {
         CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.beach);
         CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.coldBeach);
         CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.sky);
-        CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.mushroomIsland);
-        CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.mushroomIslandShore);
+        CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.mushroomIsland); //Neutral?
+        CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.mushroomIslandShore); //Neutral?
         CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.desert);
         CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.desertHills);
         CivilMagicksAPI.registerNeutralBiome(BiomeGenBase.savanna);

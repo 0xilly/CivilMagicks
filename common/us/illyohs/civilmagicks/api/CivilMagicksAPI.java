@@ -36,14 +36,13 @@ import net.minecraftforge.fluids.Fluid;
 
 import us.illyohs.civilmagicks.api.civilregistry.CivilObject;
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
-import us.illyohs.civilmagicks.api.mana.BiomeStatus;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 
 public class CivilMagicksAPI {
     
     
     public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
-    public static Set<BiomeStatus> biomeManaRegesty = new HashSet<BiomeStatus>();
+    public static HashMap<BiomeGenBase, ManaType> biomeManaRegesty = new HashMap<BiomeGenBase, ManaType>();
 
     private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
         if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
@@ -55,7 +54,7 @@ public class CivilMagicksAPI {
     }
 
     private static void registerManaBiome(BiomeGenBase biome, ManaType type) {
-        biomeManaRegesty.add(new BiomeStatus(biome, type));
+        biomeManaRegesty.put(biome, type);
     }
     
     /**
