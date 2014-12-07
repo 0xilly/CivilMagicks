@@ -33,6 +33,8 @@ public class RegesterBiomes {
     
     public void reg() {
         
+        //Use the biome dictionary instead to get the values?
+        
         //Dark mana type
         CivilMagicksAPI.registerDarkBiome(BiomeGenBase.coldTaiga);
         CivilMagicksAPI.registerDarkBiome(BiomeGenBase.coldTaigaHills);
