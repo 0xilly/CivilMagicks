@@ -25,6 +25,95 @@
  */
 package us.illyohs.civilmagicks.api;
 
-public class CivilMagicksAPI {
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.fluids.Fluid;
+
+import us.illyohs.civilmagicks.api.civilregistry.CivilObject;
+import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
+import us.illyohs.civilmagicks.api.mana.BiomeStatus;
+import us.illyohs.civilmagicks.api.mana.ManaType;
+
+public class CivilMagicksAPI {
+    
+    
+    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
+    public static Set<BiomeStatus> biomeManaRegesty = new HashSet<BiomeStatus>();
+
+    private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
+        if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
+            civilRegistry.put(civilstatus, new CivilObject(object, meta));
+        } else {
+            throw new IllegalArgumentException();
+        }
+
+    }
+
+    private static void registerManaBiome(BiomeGenBase biome, ManaType type) {
+        biomeManaRegesty.add(new BiomeStatus(biome, type));
+    }
+    
+    /**
+     * This Registers blocks into the civilregistry as civilized 
+     * @param block
+     * @param meta
+     */
+    public static void registerCivilizedBlock(Block block, int meta) {
+        registerObjectStatus(block, meta, CivilStatus.CIVILIZED);
+    }
+
+    /**
+     * This Registers blocks into the civilregistry as uncivilized 
+     * @param block
+     * @param meta
+     */
+    public static void registerUnCivilizedBlock(Block block, int meta) {
+        registerObjectStatus(block, meta, CivilStatus.UNCIVILIZED);
+    }
+    
+    /**
+     * This Registers items into the civilregistry as civilized
+     * @param item
+     * @param meta
+     */
+    public static void registerCivilizedItem(Item item, int meta) {
+        registerObjectStatus(item, meta, CivilStatus.CIVILIZED);
+    }
+    
+    /**
+     * This Registers items into the civilregistry as civilized
+     * @param item
+     * @param meta
+     */
+    public static void registerUnCivilizedItem(Item item, int meta) {
+        registerObjectStatus(item, meta, CivilStatus.UNCIVILIZED);
+    }
+
+    
+    /**
+     * 
+     */
+    public static void registerLightBiome(BiomeGenBase biome) {
+        registerManaBiome(biome, ManaType.LIGHT);
+    }
+    
+    /**
+     * 
+     */
+    public static void registerDarkBiome(BiomeGenBase biome) {
+        registerManaBiome(biome, ManaType.DARK);
+    }
+    
+    /**
+     * 
+     */
+    public static void registerNeutralBiome(BiomeGenBase biome) {
+        registerManaBiome(biome, ManaType.NEUTRAL);
+    }
+    
 }

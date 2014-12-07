@@ -28,7 +28,7 @@ package us.illyohs.civilmagicks.api.civilregistry;
 public class CivilObject {
 
     public Object object;
-    public int meta;
+    public int    meta;
 
     public CivilObject(Object object, int meta) {
         this.object = object;

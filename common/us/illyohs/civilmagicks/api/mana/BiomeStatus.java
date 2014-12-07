@@ -6,11 +6,11 @@
  * modification, are permitted provided that the following conditions are met:
  *
  * * Redistributions of source code must retain the above copyright notice, this
- * list of conditions and the following disclaimer.
+ *   list of conditions and the following disclaimer.
  *
  * * Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
+ *   this list of conditions and the following disclaimer in the documentation
+ *   and/or other materials provided with the distribution.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -23,26 +23,18 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.magicks.blocks.node;
+package us.illyohs.civilmagicks.api.mana;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.world.World;
-import us.illyohs.civilmagicks.api.block.BlockStar;
-import us.illyohs.civilmagicks.core.lib.LibAssets;
-import us.illyohs.civilmagicks.core.lib.LibInfo;
-import us.illyohs.civilmagicks.magicks.tile.nodes.TileLightStar;
+import net.minecraft.world.biome.BiomeGenBase;
 
-public class NodeLightStar extends BlockStar {
-
-    public NodeLightStar() {
-        setBlockName(LibInfo.MOD_ID + ":lightstar");
-        setCreativeTab(CreativeTabs.tabBrewing);
-        setBlockTextureName(LibAssets.BLANK);
-    }
+public class BiomeStatus {
     
-    @Override
-    public TileLightStar createNewTileEntity(World world, int meta) {
-        return new TileLightStar();
+    public BiomeGenBase biome;
+    public ManaType type;
+    
+    public BiomeStatus(BiomeGenBase biome, ManaType type) {
+        this.biome = biome;
+        this.type = type;
     }
 
 }

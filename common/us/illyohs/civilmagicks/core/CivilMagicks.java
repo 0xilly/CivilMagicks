@@ -27,9 +27,9 @@ package us.illyohs.civilmagicks.core;
 
 import us.illyohs.azathoth.pulsar.config.ForgeCFG;
 import us.illyohs.azathoth.pulsar.control.PulseManager;
-import us.illyohs.civilmagicks.core.civilreg.RegisterBlocks;
-import us.illyohs.civilmagicks.core.civilreg.RegisterItems;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
+import us.illyohs.civilmagicks.core.regesty.RegisterBlocks;
+import us.illyohs.civilmagicks.core.regesty.RegisterItems;
 import us.illyohs.civilmagicks.magicks.Magicks;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -52,9 +52,9 @@ public class CivilMagicks {
 
         puls.registerPulse(new Magicks());
 
-        puls.preInit(event);
         RegisterBlocks.reg();
         RegisterItems.reg();
+        puls.preInit(event);
 
     }
 

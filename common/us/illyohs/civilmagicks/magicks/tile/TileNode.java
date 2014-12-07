@@ -25,53 +25,16 @@
  */
 package us.illyohs.civilmagicks.magicks.tile;
 
-import net.minecraft.nbt.NBTTagCompound;
 import us.illyohs.azathoth.tile.TileOwnable;
+import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 import us.illyohs.civilmagicks.api.mana.IManaBlock;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 
 public class TileNode extends TileOwnable implements IManaBlock {
     
-    public TileNode() {
-        // TODO Auto-generated constructor stub
-    }
-    
-    @Override
-    public void readFromNBT(NBTTagCompound ntc) {
-        
-    }
-    
-    @Override
-    public void writeToNBT(NBTTagCompound ntc) {
-        
-    }
-    
+
     @Override
     public int currentMana(int current) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public int maxMana(int max) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public int minMana(int min) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public int maxTransfer(int max) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public int minTransfer(int min) {
         // TODO Auto-generated method stub
         return 0;
     }
@@ -83,7 +46,7 @@ public class TileNode extends TileOwnable implements IManaBlock {
     }
 
     @Override
-    public ManaType canSend(ManaType type) {
+    public CivilStatus ManaStatus(CivilStatus status) {
         // TODO Auto-generated method stub
         return null;
     }

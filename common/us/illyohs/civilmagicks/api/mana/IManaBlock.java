@@ -43,7 +43,6 @@ public interface IManaBlock {
      * @param min
      * @return
      */
-
     public ManaType canAccept(ManaType type);
 
     /**
@@ -52,7 +51,6 @@ public interface IManaBlock {
      * @param type
      * @return
      */
-
-    public CivilStatus civilStatus(CivilStatus status);
+    public CivilStatus ManaStatus(CivilStatus status);
 
 }

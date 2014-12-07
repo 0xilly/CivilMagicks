@@ -23,8 +23,56 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-@API(owner = "civilmagicks", provides = "CivilMagicks|CivilRegistry", apiVersion = "0.1")
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.magicks.tile.nodes;
 
-import cpw.mods.fml.common.API;
+import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
+import us.illyohs.civilmagicks.api.mana.ManaType;
+import us.illyohs.civilmagicks.api.tile.TileStar;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 
+public class TileStarPassive extends TileStar {
+    
+    public TileStarPassive() {
+        
+    }
+    
+    @Override
+    public int currentMana(int current) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public ManaType canAccept(ManaType type) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public CivilStatus ManaStatus(CivilStatus status) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
+    @Override
+    public void readFromNBT(NBTTagCompound nbt) {
+        
+    }
+    
+    @Override
+    public void writeToNBT(NBTTagCompound nbt) {
+        
+    }
+    
+    private void getBiome(World world, BiomeGenBase biome) {
+        BiomeGenBase currentBiome = world.getBiomeGenForCoords(xCoord, yCoord);
+        
+        if (currentBiome == biome.ocean) {
+            
+        }
+        
+    }
+
+}

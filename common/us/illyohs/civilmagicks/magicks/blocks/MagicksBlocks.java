@@ -25,34 +25,31 @@
  */
 package us.illyohs.civilmagicks.magicks.blocks;
 
-import net.minecraft.block.Block;
-
 import cpw.mods.fml.common.registry.GameRegistry;
-
+import net.minecraft.block.Block;
 import us.illyohs.civilmagicks.api.block.BlockStar;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
-import us.illyohs.civilmagicks.magicks.blocks.node.NodeLightStar;
-import us.illyohs.civilmagicks.magicks.blocks.node.NodeManaPylon;
+import us.illyohs.civilmagicks.magicks.blocks.node.StarPassive;
 
 public class MagicksBlocks {
 	
+    public static BlockStar starPassive;
 	public static BlockStar starLight;
 	
 	public static Block manaPylon;
 	
 	public static void init() {
 	    
-	    starLight = new NodeLightStar();
+	    starPassive = new StarPassive();
 	    
-	    manaPylon = new NodeManaPylon();
+//	    manaPylon = new NodeManaPylon();
 		
 	    gameReg();
 	}
 
     private static void gameReg() {
-        GameRegistry.registerBlock(starLight, LibInfo.MOD_ID + ":StarLight");
-        
-        GameRegistry.registerBlock(manaPylon, LibInfo.MOD_ID + ":NodeManaPylon");
+//        GameRegistry.registerBlock(starPassive, LibInfo.MOD_ID + ":passaivestarr");
+
     }
 
 }
