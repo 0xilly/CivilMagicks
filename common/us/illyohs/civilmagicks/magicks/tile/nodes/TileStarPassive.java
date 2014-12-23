@@ -25,54 +25,57 @@
  */
 package us.illyohs.civilmagicks.magicks.tile.nodes;
 
-import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
+import net.minecraft.nbt.NBTTagCompound;
+
 import us.illyohs.civilmagicks.api.mana.ManaType;
 import us.illyohs.civilmagicks.api.tile.TileStar;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
+import us.illyohs.civilmagicks.core.helper.BiomeHelper;
 
 public class TileStarPassive extends TileStar {
+    
+    int tick;
     
     public TileStarPassive() {
         
     }
     
     @Override
-    public int currentMana(int current) {
-        // TODO Auto-generated method stub
-        return 0;
+    public ManaType canAccept(ManaType type) { 
+        return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(xCoord, zCoord));
     }
-
-    @Override
-    public ManaType canAccept(ManaType type) {
-        // TODO Auto-generated method stub
-        return null;
+    
+    public int maxMana(int max) {
+        return 1000;
     }
-
+    
+    public int addMana(int add) {
+        return add;
+        
+    }
+ 
     @Override
-    public CivilStatus ManaStatus(CivilStatus status) {
-        // TODO Auto-generated method stub
-        return null;
+    public void writeToNBT(NBTTagCompound nbt) {
+
+        
     }
     
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
-        
+        super.readFromNBT(nbt);
+
     }
     
     @Override
-    public void writeToNBT(NBTTagCompound nbt) {
+    public void updateEntity() {
         
-    }
-    
-    private void getBiome(World world, BiomeGenBase biome) {
-        BiomeGenBase currentBiome = world.getBiomeGenForCoords(xCoord, yCoord);
-        
-        if (currentBiome == biome.ocean) {
+        if(!worldObj.isRemote) {
+            tick++;
+            if(tick == 1000) {
+                addMana(3);
+            }
             
         }
         
     }
-
+    
 }

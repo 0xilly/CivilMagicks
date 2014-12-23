@@ -25,41 +25,76 @@
  */
 package us.illyohs.civilmagicks.api.tile;
 
-import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
-import us.illyohs.civilmagicks.api.mana.IManaBlock;
-import us.illyohs.civilmagicks.api.mana.ManaType;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileStar extends TileEntity implements IManaBlock{
+import us.illyohs.civilmagicks.api.mana.IManaBlock;
+import us.illyohs.civilmagicks.api.mana.ManaType;
 
+public class TileStar extends TileEntity implements IManaBlock {
+
+    int mana;
+    int max;
+    int current;
+    ManaType type;
+    boolean isFull;
+    
+    
     @Override
     public int currentMana(int current) {
-        // TODO Auto-generated method stub
-        return 0;
+        NBTTagCompound nbt = new NBTTagCompound();
+        current = nbt.getInteger("mana");
+        return current;
     }
 
     @Override
     public ManaType canAccept(ManaType type) {
-        // TODO Auto-generated method stub
-        return null;
+        return type;
     }
-
+    
+    public int maxMana(int max) {
+        return max;
+    }
+    
+    public int addMana(int add) {
+        NBTTagCompound nbt = new NBTTagCompound();
+        if(!(currentMana(current) == max)) {
+            nbt.setInteger("mana", current + add);
+            return currentMana(current)+ add;
+        } else {
+            return 0;            
+        }
+        
+    }
+    
+    
+    
     @Override
-    public CivilStatus ManaStatus(CivilStatus status) {
-        // TODO Auto-generated method stub
-        return null;
+    public void writeToNBT(NBTTagCompound nbt) {
+        super.writeToNBT(nbt);
+        nbt.setInteger("mana", mana);
+        nbt.setInteger("max", max);
+        nbt.setBoolean("isFull", isFull);
+        nbt.setString("manaType", type.toString());
+        
+        
     }
     
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
+        super.readFromNBT(nbt);
+        if(nbt.hasKey("mana")) {
+            mana = nbt.getInteger("mana");
+        }
         
+        if(nbt.hasKey("isFull")) {
+            isFull = nbt.getBoolean("isFull");
+        }
+        
+        if(nbt.hasKey("manaType")) {
+            type = ManaType.valueOf(nbt.getString("manaType"));
+        }
     }
     
-    @Override
-    public void writeToNBT(NBTTagCompound nbt) {
-        
-    }
 
 }

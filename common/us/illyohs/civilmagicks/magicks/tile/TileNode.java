@@ -45,10 +45,5 @@ public class TileNode extends TileOwnable implements IManaBlock {
         return null;
     }
 
-    @Override
-    public CivilStatus ManaStatus(CivilStatus status) {
-        // TODO Auto-generated method stub
-        return null;
-    }
     
 }

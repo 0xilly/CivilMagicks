@@ -13,6 +13,7 @@ public class StarPassive extends BlockStar {
         setBlockName(LibInfo.MOD_ID + ":passivestar");
     }
     
+    
 
     @Override
     public TileEntity createNewTileEntity(World world, int meta) {

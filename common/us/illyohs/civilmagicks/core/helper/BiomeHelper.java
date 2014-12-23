@@ -35,15 +35,27 @@ public class BiomeHelper {
     
     private World world;
     
-    public BiomeGenBase getBiome(int x, int y) {
-        BiomeGenBase biome = world.getBiomeGenForCoords(x, y); 
+    /**
+     * This gets the current biome location
+     * @param x coord
+     * @param z coord
+     * @return biome 
+     */
+    public BiomeGenBase getBiome(int x, int z) {
+        BiomeGenBase biome = world.getBiomeGenForCoords(x, z); 
         return biome;
     }
     
-    public BiomeGenBase getManaFromBiomeType(BiomeGenBase biome){
+    /**
+     * 
+     * This gets the mana type for each biom
+     * @param biome
+     * 
+     */
+    public ManaType getManaFromBiomeType(BiomeGenBase biome){
         for(ManaType type : CivilMagicksAPI.biomeManaRegesty.keySet()) {
             if (CivilMagicksAPI.biomeManaRegesty.get(type).equals(biome)) {
-                return biome;
+                return type;
             }
         }
         return null;

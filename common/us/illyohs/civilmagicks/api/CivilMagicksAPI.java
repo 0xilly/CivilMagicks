@@ -26,8 +26,6 @@
 package us.illyohs.civilmagicks.api;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -39,10 +37,9 @@ import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 
 public class CivilMagicksAPI {
-    
-    
+      
     public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
-    public static HashMap<BiomeGenBase, ManaType> biomeManaRegesty = new HashMap<BiomeGenBase, ManaType>();
+    public static HashMap<ManaType, BiomeGenBase> biomeManaRegesty = new HashMap<ManaType, BiomeGenBase>();
 
     private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
         if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
@@ -54,7 +51,7 @@ public class CivilMagicksAPI {
     }
 
     private static void registerManaBiome(BiomeGenBase biome, ManaType type) {
-        biomeManaRegesty.put(biome, type);
+        biomeManaRegesty.put(type, biome);
     }
     
     /**

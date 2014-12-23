@@ -25,7 +25,6 @@
  */
 package us.illyohs.civilmagicks.api.mana;
 
-import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 
 public interface IManaBlock {
 
@@ -38,19 +37,12 @@ public interface IManaBlock {
     public int currentMana(int current);
 
     /**
-     * The minimum amount of mana a Block can transfer
-     * 
-     * @param min
-     * @return
-     */
-    public ManaType canAccept(ManaType type);
-
-    /**
-     * The type of mana the Block can send
+     * The type of mana the Block can accept/send
      * 
      * @param type
      * @return
      */
-    public CivilStatus ManaStatus(CivilStatus status);
+    public ManaType canAccept(ManaType type);
+
 
 }
