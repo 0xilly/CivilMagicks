@@ -31,15 +31,13 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry.ObjectHolder;
-
 import us.illyohs.azathoth.pulsar.pulse.Handler;
 import us.illyohs.azathoth.pulsar.pulse.Pulse;
-
 import us.illyohs.civilmagicks.core.lib.IProxy;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
 import us.illyohs.civilmagicks.magicks.blocks.MagicksBlocks;
+import us.illyohs.civilmagicks.magicks.items.MagicksItems;
 
-@ObjectHolder(LibInfo.MOD_ID)
 @Pulse(id = "CivilMagicks|Magicks", description = "The magicks module for CivilMagicks")
 public class Magicks {
 
@@ -54,7 +52,7 @@ public class Magicks {
     public void preInit(FMLPreInitializationEvent event) {
         
         MagicksBlocks.init();
-        
+        MagicksItems.init();
         
     }
     

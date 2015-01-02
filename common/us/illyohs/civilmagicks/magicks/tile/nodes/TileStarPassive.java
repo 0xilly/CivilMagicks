@@ -71,8 +71,9 @@ public class TileStarPassive extends TileStar {
         if(!worldObj.isRemote) {
             tick++;
             if(tick == 1000) {
-                addMana(3);
+                addMana(2);
             }
+            System.out.println(mana);
             
         }
         

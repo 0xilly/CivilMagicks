@@ -3,7 +3,9 @@ tile.civilmagicks:homecore.name=[WIP] HomeCore
 tile.civilmagicks:manaring.name=[WIP] Mana Ring
 tile.civilmagicks:lightstar.name=[WIP] Star of light
 tile.civilmagicks:manapylon.name=[WIP] Mana Pylon
+tile.civilmagicks:starpassive.name=[WIP] Passive Star
 
 #Item
 item.civilmagicks:whistle.name=[WIP] Whistle of calling
+item.civilmagicks:debugitem.name= Debug item
 

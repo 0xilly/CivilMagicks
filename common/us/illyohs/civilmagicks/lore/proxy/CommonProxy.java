@@ -6,11 +6,11 @@
  * modification, are permitted provided that the following conditions are met:
  *
  * * Redistributions of source code must retain the above copyright notice, this
- * list of conditions and the following disclaimer.
+ *   list of conditions and the following disclaimer.
  *
  * * Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
+ *   this list of conditions and the following disclaimer in the documentation
+ *   and/or other materials provided with the distribution.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -23,27 +23,25 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.magicks.proxy;
-
-import cpw.mods.fml.common.registry.GameRegistry;
+package us.illyohs.civilmagicks.lore.proxy;
 
 import us.illyohs.civilmagicks.core.lib.IProxy;
-import us.illyohs.civilmagicks.core.lib.LibInfo;
-import us.illyohs.civilmagicks.magicks.tile.nodes.TileStarPassive;
 
-public class MagicksCommonProxy implements IProxy {
+public class CommonProxy implements IProxy {
 
     @Override
-    public void bindModelsAndTextures() {} /* NO OP */
+    public void bindModelsAndTextures() {} /*NOOP*/
 
     @Override
     public void registerTileEntitys() {
-        GameRegistry.registerTileEntity(TileStarPassive.class, LibInfo.MOD_ID + "_tilestarpassive");
+        // TODO Auto-generated method stub
+        
     }
 
     @Override
     public void registerMobs() {
-  
+        // TODO Auto-generated method stub
+        
     }
 
 }

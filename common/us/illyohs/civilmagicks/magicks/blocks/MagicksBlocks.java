@@ -48,7 +48,7 @@ public class MagicksBlocks {
 	}
 
     private static void gameReg() {
-//        GameRegistry.registerBlock(starPassive, LibInfo.MOD_ID + ":passaivestarr");
+        GameRegistry.registerBlock(starPassive, LibInfo.MOD_ID + "_passaivestar");
 
     }
 

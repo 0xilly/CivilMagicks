@@ -47,10 +47,8 @@ public class BiomeHelper {
     }
     
     /**
-     * 
      * This gets the mana type for each biom
      * @param biome
-     * 
      */
     public ManaType getManaFromBiomeType(BiomeGenBase biome){
         for(ManaType type : CivilMagicksAPI.biomeManaRegesty.keySet()) {

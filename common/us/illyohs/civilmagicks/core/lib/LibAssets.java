@@ -51,6 +51,7 @@ public class LibAssets {
     public static final ResourceLocation PYLON_MANA = ResourceLocationHelper.getOBJAsset("pylon");
 
     // Items
+    public static final String DEBUGITEM = BLIT + "debugwand";
 
     // GUIs
     public static final String CIVILTOME = GUI + "civiltome.png";

@@ -33,7 +33,7 @@ import us.illyohs.civilmagicks.api.mana.ManaType;
 
 public class TileStar extends TileEntity implements IManaBlock {
 
-    int mana;
+    public int mana;
     int max;
     int current;
     ManaType type;
