@@ -23,46 +23,49 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.core;
+package us.illyohs.civilmagicks.common.proxy;
 
-
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import us.illyohs.civilmagicks.common.core.registry.RegisterBlocks;
-import us.illyohs.civilmagicks.common.core.registry.RegisterItems;
 
+public class CommonProxy implements IProxy {
 
-@Mod(modid = LibInfo.MOD_ID, name = LibInfo.MOD_NAME, version = LibInfo.VERSION)
-public class CivilMagicks {
+	@Override
+	public void preInit(FMLPreInitializationEvent event) {
+		
+	}
 
-    @Instance
-    public static CivilMagicks instance;
-    
-    @SidedProxy(serverSide = LibInfo.COMMON_PROXY, clientSide = LibInfo.CLIENT_PROXY)
-    public static IProxy proxy;
+	@Override
+	public void init(FMLInitializationEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
 
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        RegisterBlocks.reg();
-        RegisterItems.reg();    
-        proxy.preInit(event);
-        
-    }
+	@Override
+	public void postInit(FMLPostInitializationEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
 
-    @EventHandler
-    public void init(FMLInitializationEvent event) {
-    	proxy.init(event);
-    }
+	@Override
+	public void bindModelsAndTextures() {
+		//NO-OP
+		
+	}
 
-    @EventHandler
-    public void postinit(FMLPostInitializationEvent event) {
-    	proxy.postInit(event);
-    }
+	@Override
+	public void registerTileEntitys() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void registerMobs() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

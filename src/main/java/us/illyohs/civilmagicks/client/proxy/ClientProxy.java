@@ -23,46 +23,45 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.core;
+package us.illyohs.civilmagicks.client.proxy;
 
-
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import us.illyohs.civilmagicks.common.core.registry.RegisterBlocks;
-import us.illyohs.civilmagicks.common.core.registry.RegisterItems;
 
+public class ClientProxy implements IProxy {
 
-@Mod(modid = LibInfo.MOD_ID, name = LibInfo.MOD_NAME, version = LibInfo.VERSION)
-public class CivilMagicks {
+	@Override
+	public void preInit(FMLPreInitializationEvent event) {
+		//NO-OP
+	}
 
-    @Instance
-    public static CivilMagicks instance;
-    
-    @SidedProxy(serverSide = LibInfo.COMMON_PROXY, clientSide = LibInfo.CLIENT_PROXY)
-    public static IProxy proxy;
+	@Override
+	public void init(FMLInitializationEvent event) {
+		
 
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        RegisterBlocks.reg();
-        RegisterItems.reg();    
-        proxy.preInit(event);
-        
-    }
+	}
 
-    @EventHandler
-    public void init(FMLInitializationEvent event) {
-    	proxy.init(event);
-    }
+	@Override
+	public void postInit(FMLPostInitializationEvent event) {
+		//NO-OP
+	}
 
-    @EventHandler
-    public void postinit(FMLPostInitializationEvent event) {
-    	proxy.postInit(event);
-    }
+	@Override
+	public void bindModelsAndTextures() {
+
+	}
+
+	@Override
+	public void registerTileEntitys() {
+		//NO-OP
+
+	}
+
+	@Override
+	public void registerMobs() {
+		//NO-OP
+	}
+
 }

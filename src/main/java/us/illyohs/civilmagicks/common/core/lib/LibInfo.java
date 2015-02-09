@@ -31,7 +31,7 @@ public class LibInfo {
     public static final String MOD_NAME = "Civil Magicks";
     public static final String VERSION = "@VERSION@";
 
-    public static final String CLIENT_PROXY = "us.illyohs.civilmagicks.client.ClientProxy";
-    public static final String COMMON_PROXY = "us.illyohs.civilmagicks.client.CommonProxy";
+    public static final String CLIENT_PROXY = "us.illyohs.civilmagicks.client.proxy.ClientProxy";
+    public static final String COMMON_PROXY = "us.illyohs.civilmagicks.common.proxy.CommonProxy";
 
 }
