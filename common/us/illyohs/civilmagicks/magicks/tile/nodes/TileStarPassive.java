@@ -41,7 +41,7 @@ public class TileStarPassive extends TileStar {
     
     @Override
     public ManaType canAccept(ManaType type) { 
-        return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(xCoord, zCoord));
+        return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(pos));
     }
     
     public int maxMana(int max) {
@@ -66,7 +66,7 @@ public class TileStarPassive extends TileStar {
     }
     
     @Override
-    public void updateEntity() {
+    public void update() {
         
         if(!worldObj.isRemote) {
             tick++;

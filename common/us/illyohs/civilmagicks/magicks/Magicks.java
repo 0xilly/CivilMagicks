@@ -25,46 +25,34 @@
  */
 package us.illyohs.civilmagicks.magicks;
 
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry.ObjectHolder;
-import us.illyohs.azathoth.pulsar.pulse.Handler;
-import us.illyohs.azathoth.pulsar.pulse.Pulse;
-import us.illyohs.civilmagicks.core.lib.IProxy;
-import us.illyohs.civilmagicks.core.lib.LibInfo;
-import us.illyohs.civilmagicks.magicks.blocks.MagicksBlocks;
-import us.illyohs.civilmagicks.magicks.items.MagicksItems;
 
-@Pulse(id = "CivilMagicks|Magicks", description = "The magicks module for CivilMagicks")
+//@Pulse(id = "CivilMagicks|Magicks", description = "The magicks module for CivilMagicks")
 public class Magicks {
 
-    @Instance("CivilMagicks|Magicks")
-    public static Magicks instance;
-
-    @SidedProxy(clientSide = "us.illyohs.civilmagicks.magicks.proxy.MagicksClientProxy", 
-                serverSide = "us.illyohs.civilmagicks.magicks.proxy.MagicksCommonProxy")
-    public static IProxy proxy;
-    
-    @Handler
-    public void preInit(FMLPreInitializationEvent event) {
-        
-        MagicksBlocks.init();
-        MagicksItems.init();
-        
-    }
-    
-    @Handler
-    public void init(FMLInitializationEvent event) {
-        proxy.registerTileEntitys();
-        proxy.bindModelsAndTextures();
-    }
-    
-    @Handler
-    public void postInit(FMLPostInitializationEvent event) {
-        
-    }
-    
+//    @Instance("CivilMagicks|Magicks")
+//    public static Magicks instance;
+//
+//    @SidedProxy(clientSide = "us.illyohs.civilmagicks.magicks.proxy.MagicksClientProxy", 
+//               serverSide = "us.illyohs.civilmagicks.magicks.proxy.MagicksCommonProxy")
+//    public static IProxy proxy;
+//    
+//    @Handler
+//    public void preInit(FMLPreInitializationEvent event) {
+//        
+//        MagicksBlocks.init();
+//        MagicksItems.init();
+//        
+//    }
+//    
+//    @Handler
+//    public void init(FMLInitializationEvent event) {
+//        proxy.registerTileEntitys();
+//        proxy.bindModelsAndTextures();
+//    }
+//    
+//    @Handler
+//    public void postInit(FMLPostInitializationEvent event) {
+//        
+//    }
+//    
 }

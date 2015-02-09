@@ -26,12 +26,18 @@
 package us.illyohs.civilmagicks.teaurgy.client.render.mob;
 
 import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSprite extends Render {
 
-    @Override
+    protected RenderSprite(RenderManager p_i46179_1_) {
+		super(p_i46179_1_);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
     public void doRender(Entity entity, double x, double y, double z, float f,
             float tick) {
         // TODO Auto-generated method stub

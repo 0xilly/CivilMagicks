@@ -55,8 +55,9 @@ public class RegisterBlocks {
         CivilMagicksAPI.registerCivilizedBlock(Blocks.stained_glass, 0);
         CivilMagicksAPI.registerCivilizedBlock(Blocks.chest, 0);
         CivilMagicksAPI.registerCivilizedBlock(Blocks.cobblestone_wall, 0);
-        CivilMagicksAPI.registerCivilizedBlock(Blocks.fence, 0);
-        CivilMagicksAPI.registerCivilizedBlock(Blocks.fence_gate, 0);
+        CivilMagicksAPI.registerCivilizedBlock(Blocks.oak_fence, 0);
+        CivilMagicksAPI.registerCivilizedBlock(Blocks.oak_fence_gate, 0);
+        //TODO: more fences?
         CivilMagicksAPI.registerCivilizedBlock(Blocks.nether_brick_fence, 0);
         CivilMagicksAPI.registerCivilizedBlock(Blocks.brick_block, 0);
         CivilMagicksAPI.registerCivilizedBlock(Blocks.nether_brick, 0);
@@ -93,7 +94,8 @@ public class RegisterBlocks {
         CivilMagicksAPI.registerUnCivilizedBlock(Blocks.hardened_clay, 0);
         CivilMagicksAPI.registerUnCivilizedBlock(Blocks.soul_sand, 0);
         CivilMagicksAPI.registerUnCivilizedBlock(Blocks.sand, 0);
-        CivilMagicksAPI.registerUnCivilizedBlock(Blocks.wooden_door, 0);
+        CivilMagicksAPI.registerUnCivilizedBlock(Blocks.oak_door, 0);
+        //TODO: add more fences
         CivilMagicksAPI.registerUnCivilizedBlock(Blocks.ice, 0);
         CivilMagicksAPI.registerUnCivilizedBlock(Blocks.packed_ice, 0);
         CivilMagicksAPI.registerUnCivilizedBlock(Blocks.piston, 0);

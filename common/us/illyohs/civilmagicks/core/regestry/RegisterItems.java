@@ -111,7 +111,8 @@ public class RegisterItems {
 
         // Uncivilized
         CivilMagicksAPI.registerUnCivilizedItem(Items.wooden_axe, 0);
-        CivilMagicksAPI.registerUnCivilizedItem(Items.wooden_door, 0);
+        CivilMagicksAPI.registerUnCivilizedItem(Items.oak_door, 0);
+        //TODO: Add more doors
         CivilMagicksAPI.registerUnCivilizedItem(Items.wooden_hoe, 0);
         CivilMagicksAPI.registerUnCivilizedItem(Items.wooden_pickaxe, 0);
         CivilMagicksAPI.registerUnCivilizedItem(Items.wooden_shovel, 0);
@@ -135,7 +136,7 @@ public class RegisterItems {
         CivilMagicksAPI.registerUnCivilizedItem(Items.coal, 0);
         CivilMagicksAPI.registerUnCivilizedItem(Items.comparator, 0);
         CivilMagicksAPI.registerUnCivilizedItem(Items.cooked_beef, 0);
-        CivilMagicksAPI.registerUnCivilizedItem(Items.cooked_fished, 0);
+        CivilMagicksAPI.registerUnCivilizedItem(Items.cooked_fish, 0);
         CivilMagicksAPI.registerUnCivilizedItem(Items.cooked_chicken, 0);
         CivilMagicksAPI.registerUnCivilizedItem(Items.cooked_porkchop, 0);
         CivilMagicksAPI.registerUnCivilizedItem(Items.cookie, 0);

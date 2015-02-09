@@ -25,24 +25,19 @@
  */
 package us.illyohs.civilmagicks.magicks.client.model;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-import net.minecraftforge.client.model.AdvancedModelLoader;
-import net.minecraftforge.client.model.IModelCustom;
-
-import us.illyohs.civilmagicks.core.lib.LibAssets;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class ModelManaPylon {
 
-    private IModelCustom modelPylon;
-
-    public ModelManaPylon() {
-        modelPylon = AdvancedModelLoader.loadModel(LibAssets.PYLON_MANA);
-    }
-    
-    public void render() {
-        modelPylon.renderAll();
-    }
+//    private IModelCustom modelPylon;
+//
+//    public ModelManaPylon() {
+//        modelPylon = AdvancedModelLoader.loadModel(LibAssets.PYLON_MANA);
+//    }
+//    
+//    public void render() {
+//        modelPylon.renderAll();
+//    }
 }

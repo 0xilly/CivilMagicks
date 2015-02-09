@@ -25,9 +25,7 @@
  */
 package us.illyohs.civilmagicks.teaurgy;
 
-import us.illyohs.azathoth.pulsar.pulse.Pulse;
-
-@Pulse(id = "CiviMagicks|Teaurgy", description = "MMM that's a good cup of tea")
+//@Pulse(id = "CiviMagicks|Teaurgy", description = "MMM that's a good cup of tea")
 public class Teaurgy {
 
 }

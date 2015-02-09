@@ -27,7 +27,7 @@ package us.illyohs.civilmagicks.core.helper;
 
 import us.illyohs.civilmagicks.api.CivilMagicksAPI;
 import us.illyohs.civilmagicks.api.mana.ManaType;
-
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
@@ -41,8 +41,9 @@ public class BiomeHelper {
      * @param z coord
      * @return biome 
      */
-    public BiomeGenBase getBiome(int x, int z) {
-        BiomeGenBase biome = world.getBiomeGenForCoords(x, z); 
+    public BiomeGenBase getBiome(BlockPos pos) {
+//        BiomeGenBase biome = world.getBiomeGenForCoords(x, z); 
+    	BiomeGenBase biome = world.getBiomeGenForCoords(pos);
         return biome;
     }
     
@@ -50,7 +51,7 @@ public class BiomeHelper {
      * This gets the mana type for each biom
      * @param biome
      */
-    public ManaType getManaFromBiomeType(BiomeGenBase biome){
+    public ManaType getManaFromBiomeType(BiomeGenBase biome) {
         for(ManaType type : CivilMagicksAPI.biomeManaRegesty.keySet()) {
             if (CivilMagicksAPI.biomeManaRegesty.get(type).equals(biome)) {
                 return type;

@@ -25,8 +25,9 @@
  */
 package us.illyohs.civilmagicks.magicks.blocks;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 import us.illyohs.civilmagicks.api.block.BlockStar;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
 import us.illyohs.civilmagicks.magicks.blocks.node.StarPassive;

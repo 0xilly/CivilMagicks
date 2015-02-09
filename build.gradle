@@ -71,7 +71,7 @@ processResources {
         archives deobfJar
     }
 }
-
+/*
 repositories {
     mavenCentral()
     ivy {
@@ -83,3 +83,4 @@ repositories {
 dependencies {
     compile name: 'Azathoth', version: '1.7.10-0.5.f5787d2.beta-DEV', ext: 'jar'
 }
+*/

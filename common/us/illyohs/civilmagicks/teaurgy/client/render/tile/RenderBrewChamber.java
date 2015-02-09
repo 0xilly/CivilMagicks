@@ -47,7 +47,7 @@ public class RenderBrewChamber extends TileEntitySignRenderer {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LibInfo.MOD_ID, LibAssets.BREWCHAMER);
 
     @Override
-    public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick) {
+    public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick, int arg) {
 //        TileBrewChamber tbc = (TileBrewChamber) tile;
 
         GL11.glPushMatrix();

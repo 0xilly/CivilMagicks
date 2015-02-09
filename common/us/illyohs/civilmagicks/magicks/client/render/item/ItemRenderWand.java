@@ -28,12 +28,12 @@ package us.illyohs.civilmagicks.magicks.client.render.item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 import org.lwjgl.opengl.GL11;
 
 import us.illyohs.civilmagicks.core.lib.LibInfo;
 import us.illyohs.civilmagicks.magicks.client.model.ModelWand;
-import cpw.mods.fml.client.FMLClientHandler;
 
 public class ItemRenderWand implements IItemRenderer {
 

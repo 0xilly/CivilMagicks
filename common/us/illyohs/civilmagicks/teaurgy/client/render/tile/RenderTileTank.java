@@ -46,9 +46,10 @@ public class RenderTileTank extends TileEntitySpecialRenderer {
     private static final ResourceLocation TEXTURE = new ResourceLocation(
             LibInfo.MOD_ID, "textures/models/glassslate.png");
 
-    @Override
-    public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick) {
-        TileTeaTank tt = (TileTeaTank) tile;
+	@Override
+	public void renderTileEntityAt(TileEntity tile, double x,double y, double z, float tick,
+			int p_180535_9_) {
+		TileTeaTank tt = (TileTeaTank) tile;
         GL11.glPushMatrix();
 
         GL11.glTranslated((float) x + 0.5, (float) y + 1.5, (float) z + 0.5);
@@ -62,6 +63,7 @@ public class RenderTileTank extends TileEntitySpecialRenderer {
         // GL11.glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
         GL11.glDisable(GL11.GL_BLEND);
         GL11.glPopMatrix();
-    }
+		
+	}
 
 }

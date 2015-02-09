@@ -23,19 +23,8 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.magicks.items;
+package us.illyohs.civilmagicks.magicks.mob;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import us.illyohs.civilmagicks.core.lib.LibAssets;
-import us.illyohs.civilmagicks.core.lib.LibInfo;
+public class Faerie {
 
-public class ItemDebugItem extends Item {
-    
-    public ItemDebugItem() {
-        setUnlocalizedName(LibInfo.MOD_ID+ ":debugitem");
-//        setTextureName(LibAssets.DEBUGITEM);
-        setCreativeTab(CreativeTabs.tabBrewing);
-    }
-    
 }

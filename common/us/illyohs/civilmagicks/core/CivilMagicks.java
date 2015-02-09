@@ -25,18 +25,18 @@
  */
 package us.illyohs.civilmagicks.core;
 
-import us.illyohs.azathoth.pulsar.config.ForgeCFG;
-import us.illyohs.azathoth.pulsar.control.PulseManager;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
 import us.illyohs.civilmagicks.core.regestry.RegisterBlocks;
 import us.illyohs.civilmagicks.core.regestry.RegisterItems;
 import us.illyohs.civilmagicks.magicks.Magicks;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
 
 @Mod(modid = LibInfo.MOD_ID, name = LibInfo.MOD_NAME, version = LibInfo.VERSION)
 public class CivilMagicks {
@@ -44,31 +44,31 @@ public class CivilMagicks {
     @Instance
     public static CivilMagicks instance;
 
-    public static PulseManager puls = new PulseManager(LibInfo.MOD_ID, new ForgeCFG("CivilPulses",
-            "Don't disable these unless you want some wierd randomnes to happen"));
+//    public static PulseManager puls = new PulseManager(LibInfo.MOD_ID, new ForgeCFG("CivilPulses",
+//            "Don't disable these unless you want some wierd randomnes to happen"));
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        puls.registerPulse(new Magicks());
+//        puls.registerPulse(new Magicks());
 
         RegisterBlocks.reg();
         RegisterItems.reg();
-        puls.preInit(event);
+//        puls.preInit(event);
 
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
 
-        puls.init(event);
+//        puls.init(event);
 
     }
 
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
 
-        puls.postInit(event);
+//        puls.postInit(event);
 
     }
 }

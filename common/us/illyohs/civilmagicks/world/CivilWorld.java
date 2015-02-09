@@ -25,12 +25,10 @@
  */
 package us.illyohs.civilmagicks.world;
 
-import us.illyohs.azathoth.pulsar.pulse.Pulse;
 import us.illyohs.civilmagicks.core.lib.LibInfo;
-import cpw.mods.fml.common.registry.GameRegistry.ObjectHolder;
 
-@ObjectHolder(LibInfo.MOD_ID)
-@Pulse(id = "CivilMagicks|World", description = "CivilMagicks World/dimension generation", defaultEnable = true)
+//@ObjectHolder(LibInfo.MOD_ID)
+//@Pulse(id = "CivilMagicks|World", description = "CivilMagicks World/dimension generation", defaultEnable = true)
 public class CivilWorld {
 
 }
