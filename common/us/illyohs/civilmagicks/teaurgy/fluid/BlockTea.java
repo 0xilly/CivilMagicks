@@ -25,40 +25,18 @@
  */
 package us.illyohs.civilmagicks.teaurgy.fluid;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import us.illyohs.civilmagicks.core.lib.LibAssets;
-import us.illyohs.civilmagicks.core.lib.LibInfo;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.util.IIcon;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
+import us.illyohs.civilmagicks.core.lib.LibInfo;
 
 public class BlockTea extends BlockFluidClassic {
 
-    @SideOnly(Side.CLIENT)
-    private IIcon TFS;
-
-    @SideOnly(Side.CLIENT)
-    private IIcon TFF;
-
     public BlockTea(Fluid fluid, Material material) {
         super(fluid, material);
-        setBlockName(LibInfo.MOD_ID + ":basetea");
-        setCreativeTab(CreativeTabs.tabBrewing);// Should make a tab for these
-                                                // things but really lazy
+        setUnlocalizedName(LibInfo.MOD_ID + ":basetea");
+        setCreativeTab(CreativeTabs.tabBrewing);
     }
 
-    @Override
-    public IIcon getIcon(int side, int meta) {
-        return (side == 0 || side == 1) ? TFS : TFF;
-
-    }
-
-    public void registerBlockIcons(IIconRegister reg) {
-        TFS = reg.registerIcon(LibAssets.TEABASESTILL);
-        TFF = reg.registerIcon(LibAssets.TEABASEFLOW);
-    }
 }

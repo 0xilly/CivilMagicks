@@ -25,9 +25,9 @@
  */
 package us.illyohs.civilmagicks.lore;
 
-import us.illyohs.azathoth.pulsar.pulse.Pulse;
+//import us.illyohs.azathoth.pulsar.pulse.Pulse;
 
-@Pulse(id = "CivilMagicks|Lore", description = "Hey! Listen!", defaultEnable = true)
+//@Pulse(id = "CivilMagicks|Lore", description = "Hey! Listen!", defaultEnable = true)
 public class Lore {
 
 }

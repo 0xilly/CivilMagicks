@@ -27,7 +27,8 @@ package us.illyohs.civilmagicks.api.mana;
 
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 import net.minecraft.tileentity.TileEntity;
-import cpw.mods.fml.common.eventhandler.Event;
+import net.minecraftforge.fml.common.eventhandler.Event;
+
 
 public class ManaNetEvent extends Event {
     

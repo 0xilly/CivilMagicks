@@ -26,5 +26,6 @@
 @API(owner = "civilmagicks", provides = "CivilMagicks|Mana", apiVersion = "0.1")
 package us.illyohs.civilmagicks.api.mana;
 
-import cpw.mods.fml.common.API;
+import net.minecraftforge.fml.common.API;
+
 

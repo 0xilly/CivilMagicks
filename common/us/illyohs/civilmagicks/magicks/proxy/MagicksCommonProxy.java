@@ -25,7 +25,8 @@
  */
 package us.illyohs.civilmagicks.magicks.proxy;
 
-import cpw.mods.fml.common.registry.GameRegistry;
+
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import us.illyohs.civilmagicks.core.lib.IProxy;
 import us.illyohs.civilmagicks.core.lib.LibInfo;

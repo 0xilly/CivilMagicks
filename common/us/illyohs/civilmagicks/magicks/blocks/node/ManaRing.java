@@ -35,7 +35,7 @@ public class ManaRing extends BlockContainer {
 
     public ManaRing() {
         super(Material.rock);
-        this.setBlockName(LibInfo.MOD_ID+":manaring");
+        setUnlocalizedName(LibInfo.MOD_ID+":manaring");
     }
 
     @Override

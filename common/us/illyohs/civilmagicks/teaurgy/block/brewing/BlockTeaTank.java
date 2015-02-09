@@ -25,20 +25,19 @@
  */
 package us.illyohs.civilmagicks.teaurgy.block.brewing;
 
-import us.illyohs.civilmagicks.core.lib.LibInfo;
-import us.illyohs.civilmagicks.teaurgy.tile.TileTeaTank;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import us.illyohs.civilmagicks.teaurgy.tile.TileTeaTank;
 
 public class BlockTeaTank extends Block implements ITileEntityProvider {
 
     public BlockTeaTank() {
         super(Material.glass);
-        setBlockName(LibInfo.MOD_ID + ":teatank");
+//        setBlockName(LibInfo.MOD_ID + ":teatank");
         setCreativeTab(CreativeTabs.tabBrewing);
     }
 
@@ -47,11 +46,11 @@ public class BlockTeaTank extends Block implements ITileEntityProvider {
         return new TileTeaTank();
     }
 
-    @Override
-    public boolean renderAsNormalBlock() {
-        return false;
-
-    }
+//    @Override
+//    public boolean renderAsNormalBlock() {
+//        return false;
+//
+//    }
 
     @Override
     public boolean isOpaqueCube() {

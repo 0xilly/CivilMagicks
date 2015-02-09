@@ -38,16 +38,16 @@ public class BlockBrewChamber extends BlockContainer {
     public BlockBrewChamber() {
         super(Material.glass);
         setCreativeTab(CreativeTabs.tabBrewing);
-        setBlockName(LibInfo.MOD_ID + ":brewchamber");
-        setBlockTextureName(LibAssets.SLATE);
+        setUnlocalizedName(LibInfo.MOD_ID + ":brewchamber");
+//        setBlockTextureName(LibAssets.SLATE);
         setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
     }
 
-    @Override
-    public boolean renderAsNormalBlock() {
-        return false;
-
-    }
+//    @Override
+//    public boolean renderAsNormalBlock() {
+//        return false;
+//
+//    }
 
     @Override
     public boolean isOpaqueCube() {

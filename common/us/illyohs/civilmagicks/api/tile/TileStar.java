@@ -26,12 +26,12 @@
 package us.illyohs.civilmagicks.api.tile;
 
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
-
 import us.illyohs.civilmagicks.api.mana.IManaBlock;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 
-public class TileStar extends TileEntity implements IManaBlock {
+public class TileStar extends TileEntity implements IUpdatePlayerListBox, IManaBlock {
 
     public int mana;
     int max;
@@ -95,6 +95,9 @@ public class TileStar extends TileEntity implements IManaBlock {
             type = ManaType.valueOf(nbt.getString("manaType"));
         }
     }
+
+    @Override
+	public void update() {}
     
 
 }

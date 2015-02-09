@@ -25,12 +25,11 @@
  */
 package us.illyohs.civilmagicks.magicks.tile;
 
-import us.illyohs.azathoth.tile.TileOwnable;
-import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
+import net.minecraft.server.gui.IUpdatePlayerListBox;
 import us.illyohs.civilmagicks.api.mana.IManaBlock;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 
-public class TileNode extends TileOwnable implements IManaBlock {
+public class TileNode implements IUpdatePlayerListBox, IManaBlock{
     
 
     @Override
@@ -44,6 +43,9 @@ public class TileNode extends TileOwnable implements IManaBlock {
         // TODO Auto-generated method stub
         return null;
     }
+
+	@Override
+	public void update() {}
 
     
 }

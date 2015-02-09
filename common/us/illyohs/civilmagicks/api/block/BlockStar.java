@@ -27,10 +27,11 @@ package us.illyohs.civilmagicks.api.block;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-
 import us.illyohs.civilmagicks.api.material.CivilMaterials;
 
 public class BlockStar extends BlockContainer {
@@ -46,8 +47,11 @@ public class BlockStar extends BlockContainer {
 
     }
 
-    @Override
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
+        return null;
+    }
+    
+    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
         return null;
     }
 

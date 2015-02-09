@@ -34,7 +34,7 @@ public class ItemCallingWhistle extends Item {
     public ItemCallingWhistle() {
         super();
         setCreativeTab(CreativeTabs.tabFood);
-        setTextureName(LibInfo.MOD_ID + ":whistle");
+//        setTextureName(LibInfo.MOD_ID + ":whistle");
         setUnlocalizedName(LibInfo.MOD_ID + ":whistle");
     }
 
