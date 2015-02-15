@@ -25,6 +25,31 @@
  */
 package us.illyohs.civilmagicks.common.item;
 
-public class LoreItem {
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+import us.illyohs.civilmagicks.common.item.armor.ArmorMonocle;
+import us.illyohs.civilmagicks.common.item.mana.ItemManaShard;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
+public class ModItems {
+
+    public static Item itemManaShard;
+    
+    //Armor
+    public static ItemArmor armorMonocle;
+
+    public static void init() {
+
+        itemManaShard = new ItemManaShard();
+        
+        //Armor
+        armorMonocle = new ArmorMonocle();
+        
+        gameReg();
+    }
+
+    private static void gameReg() {
+        GameRegistry.registerItem(itemManaShard, LibInfo.MOD_ID + "_manashard");        
+    }	
 }

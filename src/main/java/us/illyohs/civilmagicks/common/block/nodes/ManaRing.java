@@ -40,8 +40,7 @@ public class ManaRing extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int meta) {
-        // TODO Auto-generated method stub
-        return null;
+        return null;// new TileManaRing();
     }
 
 }

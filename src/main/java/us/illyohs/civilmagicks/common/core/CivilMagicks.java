@@ -33,11 +33,12 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import us.illyohs.civilmagicks.common.block.ModBlocks;
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import us.illyohs.civilmagicks.common.core.registry.RegisterBlocks;
 import us.illyohs.civilmagicks.common.core.registry.RegisterItems;
-
+import us.illyohs.civilmagicks.common.item.ModItems;
 
 @Mod(modid = LibInfo.MOD_ID, name = LibInfo.MOD_NAME, version = LibInfo.VERSION)
 public class CivilMagicks {
@@ -52,17 +53,17 @@ public class CivilMagicks {
     public void preInit(FMLPreInitializationEvent event) {
         RegisterBlocks.reg();
         RegisterItems.reg();    
-        proxy.preInit(event);
+        
+        ModBlocks.init();
+        ModItems.init();
         
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-    	proxy.init(event);
     }
 
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-    	proxy.postInit(event);
     }
 }

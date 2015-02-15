@@ -33,22 +33,6 @@ import us.illyohs.civilmagicks.common.core.lib.IProxy;
 public class ClientProxy implements IProxy {
 
 	@Override
-	public void preInit(FMLPreInitializationEvent event) {
-		//NO-OP
-	}
-
-	@Override
-	public void init(FMLInitializationEvent event) {
-		
-
-	}
-
-	@Override
-	public void postInit(FMLPostInitializationEvent event) {
-		//NO-OP
-	}
-
-	@Override
 	public void bindModelsAndTextures() {
 
 	}

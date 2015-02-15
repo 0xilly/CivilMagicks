@@ -29,15 +29,18 @@ import java.util.HashMap;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fluids.Fluid;
-
 import us.illyohs.civilmagicks.api.civilregistry.CivilObject;
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 
 public class CivilMagicksAPI {
-      
+	
+    public static ArmorMaterial armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
+	
     public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
     public static HashMap<ManaType, BiomeGenBase> biomeManaRegesty = new HashMap<ManaType, BiomeGenBase>();
 

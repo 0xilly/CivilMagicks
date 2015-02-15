@@ -23,24 +23,17 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.block;
+package us.illyohs.civilmagicks.common.item.mana;
 
-import net.minecraft.block.Block;
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 
-public class ModBlocks {
-	
-	public static Block BlockGrindStone;
-	public static Block BlockManaRing;
-	
-	public static void init() {
-		
-		
-		gameReg();
-	}
-
-	private static void gameReg() {
-		// TODO Auto-generated method stub
-		
-	}
+public class ItemManaShard extends Item {
+    
+    public ItemManaShard() {
+        setUnlocalizedName(LibInfo.MOD_ID + ":manashard");
+        setCreativeTab(CreativeTabs.tabBrewing);
+    }
 
 }

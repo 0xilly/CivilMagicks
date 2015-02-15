@@ -33,12 +33,11 @@ import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeHelper {
     
-    private World world;
+    World world;
     
     /**
      * This gets the current biome location
-     * @param x coord
-     * @param z coord
+     * @param pos
      * @return biome 
      */
     public BiomeGenBase getBiome(BlockPos pos) {

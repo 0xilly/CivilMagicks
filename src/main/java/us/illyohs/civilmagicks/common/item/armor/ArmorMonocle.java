@@ -23,24 +23,17 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.block;
+package us.illyohs.civilmagicks.common.item.armor;
 
-import net.minecraft.block.Block;
+import us.illyohs.civilmagicks.api.CivilMagicksAPI;
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+import net.minecraft.item.ItemArmor;
 
-public class ModBlocks {
-	
-	public static Block BlockGrindStone;
-	public static Block BlockManaRing;
-	
-	public static void init() {
-		
-		
-		gameReg();
-	}
+public class ArmorMonocle extends ItemArmor {
 
-	private static void gameReg() {
-		// TODO Auto-generated method stub
-		
+	public ArmorMonocle() {
+		super(CivilMagicksAPI.armorCivil, 0, 0);
+		setUnlocalizedName(LibInfo.MOD_ID + ":monocle");
 	}
 
 }

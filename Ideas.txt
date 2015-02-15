@@ -1,0 +1,72 @@
+/||||||\
+|BASICS |
+\||||||/
+Mana:
+    - Mana Types
+        - Dark
+        - Light
+        - Neutral
+    - Mana is generated Passively from the world around
+    - Mana can only be gathered from ManaStars
+    - The type of mana that can be gathered is dependant on the biome & star
+      -Dark mana can only be gatherd from these biomes using the DarkManaStar
+        - coldTaiga
+        - coldTaigaHills
+        - hell
+        - taiga
+        - taigaHills
+        - swampland
+        - roofedForest
+      - Light mana is gatherd from these biomes useing the LightManaStar
+        - forest
+        - icePlains
+        - plains
+        - jungle
+        - jungleEdge
+        - jungleHills
+        - birchForest
+        - birchForestHills
+      - Neutral mana is gatherd from these biomes useing TheGreyManaStar
+        - extremeHills
+        - extremeHillsEdge
+        - extremeHillsPlus
+        - megaTaiga
+        - megaTaigaHills
+        - stoneBeach
+        - ocean
+        - deepOcean
+        - river
+        - frozenRiver
+        - beach
+        - coldBeach
+        - sky
+        - mushroomIsland
+        - mushroomIslandShore
+        - desert
+        - desertHills
+        - savanna
+        - savannaPlateau
+        - mesa
+        - mesaPlateau
+        - mesaPlateau_F
+    - Mana is stored in Crystals the glow brighter depending on the amount of
+      mana they hold. The type of mana they hold will change the color of the
+      crystal and only one type of mana can be accepted.
+      
+Civility:
+    - Blocks/Items/Fluids are all considered civilized or uncivilized
+        - See the us.illyohs.civilmagicks.common.core.registry.RegisterBlocks
+          and us.illyohs.civilmagicks.common.core.registry.RegisterItems for
+          the civil blocks
+    - Players also have civil levels that are dependent on the players actions
+      i.e. if a player digs dirt or mines stone or coal that is considered 
+      manual labor and something a CivilMagus person would not do. 
+
+Magciks dimension:
+    - This dimension is filled with many different magical creatures
+        - Many of the creatures will not interact with the player if they are
+          uncivil i.e. the High Elves or the Flügel
+        - Some of these creatures will be willing to form contracts with the
+          players
+    - The way to get into the Magicks dimension is via a portal powered by
+      dark, light, and neutral mana
