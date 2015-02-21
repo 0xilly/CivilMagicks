@@ -61,7 +61,7 @@ public class RenderLightStar extends TileEntitySpecialRenderer {
         tess.addVertexWithUV(1, 1, 0, 1, 1);
         tess.addVertexWithUV(0, 1, 0, 0, 1);
 
-        tess.draw();
+//        tess.draw();
         
         
 //        GL11.glDisable(GL11.GL_BLEND);

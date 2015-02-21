@@ -1,13 +1,13 @@
 package us.illyohs.civilmagicks.common.block.nodes;
 
-import us.illyohs.civilmagicks.api.block.BlockStar;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import us.illyohs.civilmagicks.common.entity.tile.node.TileStarPassive;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import us.illyohs.civilmagicks.api.block.BlockStar;
+import us.illyohs.civilmagicks.common.block.tile.node.TileStarPassive;
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class StarPassive extends BlockStar {
     

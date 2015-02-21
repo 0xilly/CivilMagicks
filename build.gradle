@@ -30,6 +30,8 @@ group= "${config.group}" // http://maven.apache.org/guides/mini/guide-naming-con
 archivesBaseName = "${config.name}"
 
 minecraft {
+
+    mappings = 'stable_16'
 	version = "${config.mc_version}-${config.forge_version}"
 
 

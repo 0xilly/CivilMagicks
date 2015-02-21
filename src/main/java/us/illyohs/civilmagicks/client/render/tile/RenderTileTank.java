@@ -25,15 +25,16 @@
  */
 package us.illyohs.civilmagicks.client.render.tile;
 
-import org.lwjgl.opengl.GL11;
-
-import us.illyohs.civilmagicks.client.models.ModelTeaTank;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import us.illyohs.civilmagicks.common.entity.tile.brewing.TileTeaTank;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+
+import org.lwjgl.opengl.GL11;
+
+import us.illyohs.civilmagicks.client.models.ModelTeaTank;
+import us.illyohs.civilmagicks.common.block.tile.brewing.TileTeaTank;
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class RenderTileTank extends TileEntitySpecialRenderer {
 

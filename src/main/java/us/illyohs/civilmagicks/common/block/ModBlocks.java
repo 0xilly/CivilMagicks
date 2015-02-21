@@ -25,22 +25,37 @@
  */
 package us.illyohs.civilmagicks.common.block;
 
+import us.illyohs.civilmagicks.common.block.nodes.ManaRing;
+import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import net.minecraft.block.Block;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 	
-	public static Block BlockGrindStone;
-	public static Block BlockManaRing;
+	public static Block blockGrindStone;
+	public static Block blockManaRing;
+	
+	public static Block blockManaStone;
+	
+//	public static Block
 	
 	public static void init() {
 		
+		blockManaRing = new ManaRing();
 		
-		gameReg();
+		gameRegBlock();
+		gameRegTile();
 	}
 
-	private static void gameReg() {
-		// TODO Auto-generated method stub
+	private static void gameRegBlock() {
+		GameRegistry.registerBlock(blockManaRing, LibInfo.MOD_ID + "_manaring");
 		
 	}
+	
+	private static void gameRegTile() {
+		GameRegistry.registerTileEntity(TileNodeManaRing.class, LibInfo.MOD_ID + "manaring_tile");
+	}
+
 
 }

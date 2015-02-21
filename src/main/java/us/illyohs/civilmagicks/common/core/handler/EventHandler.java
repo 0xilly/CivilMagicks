@@ -23,59 +23,21 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.entity.tile.node;
+package us.illyohs.civilmagicks.common.core.handler;
 
-import net.minecraft.nbt.NBTTagCompound;
-import us.illyohs.civilmagicks.api.mana.ManaType;
-import us.illyohs.civilmagicks.api.tile.TileStar;
-import us.illyohs.civilmagicks.common.core.helper.BiomeHelper;
+import us.illyohs.civilmagicks.common.core.lib.CivilPlayer;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class TileStarPassive extends TileStar {
-    
-    int tick;
-    
-    public TileStarPassive() {
-        
-    }
-    
-    @Override
-    public ManaType canAccept(ManaType type) { 
-        return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(pos));
-    }
-    
-    public int maxMana(int max) {
-        return 1000;
-    }
-    
-    public int addMana(int add) {
-        return add;
-        
-    }
- 
-    @Override
-    public void writeToNBT(NBTTagCompound nbt) {
+public class EventHandler {
 
-        
-    }
-    
-    @Override
-    public void readFromNBT(NBTTagCompound nbt) {
-        super.readFromNBT(nbt);
-
-    }
-    
-    @Override
-    public void update() {
-        
-        if(!worldObj.isRemote) {
-            tick++;
-            if(tick == 1000) {
-                addMana(2);
+    @SubscribeEvent
+    public void onEntityConstruct(EntityConstructing event) {
+        if(event.entity instanceof EntityPlayer) {
+            if(CivilPlayer.forPlayer((EntityPlayer) event.entity) == null) {
+                event.entity.registerExtendedProperties(CivilPlayer.IDENT, new CivilPlayer((EntityPlayer) event.entity));
             }
-            System.out.println(mana);
-            
         }
-        
     }
-    
 }

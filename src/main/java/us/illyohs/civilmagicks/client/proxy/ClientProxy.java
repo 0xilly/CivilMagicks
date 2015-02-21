@@ -25,16 +25,16 @@
  */
 package us.illyohs.civilmagicks.client.proxy;
 
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import us.illyohs.civilmagicks.client.render.tile.RenderTileManaRing;
+import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
 
 public class ClientProxy implements IProxy {
 
 	@Override
 	public void bindModelsAndTextures() {
-
+		ClientRegistry.bindTileEntitySpecialRenderer(TileNodeManaRing.class, new RenderTileManaRing());
 	}
 
 	@Override

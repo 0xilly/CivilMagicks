@@ -23,39 +23,13 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.core.lib;
+package us.illyohs.civilmagicks.api.mana;
 
-import net.minecraft.util.ResourceLocation;
-import us.illyohs.civilmagicks.common.core.helper.ResourceLocationHelper;
+public interface IManaStoringMob {
 
-public class LibAssets {
-
-    // Roots
-    private static final String ASSET = LibInfo.MOD_ID.toLowerCase();
-    private static final String BLIT = ASSET + ":";
-    private static final String GUI = ASSET + ":textures/gui/";
-    private static final String MODELS = "textures/models/";
-    private static final String FX = "textures/fx/";
-
-    // Blocks
-    public static final String TEMP = BLIT + "temp";
-    public static final String TEABASEFLOW = BLIT + "tempteaflow";
-    public static final String TEABASESTILL = BLIT + "tempteastill";
-    public static final String SLATE = BLIT + "slate";
-    public static final String BLANK = BLIT + "blank";
-
-    // Modles
-    public static final String BREWCHAMER = MODELS + "woodslate.png";
-    public static final ResourceLocation WOOD_SLATE = ResourceLocationHelper.getModelAsset("woodslate");
-    public static final ResourceLocation PYLON_MANA = ResourceLocationHelper.getOBJAsset("pylon");
-
-    // Items
-    public static final String DEBUGITEM = BLIT + "debugwand";
-
-    // GUIs
-    public static final String CIVILTOME = GUI + "civiltome.png";
-
-    // FX
-    public static final String FLARE = FX + "flare.png";
-
+	public abstract boolean canStoreMana();
+	
+	public abstract int maxMana(int mana);
+	
+	public abstract ManaType canStore();
 }

@@ -31,7 +31,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import us.illyohs.civilmagicks.common.entity.tile.brewing.TileTeaTank;
+import us.illyohs.civilmagicks.common.block.tile.brewing.TileTeaTank;
 
 public class BlockTeaTank extends Block implements ITileEntityProvider {
 

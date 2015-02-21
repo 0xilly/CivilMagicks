@@ -25,7 +25,6 @@
  */
 package us.illyohs.civilmagicks.client.fx;
 
-import us.illyohs.civilmagicks.common.core.lib.LibAssets;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
@@ -34,7 +33,7 @@ import net.minecraft.world.World;
 
 public class StarFx extends EntityFX {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LibAssets.FLARE);
+//    private static final ResourceLocation TEXTURE = new ResourceLocation();
 
     public StarFx(World world, double x, double y, double z, float size, float red, float blue, float green) {
         super(world, x, y, z);
@@ -61,7 +60,7 @@ public class StarFx extends EntityFX {
             f9 = this.particleIcon.getMaxV();
         }
 
-        Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
+//        Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
 
         float f11 = (float) (this.prevPosX + (this.posX - this.prevPosX) * (double) f0 - interpPosX);
         float f12 = (float) (this.prevPosY + (this.posY - this.prevPosY) * (double) f0 - interpPosY);

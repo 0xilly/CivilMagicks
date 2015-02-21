@@ -6,11 +6,11 @@
  * modification, are permitted provided that the following conditions are met:
  *
  * * Redistributions of source code must retain the above copyright notice, this
- * list of conditions and the following disclaimer.
+ *   list of conditions and the following disclaimer.
  *
  * * Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
+ *   this list of conditions and the following disclaimer in the documentation
+ *   and/or other materials provided with the distribution.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -23,38 +23,36 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.block.nodes;
+package us.illyohs.civilmagicks.client.render.tile;
 
-import net.minecraft.block.BlockContainer;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
+import us.illyohs.civilmagicks.client.core.helper.FXHelper;
+import us.illyohs.civilmagicks.client.core.lib.LibAssets;
+import us.illyohs.civilmagicks.client.models.ModelTransferNode;
 import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.tileentity.TileEntity;
 
-public class ManaRing extends BlockContainer {
+public class RenderTileManaRing extends TileEntitySpecialRenderer {
+	
+	private ModelTransferNode model;
+	
+	public RenderTileManaRing() {
+		model = new ModelTransferNode();
+	}
 
-    public ManaRing() {
-        super(Material.rock);
-        setUnlocalizedName(LibInfo.MOD_ID+":manaring");
-        setCreativeTab(CreativeTabs.tabBrewing);
-    }
+	@Override
+	public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick, int arg) {
+		TileNodeManaRing tnmr = (TileNodeManaRing) tile;
+		
+		GlStateManager.pushMatrix();
+		
+		GlStateManager.scale(1f, 1f, 1f);
+		FXHelper.bindTextureMC(LibAssets.manaRing);
+		model.render(.0625F);
+		
+		GlStateManager.popMatrix();
 
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileNodeManaRing();
-    }
-    
-   @Override 
-   public int getRenderType(){
-       return -1;
-   }
-   
-//   @Override
-//   public boolean isNormalCube(IBlockAccess world, BlockPos pos) {
-//	return false;
-//	   
-//   }
+	}
 
 }

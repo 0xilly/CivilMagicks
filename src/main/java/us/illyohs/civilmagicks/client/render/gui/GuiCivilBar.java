@@ -23,10 +23,23 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.core.lib;
+package us.illyohs.civilmagicks.client.render.gui;
 
-public class LibGuiId {
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.util.ResourceLocation;
 
-    public static int BOOK_CIVILTOME = 0;
-
+public class GuiCivilBar extends Gui {
+	
+	private static ResourceLocation TEXRURE = new ResourceLocation(LibInfo.MOD_ID, "textures/gui/civilbar.png");
+	
+	private static final int BAR_LENGTH = 90;
+	private static final int BAR_HIGHT = 10;
+	
+	private Minecraft mc;
+	
+	public GuiCivilBar(Minecraft mc) {
+		this.mc = mc;
+	}
 }

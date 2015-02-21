@@ -6,11 +6,11 @@
  * modification, are permitted provided that the following conditions are met:
  *
  * * Redistributions of source code must retain the above copyright notice, this
- *   list of conditions and the following disclaimer.
+ * list of conditions and the following disclaimer.
  *
  * * Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -23,30 +23,29 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.core.helper;
+package us.illyohs.civilmagicks.common.block.tile;
 
-import net.minecraft.util.ResourceLocation;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+import net.minecraft.server.gui.IUpdatePlayerListBox;
+import us.illyohs.civilmagicks.api.mana.IManaBlock;
+import us.illyohs.civilmagicks.api.mana.ManaType;
 
-public class ResourceLocationHelper {
+public class TileNode implements IUpdatePlayerListBox, IManaBlock {
+    
 
-    public static ResourceLocation getResourceLocation(String modid, String path) {
-        return new ResourceLocation(modid, path);
+    @Override
+    public int currentMana(int current) {
+        // TODO Auto-generated method stub
+        return 0;
     }
 
-    public static ResourceLocation getOBJAsset(String path) {
-        return getResourceLocation(LibInfo.MOD_ID.toLowerCase(), "models/"
-                + path + ".obj");
+    @Override
+    public ManaType canAccept(ManaType type) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
-    public static ResourceLocation getGUIAsset(String path) {
-        return getResourceLocation(LibInfo.MOD_ID.toLowerCase(),
-                "textures/gui/" + path + ".png");
-    }
+	@Override
+	public void update() {}
 
-    public static ResourceLocation getModelAsset(String path) {
-        return getResourceLocation(LibInfo.MOD_ID.toLowerCase(),
-                "textures/models/" + path + ".png");
-    }
-
+    
 }

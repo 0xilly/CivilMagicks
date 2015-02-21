@@ -27,7 +27,6 @@ package us.illyohs.civilmagicks.common.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import us.illyohs.civilmagicks.common.core.lib.LibAssets;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class ItemDebugItem extends Item {

@@ -23,44 +23,59 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.block.brewing;
+package us.illyohs.civilmagicks.common.block.tile.node;
 
-import net.minecraft.block.BlockContainer;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+import net.minecraft.nbt.NBTTagCompound;
+import us.illyohs.civilmagicks.api.mana.ManaType;
+import us.illyohs.civilmagicks.api.tile.TileStar;
+import us.illyohs.civilmagicks.common.core.helper.BiomeHelper;
 
-public class BlockBrewChamber extends BlockContainer {
-
-    public BlockBrewChamber() {
-        super(Material.glass);
-        setCreativeTab(CreativeTabs.tabBrewing);
-        setUnlocalizedName(LibInfo.MOD_ID + ":brewchamber");
-//        setBlockTextureName(LibAssets.SLATE);
-        setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+public class TileStarPassive extends TileStar {
+    
+    int tick;
+    
+    public TileStarPassive() {
+        
     }
-
-//    @Override
-//    public boolean renderAsNormalBlock() {
-//        return false;
-//
-//    }
-
+    
     @Override
-    public boolean isOpaqueCube() {
-        return false;
+    public ManaType canAccept(ManaType type) { 
+        return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(pos));
     }
-
+    
+    public int maxMana(int max) {
+        return 1000;
+    }
+    
+    public int addMana(int add) {
+        return add;
+        
+    }
+ 
     @Override
-    public int getRenderType() {
-        return -1;
-    }
+    public void writeToNBT(NBTTagCompound nbt) {
 
+        
+    }
+    
     @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return null; //new TileBrewChamber();
-    }
+    public void readFromNBT(NBTTagCompound nbt) {
+        super.readFromNBT(nbt);
 
+    }
+    
+    @Override
+    public void update() {
+        
+        if(!worldObj.isRemote) {
+            tick++;
+            if(tick == 1000) {
+                addMana(2);
+            }
+            System.out.println(mana);
+            
+        }
+        
+    }
+    
 }

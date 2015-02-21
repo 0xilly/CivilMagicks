@@ -61,6 +61,7 @@ public class CivilMagicks {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+    	proxy.bindModelsAndTextures();
     }
 
     @EventHandler
