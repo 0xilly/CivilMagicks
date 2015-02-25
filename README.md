@@ -6,7 +6,7 @@ Only for the most of civilized sorcerers
 =========
 
 ##License
-CivilMagcks is licensed under the [The BSD 2-Clause License](https://github.com/LordIllyohs/CivilMagicks/blob/master/LICENSE)
+CivilMagcks is licensed under the [The BSD 2-Clause License](https://github.com/LordIllyohs/CivilMagicks/blob/master/LICENSE) 
 
 =========
 ##Contributing
