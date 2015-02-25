@@ -25,6 +25,42 @@
  */
 package us.illyohs.civilmagicks.api.crafting;
 
+import net.minecraft.item.ItemStack;
+
 public class StarCrafting {
+
+    public ItemStack   catlyst;
+    public ItemStack[] inputs;
+    public ItemStack   outputs;
+    public boolean     isManaRequired;
+    public int         manaRequired;
+
+    public StarCrafting(ItemStack catlyst, ItemStack[] inputs, ItemStack outputs, boolean isManaRequired, int manaRequired) {
+        this.catlyst        = catlyst;
+        this.inputs         = inputs;
+        this.outputs        = outputs;
+        this.isManaRequired = isManaRequired;
+        this.manaRequired   = manaRequired;
+    }
+    
+    public ItemStack catlyst() {
+        return catlyst;
+    }
+    
+    public ItemStack[] inputs() {
+        return inputs;
+    }
+    
+    public ItemStack outputs() {
+        return outputs;
+    }
+    
+    public Boolean isManaRequired() {
+        return isManaRequired;
+    }
+    
+    public int manaRequired() {
+        return manaRequired;
+    }
 
 }
