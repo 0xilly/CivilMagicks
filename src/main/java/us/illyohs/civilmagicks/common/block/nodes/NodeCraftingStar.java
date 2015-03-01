@@ -1,14 +1,14 @@
-/**
+/*
  * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
- * * Redistributions of source code must retain the above copyright notice, this
+ *  Redistributions of source code must retain the above copyright notice, this
  *   list of conditions and the following disclaimer.
  *
- * * Redistributions in binary form must reproduce the above copyright notice,
+ *  Redistributions in binary form must reproduce the above copyright notice,
  *   this list of conditions and the following disclaimer in the documentation
  *   and/or other materials provided with the distribution.
  *
@@ -23,44 +23,30 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.crafting;
 
-import net.minecraft.item.ItemStack;
+package us.illyohs.civilmagicks.common.block.nodes;
 
-public class StarCrafting {
+import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.material.Material;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
-    public ItemStack   catlyst;
-    public ItemStack[] inputs;
-    public ItemStack   outputs;
-    public boolean     isManaRequired;
-    public int         manaRequired;
+public class NodeCraftingStar extends Block implements ITileEntityProvider {
 
-    public StarCrafting(ItemStack catlyst, ItemStack[] inputs, ItemStack outputs, boolean isManaRequired, int manaRequired) {
-        this.catlyst        = catlyst;
-        this.inputs         = inputs;
-        this.outputs        = outputs;
-        this.isManaRequired = isManaRequired;
-        this.manaRequired   = manaRequired;
-    }
-    
-    public ItemStack getCatlyst(ItemStack catlyst) {
-        return catlyst;
-    }
-    
-    public ItemStack[] getInputs() {
-        return inputs;
-    }
-    
-    public ItemStack getOutput() {
-        return outputs;
-    }
-    
-    public Boolean isManaRequired() {
-        return isManaRequired;
-    }
-    
-    public int manaRequired() {
-        return manaRequired;
+    public NodeCraftingStar() {
+        super(Material.rock);
+        setUnlocalizedName(LibInfo.MOD_ID + ":craftingstar");
+        setBlockBounds(0.25f, 0.25f, 0.25f, 0.75f, 0.75f, 0.75f);
+
     }
 
+    @Override
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return null;
+    }
 }
+
+
+
