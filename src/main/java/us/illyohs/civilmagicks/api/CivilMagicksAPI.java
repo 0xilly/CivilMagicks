@@ -35,6 +35,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fluids.Fluid;
 import us.illyohs.civilmagicks.api.civilregistry.CivilObject;
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
+import us.illyohs.civilmagicks.api.mana.BiomeManaRegistry;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 
 public class CivilMagicksAPI {
@@ -42,7 +43,7 @@ public class CivilMagicksAPI {
     public static ArmorMaterial armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
 	
     public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
-    public static HashMap<ManaType, BiomeGenBase> biomeManaRegesty = new HashMap<ManaType, BiomeGenBase>();
+//    public static HashMap<ManaType, BiomeGenBase> biomeManaRegesty = new HashMap<ManaType, BiomeGenBase>();
 
     private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
         if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
@@ -54,7 +55,7 @@ public class CivilMagicksAPI {
     }
 
     private static void registerManaBiome(BiomeGenBase biome, ManaType type) {
-        biomeManaRegesty.put(type, biome);
+        BiomeManaRegistry.biomeManaRegistry.put(type, biome);
     }
     
     /**
@@ -93,23 +94,26 @@ public class CivilMagicksAPI {
         registerObjectStatus(item, meta, CivilStatus.UNCIVILIZED);
     }
 
-    
+
     /**
-     * 
+     * Register a biome to generate light mana
+     * @param biome
      */
     public static void registerLightBiome(BiomeGenBase biome) {
         registerManaBiome(biome, ManaType.LIGHT);
     }
-    
+
     /**
-     * 
+     * Register a biome to generate dark mana
+     * @param biome
      */
     public static void registerDarkBiome(BiomeGenBase biome) {
         registerManaBiome(biome, ManaType.DARK);
     }
-    
+
     /**
-     * 
+     * Register a biome to generate neutral mana
+     * @param biome
      */
     public static void registerNeutralBiome(BiomeGenBase biome) {
         registerManaBiome(biome, ManaType.NEUTRAL);

@@ -32,9 +32,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IChatComponent;
+import us.illyohs.civilmagicks.api.mana.IManaBlock;
+import us.illyohs.civilmagicks.api.mana.ManaType;
 
 
-public class TileNodeCraftingStar extends TileEntity implements IInventory, IUpdatePlayerListBox {
+public class TileNodeCraftingStar extends TileEntity implements IInventory, IManaBlock, IUpdatePlayerListBox {
 
     public TileNodeCraftingStar() {
 
@@ -127,6 +129,16 @@ public class TileNodeCraftingStar extends TileEntity implements IInventory, IUpd
 
     @Override
     public IChatComponent getDisplayName() {
+        return null;
+    }
+
+    @Override
+    public int currentMana(int current) {
+        return 0;
+    }
+
+    @Override
+    public ManaType canAccept(ManaType type) {
         return null;
     }
 }

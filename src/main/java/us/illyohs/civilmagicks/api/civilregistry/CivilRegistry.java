@@ -1,14 +1,14 @@
-/**
+/*
  * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
- * * Redistributions of source code must retain the above copyright notice, this
+ *  Redistributions of source code must retain the above copyright notice, this
  *   list of conditions and the following disclaimer.
  *
- * * Redistributions in binary form must reproduce the above copyright notice,
+ *  Redistributions in binary form must reproduce the above copyright notice,
  *   this list of conditions and the following disclaimer in the documentation
  *   and/or other materials provided with the distribution.
  *
@@ -23,26 +23,22 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.mana;
 
+package us.illyohs.civilmagicks.api.civilregistry;
 
-public interface IManaBlock {
+import net.minecraft.init.Blocks;
 
-    /**
-     * The current amount of mana a block has
-     * 
-     * @param current
-     * @return
-     */
-    int currentMana(int current);
+import java.util.HashMap;
 
-    /**
-     * The type of mana the Block can accept/send
-     * 
-     * @param type
-     * @return
-     */
-    ManaType canAccept(ManaType type);
+public class CivilRegistry {
 
+    public static HashMap<Object, CivilObject> civilResgistry = new HashMap<Object, CivilObject>();
 
+    public CivilRegistry() {
+        registerCivilBlocks(CivilStatus.CIVILIZED);
+    }
+
+    private void registerCivilBlocks(CivilStatus civ) {
+//        civilResgistry.put(Blocks.acacia_door, 0)
+    }
 }
