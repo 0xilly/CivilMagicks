@@ -24,21 +24,47 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagicks.api.civilregistry;
+package us.illyohs.civilmagicks.api.item;
 
-import net.minecraft.init.Blocks;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
+import us.illyohs.civilmagicks.api.mana.IManaItem;
 
-import java.util.HashMap;
+public class ManaItem extends Item implements IManaItem {
 
-public class CivilRegistry {
-
-    public static HashMap<Object, CivilObject> civilResgistry = new HashMap<Object, CivilObject>();
-
-    public CivilRegistry() {
-        registerCivilBlocks(CivilStatus.CIVILIZED);
+    public ManaItem() {
+        super();
+        setMaxStackSize(1);
     }
 
-    private void registerCivilBlocks(CivilStatus civ) {
-//        civilResgistry.put(Blocks.acacia_door, 0)
+    @Override
+    public void onCreated(ItemStack is, World world, EntityPlayer player) {
+        is.stackTagCompound = new NBTTagCompound();
+        is.stackTagCompound.setInteger("ManaLevel", 0);
+//        is.stackTagCompound.setString("ManaType", ManaType.NEUTRAL.toString());
     }
+
+    @Override
+    public int getCurrentMana(ItemStack is) {
+        return is.stackTagCompound.getInteger("ManaLevel");
+    }
+
+    @Override
+    public int setCurrentMana(ItemStack is, int mana) {
+        int oldMana = getCurrentMana(is);
+        is.stackTagCompound = new NBTTagCompound();
+        if (getCurrentMana(is) <= maxStackSize) {
+            is.stackTagCompound.setInteger("ManaLevel", mana + oldMana);
+        }
+        return getCurrentMana(is);
+    }
+
+    @Override
+    public int getMaxMana(ItemStack is, int max) {
+        return max;
+    }
+
 }

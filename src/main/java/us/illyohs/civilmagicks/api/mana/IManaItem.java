@@ -31,13 +31,10 @@ import net.minecraft.item.ItemStack;
 public interface IManaItem {
     
 
-    public int getCurrentMana(ItemStack is);
+    int getCurrentMana(ItemStack is);
 
-    public int setCurrentMana(ItemStack is, int current);
+    int setCurrentMana(ItemStack is, int mana);
 
-    public int getMaxMana(ItemStack is, int max);
-    
-    public CivilStatus setCivilStatus(ItemStack is, CivilStatus status);
-    
-    public CivilStatus getCivilStatus(ItemStack is);
+    int getMaxMana(ItemStack is, int max);
+
 }

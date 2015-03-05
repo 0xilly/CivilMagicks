@@ -26,10 +26,11 @@
 package us.illyohs.civilmagicks.common.block.tile;
 
 import net.minecraft.server.gui.IUpdatePlayerListBox;
+import net.minecraft.tileentity.TileEntity;
 import us.illyohs.civilmagicks.api.mana.IManaBlock;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 
-public class TileNode implements IUpdatePlayerListBox, IManaBlock {
+public class TileNode extends TileEntity implements IUpdatePlayerListBox, IManaBlock {
     
 
     @Override

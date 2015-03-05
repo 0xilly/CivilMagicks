@@ -50,6 +50,12 @@ sourceSets {
 	}
 }
 
+jar {
+        manifest {
+        attributes 'FMLAT': 'civilmagicks_at.cfg'
+    }
+}
+
 processResources {
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
@@ -73,16 +79,15 @@ processResources {
         archives deobfJar
     }
 }
-/*
+
 repositories {
     mavenCentral()
     ivy {
-        name "Azathoth"
-        artifactPattern "http://addons.cursecdn.com/files/2221/167/[module]-[revision].[ext]"
+        name 'Baubles'
+        artifactPattern 'https://dl.dropboxusercontent.com/u/47135879/[module]-[revision].[ext]'
     }
 }
 
 dependencies {
-    compile name: 'Azathoth', version: '1.7.10-0.5.f5787d2.beta-DEV', ext: 'jar'
+    compile name: 'Baubles', version: '1.8-1.1.1.0-deobf', ext: 'jar'
 }
-*/

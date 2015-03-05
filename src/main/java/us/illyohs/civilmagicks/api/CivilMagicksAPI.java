@@ -41,7 +41,8 @@ import us.illyohs.civilmagicks.api.mana.ManaType;
 public class CivilMagicksAPI {
 	
     public static ArmorMaterial armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
-	
+
+    //TODO: Move this to its own class instead of registering internaly like I do now maybe handle some with IMC?
     public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
 //    public static HashMap<ManaType, BiomeGenBase> biomeManaRegesty = new HashMap<ManaType, BiomeGenBase>();
 
@@ -93,7 +94,6 @@ public class CivilMagicksAPI {
     public static void registerUnCivilizedItem(Item item, int meta) {
         registerObjectStatus(item, meta, CivilStatus.UNCIVILIZED);
     }
-
 
     /**
      * Register a biome to generate light mana

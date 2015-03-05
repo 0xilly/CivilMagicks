@@ -20,7 +20,9 @@ out
 *.iws
 setupidea.bat
 /assets
-/lib/
 /libs/
 
+
 *.blend
+
+/run/
