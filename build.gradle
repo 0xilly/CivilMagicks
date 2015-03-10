@@ -39,17 +39,6 @@ minecraft {
     replace '@MCVERSION@', version
 }
 
-sourceSets {
-	main {
-		java {
-			srcDir 'common'
-		}
-		resources {
-			srcDir 'resources'
-		}
-	}
-}
-
 jar {
         manifest {
         attributes 'FMLAT': 'civilmagicks_at.cfg'
