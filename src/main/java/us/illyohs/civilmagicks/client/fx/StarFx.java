@@ -25,15 +25,13 @@
  */
 package us.illyohs.civilmagicks.client.fx;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class StarFx extends EntityFX {
 
-//    private static final ResourceLocation TEXTURE = new ResourceLocation();
+
 
     public StarFx(World world, double x, double y, double z, float size, float red, float blue, float green) {
         super(world, x, y, z);
@@ -60,20 +58,10 @@ public class StarFx extends EntityFX {
             f9 = this.particleIcon.getMaxV();
         }
 
-//        Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
-
         float f11 = (float) (this.prevPosX + (this.posX - this.prevPosX) * (double) f0 - interpPosX);
         float f12 = (float) (this.prevPosY + (this.posY - this.prevPosY) * (double) f0 - interpPosY);
         float f13 = (float) (this.prevPosZ + (this.posZ - this.prevPosZ) * (double) f0 - interpPosZ);
-//        tess.setColorRGBA_F(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha);
-//        tess.addVertexWithUV((double) (f11 - f1 * f10 - f4 * f10), (double) (f12 - f2 * f10), (double) (f13 - f3 * f10 - f5
-//                * f10), (double) f7, (double) f9);
-//        tess.addVertexWithUV((double) (f11 - f1 * f10 + f4 * f10), (double) (f12 + f2 * f10), (double) (f13 - f3 * f10 + f5
-//                * f10), (double) f7, (double) f8);
-//        tess.addVertexWithUV((double) (f11 + f1 * f10 + f4 * f10), (double) (f12 + f2 * f10), (double) (f13 + f3 * f10 + f5
-//                * f10), (double) f6, (double) f8);
-//        tess.addVertexWithUV((double) (f11 + f1 * f10 - f4 * f10), (double) (f12 - f2 * f10), (double) (f13 + f3 * f10 - f5
-//                * f10), (double) f6, (double) f9);
+
     }
 
 }
