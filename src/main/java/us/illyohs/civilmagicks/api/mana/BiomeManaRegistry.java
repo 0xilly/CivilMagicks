@@ -34,7 +34,7 @@ public class BiomeManaRegistry {
 
     public static HashMap<ManaType, BiomeGenBase> biomeManaRegistry = new HashMap<ManaType, BiomeGenBase>();
 
-    public void BiomeManaRegistry() {
+    public BiomeManaRegistry() {
         darkManaBiomes(ManaType.DARK);
         neutralManaBiomes(ManaType.NEUTRAL);
         lightManaBiome(ManaType.LIGHT);

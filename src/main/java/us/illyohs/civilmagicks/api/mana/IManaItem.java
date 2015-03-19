@@ -25,7 +25,6 @@ a * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  */
 package us.illyohs.civilmagicks.api.mana;
 
-import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 import net.minecraft.item.ItemStack;
 
 public interface IManaItem {
