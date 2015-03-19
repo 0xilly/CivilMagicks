@@ -23,8 +23,59 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.entity.mob;
+package us.illyohs.civilmagicks.common.block.tile.node;
 
-public class Faerie {
+import net.minecraft.nbt.NBTTagCompound;
+import us.illyohs.civilmagicks.api.mana.ManaType;
+import us.illyohs.civilmagicks.api.tile.TileStar;
+import us.illyohs.civilmagicks.common.core.helper.BiomeHelper;
 
+public class TileInteranalStar extends TileStar {
+    
+    int tick;
+    
+    public TileInteranalStar() {
+        
+    }
+    
+    @Override
+    public ManaType canAccept(ManaType type) { 
+        return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(getPos()));
+    }
+    
+    public int maxMana(int max) {
+        return 1000;
+    }
+    
+    public int addMana(int add) {
+        return add;
+        
+    }
+ 
+    @Override
+    public void writeToNBT(NBTTagCompound nbt) {
+
+        
+    }
+    
+    @Override
+    public void readFromNBT(NBTTagCompound nbt) {
+        super.readFromNBT(nbt);
+
+    }
+    
+    @Override
+    public void update() {
+        
+        if(!worldObj.isRemote) {
+            tick++;
+            if(tick == 1000) {
+                addMana(2);
+            }
+            System.out.println(mana);
+            
+        }
+        
+    }
+    
 }

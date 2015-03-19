@@ -24,28 +24,19 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagicks.common.block.world;
+package us.illyohs.civilmagicks.common.world;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.world.IBlockAccess;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+import net.minecraft.world.WorldProvider;
 
-public class BlockLogManaLog extends Block {
+public class WorldProviderAetheris extends WorldProvider {
 
-
-    public BlockLogManaLog() {
-        super(Material.water);
-        setUnlocalizedName(LibInfo.MOD_ID + ":manawood");
-        setCreativeTab(CreativeTabs.tabBlock);
-
+    @Override
+    public String getDimensionName() {
+        return null;
     }
 
     @Override
-    public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
-        return false;
+    public String getInternalNameSuffix() {
+        return null;
     }
 }

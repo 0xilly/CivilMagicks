@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "civilmagicks:blocks/manastone"
+        "all": "civilmagicks:blocks/manastone2"
     }
 }

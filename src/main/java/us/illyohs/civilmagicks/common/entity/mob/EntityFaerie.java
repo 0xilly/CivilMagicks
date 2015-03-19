@@ -23,31 +23,14 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.client.mob;
+package us.illyohs.civilmagicks.common.entity.mob;
 
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import net.minecraft.entity.EntityFlying;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.monster.IMob;
-import net.minecraft.world.World;
+import net.minecraft.entity.ai.EntityAIFollowOwner;
+import net.minecraft.entity.passive.EntityTameable;
 
-public class EntitySprite extends EntityFlying implements IMob {
+public class EntityFaerie extends EntityAIFollowOwner {
 
-    public EntitySprite(World world) {
-        super(world);
-
+    public EntityFaerie(EntityTameable p_i1625_1_, double p_i1625_2_, float p_i1625_4_, float p_i1625_5_) {
+        super(p_i1625_1_, p_i1625_2_, p_i1625_4_, p_i1625_5_);
     }
-
-    @Override
-    protected void applyEntityAttributes() {
-        super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
-
-    }
-
-    protected String getLivingSound() {
-        return LibInfo.MOD_ID + ":spirtechime";
-    }
-
 }

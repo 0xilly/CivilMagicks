@@ -47,7 +47,7 @@ public class BiomeHelper {
     }
     
     /**
-     * This gets the mana type for each biom
+     * This gets the mana type for each biome
      * @param biome
      */
     public ManaType getManaFromBiomeType(BiomeGenBase biome) {

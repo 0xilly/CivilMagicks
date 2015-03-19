@@ -38,8 +38,7 @@ public class TileStar extends TileEntity implements IUpdatePlayerListBox, IManaB
     int current;
     ManaType type;
     boolean isFull;
-    
-    
+
     @Override
     public int currentMana(int current) {
         NBTTagCompound nbt = new NBTTagCompound();
@@ -66,9 +65,7 @@ public class TileStar extends TileEntity implements IUpdatePlayerListBox, IManaB
         }
         
     }
-    
-    
-    
+
     @Override
     public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
@@ -97,7 +94,8 @@ public class TileStar extends TileEntity implements IUpdatePlayerListBox, IManaB
     }
 
     @Override
-	public void update() {}
-    
+	public void update() {
+
+    }
 
 }

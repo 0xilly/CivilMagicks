@@ -27,6 +27,7 @@ package us.illyohs.civilmagicks.common.block;
 
 import us.illyohs.civilmagicks.common.block.nodes.ManaRing;
 import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
+import us.illyohs.civilmagicks.common.block.world.BlockManaStone;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -41,7 +42,8 @@ public class ModBlocks {
 //	public static Block
 	
 	public static void init() {
-		
+
+        blockManaStone = new BlockManaStone();
 		blockManaRing = new ManaRing();
 		
 		gameRegBlock();
@@ -49,6 +51,7 @@ public class ModBlocks {
 	}
 
 	private static void gameRegBlock() {
+        GameRegistry.registerBlock(blockManaStone, "manastone");
 		GameRegistry.registerBlock(blockManaRing, LibInfo.MOD_ID + "_manaring");
 		
 	}
