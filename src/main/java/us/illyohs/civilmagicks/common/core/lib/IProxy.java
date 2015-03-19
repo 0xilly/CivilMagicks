@@ -25,12 +25,13 @@
  */
 package us.illyohs.civilmagicks.common.core.lib;
 
-
 public interface IProxy {
 	
-    public abstract void bindModelsAndTextures();
+    void bindModelsAndTextures();
 
-    public abstract void registerTileEntitys();
+    void registerTileEntitys();
+    
+    void renderBlockItems();
 
-    public abstract void registerMobs();
+    void registerMobs();
 }

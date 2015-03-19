@@ -32,10 +32,12 @@ import net.minecraft.block.material.Material;
 
 public class BlockManaStone extends Block {
 	
-	public BlockManaStone() {
-		super(Material.rock);
+    public BlockManaStone() {
+        super(Material.rock);
         setCreativeTab(CreativeTabs.tabBrewing);
-		setUnlocalizedName(LibInfo.MOD_ID + ":manastone");
-	}
+        setUnlocalizedName(LibInfo.MOD_ID + ":manastone");
+        setLightLevel(0.5f);
+    }
+	
 
 }

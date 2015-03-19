@@ -81,4 +81,3 @@ dependencies {
     compile name: 'Baubles', version: '1.8-1.1.1.0-deobf', ext: 'jar'
 }
 
-sourceSets { main { output.resourcesDir = output.classesDir } }

@@ -23,15 +23,9 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.proxy;
+package us.illyohs.civilmagicks.common.core;
 
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
-import us.illyohs.civilmagicks.common.block.ModBlocks;
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
-import us.illyohs.civilmagicks.common.item.ModItems;
 
 public class CommonProxy implements IProxy {
 
@@ -53,5 +47,14 @@ public class CommonProxy implements IProxy {
 		// TODO Auto-generated method stub
 		
 	}
+
+    /* (non-Javadoc)
+     * @see us.illyohs.civilmagicks.common.core.lib.IProxy#renderBlockItems()
+     */
+    @Override
+    public void renderBlockItems() {
+        //NO-OP
+        
+    }
 
 }

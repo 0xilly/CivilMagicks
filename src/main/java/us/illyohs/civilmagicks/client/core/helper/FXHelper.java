@@ -25,7 +25,11 @@
  */
 package us.illyohs.civilmagicks.client.core.helper;
 
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
@@ -39,4 +43,9 @@ public class FXHelper {
 	public static void bindTextureFML(ResourceLocation texture) {
         FMLClientHandler.instance().getClient().renderEngine.bindTexture(texture);
     }
+	
+	public static void renderItemsBlocks(Block block, String texture) {
+	    Item item = Item.getItemFromBlock(block);
+	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(LibInfo.MOD_ID +":"+texture));
+	}
 }

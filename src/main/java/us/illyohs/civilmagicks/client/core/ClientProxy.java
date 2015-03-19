@@ -23,29 +23,35 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.client.proxy;
+package us.illyohs.civilmagicks.client.core;
 
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import us.illyohs.civilmagicks.client.core.helper.FXHelper;
 import us.illyohs.civilmagicks.client.render.tile.RenderTileManaRing;
+import us.illyohs.civilmagicks.common.block.ModBlocks;
 import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
 
 public class ClientProxy implements IProxy {
 
-	@Override
-	public void bindModelsAndTextures() {
-		ClientRegistry.bindTileEntitySpecialRenderer(TileNodeManaRing.class, new RenderTileManaRing());
-	}
+    @Override
+    public void bindModelsAndTextures() {
+        ClientRegistry.bindTileEntitySpecialRenderer(TileNodeManaRing.class, new RenderTileManaRing());
+    }
 
-	@Override
-	public void registerTileEntitys() {
-		//NO-OP
+    @Override
+    public void registerTileEntitys() {
+        //NO-OP
+    }
 
-	}
+    @Override
+    public void registerMobs() {
+        //NO-OP
+    }
 
-	@Override
-	public void registerMobs() {
-		//NO-OP
-	}
+    @Override
+    public void renderBlockItems() {
+        FXHelper.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
+    }
 
 }

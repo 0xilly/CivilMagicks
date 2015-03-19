@@ -26,14 +26,11 @@
 
 package us.illyohs.civilmagicks.common.item.baubles;
 
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
+import us.illyohs.civilmagicks.api.item.ManaItem;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
-import us.illyohs.civilmagicks.api.item.ManaItem;
-import us.illyohs.civilmagicks.api.mana.IManaItem;
 
 public class ItemManaBauble extends ManaItem implements IBauble {
 
