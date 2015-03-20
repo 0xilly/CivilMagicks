@@ -23,30 +23,20 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.client.core.helper;
+package us.illyohs.civilmagicks.client.core.creativetab;
 
+import us.illyohs.civilmagicks.common.block.ModBlocks;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.client.FMLClientHandler;
 
-public class FXHelper {
+public class CivilTab  {
 
-    public static void bindTextureMC(ResourceLocation texutre) {
-        Minecraft.getMinecraft().renderEngine.bindTexture(texutre);
-    }
-
-    public static void bindTextureFML(ResourceLocation texture) {
-        FMLClientHandler.instance().getClient().renderEngine.bindTexture(texture);
-    }
-
-    public static void renderItemsBlocks(Block block, String texture) {
-        Item item = Item.getItemFromBlock(block);
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-                .register(item, 0, new ModelResourceLocation(LibInfo.MOD_ID + ":" + texture));
-    }
-
+    public static final CreativeTabs BLOCKS = new CreativeTabs(LibInfo.MOD_ID) {
+        
+        @Override
+        public Item getTabIconItem() {
+            return Item.getItemFromBlock(ModBlocks.blockManaStone);
+        }
+    };
 }
