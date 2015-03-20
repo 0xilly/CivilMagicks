@@ -79,6 +79,5 @@ repositories {
 
 dependencies {
     compile name: 'Baubles', version: '1.8-1.1.1.0-deobf', ext: 'jar'
-    compile 'ninja.leaping.configurate:configurate-hocon:1.0'
 }
 

@@ -23,32 +23,34 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.mana;
+package us.illyohs.civilmagicks.common.core.handler;
 
-import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.fml.common.eventhandler.Event;
+import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent;
+import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent.ActionType;
+import us.illyohs.civilmagicks.common.core.helper.LogHelper;
+import us.illyohs.civilmagicks.common.core.lib.CivilPlayer;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+public class CivilEventHandler {
 
-public class ManaNetEvent extends Event {
-    
-    public TileEntity tile;
-    public ActionType actionType;
-    public CivilStatus civilStatus;
-    public ManaType manaType;
-    
-    /**
-     * 
-     */
-    public ManaNetEvent(TileEntity tile, ManaType manaType, ActionType actionType, CivilStatus civilStatus) {
-        this.tile = tile;
-        this.manaType = manaType;
-        this.actionType = actionType;
-        this.civilStatus = civilStatus;
+    @SubscribeEvent
+    public void onEntityConstruct(EntityConstructing event) {
+        if (event.entity instanceof EntityPlayer) {
+            if(CivilPlayer.forPlayer((EntityPlayer) event.entity) == null) {
+                event.entity.registerExtendedProperties(CivilPlayer.IDENT, new CivilPlayer((EntityPlayer) event.entity));
+            }
+        }
     }
     
-    public enum ActionType {
-        SEND, RECEIVE
+    @SubscribeEvent
+    public void ManaNetworkEvent(ManaNetworkEvent event) {
+        if (event.actionType == ActionType.SEND) {
+            LogHelper.debug("Now sending Mana from "+ event.tile.getPos() + ". Mana type is " + event.manaType);
+        }
+        if (event.actionType == ActionType.RECEIVE) {
+            LogHelper.debug("Now receiving Mana from "+ event.tile.getPos() + ". Manatype is " +event.manaType);
+        }
     }
-
 }

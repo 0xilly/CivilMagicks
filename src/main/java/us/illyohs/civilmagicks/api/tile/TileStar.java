@@ -47,8 +47,9 @@ public class TileStar extends TileEntity implements IUpdatePlayerListBox, IManaB
     }
 
     @Override
-    public ManaType canAccept(ManaType type) {
+    public ManaType canAccept() {
         return type;
+        
     }
     
     public int maxMana(int max) {

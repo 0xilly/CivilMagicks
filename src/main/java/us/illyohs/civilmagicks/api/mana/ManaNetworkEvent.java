@@ -23,21 +23,37 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.core.handler;
+package us.illyohs.civilmagicks.api.mana;
 
-import us.illyohs.civilmagicks.common.core.lib.CivilPlayer;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.eventhandler.Event;
 
-public class EventHandler {
-
-    @SubscribeEvent
-    public void onEntityConstruct(EntityConstructing event) {
-        if(event.entity instanceof EntityPlayer) {
-            if(CivilPlayer.forPlayer((EntityPlayer) event.entity) == null) {
-                event.entity.registerExtendedProperties(CivilPlayer.IDENT, new CivilPlayer((EntityPlayer) event.entity));
-            }
-        }
+public class ManaNetworkEvent extends Event {
+    
+    public TileEntity tile;
+    public ActionType actionType;
+    public ManaType manaType;
+    
+    /**
+     * 
+     */
+    public ManaNetworkEvent(TileEntity tile, ManaType manaType, ActionType actionType) {
+        this.tile = tile;
+        this.manaType = manaType;
+        this.actionType = actionType;
     }
+    
+    public enum ActionType {
+        SEND, RECEIVE
+    }
+    
+    public static void sendMana(TileEntity tile, ManaType manaType) {
+        MinecraftForge.EVENT_BUS.post(new ManaNetworkEvent(tile, manaType, ActionType.SEND));
+    }
+    
+    public static void receiveMana(TileEntity tile, ManaType manaType) {
+        MinecraftForge.EVENT_BUS.post(new ManaNetworkEvent(tile, manaType, ActionType.RECEIVE));
+    }
+
 }

@@ -32,7 +32,7 @@ public class WorldProviderAetheris extends WorldProvider {
 
     @Override
     public String getDimensionName() {
-        return null;
+        return "Aetheris";
     }
 
     @Override

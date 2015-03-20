@@ -40,7 +40,7 @@ public class TileNode extends TileEntity implements IUpdatePlayerListBox, IManaB
     }
 
     @Override
-    public ManaType canAccept(ManaType type) {
+    public ManaType canAccept() {
         // TODO Auto-generated method stub
         return null;
     }

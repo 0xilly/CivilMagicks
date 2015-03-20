@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  * All rights reserved.
  *

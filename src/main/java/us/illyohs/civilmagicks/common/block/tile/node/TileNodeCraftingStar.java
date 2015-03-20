@@ -138,7 +138,7 @@ public class TileNodeCraftingStar extends TileEntity implements IInventory, IMan
     }
 
     @Override
-    public ManaType canAccept(ManaType type) {
+    public ManaType canAccept() {
         return null;
     }
 }

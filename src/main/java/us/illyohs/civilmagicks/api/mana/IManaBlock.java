@@ -42,7 +42,8 @@ public interface IManaBlock {
      * @param type
      * @return
      */
-    ManaType canAccept(ManaType type);
+    ManaType canAccept();
+
 
 
 }

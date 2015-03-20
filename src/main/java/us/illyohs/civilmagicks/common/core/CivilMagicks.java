@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  * All rights reserved.
  *
@@ -26,6 +26,7 @@
 package us.illyohs.civilmagicks.common.core;
 
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -34,6 +35,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import us.illyohs.civilmagicks.common.block.ModBlocks;
+import us.illyohs.civilmagicks.common.core.config.ConfigurationHandler;
+import us.illyohs.civilmagicks.common.core.handler.CivilEventHandler;
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import us.illyohs.civilmagicks.common.core.registry.RegisterBlocks;
@@ -51,6 +54,7 @@ public class CivilMagicks {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         RegisterBlocks.reg();
         RegisterItems.reg();    
         
@@ -67,5 +71,6 @@ public class CivilMagicks {
 
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(new CivilEventHandler());
     }
 }

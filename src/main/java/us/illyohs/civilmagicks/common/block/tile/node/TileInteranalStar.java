@@ -26,6 +26,7 @@
 package us.illyohs.civilmagicks.common.block.tile.node;
 
 import net.minecraft.nbt.NBTTagCompound;
+import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 import us.illyohs.civilmagicks.api.tile.TileStar;
 import us.illyohs.civilmagicks.common.core.helper.BiomeHelper;
@@ -39,7 +40,7 @@ public class TileInteranalStar extends TileStar {
     }
     
     @Override
-    public ManaType canAccept(ManaType type) { 
+    public ManaType canAccept() { 
         return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(getPos()));
     }
     
@@ -70,7 +71,9 @@ public class TileInteranalStar extends TileStar {
         if(!worldObj.isRemote) {
             tick++;
             if(tick == 1000) {
+                
                 addMana(2);
+                ManaNetworkEvent.receiveMana(this, canAccept());
             }
             System.out.println(mana);
             

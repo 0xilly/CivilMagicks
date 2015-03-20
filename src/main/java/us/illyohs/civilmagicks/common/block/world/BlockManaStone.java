@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  * All rights reserved.
  *
@@ -25,16 +25,16 @@
  */
 package us.illyohs.civilmagicks.common.block.world;
 
-import net.minecraft.creativetab.CreativeTabs;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class BlockManaStone extends Block {
 	
     public BlockManaStone() {
         super(Material.rock);
-        setCreativeTab(CreativeTabs.tabBrewing);
+        setCreativeTab(CivilTab.BLOCKS);
         setUnlocalizedName(LibInfo.MOD_ID + ":manastone");
         setLightLevel(0.5f);
     }
