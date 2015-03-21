@@ -33,7 +33,8 @@ import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeHelper {
     
-    World world;
+    public World world;
+    public BiomeGenBase biome;
     
     /**
      * This gets the current biome location

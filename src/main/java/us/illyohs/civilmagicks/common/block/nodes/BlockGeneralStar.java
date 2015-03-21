@@ -23,51 +23,24 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.block;
+package us.illyohs.civilmagicks.common.block.nodes;
 
-import net.minecraft.block.Block;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 import us.illyohs.civilmagicks.api.block.BlockStar;
-import us.illyohs.civilmagicks.common.block.nodes.BlockGeneralStar;
-import us.illyohs.civilmagicks.common.block.nodes.ManaRing;
+import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
 import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
-import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
-import us.illyohs.civilmagicks.common.block.world.BlockManaStone;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
-public class ModBlocks {
+public class BlockGeneralStar extends BlockStar {
 
-    public static Block blockGrindStone;
-    public static Block blockManaRing;
-
-    public static Block blockManaStone;
-
-    public static BlockStar blockGeneralStar;
-
-    //	public static Block
-
-    public static void init() {
-
-        blockManaStone = new BlockManaStone();
-        blockManaRing = new ManaRing();
-
-        blockGeneralStar = new BlockGeneralStar();
-
-        gameRegBlock();
-        gameRegTile();
+    public BlockGeneralStar() {
+        setCreativeTab(CivilTab.BLOCKS);
+        setUnlocalizedName(LibInfo.MOD_ID + "generalstar");
     }
-
-    private static void gameRegBlock() {
-        GameRegistry.registerBlock(blockManaStone, "manastone");
-        GameRegistry.registerBlock(blockManaRing, LibInfo.MOD_ID + "_manaring");
-        GameRegistry.registerBlock(blockGeneralStar, "generalstar");
-
+    
+    @Override
+    public TileEntity createNewTileEntity(World world, int meta) {
+        return new TileGeneralStar();
     }
-
-    private static void gameRegTile() {
-        GameRegistry.registerTileEntity(TileNodeManaRing.class, LibInfo.MOD_ID + "manaring_tile");
-        GameRegistry.registerTileEntity(TileGeneralStar.class, LibInfo.MOD_ID +"genralstar");
-    }
-
-
 }

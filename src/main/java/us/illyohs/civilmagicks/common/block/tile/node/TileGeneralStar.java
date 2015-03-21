@@ -26,22 +26,25 @@
 package us.illyohs.civilmagicks.common.block.tile.node;
 
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 import us.illyohs.civilmagicks.api.tile.TileStar;
 import us.illyohs.civilmagicks.common.core.helper.BiomeHelper;
+import us.illyohs.civilmagicks.common.core.helper.LogHelper;
 
-public class TileInteranalStar extends TileStar {
+public class TileGeneralStar extends TileStar {
     
     int tick;
+    World world;
     
-    public TileInteranalStar() {
+    public TileGeneralStar() {
         
     }
     
     @Override
     public ManaType canAccept() { 
-        return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(getPos()));
+        return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(pos));
     }
     
     public int maxMana(int max) {
@@ -49,6 +52,8 @@ public class TileInteranalStar extends TileStar {
     }
     
     public int addMana(int add) {
+//        ManaNetworkEvent.receiveMana(this, canAccept());
+        LogHelper.info("Mana Added:"+ add  + "");
         return add;
         
     }
@@ -70,12 +75,15 @@ public class TileInteranalStar extends TileStar {
         
         if(!worldObj.isRemote) {
             tick++;
-            if(tick == 1000) {
+            if(tick == 20) {
                 
-                addMana(2);
-                ManaNetworkEvent.receiveMana(this, canAccept());
+                addMana(1);
+//                System.out.println("Boop");
+                
+//                ManaNetworkEvent.receiveMana(this, canAccept());
             }
-            System.out.println(mana);
+//            System.out.println(mana);
+            System.out.println(getWorld().getBiomeGenForCoords(pos)); //This works but BiomeHelper doesn't?
             
         }
         
