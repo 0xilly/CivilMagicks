@@ -52,5 +52,6 @@ public class CivilEventHandler {
         if (event.actionType == ActionType.RECEIVE) {
             LogHelper.debug("Now receiving Mana from "+ event.tile.getPos() + ". Manatype is " +event.manaType);
         }
+        System.out.println(event.tile.getPos() + " " + event.manaType + " " + event.actionType);
     }
 }

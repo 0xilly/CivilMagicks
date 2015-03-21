@@ -44,7 +44,7 @@ public class TileGeneralStar extends TileStar {
     
     @Override
     public ManaType canAccept() { 
-        return new BiomeHelper().getManaFromBiomeType(new BiomeHelper().getBiome(pos));
+        return new BiomeHelper().getManaFromBiomeType(getWorld().getBiomeGenForCoords(pos));
     }
     
     public int maxMana(int max) {
@@ -52,7 +52,7 @@ public class TileGeneralStar extends TileStar {
     }
     
     public int addMana(int add) {
-//        ManaNetworkEvent.receiveMana(this, canAccept());
+        ManaNetworkEvent.receiveMana(this, canAccept());
         LogHelper.info("Mana Added:"+ add  + "");
         return add;
         
@@ -83,7 +83,7 @@ public class TileGeneralStar extends TileStar {
 //                ManaNetworkEvent.receiveMana(this, canAccept());
             }
 //            System.out.println(mana);
-            System.out.println(getWorld().getBiomeGenForCoords(pos)); //This works but BiomeHelper doesn't?
+//            System.out.println(getWorld().getBiomeGenForCoords(pos)); //This works but BiomeHelper doesn't?
             
         }
         
