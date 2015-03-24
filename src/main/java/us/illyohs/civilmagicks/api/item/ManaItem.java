@@ -44,6 +44,7 @@ public class ManaItem extends Item implements IManaItem {
     public void onCreated(ItemStack is, World world, EntityPlayer player) {
         is.stackTagCompound = new NBTTagCompound();
         is.stackTagCompound.setInteger("ManaLevel", 0);
+        is.stackTagCompound.setInteger("MaxManaLevel", setMaxMana());
 //        is.stackTagCompound.setString("ManaType", ManaType.NEUTRAL.toString());
     }
 
@@ -56,15 +57,20 @@ public class ManaItem extends Item implements IManaItem {
     public int setCurrentMana(ItemStack is, int mana) {
         int oldMana = getCurrentMana(is);
         is.stackTagCompound = new NBTTagCompound();
-        if (getCurrentMana(is) <= maxStackSize) {
+        if (getCurrentMana(is) <= getMaxMana(is)) {
             is.stackTagCompound.setInteger("ManaLevel", mana + oldMana);
         }
         return getCurrentMana(is);
     }
 
     @Override
-    public int getMaxMana(ItemStack is, int max) {
-        return max;
+    public int getMaxMana(ItemStack is) {
+        return is.stackTagCompound.getInteger("MaxManaLevel");
+    }
+    
+    @Override
+    public int setMaxMana() {
+        return 0;
     }
 
 }

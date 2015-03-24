@@ -34,6 +34,11 @@ public interface IManaItem {
 
     int setCurrentMana(ItemStack is, int mana);
 
-    int getMaxMana(ItemStack is, int max);
+    int getMaxMana(ItemStack is);
+
+    /**
+     * @return
+     */
+    int setMaxMana();
 
 }
