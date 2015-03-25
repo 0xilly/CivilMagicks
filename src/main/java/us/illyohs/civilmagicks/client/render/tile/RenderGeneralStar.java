@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  * All rights reserved.
  *
@@ -25,35 +25,6 @@
  */
 package us.illyohs.civilmagicks.client.render.tile;
 
-import us.illyohs.civilmagicks.client.core.helper.FXHelper;
-import us.illyohs.civilmagicks.client.core.lib.LibAssets;
-import us.illyohs.civilmagicks.client.models.ModelTransferNode;
-import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.tileentity.TileEntity;
-
-public class RenderTileManaRing extends TileEntitySpecialRenderer {
-	
-	private ModelTransferNode model;
-	
-	public RenderTileManaRing() {
-		model = new ModelTransferNode();
-	}
-
-	@Override
-	public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick, int arg) {
-		@SuppressWarnings("unused")
-        TileNodeManaRing tnmr = (TileNodeManaRing) tile;
-		
-		GlStateManager.pushMatrix();
-		
-		GlStateManager.scale(1f, 1f, 1f);
-		FXHelper.bindTextureMC(LibAssets.manaRing);
-		model.render(.0625F);
-		
-		GlStateManager.popMatrix();
-
-	}
+public class RenderGeneralStar {
 
 }

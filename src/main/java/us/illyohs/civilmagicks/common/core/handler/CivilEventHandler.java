@@ -25,13 +25,12 @@
  */
 package us.illyohs.civilmagicks.common.core.handler;
 
-import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent;
-import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent.ActionType;
-import us.illyohs.civilmagicks.common.core.helper.LogHelper;
-import us.illyohs.civilmagicks.common.core.lib.CivilPlayer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent;
+import us.illyohs.civilmagicks.common.core.helper.LogHelper;
+import us.illyohs.civilmagicks.common.core.lib.CivilPlayer;
 
 public class CivilEventHandler {
 
@@ -46,12 +45,6 @@ public class CivilEventHandler {
     
     @SubscribeEvent
     public void ManaNetworkEvent(ManaNetworkEvent event) {
-        if (event.actionType == ActionType.SEND) {
-            LogHelper.debug("Now sending Mana from "+ event.tile.getPos() + ". Mana type is " + event.manaType);
-        }
-        if (event.actionType == ActionType.RECEIVE) {
-            LogHelper.debug("Now receiving Mana from "+ event.tile.getPos() + ". Manatype is " +event.manaType);
-        }
-        System.out.println(event.tile.getPos() + " " + event.manaType + " " + event.actionType);
+            LogHelper.info("ManaEvent from "+ event.tile.getPos() + ". Manatype is " +event.manaType);
     }
 }

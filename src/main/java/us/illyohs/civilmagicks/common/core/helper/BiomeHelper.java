@@ -33,8 +33,9 @@ import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeHelper {
     
-    public World world;
+    public World        world;
     public BiomeGenBase biome;
+    ManaType            type = ManaType.NEUTRAL;
     
     /**
      * This gets the current biome location
@@ -50,14 +51,16 @@ public class BiomeHelper {
     /**
      * This gets the mana type for each biome
      * @param biome
+     * @return 
      */
     public ManaType getManaFromBiomeType(BiomeGenBase biome) {
-        for(ManaType type : BiomeManaRegistry.biomeManaRegistry.keySet()) {
+        for(ManaType type : BiomeManaRegistry.biomeManaRegistry.keySet()) 
             if (BiomeManaRegistry.biomeManaRegistry.get(type).equals(biome)) {
                 return type;
             }
-        }
-        return null;
+        return type;
+
+        
     }
 
 }

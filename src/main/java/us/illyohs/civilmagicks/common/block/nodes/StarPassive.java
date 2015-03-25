@@ -14,6 +14,7 @@ public class StarPassive extends BlockStar {
     public StarPassive() {
         setUnlocalizedName(LibInfo.MOD_ID + ":starpassive");
         setCreativeTab(CreativeTabs.tabBrewing);
+        setTickRandomly(true);
     }
     
     public void onBlockClicked(World world, BlockPos pos, EntityPlayer playerIn) {

@@ -33,11 +33,11 @@ import us.illyohs.civilmagicks.api.mana.ManaType;
 
 public class TileStar extends TileEntity implements IUpdatePlayerListBox, IManaBlock {
 
-    public int mana;
-    int max;
-    int current;
-    ManaType type;
-    boolean isFull;
+    public int      mana;
+    public int      max;
+    public int      current;
+    public ManaType type;
+    public boolean  isFull;
 
     @Override
     public int currentMana(int current) {
@@ -49,22 +49,22 @@ public class TileStar extends TileEntity implements IUpdatePlayerListBox, IManaB
     @Override
     public ManaType canAccept() {
         return type;
-        
+
     }
-    
+
     public int maxMana(int max) {
         return max;
     }
-    
+
     public int addMana(int add) {
         NBTTagCompound nbt = new NBTTagCompound();
-        if(!(currentMana(current) == max)) {
+        if (!(currentMana(current) == max)) {
             nbt.setInteger("mana", current + add);
-            return currentMana(current)+ add;
+            return currentMana(current) + add;
         } else {
-            return 0;            
+            return 0;
         }
-        
+
     }
 
     @Override
@@ -74,28 +74,27 @@ public class TileStar extends TileEntity implements IUpdatePlayerListBox, IManaB
         nbt.setInteger("max", max);
         nbt.setBoolean("isFull", isFull);
         nbt.setString("manaType", type.toString());
-        
-        
+
     }
-    
+
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        if(nbt.hasKey("mana")) {
+        if (nbt.hasKey("mana")) {
             mana = nbt.getInteger("mana");
         }
-        
-        if(nbt.hasKey("isFull")) {
+
+        if (nbt.hasKey("isFull")) {
             isFull = nbt.getBoolean("isFull");
         }
-        
-        if(nbt.hasKey("manaType")) {
+
+        if (nbt.hasKey("manaType")) {
             type = ManaType.valueOf(nbt.getString("manaType"));
         }
     }
 
     @Override
-	public void update() {
+    public void update() {
 
     }
 

@@ -29,9 +29,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySignRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-
-import org.lwjgl.opengl.GL11;
-
 import us.illyohs.civilmagicks.client.models.ModelBrewChamber;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 

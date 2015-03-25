@@ -35,11 +35,11 @@ import us.illyohs.civilmagicks.common.core.helper.LogHelper;
 
 public class TileGeneralStar extends TileStar {
     
-    int tick;
+    int timer;
     World world;
     
     public TileGeneralStar() {
-        
+        timer = 20;
     }
     
     @Override
@@ -53,7 +53,7 @@ public class TileGeneralStar extends TileStar {
     
     public int addMana(int add) {
         ManaNetworkEvent.receiveMana(this, canAccept());
-        LogHelper.info("Mana Added:"+ add  + "");
+//        LogHelper.info("Mana Added:"+ add  + "");
         return add;
         
     }
@@ -71,22 +71,16 @@ public class TileGeneralStar extends TileStar {
     }
     
     @Override
-    public void update() {
-        
-        if(!worldObj.isRemote) {
-            tick++;
-            if(tick == 20) {
-                
+    public void update() {        
+        if(!worldObj.isRemote && timer == 20) {      
                 addMana(1);
-//                System.out.println("Boop");
-                
-//                ManaNetworkEvent.receiveMana(this, canAccept());
+
             }
-//            System.out.println(mana);
+        
+        timer--;
 //            System.out.println(getWorld().getBiomeGenForCoords(pos)); //This works but BiomeHelper doesn't?
             
         }
-        
-    }
+    
     
 }

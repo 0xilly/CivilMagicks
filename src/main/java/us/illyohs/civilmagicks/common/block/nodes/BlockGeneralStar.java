@@ -25,7 +25,10 @@
  */
 package us.illyohs.civilmagicks.common.block.nodes;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import us.illyohs.civilmagicks.api.block.BlockStar;
 import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
@@ -37,6 +40,17 @@ public class BlockGeneralStar extends BlockStar {
     public BlockGeneralStar() {
         setCreativeTab(CivilTab.BLOCKS);
         setUnlocalizedName(LibInfo.MOD_ID + "generalstar");
+        setTickRandomly(true);
+    }
+    
+    public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
+        if(!worldIn.isRemote) {
+        }
+        TileGeneralStar tile =  (TileGeneralStar)worldIn.getTileEntity(pos);
+//            tile.get
+        playerIn.addChatMessage(new ChatComponentText("TYhis star currently has " + tile.current + " Mana"));
+        System.out.println("Boop");
+        
     }
     
     @Override
