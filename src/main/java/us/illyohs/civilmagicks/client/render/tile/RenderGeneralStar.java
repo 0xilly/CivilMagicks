@@ -34,23 +34,24 @@ public class RenderGeneralStar extends TileEntitySpecialRenderer {
 
     @Override
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float p_180535_8_, int p_180535_9_) {
-        int r     = 1;
-        int g     = 1;
-        int b     = 1;
+        int red     = 1;
+        int green     = 1;
+        int blue     = 1;
         int alpha = 1;
-        
+        int brightnes = 100;
         
 //        GlStateManager.alphaFunc(func, ref);
 //        GlStateManager.b
         
-        renderStar(r, g, b, alpha);
+        renderStar(red, green, blue, alpha, brightnes);
     }
 
 
-    private void renderStar(int r, int g, int b, int alpha) {
+    private void renderStar(int r, int g, int b, int alpha, int brightnes) {
         Tessellator tess = Tessellator.getInstance();
         WorldRenderer wr = tess.getWorldRenderer();
         
+        wr.startDrawingQuads();
         wr.setColorRGBA(r, g, b, alpha);
         
     }
