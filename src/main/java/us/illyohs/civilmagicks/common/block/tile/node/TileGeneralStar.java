@@ -27,7 +27,7 @@ package us.illyohs.civilmagicks.common.block.tile.node;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import us.illyohs.civilmagicks.api.mana.BiomeManaRegistry;
+import us.illyohs.civilmagicks.api.CivilMagicksAPI;
 import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 import us.illyohs.civilmagicks.api.tile.TileStar;
@@ -43,8 +43,7 @@ public class TileGeneralStar extends TileStar {
     
     @Override
     public ManaType canAccept() { 
-        new BiomeManaRegistry();
-        return BiomeManaRegistry.getManaTypeFromBiome(getWorld().getBiomeGenForCoords(getPos()));
+        return CivilMagicksAPI.getManaTypeFromBiome(getWorld().getBiomeGenForCoords(getPos()));
     }
     
     public int maxMana(int max) {

@@ -25,8 +25,6 @@
  */
 package us.illyohs.civilmagicks.api;
 
-import java.util.HashMap;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
@@ -34,6 +32,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fluids.Fluid;
 import us.illyohs.civilmagicks.api.civilregistry.CivilObject;
+import us.illyohs.civilmagicks.api.civilregistry.CivilRegistry;
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 import us.illyohs.civilmagicks.api.mana.BiomeManaRegistry;
 import us.illyohs.civilmagicks.api.mana.ManaType;
@@ -42,13 +41,9 @@ public class CivilMagicksAPI {
 	
     public static ArmorMaterial armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
 
-    //TODO: Move this to its own class instead of registering internaly like I do now maybe handle some with IMC?
-    public static HashMap<Object, CivilObject> civilRegistry = new HashMap<Object, CivilObject>();
-//    public static HashMap<ManaType, BiomeGenBase> biomeManaRegesty = new HashMap<ManaType, BiomeGenBase>();
-
     private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
         if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
-            civilRegistry.put(civilstatus, new CivilObject(object, meta));
+            CivilRegistry.civilReg.put(new CivilObject(object, meta), civilstatus);
         } else {
             throw new IllegalArgumentException();
         }
@@ -117,6 +112,23 @@ public class CivilMagicksAPI {
      */
     public static void registerNeutralBiome(BiomeGenBase biome) {
         registerManaBiome(biome, ManaType.NEUTRAL);
+    }
+    
+    /**
+     * 
+     * @param biome The biome were you want to get the mana from
+     * @return ManaType
+     */
+    public static ManaType getManaTypeFromBiome(BiomeGenBase biome) {
+        if(!BiomeManaRegistry.biomeManaRegistry.containsKey(biome)) {
+            return ManaType.NEUTRAL;
+        }
+        return BiomeManaRegistry.biomeManaRegistry.get(biome);
+    }
+    
+    public static CivilStatus getStCivilStatus(Object object) {
+        return CivilRegistry.civilReg.get(object);
+        
     }
     
 }

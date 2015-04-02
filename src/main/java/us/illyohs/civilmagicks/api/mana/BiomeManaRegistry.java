@@ -88,11 +88,4 @@ public class BiomeManaRegistry {
         biomeManaRegistry.put(BiomeGenBase.iceMountains, dark);
     }
     
-    public static ManaType getManaTypeFromBiome(BiomeGenBase biome) {
-        if(!biomeManaRegistry.containsKey(biome)) {
-            return ManaType.NEUTRAL;
-        }
-        return biomeManaRegistry.get(biome);
-    }
-    
 }

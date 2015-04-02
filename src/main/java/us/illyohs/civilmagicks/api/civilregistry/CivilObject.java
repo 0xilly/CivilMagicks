@@ -32,7 +32,7 @@ public class CivilObject {
 
     public CivilObject(Object object, int meta) {
         this.object = object;
-        this.meta = meta;
+        this.meta   = meta;
 
     }
 

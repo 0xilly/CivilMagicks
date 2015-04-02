@@ -39,8 +39,6 @@ import us.illyohs.civilmagicks.common.core.config.ConfigurationHandler;
 import us.illyohs.civilmagicks.common.core.handler.CivilEventHandler;
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import us.illyohs.civilmagicks.common.core.registry.RegisterBlocks;
-import us.illyohs.civilmagicks.common.core.registry.RegisterItems;
 import us.illyohs.civilmagicks.common.item.ModItems;
 
 @Mod(modid = LibInfo.MOD_ID, name = LibInfo.MOD_NAME, version = LibInfo.VERSION)
@@ -55,8 +53,6 @@ public class CivilMagicks {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-        RegisterBlocks.reg();
-        RegisterItems.reg();    
         
         ModBlocks.init();
         ModItems.init();
