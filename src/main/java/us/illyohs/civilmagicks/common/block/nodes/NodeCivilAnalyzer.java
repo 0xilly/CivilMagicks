@@ -25,17 +25,18 @@
  */
 package us.illyohs.civilmagicks.common.block.nodes;
 
+import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 public class NodeCivilAnalyzer extends Block {
 
-    /**
-     * @param materialIn
-     */
     public NodeCivilAnalyzer() {
         super(Material.rock);
-        // TODO Auto-generated constructor stub
+        setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+        setUnlocalizedName(LibInfo.MOD_ID + ":objectanalyzer");
+        setCreativeTab(CivilTab.BLOCKS);
     }
 
 }
