@@ -61,6 +61,7 @@ public class CivilMagicks {
         ModBlocks.init();
         ModItems.init();
         
+        
     }
 
     @EventHandler

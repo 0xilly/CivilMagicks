@@ -56,7 +56,7 @@ public class CivilMagicksAPI {
     }
 
     private static void registerManaBiome(BiomeGenBase biome, ManaType type) {
-        BiomeManaRegistry.biomeManaRegistry.put(type, biome);
+        BiomeManaRegistry.biomeManaRegistry.put(biome, type);
     }
     
     /**

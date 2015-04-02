@@ -32,7 +32,7 @@ import java.util.HashMap;
 
 public class BiomeManaRegistry {
 
-    public static HashMap<ManaType, BiomeGenBase> biomeManaRegistry = new HashMap<ManaType, BiomeGenBase>();
+    public static HashMap<BiomeGenBase, ManaType> biomeManaRegistry = new HashMap<BiomeGenBase, ManaType>();
 
     public BiomeManaRegistry() {
         darkManaBiomes(ManaType.DARK);
@@ -41,50 +41,58 @@ public class BiomeManaRegistry {
     }
 
     private void lightManaBiome(ManaType light) {
-        biomeManaRegistry.put(light, BiomeGenBase.forest);
-        biomeManaRegistry.put(light, BiomeGenBase.icePlains); //should this bea dark
-        biomeManaRegistry.put(light, BiomeGenBase.plains);
-        biomeManaRegistry.put(light, BiomeGenBase.jungle);
-        biomeManaRegistry.put(light, BiomeGenBase.jungleEdge);
-        biomeManaRegistry.put(light, BiomeGenBase.jungleHills);
-        biomeManaRegistry.put(light, BiomeGenBase.birchForest);
-        biomeManaRegistry.put(light, BiomeGenBase.birchForestHills);
+        biomeManaRegistry.put(BiomeGenBase.forest, light);
+        biomeManaRegistry.put(BiomeGenBase.icePlains, light); //should this bea dark
+        biomeManaRegistry.put(BiomeGenBase.plains, light);
+        biomeManaRegistry.put(BiomeGenBase.jungle, light);
+        biomeManaRegistry.put(BiomeGenBase.jungleEdge, light);
+        biomeManaRegistry.put(BiomeGenBase.jungleHills, light);
+        biomeManaRegistry.put(BiomeGenBase.birchForest, light);
+        biomeManaRegistry.put(BiomeGenBase.birchForestHills, light);
     }
 
     private void neutralManaBiomes(ManaType neutral) {
-        biomeManaRegistry.put(neutral, BiomeGenBase.extremeHills);
-        biomeManaRegistry.put(neutral, BiomeGenBase.extremeHillsEdge);
-        biomeManaRegistry.put(neutral, BiomeGenBase.extremeHillsPlus);
-        biomeManaRegistry.put(neutral, BiomeGenBase.megaTaiga);
-        biomeManaRegistry.put(neutral, BiomeGenBase.megaTaigaHills);
-        biomeManaRegistry.put(neutral, BiomeGenBase.stoneBeach);
-        biomeManaRegistry.put(neutral, BiomeGenBase.ocean);
-        biomeManaRegistry.put(neutral, BiomeGenBase.deepOcean);
-        biomeManaRegistry.put(neutral, BiomeGenBase.frozenOcean); //Should this be Dark?
-        biomeManaRegistry.put(neutral, BiomeGenBase.river);
-        biomeManaRegistry.put(neutral, BiomeGenBase.frozenRiver); //Should this be Dark?
-        biomeManaRegistry.put(neutral, BiomeGenBase.beach);
-        biomeManaRegistry.put(neutral, BiomeGenBase.coldBeach); // Should this be Dark?
-        biomeManaRegistry.put(neutral, BiomeGenBase.sky);
-        biomeManaRegistry.put(neutral, BiomeGenBase.mushroomIsland);
-        biomeManaRegistry.put(neutral, BiomeGenBase.mushroomIslandShore);
-        biomeManaRegistry.put(neutral, BiomeGenBase.desert);
-        biomeManaRegistry.put(neutral, BiomeGenBase.desertHills);
-        biomeManaRegistry.put(neutral, BiomeGenBase.savanna);
-        biomeManaRegistry.put(neutral, BiomeGenBase.savannaPlateau);
-        biomeManaRegistry.put(neutral, BiomeGenBase.mesa);
-        biomeManaRegistry.put(neutral, BiomeGenBase.mesaPlateau);
-        biomeManaRegistry.put(neutral, BiomeGenBase.mesaPlateau_F);
+        biomeManaRegistry.put(BiomeGenBase.extremeHills, neutral);
+        biomeManaRegistry.put(BiomeGenBase.extremeHillsEdge, neutral);
+        biomeManaRegistry.put(BiomeGenBase.extremeHillsPlus, neutral);
+        biomeManaRegistry.put(BiomeGenBase.megaTaiga, neutral);
+        biomeManaRegistry.put(BiomeGenBase.megaTaigaHills, neutral);
+        biomeManaRegistry.put(BiomeGenBase.stoneBeach, neutral);
+        biomeManaRegistry.put(BiomeGenBase.ocean, neutral);
+        biomeManaRegistry.put(BiomeGenBase.deepOcean, neutral);
+        biomeManaRegistry.put(BiomeGenBase.frozenOcean, neutral); //Should this be Dark?
+        biomeManaRegistry.put(BiomeGenBase.river, neutral);
+        biomeManaRegistry.put(BiomeGenBase.frozenRiver, neutral); //Should this be Dark?
+        biomeManaRegistry.put(BiomeGenBase.beach, neutral);
+        biomeManaRegistry.put(BiomeGenBase.coldBeach, neutral); // Should this be Dark?
+        biomeManaRegistry.put(BiomeGenBase.sky, neutral);
+        biomeManaRegistry.put(BiomeGenBase.mushroomIsland, neutral);
+        biomeManaRegistry.put(BiomeGenBase.mushroomIslandShore, neutral);
+        biomeManaRegistry.put(BiomeGenBase.desert, neutral);
+        biomeManaRegistry.put(BiomeGenBase.desertHills, neutral);
+        biomeManaRegistry.put(BiomeGenBase.savanna, neutral);
+        biomeManaRegistry.put(BiomeGenBase.savannaPlateau, neutral);
+        biomeManaRegistry.put(BiomeGenBase.mesa, neutral);
+        biomeManaRegistry.put(BiomeGenBase.mesaPlateau, neutral);
+        biomeManaRegistry.put(BiomeGenBase.mesaPlateau_F, neutral);
         
     }
 
     private void darkManaBiomes(ManaType dark) {
-        biomeManaRegistry.put(dark, BiomeGenBase.coldTaiga);
-        biomeManaRegistry.put(dark, BiomeGenBase.coldTaigaHills);
-        biomeManaRegistry.put(dark, BiomeGenBase.hell);
-        biomeManaRegistry.put(dark, BiomeGenBase.taiga);
-        biomeManaRegistry.put(dark, BiomeGenBase.swampland);
-        biomeManaRegistry.put(dark, BiomeGenBase.roofedForest);
-        biomeManaRegistry.put(dark, BiomeGenBase.iceMountains);
+        biomeManaRegistry.put(BiomeGenBase.coldTaiga, dark);
+        biomeManaRegistry.put(BiomeGenBase.coldTaigaHills, dark);
+        biomeManaRegistry.put(BiomeGenBase.hell, dark);
+        biomeManaRegistry.put(BiomeGenBase.taiga, dark);
+        biomeManaRegistry.put(BiomeGenBase.swampland, dark);
+        biomeManaRegistry.put(BiomeGenBase.roofedForest, dark);
+        biomeManaRegistry.put(BiomeGenBase.iceMountains, dark);
     }
+    
+    public static ManaType getManaTypeFromBiome(BiomeGenBase biome) {
+        if(!biomeManaRegistry.containsKey(biome)) {
+            return ManaType.NEUTRAL;
+        }
+        return biomeManaRegistry.get(biome);
+    }
+    
 }

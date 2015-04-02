@@ -37,22 +37,27 @@ public class RenderGeneralStar extends TileEntitySpecialRenderer {
         int red     = 1;
         int green     = 1;
         int blue     = 1;
-        int alpha = 1;
+        float alpha = 1;
         int brightnes = 100;
         
 //        GlStateManager.alphaFunc(func, ref);
 //        GlStateManager.b
         
-        renderStar(red, green, blue, alpha, brightnes);
+        renderStar(red, green, blue, .05f, brightnes);
     }
 
 
-    private void renderStar(int r, int g, int b, int alpha, int brightnes) {
+    private void renderStar(int r, int g, int b, float alpha, int brightnes) {
+        
+        int HIGHT = 128;
+        int WIDTH = 896;
         Tessellator tess = Tessellator.getInstance();
         WorldRenderer wr = tess.getWorldRenderer();
         
         wr.startDrawingQuads();
-        wr.setColorRGBA(r, g, b, alpha);
+        wr.addVertexWithUV(0, 0, 0, 0, 0);
+        
+        wr.setColorRGBA_F((float)r, (float)g, (float)b, alpha);
         
     }
 

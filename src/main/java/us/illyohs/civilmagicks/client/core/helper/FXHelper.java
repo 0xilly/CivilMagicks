@@ -23,8 +23,9 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api;
+package us.illyohs.civilmagicks.client.core.helper;
 
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -44,14 +45,7 @@ public class FXHelper {
     
     public static void renderItemsBlocks(Block block, String texture) {
         Item item = Item.getItemFromBlock(block);
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation("civilmagicks" + ":" + texture));
-    }
-
-    //This is a internal method for my lazyness this is being exposed at the request of a friend
-    //might get removed later if this become a problem
-    public static void renderItemsBlocksIlly(Block block, String texture) {
-        Item item = Item.getItemFromBlock(block);
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation("civilmagicks" + ":" + texture));
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(LibInfo.MOD_ID + ":" + texture));
     }
 
 }
