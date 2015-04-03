@@ -30,6 +30,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import us.illyohs.civilmagicks.api.block.BlockStar;
 import us.illyohs.civilmagicks.common.block.nodes.BlockGeneralStar;
 import us.illyohs.civilmagicks.common.block.nodes.ManaRing;
+import us.illyohs.civilmagicks.common.block.nodes.NodeCivilAnalyzer;
 import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
 import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
 import us.illyohs.civilmagicks.common.block.world.BlockManaStone;
@@ -39,6 +40,7 @@ public class ModBlocks {
 
     public static Block blockGrindStone;
     public static Block blockManaRing;
+    public static Block nodeCivilAnalyzer;
 
     public static Block blockManaStone;
 
@@ -50,6 +52,8 @@ public class ModBlocks {
 
         blockManaStone = new BlockManaStone();
         blockManaRing = new ManaRing();
+        
+        nodeCivilAnalyzer = new NodeCivilAnalyzer();
 
         blockGeneralStar = new BlockGeneralStar();
 
@@ -61,6 +65,7 @@ public class ModBlocks {
         GameRegistry.registerBlock(blockManaStone, "manastone");
         GameRegistry.registerBlock(blockManaRing, LibInfo.MOD_ID + "_manaring");
         GameRegistry.registerBlock(blockGeneralStar, "generalstar");
+        GameRegistry.registerBlock(nodeCivilAnalyzer, "civilanalyzer");
 
     }
 

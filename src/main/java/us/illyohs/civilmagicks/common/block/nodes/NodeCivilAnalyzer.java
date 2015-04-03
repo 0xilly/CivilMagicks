@@ -34,7 +34,7 @@ public class NodeCivilAnalyzer extends Block {
 
     public NodeCivilAnalyzer() {
         super(Material.rock);
-        setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+        setBlockBounds(0.0F, 0.0F, 0.0f, 1.0f, 0.1f, 1.0f);
         setUnlocalizedName(LibInfo.MOD_ID + ":objectanalyzer");
         setCreativeTab(CivilTab.BLOCKS);
     }
