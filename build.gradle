@@ -45,6 +45,8 @@ jar {
     }
 }
 
+
+
 processResources {
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
@@ -79,5 +81,12 @@ repositories {
 
 dependencies {
     compile name: 'Baubles', version: '1.8-1.1.1.0-deobf', ext: 'jar'
+}
+
+//apply plugin: 'idea'
+idea {
+    module {
+        inheritOutputDirs = true
+    }
 }
 
