@@ -25,6 +25,7 @@
  */
 package us.illyohs.civilmagicks.client.render.tile;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -34,11 +35,11 @@ public class RenderGeneralStar extends TileEntitySpecialRenderer {
 
     @Override
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float p_180535_8_, int p_180535_9_) {
-        int red     = 1;
-        int green     = 1;
-        int blue     = 1;
-        float alpha = 1;
-        int brightnes = 100;
+        int red         = 1;
+        int green       = 1;
+        int blue        = 1;
+        float alpha     = 1;
+        int brightnes   = 100;
         
 //        GlStateManager.alphaFunc(func, ref);
 //        GlStateManager.b
@@ -49,15 +50,38 @@ public class RenderGeneralStar extends TileEntitySpecialRenderer {
 
     private void renderStar(int r, int g, int b, float alpha, int brightnes) {
         
-        int HIGHT = 128;
-        int WIDTH = 896;
+
         Tessellator tess = Tessellator.getInstance();
         WorldRenderer wr = tess.getWorldRenderer();
         
-        wr.startDrawingQuads();
-        wr.addVertexWithUV(0, 0, 0, 0, 0);
+        GlStateManager.pushAttrib();
+        GlStateManager.pushMatrix();
         
-        wr.setColorRGBA_F((float)r, (float)g, (float)b, alpha);
+        wr.startDrawingQuads();
+        wr.setBrightness(200);
+        
+/*        wr.setColorRGBA_F((float)r, (float)g, (float)b, alpha);
+        
+        wr.addVertexWithUV(0, 0, 0, 0, 0);
+        wr.addVertexWithUV(0, 1, 0, 0, 1);
+        wr.addVertexWithUV(1, 1, 0, 1, 1);
+        wr.addVertexWithUV(1, 0, 0, 1, 0);
+        
+        wr.addVertexWithUV(0, 0, 0, 0, 0);
+        wr.addVertexWithUV(1, 0, 0, 1, 0);
+        wr.addVertexWithUV(1, 1, 0, 1, 1);
+        wr.addVertexWithUV(0, 1, 0, 0, 1);
+*/      
+        
+        //frame1
+        wr.addVertexWithUV(0, 0, 0, 0, 0);
+        wr.addVertexWithUV(0, 1, 0, 0, 1);
+        wr.addVertexWithUV(0, 1, 0, 0, 1);
+        
+        tess.draw();
+    }
+    
+    private void frame() {
         
     }
 
