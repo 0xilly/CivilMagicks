@@ -70,16 +70,9 @@ public class TileGeneralStar extends TileStar {
     }
     
     @Override
-    public void update() {        
-        if(!worldObj.isRemote && timer == 20) {      
-                addMana(1);
+    public void update() {
 
-            }
-        
-        timer--;
-//            System.out.println(getWorld().getBiomeGenForCoords(pos)); //This works but BiomeHelper doesn't?
-            
-        }
+    }
     
     
 }
