@@ -28,7 +28,7 @@ package us.illyohs.civilmagicks.api.grimoire;
 
 public class GrimoirePage {
 
-    public String title = null;
-    public String description = null;
+    public String title         = null;
+    public String description   = null;
 //    public String
 }

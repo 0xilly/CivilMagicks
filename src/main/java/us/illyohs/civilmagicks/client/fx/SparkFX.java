@@ -5,10 +5,10 @@
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
- * * Redistributions of source code must retain the above copyright notice, this
+ *  Redistributions of source code must retain the above copyright notice, this
  *   list of conditions and the following disclaimer.
  *
- * * Redistributions in binary form must reproduce the above copyright notice,
+ *  Redistributions in binary form must reproduce the above copyright notice,
  *   this list of conditions and the following disclaimer in the documentation
  *   and/or other materials provided with the distribution.
  *
@@ -23,14 +23,28 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.entity.mob;
 
-import net.minecraft.entity.ai.EntityAIFollowOwner;
-import net.minecraft.entity.passive.EntityTameable;
+package us.illyohs.civilmagicks.client.fx;
 
-public class EntityFaerie extends EntityAIFollowOwner {
+import net.minecraft.client.particle.EntityFX;
+import net.minecraft.world.World;
 
-    public EntityFaerie(EntityTameable et, double p_i1625_2_, float p_i1625_4_, float p_i1625_5_) {
-        super(et, p_i1625_2_, p_i1625_4_, p_i1625_5_);
+public class SparkFX extends EntityFX {
+
+    public SparkFX(World world, double posX, double posY, double posZ) {
+        super(world, posX, posY, posZ);
     }
+
+    public void setAlpha(float alpha) {
+        this.particleAlpha = alpha;
+    }
+
+    public void setAge(int age) {
+        this.particleAge = age;
+    }
+
+    public void setScale(float scale) {
+        this.particleScale = scale;
+    }
+
 }

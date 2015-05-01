@@ -29,6 +29,6 @@ package us.illyohs.civilmagicks.api.spells;
 public abstract class SpellBase {
 
     public String name;
-
+//    public String
 
 }

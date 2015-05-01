@@ -76,7 +76,8 @@ public class RenderGeneralStar extends TileEntitySpecialRenderer {
         //frame1
         wr.addVertexWithUV(0, 0, 0, 0, 0);
         wr.addVertexWithUV(0, 1, 0, 0, 1);
-        wr.addVertexWithUV(0, 1, 0, 0, 1);
+        wr.addVertexWithUV(0, 1, 0, 1, 1);
+        wr.addVertexWithUV(0, 1, 0, 1, 0);
         
         tess.draw();
     }

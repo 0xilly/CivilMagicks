@@ -56,6 +56,7 @@ public class ClientProxy implements IProxy {
     public void renderBlockItems() {
         FXHelper.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
         FXHelper.renderItemsBlocks(ModBlocks.nodeCivilAnalyzer, "civilanalyzer");
+//        FXHelper.renderItemsBlocks(ModBlocks.blockGeneralStar);
     }
 
 }
