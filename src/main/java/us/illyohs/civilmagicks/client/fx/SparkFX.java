@@ -31,8 +31,15 @@ import net.minecraft.world.World;
 
 public class SparkFX extends EntityFX {
 
-    public SparkFX(World world, double posX, double posY, double posZ) {
-        super(world, posX, posY, posZ);
+    public SparkFX(World world, double xCoord, double yCoord, double zCoord, double xSpeed, double ySpeed, double zSpeed) {
+        super(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed);
+
+
+
+    }
+
+    public int getFXLayer() {
+        return 0;
     }
 
     public void setAlpha(float alpha) {
