@@ -35,8 +35,8 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class FXHelper {
 
-    public static void bindTextureMC(ResourceLocation texutre) {
-        Minecraft.getMinecraft().renderEngine.bindTexture(texutre);
+    public static void bindTextureMC(ResourceLocation texture) {
+        Minecraft.getMinecraft().renderEngine.bindTexture(texture);
     }
 
     public static void bindTextureFML(ResourceLocation texture) {

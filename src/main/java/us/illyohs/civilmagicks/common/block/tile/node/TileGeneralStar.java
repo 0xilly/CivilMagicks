@@ -25,12 +25,15 @@
  */
 package us.illyohs.civilmagicks.common.block.tile.node;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import us.illyohs.civilmagicks.api.CivilMagicksAPI;
 import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 import us.illyohs.civilmagicks.api.tile.TileStar;
+import us.illyohs.civilmagicks.client.core.lib.LibAssets;
+import us.illyohs.civilmagicks.client.fx.BaseParticleFX;
 
 public class TileGeneralStar extends TileStar {
     
@@ -71,7 +74,9 @@ public class TileGeneralStar extends TileStar {
     
     @Override
     public void update() {
-
+        if (world.isRemote) {
+            Minecraft.getMinecraft().effectRenderer.addEffect(new BaseParticleFX(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(),2.0, 2.0, 2.0, "0xffff7e", 0.5F, .05F, 200, 200, LibAssets.spark));
+        }
     }
     
     
