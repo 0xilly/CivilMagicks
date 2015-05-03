@@ -28,12 +28,16 @@ package us.illyohs.civilmagicks.api.grimoire;
 
 public class GrimoireCatagory {
 
-    String catagory;
-    String description;
+    String  catagory;
+    String  description;
+    int     color;
+    int     blend;
 
-    public GrimoireCatagory(String catagory, String description) {
-        this.catagory = catagory;
-        this.description= description;
+    public GrimoireCatagory(String catagory, String description, int color, int blend) {
+        this.catagory       = catagory;
+        this.description    = description;
+        this.color          = color;
+        this.blend          = blend;
     }
 
     public String getCatagory() {
@@ -44,11 +48,27 @@ public class GrimoireCatagory {
         return description;
     }
 
+    public int getColor() {
+        return color;
+    }
+
+    public int getBlend() {
+        return blend;
+    }
+
     public void setCatagory(String catagory) {
         this.catagory = catagory;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public void setBlend(int blend) {
+        this.blend = blend;
     }
 }

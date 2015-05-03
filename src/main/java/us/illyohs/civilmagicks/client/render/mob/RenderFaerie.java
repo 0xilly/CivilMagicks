@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  * All rights reserved.
  *
@@ -24,10 +24,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagicks.api.grimoire;
+package us.illyohs.civilmagicks.client.render.mob;
 
-/**
- *
- */
-public interface IGrimoireMob {
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+
+public class RenderFaerie extends Render {
+
+    public RenderFaerie(RenderManager render) {
+        super(render);
+
+    }
+
+    public void doRender(Entity entity, double x, double y, double z, float entityYaw, float partialTicks) {
+
+    }
+
+    @Override
+    protected ResourceLocation getEntityTexture(Entity entity) {
+        return null;
+    }
 }

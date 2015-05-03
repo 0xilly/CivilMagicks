@@ -25,6 +25,16 @@
  */
 package us.illyohs.civilmagicks.common.core.helper;
 
+import net.minecraft.entity.player.EntityPlayer;
+
 public class CivilHelper {
+
+    public static boolean isPlayerCivil(EntityPlayer player){
+        if(player.getNBTTagCompound().getBoolean("isCivil") == true) {
+            return true;
+        }
+
+        return false;
+    }
 
 }
