@@ -10,7 +10,8 @@ jdk:
 before_install:
  - chmod +x gradlew
 
-script: ./gradlew build -S
+install: ./gradlew setupCiWorkspace -S
+script: ./gradlew build
 
 env:
   global:
