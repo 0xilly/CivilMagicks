@@ -57,9 +57,9 @@ public class BaseParticleFX extends EntityFX {
 
     }
 
-    public BaseParticleFX(World world, double xCoord, double yCoord, double zCoord, double xSpeed, double ySpeed, double zSpeed, String color, float alpha, float gravity, int brightness, int age, ResourceLocation texture) {
+    public BaseParticleFX(World world, double xCoord, double yCoord, double zCoord, double xSpeed, double ySpeed, double zSpeed, int color, float alpha, float gravity, int brightness, int age, ResourceLocation texture) {
         super(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed);
-        Color HEXTORGB = Color.decode(color);
+        Color HEXTORGB = new Color(color);
         this.motionX            = xSpeed;
         this.motionY            = ySpeed;
         this.motionZ            = zSpeed;
@@ -93,7 +93,7 @@ public class BaseParticleFX extends EntityFX {
         float y = (float)(this.prevPosY+(this.posY-this.prevPosY)*par2-interpPosY);
     	float z = (float)(this.prevPosZ+(this.posZ-this.prevPosZ)*par2-interpPosZ);
 
-        FXHelper.bindTextureFML(resourceLocation);
+        FXHelper.bindTextureMC(resourceLocation);
 
         wr.startDrawingQuads();
 

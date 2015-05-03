@@ -25,12 +25,16 @@
  */
 package us.illyohs.civilmagicks.client.core.helper;
 
+import us.illyohs.civilmagicks.client.core.lib.LibAssets;
+import us.illyohs.civilmagicks.client.fx.BaseParticleFX;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class FXHelper {
@@ -47,5 +51,18 @@ public class FXHelper {
         Item item = Item.getItemFromBlock(block);
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(LibInfo.MOD_ID + ":" + texture));
     }
+    
+//    Minecraft.getMinecraft().effectRenderer.addEffect(new BaseParticleFX(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(),2.0, 2.0, 2.0, "0xffff7e", 0.5F, .05F, 200, 200, LibAssets.spark))
+    public static void bindEffect(EntityFX entity){
+        Minecraft.getMinecraft().effectRenderer.addEffect(entity);
+    }
+    
+    public void spark(World world, double xCoord,double yCoord,double zCoord,double xSpeed, double ySpeed, double zSpeed, int color, float alpha, float gravity, int brightness, int age) {
+        ResourceLocation texture = LibAssets.spark;
+        bindEffect(new BaseParticleFX(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed, color, alpha, gravity, brightness, age, texture));
+        
+    }
+    
+    
 
 }

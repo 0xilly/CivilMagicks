@@ -52,6 +52,8 @@ public class BlockGeneralStar extends BlockStar {
         System.out.println("Boop");
         
     }
+//    Minecraft.getMinecraft().effectRenderer.addEffect(new BaseParticleFX(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(),2.0, 2.0, 2.0, "0xffff7e", 0.5F, .05F, 200, 200, LibAssets.spark))
+    
     
     @Override
     public TileEntity createNewTileEntity(World world, int meta) {

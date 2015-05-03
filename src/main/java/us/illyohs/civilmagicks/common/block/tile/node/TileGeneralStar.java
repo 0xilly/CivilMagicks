@@ -75,7 +75,7 @@ public class TileGeneralStar extends TileStar {
     @Override
     public void update() {
         if (world.isRemote) {
-            Minecraft.getMinecraft().effectRenderer.addEffect(new BaseParticleFX(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(),2.0, 2.0, 2.0, "0xffff7e", 0.5F, .05F, 200, 200, LibAssets.spark));
+            
         }
     }
     
