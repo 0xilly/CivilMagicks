@@ -74,9 +74,6 @@ public class TileGeneralStar extends TileStar {
     
     @Override
     public void update() {
-        if (world.isRemote) {
-            
-        }
     }
     
     

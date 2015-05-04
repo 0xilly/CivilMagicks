@@ -35,6 +35,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 import us.illyohs.civilmagicks.client.core.helper.FXHelper;
+import us.illyohs.civilmagicks.client.core.lib.LibAssets;
 
 import java.awt.Color;
 
@@ -43,15 +44,16 @@ public class BaseParticleFX extends EntityFX {
 
     public ResourceLocation resourceLocation;
     public int brightness;
+    double red, green, blue;
 
     public BaseParticleFX(World world, double xCoord, double yCoord, double zCoord, double xSpeed, double ySpeed, double zSpeed, float red, float green, float blue, float alpha, float gravity, int age) {
         super(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed);
         this.motionX            = xSpeed;
         this.motionY            = ySpeed;
         this.motionZ            = zSpeed;
-        this.particleRed        = red;
-        this.particleGreen      = green;
-        this.particleBlue       = blue;
+        this.red                = red;
+        this.green              = green;
+        this.blue               = blue;
         this.particleAlpha      = alpha;
         this.particleGravity    = gravity;
 
@@ -63,9 +65,9 @@ public class BaseParticleFX extends EntityFX {
         this.motionX            = xSpeed;
         this.motionY            = ySpeed;
         this.motionZ            = zSpeed;
-        this.particleRed        = (float)HEXTORGB.getRed();
-        this.particleGreen      = (float)HEXTORGB.getGreen();
-        this.particleBlue       = (float)HEXTORGB.getBlue();
+        this.red                = (float)HEXTORGB.getRed();
+        this.green              = (float)HEXTORGB.getGreen();
+        this.blue               = (float)HEXTORGB.getBlue();
         this.particleAlpha      = alpha;
         this.particleGravity    = gravity;
         this.particleMaxAge     = age;
@@ -93,9 +95,10 @@ public class BaseParticleFX extends EntityFX {
         float y = (float)(this.prevPosY+(this.posY-this.prevPosY)*par2-interpPosY);
     	float z = (float)(this.prevPosZ+(this.posZ-this.prevPosZ)*par2-interpPosZ);
 
-        FXHelper.bindTextureMC(resourceLocation);
+        FXHelper.bindTextureMC(LibAssets.spark);
 
         wr.startDrawingQuads();
+        wr.setColorRGBA_F((float) red, (float) green, (float) blue, particleAlpha);
 
         wr.setBrightness(brightness);
         wr.addVertexWithUV((double) (x - par3 * pScale - par6 * pScale), (double) (y - par4 * pScale), (double) (z - par5 * pScale - par7 * pScale), 0, 0);
@@ -113,9 +116,11 @@ public class BaseParticleFX extends EntityFX {
     }
 
     public void onUpdate() {
+        super.onUpdate();
         if(particleAge >= particleMaxAge) {
             this.setDead();
         }
+//        System.out.println("foo");
         if(Minecraft.getMinecraft().gameSettings.particleSetting==2) {
             this.setDead();
         }

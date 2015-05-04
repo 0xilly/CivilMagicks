@@ -30,60 +30,16 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
+import us.illyohs.civilmagicks.client.core.helper.FXHelper;
 
 public class RenderGeneralStar extends TileEntitySpecialRenderer {
 
     @Override
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float p_180535_8_, int p_180535_9_) {
-        int red         = 1;
-        int green       = 1;
-        int blue        = 1;
-        float alpha     = 1;
-        int brightnes   = 100;
-        
-//        GlStateManager.alphaFunc(func, ref);
-//        GlStateManager.b
-        
-        renderStar(red, green, blue, .05f, brightnes);
+//        FXHelper.spark(this.getWorld(),(double) x, (double));
+
     }
 
 
-    private void renderStar(int r, int g, int b, float alpha, int brightnes) {
-        
-
-        Tessellator tess = Tessellator.getInstance();
-        WorldRenderer wr = tess.getWorldRenderer();
-        
-        GlStateManager.pushAttrib();
-        GlStateManager.pushMatrix();
-        
-        wr.startDrawingQuads();
-        wr.setBrightness(200);
-        
-/*        wr.setColorRGBA_F((float)r, (float)g, (float)b, alpha);
-        
-        wr.addVertexWithUV(0, 0, 0, 0, 0);
-        wr.addVertexWithUV(0, 1, 0, 0, 1);
-        wr.addVertexWithUV(1, 1, 0, 1, 1);
-        wr.addVertexWithUV(1, 0, 0, 1, 0);
-        
-        wr.addVertexWithUV(0, 0, 0, 0, 0);
-        wr.addVertexWithUV(1, 0, 0, 1, 0);
-        wr.addVertexWithUV(1, 1, 0, 1, 1);
-        wr.addVertexWithUV(0, 1, 0, 0, 1);
-*/      
-        
-        //frame1
-        wr.addVertexWithUV(0, 0, 0, 0, 0);
-        wr.addVertexWithUV(0, 1, 0, 0, 1);
-        wr.addVertexWithUV(0, 1, 0, 1, 1);
-        wr.addVertexWithUV(0, 1, 0, 1, 0);
-        
-        tess.draw();
-    }
-    
-    private void frame() {
-        
-    }
 
 }

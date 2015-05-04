@@ -28,7 +28,40 @@ package us.illyohs.civilmagicks.api.grimoire;
 
 public class GrimoirePage {
 
-    public String title         = null;
-    public String description   = null;
-//    public String
+    public String title;
+    public String description;
+    public String lore;
+    public String imgpath;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getLore() {
+        return lore;
+    }
+
+    public String getImgpath() {
+        return imgpath;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setLore(String lore) {
+        this.lore = lore;
+    }
+
+    public void setImgpath(String imgpath) {
+        this.imgpath = imgpath;
+    }
 }

@@ -57,10 +57,9 @@ public class FXHelper {
         Minecraft.getMinecraft().effectRenderer.addEffect(entity);
     }
     
-    public void spark(World world, double xCoord,double yCoord,double zCoord,double xSpeed, double ySpeed, double zSpeed, int color, float alpha, float gravity, int brightness, int age) {
+    public static void spark(World world, double xCoord,double yCoord,double zCoord,double xSpeed, double ySpeed, double zSpeed, int color, float alpha, float gravity, int brightness, int age) {
         ResourceLocation texture = LibAssets.spark;
         bindEffect(new BaseParticleFX(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed, color, alpha, gravity, brightness, age, texture));
-        
     }
     
     

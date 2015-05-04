@@ -30,6 +30,7 @@ import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import us.illyohs.civilmagicks.client.core.lib.LibAssets;
 
 public class RenderFaerie extends Render {
 
@@ -44,6 +45,6 @@ public class RenderFaerie extends Render {
 
     @Override
     protected ResourceLocation getEntityTexture(Entity entity) {
-        return null;
+        return LibAssets.spark;
     }
 }
