@@ -26,7 +26,14 @@
 
 package us.illyohs.civilmagicks.api.grimoire;
 
+import java.util.LinkedHashMap;
+
 public class GrimoireRegistry {
 
-//    public static
+    public static LinkedHashMap<String, GrimoireCatagory> cataReg = new LinkedHashMap<String, GrimoireCatagory>();
+
+    public GrimoireRegistry() {
+
+
+    }
 }
