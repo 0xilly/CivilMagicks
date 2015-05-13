@@ -25,15 +25,12 @@
  */
 package us.illyohs.civilmagicks.common.block.tile.node;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import us.illyohs.civilmagicks.api.CivilMagicksAPI;
 import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 import us.illyohs.civilmagicks.api.tile.TileStar;
-import us.illyohs.civilmagicks.client.core.lib.LibAssets;
-import us.illyohs.civilmagicks.client.fx.BaseParticleFX;
 
 public class TileGeneralStar extends TileStar {
     

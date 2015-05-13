@@ -26,14 +26,26 @@
 
 package us.illyohs.civilmagicks.api.grimoire;
 
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 
 public class GrimoireRegistry {
 
-    public static LinkedHashMap<String, GrimoireCatagory> cataReg = new LinkedHashMap<String, GrimoireCatagory>();
+    public static HashMap<String, GrimoireCatagory> cataReg = new HashMap<String, GrimoireCatagory>();
+    
 
     public GrimoireRegistry() {
+    	cataReg.put("BASICS", new GrimoireCatagory("Your introduction to the proper way spell casting",
+    			0x3cd4fc, 1));
+    	cataReg.put("FAMILIARS", new GrimoireCatagory("Don't dirty your hands", 0xffff7e, 1));
+    	cataReg.put("COOKING", new GrimoireCatagory("Mmm bagels", 0x3cd4fc, 1));
 
-
+    }
+    
+    public static void registerCatagory(String catagoryname, GrimoireCatagory catagoryclass) {
+    	cataReg.put(catagoryname, catagoryclass);
+    }
+    
+    public static void registerPage(String pagename, String catagory, GrimoirePage page) {
+    	
     }
 }

@@ -25,6 +25,8 @@
  */
 package us.illyohs.civilmagicks.common.block.nodes;
 
+import java.util.Random;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -34,13 +36,9 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import us.illyohs.civilmagicks.api.block.BlockStar;
 import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
-import us.illyohs.civilmagicks.client.core.helper.FXHelper;
-import us.illyohs.civilmagicks.client.core.lib.LibAssets;
 import us.illyohs.civilmagicks.client.fx.BaseParticleFX;
 import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-
-import java.util.Random;
 
 public class BlockGeneralStar extends BlockStar {
 

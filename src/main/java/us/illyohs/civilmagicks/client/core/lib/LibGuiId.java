@@ -27,6 +27,6 @@ package us.illyohs.civilmagicks.client.core.lib;
 
 public class LibGuiId {
 
-    public static int BOOK_CIVILTOME = 0;
+    public static int  Grimoire = 0;
 
 }
