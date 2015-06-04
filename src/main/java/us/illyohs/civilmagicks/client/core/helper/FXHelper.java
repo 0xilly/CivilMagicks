@@ -25,9 +25,6 @@
  */
 package us.illyohs.civilmagicks.client.core.helper;
 
-import us.illyohs.civilmagicks.client.core.lib.LibAssets;
-import us.illyohs.civilmagicks.client.fx.BaseParticleFX;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
@@ -36,6 +33,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import us.illyohs.civilmagicks.client.core.lib.LibAssets;
+import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class FXHelper {
 
@@ -59,7 +58,7 @@ public class FXHelper {
     
     public static void spark(World world, double xCoord,double yCoord,double zCoord,double xSpeed, double ySpeed, double zSpeed, int color, float alpha, float gravity, int brightness, int age) {
         ResourceLocation texture = LibAssets.spark;
-        bindEffect(new BaseParticleFX(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed, color, alpha, gravity, brightness, age, texture));
+//        bindEffect(new BaseParticleFX(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed, color, alpha, gravity, brightness, age, texture));
     }
     
     

@@ -28,7 +28,6 @@ package us.illyohs.civilmagicks.common.block.nodes;
 import java.util.Random;
 
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
@@ -36,7 +35,6 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import us.illyohs.civilmagicks.api.block.BlockStar;
 import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
-import us.illyohs.civilmagicks.client.fx.BaseParticleFX;
 import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
@@ -61,7 +59,7 @@ public class BlockGeneralStar extends BlockStar {
     
     public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 //        FXHelper.spark(worldIn, pos.getX(), pos.getY(), pos.getZ(), 1, 2, 3, 0x3cd4fc, 0.1f, 2.0F, 200, 3);
-        Minecraft.getMinecraft().effectRenderer.addEffect(new BaseParticleFX(worldIn, pos.getX(), pos.getY(), pos.getZ(), 1, 2, 3, 0x3cd4fc, 0.1f, 2.0F, 200, 3, null));
+//        Minecraft.getMinecraft().effectRenderer.addEffect(new BaseParticleFX(worldIn, pos.getX(), pos.getY(), pos.getZ(), 1, 2, 3, 0x3cd4fc, 0.1f, 2.0F, 200, 3, null));
 
     }
     @Override
