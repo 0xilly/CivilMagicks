@@ -36,12 +36,16 @@ public class ModItems {
 
     public static Item itemManaShard;
     
+    public static Item itemWrit;
+    
+    
     //Armor
     public static ItemArmor armorMonocle;
 
     public static void init() {
 
         itemManaShard = new ItemManaShard();
+        itemWrit = new ItemWrit();
         
         //Armor
         armorMonocle = new ArmorMonocle();
