@@ -25,6 +25,8 @@
  */
 package us.illyohs.civilmagicks.client.core.helper;
 
+import java.awt.Color;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
@@ -37,7 +39,12 @@ import us.illyohs.civilmagicks.client.core.lib.LibAssets;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class FXHelper {
-
+    
+    int red;
+    int blue;
+    int green;
+    int alpha;
+    
     public static void bindTextureMC(ResourceLocation texture) {
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
     }
@@ -61,6 +68,53 @@ public class FXHelper {
 //        bindEffect(new BaseParticleFX(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed, color, alpha, gravity, brightness, age, texture));
     }
     
+    public void HexToRgb(int hex) {
+        Color color = new Color(hex);
+        setRed(color.getRed());
+        setBlue(color.getBlue());
+        setGreen(color.getGreen());
+    }
     
+    public void HexToRgba(int hex) {
+        Color color = new Color(hex);
+        setRed(color.getRed());
+        setBlue(color.getBlue());
+        setGreen(color.getGreen());
+        setAlpha(color.getAlpha());
+    }
+
+    
+    
+    public int getRed() {
+        return red;
+    }
+    
+    public void setRed(int red) {
+        this.red = red;
+    }
+    
+    public int getBlue() {
+        return blue;
+    }
+    
+    public void setBlue(int blue) {
+        this.blue = blue;
+    }
+    
+    public int getGreen() {
+        return green;
+    }
+    
+    public void setGreen(int green) {
+        this.green = green;
+    }
+    
+    public int getAlpha() {
+        return alpha;
+    }
+    
+    public void setAlpha(int alpha) {
+        this.alpha = alpha;
+    }
 
 }

@@ -26,6 +26,7 @@
 
 package us.illyohs.civilmagicks.client.render.mob;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
@@ -40,11 +41,16 @@ public class RenderFaerie extends Render {
     }
 
     public void doRender(Entity entity, double x, double y, double z, float entityYaw, float partialTicks) {
-
+        GlStateManager.pushMatrix();
+        
+        
+        GlStateManager.popMatrix();
     }
 
     @Override
     protected ResourceLocation getEntityTexture(Entity entity) {
         return LibAssets.spark;
     }
+    
+//    private 
 }
