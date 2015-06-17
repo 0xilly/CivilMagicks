@@ -27,8 +27,6 @@ package us.illyohs.civilmagicks.client.core.helper;
 
 import java.awt.Color;
 
-import org.omg.CORBA.REBIND;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
@@ -40,7 +38,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
-import scala.annotation.meta.getter;
+
 import us.illyohs.civilmagicks.client.core.lib.LibAssets;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
