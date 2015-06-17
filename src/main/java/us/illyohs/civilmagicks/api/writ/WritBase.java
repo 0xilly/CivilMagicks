@@ -24,9 +24,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagicks.api.spells;
+package us.illyohs.civilmagicks.api.writ;
 
-public abstract class SpellBase {
+public abstract class WritBase {
 
     public String name;
 //    public String
