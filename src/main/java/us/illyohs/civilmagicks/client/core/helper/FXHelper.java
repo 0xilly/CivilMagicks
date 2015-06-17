@@ -27,23 +27,31 @@ package us.illyohs.civilmagicks.client.core.helper;
 
 import java.awt.Color;
 
+import org.omg.CORBA.REBIND;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import scala.annotation.meta.getter;
 import us.illyohs.civilmagicks.client.core.lib.LibAssets;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class FXHelper {
     
-    int red;
-    int blue;
-    int green;
-    int alpha;
+    static int red;
+    static int blue;
+    static int green;
+    static int alpha;
+    
+    static int hex;
     
     public static void bindTextureMC(ResourceLocation texture) {
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
@@ -68,6 +76,29 @@ public class FXHelper {
 //        bindEffect(new BaseParticleFX(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed, color, alpha, gravity, brightness, age, texture));
     }
     
+    public static void renderAnimatedSpritSheet(World world, double xCoord, double yCoord,double zCoord,double xSpeed, double ySpeed, double zSpeed, float red, float green, float blue, float alpha, ResourceLocation spriteSheet) {
+//        red = getRed();
+        WorldRenderer wr = Tessellator.getInstance().getWorldRenderer();
+        GlStateManager.pushAttrib();
+        GlStateManager.pushMatrix();
+        
+        
+        wr.setColorRGBA_F((float)getRed(), (float)getGreen(), (float)getBlue(), alpha);
+       
+        wr.startDrawingQuads();
+        
+        Tessellator.getInstance().draw();
+        
+        GlStateManager.popAttrib();
+        GlStateManager.popMatrix();
+    }
+    
+    public static void renderAnimatedSprite(World world, double xCoord, double yCoord,double zCoord,double xSpeed, double ySpeed, double zSpeed, int hex, float alpha, ResourceLocation spriteSheet) {
+//        FXHelper.
+        renderAnimatedSpritSheet(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed, alpha, alpha, hex, alpha, spriteSheet);
+        
+    }
+    
     public void HexToRgb(int hex) {
         Color color = new Color(hex);
         setRed(color.getRed());
@@ -82,10 +113,8 @@ public class FXHelper {
         setGreen(color.getGreen());
         setAlpha(color.getAlpha());
     }
-
     
-    
-    public int getRed() {
+    public static int getRed() {
         return red;
     }
     
@@ -93,7 +122,7 @@ public class FXHelper {
         this.red = red;
     }
     
-    public int getBlue() {
+    public static int getBlue() {
         return blue;
     }
     
@@ -101,7 +130,7 @@ public class FXHelper {
         this.blue = blue;
     }
     
-    public int getGreen() {
+    public static int getGreen() {
         return green;
     }
     
@@ -109,12 +138,20 @@ public class FXHelper {
         this.green = green;
     }
     
-    public int getAlpha() {
+    public static int getAlpha() {
         return alpha;
     }
     
     public void setAlpha(int alpha) {
         this.alpha = alpha;
+    }
+    
+    public static int getHex() {
+        return hex;
+    }
+    
+    public static void setHex(int hex) {
+        FXHelper.hex = hex;
     }
 
 }
