@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
  * All rights reserved.
  *
@@ -24,10 +24,11 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagicks.api.grimoire;
+package us.illyohs.civilmagicks.api.writ;
 
-/**
- *
- */
-public interface IGrimoireMob {
+public abstract class WritBase {
+
+    public String name;
+//    public String
+
 }

@@ -27,9 +27,9 @@ package us.illyohs.civilmagicks.common.block.nodes;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
 import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
@@ -38,7 +38,7 @@ public class ManaRing extends BlockContainer {
     public ManaRing() {
         super(Material.rock);
         setUnlocalizedName(LibInfo.MOD_ID+":manaring");
-        setCreativeTab(CreativeTabs.tabBrewing);
+        setCreativeTab(CivilTab.BLOCKS);
     }
 
     @Override
@@ -46,15 +46,20 @@ public class ManaRing extends BlockContainer {
         return new TileNodeManaRing();
     }
     
-   @Override 
-   public int getRenderType(){
+    @Override
+    public int getRenderType(){
        return -1;
-   }
+    }
+
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
+    }
    
 //   @Override
 //   public boolean isNormalCube(IBlockAccess world, BlockPos pos) {
-//	return false;
-//	   
+//       return false;
+//
 //   }
 
 }

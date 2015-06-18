@@ -5,10 +5,10 @@
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
- * * Redistributions of source code must retain the above copyright notice, this
+ *  Redistributions of source code must retain the above copyright notice, this
  *   list of conditions and the following disclaimer.
  *
- * * Redistributions in binary form must reproduce the above copyright notice,
+ *  Redistributions in binary form must reproduce the above copyright notice,
  *   this list of conditions and the following disclaimer in the documentation
  *   and/or other materials provided with the distribution.
  *
@@ -23,10 +23,29 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.client.core.lib;
 
-public class LibGuiId {
+package us.illyohs.civilmagicks.api.grimoire;
 
-    public static int  Grimoire = 0;
+import java.util.HashMap;
 
+public class GrimoireRegistry {
+
+    public static HashMap<String, GrimoireCatagory> cataReg = new HashMap<String, GrimoireCatagory>();
+    
+
+    public GrimoireRegistry() {
+    	cataReg.put("BASICS", new GrimoireCatagory("Your introduction to the proper way spell casting",
+    			0x3cd4fc, 1));
+    	cataReg.put("FAMILIARS", new GrimoireCatagory("Don't dirty your hands", 0xffff7e, 1));
+    	cataReg.put("COOKING", new GrimoireCatagory("Mmm bagels", 0x3cd4fc, 1));
+
+    }
+    
+    public static void registerCatagory(String catagoryname, GrimoireCatagory catagoryclass) {
+    	cataReg.put(catagoryname, catagoryclass);
+    }
+    
+    public static void registerPage(String pagename, String catagory, GrimoirePage page) {
+    	
+    }
 }

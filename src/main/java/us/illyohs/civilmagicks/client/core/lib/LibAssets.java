@@ -29,12 +29,13 @@ import us.illyohs.civilmagicks.client.core.helper.ResourceLocationHelper;
 import net.minecraft.util.ResourceLocation;
 
 public class LibAssets {
-	
-	//Models
-	public static final ResourceLocation manaRing = ResourceLocationHelper.getModelAsset("woodslate");
-	
-	//GUIs
-	public static final ResourceLocation civilBar = ResourceLocationHelper.getGUIAsset("civilbar");
-	public static final ResourceLocation civilTome = ResourceLocationHelper.getGUIAsset("civiltome");
+    //Models
+    public static final ResourceLocation manaRing = ResourceLocationHelper.getModelAsset("woodslate");
 
+    //GUIs
+    public static final ResourceLocation civilBar  = ResourceLocationHelper.getGUIAsset("civilbar");
+    public static final ResourceLocation civilTome = ResourceLocationHelper.getGUIAsset("civiltome");
+
+    //Particles
+    public static final ResourceLocation spark = ResourceLocationHelper.getParticle("spark");
 }

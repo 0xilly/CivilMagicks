@@ -25,40 +25,21 @@
  */
 package us.illyohs.civilmagicks.client.render.tile;
 
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
+import us.illyohs.civilmagicks.client.core.helper.FXHelper;
 
 public class RenderGeneralStar extends TileEntitySpecialRenderer {
 
     @Override
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float p_180535_8_, int p_180535_9_) {
-        int red     = 1;
-        int green     = 1;
-        int blue     = 1;
-        float alpha = 1;
-        int brightnes = 100;
-        
-//        GlStateManager.alphaFunc(func, ref);
-//        GlStateManager.b
-        
-        renderStar(red, green, blue, .05f, brightnes);
+//        FXHelper.spark(this.getWorld(),(double) x, (double));
+
     }
 
 
-    private void renderStar(int r, int g, int b, float alpha, int brightnes) {
-        
-        int HIGHT = 128;
-        int WIDTH = 896;
-        Tessellator tess = Tessellator.getInstance();
-        WorldRenderer wr = tess.getWorldRenderer();
-        
-        wr.startDrawingQuads();
-        wr.addVertexWithUV(0, 0, 0, 0, 0);
-        
-        wr.setColorRGBA_F((float)r, (float)g, (float)b, alpha);
-        
-    }
 
 }

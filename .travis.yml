@@ -1,0 +1,22 @@
+sudo: false
+
+language: java
+jdk:
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk7
+  - openjdk6
+
+before_install:
+ - chmod +x gradlew
+
+install: ./gradlew setupCiWorkspace -S
+script: ./gradlew build
+
+env:
+  global:
+    TERM=dumb
+
+notifications:
+  email: false
+  irc: "irc.esper.net#illyohs"

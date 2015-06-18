@@ -30,7 +30,7 @@ import net.minecraft.entity.passive.EntityTameable;
 
 public class EntityFaerie extends EntityAIFollowOwner {
 
-    public EntityFaerie(EntityTameable p_i1625_1_, double p_i1625_2_, float p_i1625_4_, float p_i1625_5_) {
-        super(p_i1625_1_, p_i1625_2_, p_i1625_4_, p_i1625_5_);
+    public EntityFaerie(EntityTameable et, double p_i1625_2_, float p_i1625_4_, float p_i1625_5_) {
+        super(et, p_i1625_2_, p_i1625_4_, p_i1625_5_);
     }
 }

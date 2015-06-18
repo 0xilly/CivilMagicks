@@ -25,10 +25,10 @@
  */
 package us.illyohs.civilmagicks.api.civilregistry;
 
-import java.util.HashMap;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+
+import java.util.HashMap;
 
 public class CivilRegistry {
     
@@ -129,7 +129,6 @@ public class CivilRegistry {
         civilReg.put(new CivilObject(Blocks.log2, 0), uncivilized);
         civilReg.put(new CivilObject(Blocks.log2, 1), uncivilized);
     }
-
 
     private void registerUnCivilItems(CivilStatus uncivilized) {        
         civilReg.put(new CivilObject(Items.wooden_axe, 0), uncivilized);
@@ -305,5 +304,6 @@ public class CivilRegistry {
         civilReg.put(new CivilObject(Items.written_book, 0), civilized);
         
     }
+
 
 }

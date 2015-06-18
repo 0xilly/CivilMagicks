@@ -48,9 +48,6 @@ public class CommonProxy implements IProxy {
 		
 	}
 
-    /* (non-Javadoc)
-     * @see us.illyohs.civilmagicks.common.core.lib.IProxy#renderBlockItems()
-     */
     @Override
     public void renderBlockItems() {
         //NO-OP
