@@ -23,18 +23,8 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.item.mana;
+package us.illyohs.civilmagicks.common.item.mics;
 
-import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-
-public class ItemManaShard extends Item {
-    
-    public ItemManaShard() {
-        setUnlocalizedName(LibInfo.MOD_ID + ":manashard");
-        setCreativeTab(CivilTab.BLOCKS);
-    }
+public class ItemManaWand {
 
 }

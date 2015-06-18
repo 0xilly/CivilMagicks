@@ -1,5 +1,5 @@
 {
-    "parent": "civilmagicks:builtin/generated",
+    "parent": "builtin/generated",
     "textures": {
         "layer0": "civilmagicks:items/manashard"
     },

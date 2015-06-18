@@ -36,6 +36,8 @@ public class ModItems {
 
     public static Item itemManaShard;
     
+    public static Item itemWand;
+    
     public static Item itemWrit;
     
     
@@ -45,7 +47,7 @@ public class ModItems {
     public static void init() {
 
         itemManaShard = new ItemManaShard();
-        itemWrit = new ItemWrit();
+//        itemWrit = new ItemWrit();
         
         //Armor
         armorMonocle = new ArmorMonocle();
@@ -54,6 +56,6 @@ public class ModItems {
     }
 
     private static void gameReg() {
-        GameRegistry.registerItem(itemManaShard, LibInfo.MOD_ID + "_manashard");        
+        GameRegistry.registerItem(itemManaShard, "manashard");        
     }	
 }
