@@ -23,43 +23,29 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.client.core;
+package us.illyohs.civilmagicks.common.block;
 
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-import us.illyohs.civilmagicks.client.core.helper.FXHelper;
-import us.illyohs.civilmagicks.client.render.tile.RenderGeneralStar;
-import us.illyohs.civilmagicks.client.render.tile.RenderSigil;
-import us.illyohs.civilmagicks.client.render.tile.RenderTileManaRing;
-import us.illyohs.civilmagicks.common.block.ModBlocks;
+import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
 import us.illyohs.civilmagicks.common.block.tile.TileSigil;
-import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
-import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
-import us.illyohs.civilmagicks.common.core.lib.IProxy;
+import us.illyohs.civilmagicks.common.core.lib.LibBlockNames;
+import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.material.Material;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
-public class ClientProxy implements IProxy {
+public class BlockSigil extends Block implements ITileEntityProvider{
 
-    @Override
-    public void bindModelsAndTextures() {
-        ClientRegistry.bindTileEntitySpecialRenderer(TileNodeManaRing.class, new RenderTileManaRing());
-        ClientRegistry.bindTileEntitySpecialRenderer(TileGeneralStar.class, new RenderGeneralStar());
-        ClientRegistry.bindTileEntitySpecialRenderer(TileSigil.class, new RenderSigil());
+    public BlockSigil() {
+        super(Material.rock);
+        setUnlocalizedName(LibBlockNames.SUMMONSIGIL);
+        setBlockBounds(0.0F, 0.0F, 0.0f, 1.0f, 0.0625f, 1.0f);
+        setCreativeTab(CivilTab.BLOCKS);
     }
 
     @Override
-    public void registerTileEntitys() {
-        //NO-OP
-    }
-
-    @Override
-    public void registerMobs() {
-        //NO-OP
-    }
-
-    @Override
-    public void renderBlockItems() {
-        FXHelper.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
-        FXHelper.renderItemsBlocks(ModBlocks.nodeCivilAnalyzer, "civilanalyzer");
-//        FXHelper.renderItemsBlocks(ModBlocks.blockGeneralStar);
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return new TileSigil();
     }
 
 }

@@ -9,6 +9,7 @@ public class EntityServant extends EntityCreature {
         super(worldIn);
     }
     
+    @Override
     protected boolean canDespawn() {
         return false;
         

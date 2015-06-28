@@ -31,6 +31,7 @@ import us.illyohs.civilmagicks.api.block.BlockStar;
 import us.illyohs.civilmagicks.common.block.nodes.BlockGeneralStar;
 import us.illyohs.civilmagicks.common.block.nodes.ManaRing;
 import us.illyohs.civilmagicks.common.block.nodes.NodeCivilAnalyzer;
+import us.illyohs.civilmagicks.common.block.tile.TileSigil;
 import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
 import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
 import us.illyohs.civilmagicks.common.block.world.BlockManaStone;
@@ -38,24 +39,28 @@ import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class ModBlocks {
 
-    public static Block blockGrindStone;
-    public static Block blockManaRing;
-    public static Block nodeCivilAnalyzer;
+    public static Block     blockGrindStone;
+    public static Block     blockManaRing;
+    public static Block     nodeCivilAnalyzer;
 
-    public static Block blockManaStone;
+    public static Block     blockManaStone;
 
     public static BlockStar blockGeneralStar;
 
-    //	public static Block
+    public static Block     blockSigil;
+
+    // public static Block
 
     public static void init() {
 
         blockManaStone = new BlockManaStone();
         blockManaRing = new ManaRing();
-        
+
         nodeCivilAnalyzer = new NodeCivilAnalyzer();
 
         blockGeneralStar = new BlockGeneralStar();
+
+        blockSigil = new BlockSigil();
 
         gameRegBlock();
         gameRegTile();
@@ -66,13 +71,14 @@ public class ModBlocks {
         GameRegistry.registerBlock(blockManaRing, LibInfo.MOD_ID + "_manaring");
         GameRegistry.registerBlock(blockGeneralStar, "generalstar");
         GameRegistry.registerBlock(nodeCivilAnalyzer, "civilanalyzer");
+        GameRegistry.registerBlock(blockSigil, "blockSigil");
 
     }
 
     private static void gameRegTile() {
         GameRegistry.registerTileEntity(TileNodeManaRing.class, LibInfo.MOD_ID + "manaring_tile");
-        GameRegistry.registerTileEntity(TileGeneralStar.class, LibInfo.MOD_ID +"genralstar");
+        GameRegistry.registerTileEntity(TileGeneralStar.class, LibInfo.MOD_ID + "genralstar");
+        GameRegistry.registerTileEntity(TileSigil.class, "tilesigil");
     }
-
 
 }
