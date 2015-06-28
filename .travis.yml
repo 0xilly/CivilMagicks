@@ -17,6 +17,3 @@ env:
   global:
     TERM=dumb
 
-notifications:
-  email: false
-  irc: "irc.esper.net#illyohs"
