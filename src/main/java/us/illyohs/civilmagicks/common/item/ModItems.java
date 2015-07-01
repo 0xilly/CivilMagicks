@@ -38,7 +38,9 @@ public class ModItems {
     
     public static Item itemWand;
     
-    public static Item itemWrit;
+    public static Item itemContract;
+    public static Item itemSigil;
+//    public static Item
     
     
     //Armor
