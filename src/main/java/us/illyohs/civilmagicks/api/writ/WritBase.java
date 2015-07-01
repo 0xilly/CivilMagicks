@@ -26,9 +26,57 @@
 
 package us.illyohs.civilmagicks.api.writ;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.BlockPos;
+
 public abstract class WritBase {
 
-    public String name;
-//    public String
+    public String       name;
+    public int          length;
+    public EntityPlayer player;
+    public boolean      isProtected;
+
+    public WritBase() {
+
+    }
+
+    public abstract void castSpell(EntityPlayer spellCaster, Entity entity, BlockPos blockPos);
+
+
+
+    // public String
+
+    public int getLength() {
+        return length;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public EntityPlayer getPlayer() {
+        return player;
+    }
+
+    public boolean isProtected() {
+        return isProtected;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPlayer(EntityPlayer player) {
+        this.player = player;
+    }
+
+    public void setProtected(boolean isProtected) {
+        this.isProtected = isProtected;
+    }
 
 }
