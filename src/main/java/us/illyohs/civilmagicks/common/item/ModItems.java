@@ -39,7 +39,7 @@ public class ModItems {
     public static Item itemWand;
     
     public static Item itemContract;
-    public static Item itemSigil;
+    public static Item itemWrit;
 //    public static Item
     
     
@@ -49,7 +49,7 @@ public class ModItems {
     public static void init() {
 
         itemManaShard = new ItemManaShard();
-//        itemWrit = new ItemWrit();
+        itemWrit = new ItemWrit();
         
         //Armor
         armorMonocle = new ArmorMonocle();
