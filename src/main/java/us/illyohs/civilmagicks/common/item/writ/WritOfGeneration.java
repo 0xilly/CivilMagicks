@@ -17,9 +17,12 @@ public class WritOfGeneration extends WritAOE {
     
     public void castSpell(EntityPlayer caster) {
         World world;
+        /*
         if (world.getEntitiesWithinAABB(classEntity, bb)) {
             
+            
         }
+        */
     }
 
 }
