@@ -41,7 +41,7 @@ public abstract class WritBase {
 
     }
 
-    public abstract void castSpell(EntityPlayer spellCaster, Entity entity, BlockPos blockPos);
+    public abstract void castSpell(EntityPlayer spellCaster, Object target, BlockPos pos);
 
 
 

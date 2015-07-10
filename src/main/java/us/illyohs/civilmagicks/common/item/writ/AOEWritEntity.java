@@ -23,42 +23,34 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.item;
+package us.illyohs.civilmagicks.common.item.writ;
 
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import us.illyohs.civilmagicks.common.item.armor.ArmorMonocle;
-import us.illyohs.civilmagicks.common.item.mana.ItemManaShard;
-import us.illyohs.civilmagicks.common.item.writ.ItemWrit;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.BlockPos;
+import us.illyohs.civilmagicks.api.writ.WritBase;
 
-public class ModItems {
+public class AOEWritEntity extends WritBase {
 
-    public static Item itemManaShard;
+    public int radius;
     
-    public static Item itemWand;
+    /**
+     * 
+     */
+    public AOEWritEntity(EntityPlayer player, int radius) {
+        this.player = player;
+        this.radius = radius;
+    }
     
-    public static Item itemContract;
-    public static Item itemWrit;
-//    public static Item
-    
-    
-    //Armor
-    public static ItemArmor armorMonocle;
+    @Override
+    public void castSpell(EntityPlayer spellCaster, Object entity, BlockPos pos) {
 
-    public static void init() {
-
-        itemManaShard = new ItemManaShard();
-        itemWrit = new ItemWrit();
-        
-        //Armor
-        armorMonocle = new ArmorMonocle();
-        
-        gameReg();
+    }
+    
+    /**
+     * @return the radius
+     */
+    public int getRadius() {
+        return radius;
     }
 
-    private static void gameReg() {
-        GameRegistry.registerItem(itemManaShard, "manashard");        
-    }	
 }

@@ -1,4 +1,4 @@
-package us.illyohs.civilmagicks.common.item;
+package us.illyohs.civilmagicks.common.item.writ;
 
 import net.minecraft.item.Item;
 
