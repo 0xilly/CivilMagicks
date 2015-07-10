@@ -26,14 +26,14 @@
 
 package us.illyohs.civilmagicks.api.writ;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.BlockPos;
 
 public abstract class WritBase {
 
+    public String       type;
     public String       name;
-    public int          length;
+    public String       lore;
+    public int          duration;
     public EntityPlayer player;
     public boolean      isProtected;
 
@@ -41,18 +41,23 @@ public abstract class WritBase {
 
     }
 
-    public abstract void castSpell(EntityPlayer spellCaster, Object target, BlockPos pos);
+    public abstract void castSpell(EntityPlayer spellCaster);
 
 
-
-    // public String
-
-    public int getLength() {
-        return length;
+    public int getDuration() {
+        return duration;
     }
 
+    public String getType() {
+        return type;
+    }
+    
     public String getName() {
         return name;
+    }
+    
+    public String getLore() {
+        return lore;
     }
 
     public EntityPlayer getPlayer() {
@@ -63,12 +68,20 @@ public abstract class WritBase {
         return isProtected;
     }
 
-    public void setLength(int length) {
-        this.length = length;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
+    
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public void setLore(String lore) {
+        this.lore = lore;
     }
 
     public void setPlayer(EntityPlayer player) {

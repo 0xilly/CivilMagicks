@@ -26,31 +26,38 @@
 package us.illyohs.civilmagicks.common.item.writ;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.BlockPos;
 import us.illyohs.civilmagicks.api.writ.WritBase;
 
-public class AOEWritEntity extends WritBase {
+public class WritAOE extends WritBase {
 
-    public int radius;
-    
+    public int    radius;
+
     /**
      * 
      */
-    public AOEWritEntity(EntityPlayer player, int radius) {
-        this.player = player;
-        this.radius = radius;
+    public WritAOE() {
+        this.setType("Area of effect");
     }
-    
+
     @Override
-    public void castSpell(EntityPlayer spellCaster, Object entity, BlockPos pos) {
+    public void castSpell(EntityPlayer spellCaster) {
+        castSpell(spellCaster, getRadius());
+    }
+
+    public void castSpell(EntityPlayer caster, int radius) {
 
     }
+    
     
     /**
      * @return the radius
      */
     public int getRadius() {
         return radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
     }
 
 }
