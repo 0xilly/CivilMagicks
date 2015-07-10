@@ -23,7 +23,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.item.writ;
+package us.illyohs.civilmagicks.common.writ;
 
 import net.minecraft.entity.player.EntityPlayer;
 import us.illyohs.civilmagicks.api.writ.WritBase;

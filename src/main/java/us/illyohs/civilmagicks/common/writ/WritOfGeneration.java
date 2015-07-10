@@ -1,4 +1,4 @@
-package us.illyohs.civilmagicks.common.item.writ;
+package us.illyohs.civilmagicks.common.writ;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
@@ -17,12 +17,6 @@ public class WritOfGeneration extends WritAOE {
     
     public void castSpell(EntityPlayer caster) {
         World world;
-        /*
-        if (world.getEntitiesWithinAABB(classEntity, bb)) {
-            
-            
-        }
-        */
     }
 
 }
