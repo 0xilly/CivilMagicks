@@ -5,10 +5,10 @@
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
- *  Redistributions of source code must retain the above copyright notice, this
+ * * Redistributions of source code must retain the above copyright notice, this
  *   list of conditions and the following disclaimer.
  *
- *  Redistributions in binary form must reproduce the above copyright notice,
+ * * Redistributions in binary form must reproduce the above copyright notice,
  *   this list of conditions and the following disclaimer in the documentation
  *   and/or other materials provided with the distribution.
  *
@@ -23,36 +23,30 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.writ;
+package us.illyohs.civilmagicks.common.core.command;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.eventhandler.Event;
+import net.minecraft.command.CommandBase;
+import net.minecraft.command.CommandException;
+import net.minecraft.command.ICommandSender;
 
-public class WritEvent extends Event {
+public class CivilCommand extends CommandBase {
 
-    public EntityPlayer player;
-    public String       name;
-    public ActionType   actionType;
 
-    public WritEvent(EntityPlayer player, String name, ActionType actionType) {
-        this.player = player;
-        this.name = name;
-        this.actionType = actionType;
+	@Override
+	public String getCommandName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    }
-    
+	@Override
+	public String getCommandUsage(ICommandSender sender) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    public enum ActionType {
-        CREATE, ACTIVATE
-    }
-    
-    public static void createWrit(EntityPlayer player, ActionType actionType, String name) {
-        MinecraftForge.EVENT_BUS.post(new WritEvent(player, name, actionType.CREATE));
-    }
-    
-    public static void activateWrit(EntityPlayer player, ActionType actionType, String name) {
-        MinecraftForge.EVENT_BUS.post(new WritEvent(player, name, actionType.ACTIVATE));
-    }
+	@Override
+	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
+		
+	}
 
 }

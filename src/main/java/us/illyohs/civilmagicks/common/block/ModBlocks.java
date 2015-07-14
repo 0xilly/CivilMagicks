@@ -50,6 +50,8 @@ public class ModBlocks {
     public static Block     blockSigil;
 
     // public static Block
+    
+    public static Block     blockWritingDesk;
 
     public static void init() {
 

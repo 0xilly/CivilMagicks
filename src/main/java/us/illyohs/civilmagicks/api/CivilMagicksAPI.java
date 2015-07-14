@@ -33,17 +33,19 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fluids.Fluid;
+
 import us.illyohs.civilmagicks.api.civilregistry.CivilObject;
 import us.illyohs.civilmagicks.api.civilregistry.CivilRegistry;
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 import us.illyohs.civilmagicks.api.mana.BiomeManaRegistry;
 import us.illyohs.civilmagicks.api.mana.ManaType;
 import us.illyohs.civilmagicks.api.writ.WritBase;
+import us.illyohs.civilmagicks.api.writ.WritObject;
 
 public class CivilMagicksAPI {
 	
     public static ArmorMaterial armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
-    public static ArrayList<WritBase> writReg = new ArrayList<WritBase>();
+    public static ArrayList<WritObject> writReg = new ArrayList<WritObject>();
     
     
     private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
@@ -63,8 +65,8 @@ public class CivilMagicksAPI {
      * Adds a writ/spell to the base item
      * @param writ
      */
-    public static void registerWrit(WritBase writ) {
-        writReg.add(writ);
+    public static void registerWrit(String name, WritBase writ) {
+        writReg.add(new WritObject(name, writ));
     }
     
     /**

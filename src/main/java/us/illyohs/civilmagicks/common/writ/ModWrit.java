@@ -25,10 +25,24 @@
  */
 package us.illyohs.civilmagicks.common.writ;
 
+import us.illyohs.civilmagicks.api.CivilMagicksAPI;
+import us.illyohs.civilmagicks.api.writ.WritBase;
+
 public class ModWrit {
-    
-    public static void init() {
-        
-    }
+
+	public static WritBase testWrit;
+
+	public static void init() {
+
+		testWrit = new TestWrit();
+		regWrit();
+
+	}
+
+	private static void regWrit() {
+
+		CivilMagicksAPI.registerWrit("testwrit", testWrit);
+
+	}
 
 }
