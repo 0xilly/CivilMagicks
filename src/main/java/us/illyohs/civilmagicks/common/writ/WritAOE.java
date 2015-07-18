@@ -40,7 +40,7 @@ public class WritAOE extends WritBase {
     }
 
     @Override
-    public void castSpell(EntityPlayer spellCaster) {
+    public void spell(EntityPlayer spellCaster) {
         castSpell(spellCaster, getRadius());
     }
 

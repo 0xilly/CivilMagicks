@@ -41,7 +41,7 @@ public abstract class WritBase {
 
     }
 
-    public abstract void castSpell(EntityPlayer caster);
+    public abstract void spell(EntityPlayer caster);
 
 
     public int getDuration() {

@@ -41,7 +41,7 @@ public class TestWrit extends WritBase {
     }
     
     @Override
-    public void castSpell(EntityPlayer caster) {
+    public void spell(EntityPlayer caster) {
         
         caster.addChatMessage(new ChatComponentText("Fooo writ casting"));
     }

@@ -26,6 +26,7 @@
 package us.illyohs.civilmagicks.api;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -39,15 +40,14 @@ import us.illyohs.civilmagicks.api.civilregistry.CivilRegistry;
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 import us.illyohs.civilmagicks.api.mana.BiomeManaRegistry;
 import us.illyohs.civilmagicks.api.mana.ManaType;
+import us.illyohs.civilmagicks.api.writ.Writ;
 import us.illyohs.civilmagicks.api.writ.WritBase;
-import us.illyohs.civilmagicks.api.writ.WritObject;
 
 public class CivilMagicksAPI {
 	
     public static ArmorMaterial armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
-    public static ArrayList<WritObject> writReg = new ArrayList<WritObject>();
-    
-    
+    public static ArrayList<Writ> writReg = new ArrayList<Writ>();
+     
     private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
         if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
             CivilRegistry.civilReg.put(new CivilObject(object, meta), civilstatus);
@@ -66,7 +66,7 @@ public class CivilMagicksAPI {
      * @param writ
      */
     public static void registerWrit(String name, WritBase writ) {
-        writReg.add(new WritObject(name, writ));
+        writReg.add(new Writ(name, writ));
     }
     
     /**

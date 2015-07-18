@@ -15,7 +15,7 @@ public class WritOfGeneration extends WritAOE {
         
     }
     
-    public void castSpell(EntityPlayer caster) {
+    public void spell(EntityPlayer caster) {
         World world;
     }
 

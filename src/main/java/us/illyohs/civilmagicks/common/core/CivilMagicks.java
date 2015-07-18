@@ -37,6 +37,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import us.illyohs.civilmagicks.common.block.ModBlocks;
 import us.illyohs.civilmagicks.common.core.config.ConfigurationHandler;
 import us.illyohs.civilmagicks.common.core.handler.CivilEventHandler;
+import us.illyohs.civilmagicks.common.core.handler.WritHandler;
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 import us.illyohs.civilmagicks.common.item.ModItems;
@@ -49,14 +50,14 @@ public class CivilMagicks {
     
     @SidedProxy(serverSide = LibInfo.COMMON_PROXY, clientSide = LibInfo.CLIENT_PROXY)
     public static IProxy proxy;
-
+    
+    public WritHandler writhandler;
+    
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-        
         ModBlocks.init();
         ModItems.init();
-        
         
     }
 
@@ -68,6 +69,7 @@ public class CivilMagicks {
 
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
+        writhandler = new WritHandler();
         MinecraftForge.EVENT_BUS.register(new CivilEventHandler());
     }
 }
