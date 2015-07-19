@@ -42,7 +42,6 @@ public class WritEvent extends Event {
 
     }
     
-
     public enum ActionType {
         CREATE, ACTIVATE
     }
