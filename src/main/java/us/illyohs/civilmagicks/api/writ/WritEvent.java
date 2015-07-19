@@ -47,12 +47,5 @@ public class WritEvent extends Event {
         CREATE, ACTIVATE
     }
     
-    public static void createWrit(EntityPlayer player, ActionType actionType, String name) {
-        MinecraftForge.EVENT_BUS.post(new WritEvent(player, name, actionType.CREATE));
-    }
-    
-    public static void activateWrit(EntityPlayer player, ActionType actionType, String name) {
-        MinecraftForge.EVENT_BUS.post(new WritEvent(player, name, actionType.ACTIVATE));
-    }
     
 }
