@@ -9,4 +9,12 @@ public class Writ {
         this.name = name;
         this.writ = writ;
     }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public WritBase getWrit() {
+        return writ;
+    }
 }

@@ -25,15 +25,14 @@
  */
 package us.illyohs.civilmagicks.common.core.handler;
 
-import java.util.Map;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.MinecraftForge;
 import us.illyohs.civilmagicks.api.CivilMagicksAPI;
-import us.illyohs.civilmagicks.api.writ.WritBase;
+import us.illyohs.civilmagicks.api.writ.Writ;
 import us.illyohs.civilmagicks.api.writ.WritEvent;
+import us.illyohs.civilmagicks.api.writ.WritEvent.ActionType;
 
 public class WritHandler {
     
@@ -57,16 +56,19 @@ public class WritHandler {
         if(stack.getTagCompound().getString("spellname") == null || stack.getTagCompound().getString("spellname") == "nillspell") {
             player.addChatMessage(new ChatComponentText("No spell bound to this writ"));
         } else {
-            getSpell(stack.getTagCompound().getString("spellname"));
+//            getspell(stack.getTagCompound().getString("spellname"));
         }
     }
 
-    /**
-     * @param string
-     */
-    private static void getSpell(String string) {
-        // TODO Auto-generated method stub
-        
-    }
+//    private static Writ getspell(String writName) {
+//        for (Writ writ : civilMagicksAPI.getWritList()) {
+//            if (writ.getName() == writName) {
+//                return writ && MinecraftForge.EVENT_BUS.post(event);
+//            }
+//        }
+//        return null;
+//    }
+    
+    
 
 }

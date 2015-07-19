@@ -26,7 +26,6 @@
 package us.illyohs.civilmagicks.api;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -144,6 +143,10 @@ public class CivilMagicksAPI {
     public static CivilStatus getStCivilStatus(Object object) {
         return CivilRegistry.civilReg.get(object);
         
+    }
+    
+    public static ArrayList<Writ> getWritList() {
+        return writReg;
     }
     
 }
