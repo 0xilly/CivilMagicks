@@ -23,43 +23,19 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.item;
+package us.illyohs.civilmagicks.common.crafting;
 
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
-import us.illyohs.civilmagicks.common.item.armor.ArmorMonocle;
-import us.illyohs.civilmagicks.common.item.mana.ItemManaShard;
-import us.illyohs.civilmagicks.common.item.writ.ItemWrit;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
+import us.illyohs.civilmagicks.common.item.ModItems;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class ModItems {
-
-    public static Item itemManaShard;
+public class VanillaCrafting {
     
-    public static Item itemWand;
-    
-    public static Item itemContract;
-    public static Item itemWrit;
-//    public static Item
-    
-    
-    //Armor
-    public static ItemArmor armorMonocle;
-
     public static void init() {
-
-        itemManaShard = new ItemManaShard();
-        itemWrit = new ItemWrit();
-        
-        //Armor
-        armorMonocle = new ArmorMonocle();
-        
-        gameReg();
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemWrit, 16), "egd","gpg","lpi", 'e',
+                Items.emerald, 'g', Items.gold_ingot, 'd', Items.diamond, 'p', Items.paper, 'l', 
+                new ItemStack(Items.dye, 1, 4), 'i', Items.iron_ingot);
     }
 
-    private static void gameReg() {
-        GameRegistry.registerItem(itemManaShard, "manashard");
-        GameRegistry.registerItem(itemWrit, "writ");
-    }	
 }

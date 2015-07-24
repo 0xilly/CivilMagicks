@@ -50,14 +50,12 @@ public class WritHandler {
 
     }
 
-    public static void castSpell(EntityPlayer player, String spellname) {
+    public static void castSpell(ItemStack is, EntityPlayer player, String spellname) {
 
-        ItemStack stack = null;
-
-        if (stack.getTagCompound().getString("spellname") == null || stack.getTagCompound().getString("spellname") == "nillspell") {
+        if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
             player.addChatMessage(new ChatComponentText("No spell bound to this writ"));
         } else {
-            getspell(stack.getTagCompound().getString("spellname"));
+            getspell(is.getTagCompound().getString("spellname"));
         }
     }
 
