@@ -25,7 +25,7 @@ configFile.withReader {
     project.ext.config = new ConfigSlurper().parse prop
 }
 
-version = "${config.mod_version}"
+version = "${config.mc_version}-${config.mod_version}.${config.api_version}.${config.minor_version}.${config.patch_version}"
 group= "${config.group}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "${config.name}"
 

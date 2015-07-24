@@ -25,7 +25,6 @@
  */
 package us.illyohs.civilmagicks.common.core;
 
-
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -34,6 +33,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
 import us.illyohs.civilmagicks.common.block.ModBlocks;
 import us.illyohs.civilmagicks.common.core.config.ConfigurationHandler;
 import us.illyohs.civilmagicks.common.core.handler.CivilEventHandler;
@@ -67,6 +67,7 @@ public class CivilMagicks {
     	proxy.bindModelsAndTextures();
     	proxy.renderBlockItems();
     	VanillaCrafting.init();
+
     }
 
     @EventHandler

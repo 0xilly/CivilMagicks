@@ -33,9 +33,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class VanillaCrafting {
     
     public static void init() {
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.itemWrit, 16), "egd","gpg","lpi", 'e',
-                Items.emerald, 'g', Items.gold_ingot, 'd', Items.diamond, 'p', Items.paper, 'l', 
-                new ItemStack(Items.dye, 1, 4), 'i', Items.iron_ingot);
+        GameRegistry.addRecipe(new ItemStack(ModItems.itemWrit, 5), "ddd", "dpd", "ddd", 'd', Items.dye, 'p', Items.paper);
+
     }
 
 }
