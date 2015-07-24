@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "civilmagicks:items/writ"
+        "all": "civilmagicks:items/writ"
     },
     "display": {
         "thirdperson": {
