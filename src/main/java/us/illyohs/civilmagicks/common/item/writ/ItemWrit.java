@@ -14,10 +14,10 @@ public class ItemWrit extends Item {
 	public ItemWrit() {
 		setCreativeTab(CivilTab.BLOCKS);
 		setUnlocalizedName(LibInfo.MOD_NAME + "writ");
+        setMaxStackSize(1);
 	}
 	
-    public String getWritName() {
-        ItemStack is = null;
+    public String getWritName(ItemStack is) {
         return is.getTagCompound().getString("WritName");
     }
     

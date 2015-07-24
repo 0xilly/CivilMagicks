@@ -52,10 +52,14 @@ public class WritHandler {
 
     public static void castSpell(ItemStack is, EntityPlayer player, String spellname) {
 
-        if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
-            player.addChatMessage(new ChatComponentText("No spell bound to this writ"));
-        } else {
+        if (is.getTagCompound() != null){
+            if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
+                player.addChatMessage(new ChatComponentText("No spell bound to this writ"));
+            } else {
             getspell(is.getTagCompound().getString("spellname"));
+            }
+        } else {
+            System.out.println("test");
         }
     }
 
