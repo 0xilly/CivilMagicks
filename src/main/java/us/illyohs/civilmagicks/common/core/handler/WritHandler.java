@@ -38,6 +38,7 @@ import us.illyohs.civilmagicks.api.writ.WritEvent.ActionType;
 public class WritHandler {
 
     static CivilMagicksAPI civilMagicksAPI;
+    public static WritHandler instance = null;
 
     public WritHandler() {
 
@@ -50,7 +51,14 @@ public class WritHandler {
 
     }
 
-    public static void castSpell(ItemStack is, EntityPlayer player, String spellname) {
+    public static WritHandler instance() {
+        if (instance == null) {
+            instance = new WritHandler();
+        }
+        return instance;
+    }
+
+    public void castSpell(ItemStack is, EntityPlayer player, String spellname) {
 
         if (is.getTagCompound() != null){
             if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
@@ -63,7 +71,7 @@ public class WritHandler {
         }
     }
 
-    private static WritBase getspell(String writName) {
+    private WritBase getspell(String writName) {
         for (Writ writ : CivilMagicksAPI.getWritList()) {
             if (writ.getName() == writName) {
                 EntityPlayer player = null;
