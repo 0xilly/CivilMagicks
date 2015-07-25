@@ -29,6 +29,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.MinecraftForge;
+import org.lwjgl.Sys;
 import us.illyohs.civilmagicks.api.CivilMagicksAPI;
 import us.illyohs.civilmagicks.api.writ.Writ;
 import us.illyohs.civilmagicks.api.writ.WritBase;
@@ -64,7 +65,8 @@ public class WritHandler {
             if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
                 player.addChatMessage(new ChatComponentText("No spell bound to this writ"));
             } else {
-            getspell(is.getTagCompound().getString("spellname"));
+                getspell(is.getTagCompound().getString(spellname));
+                System.out.println(is.getTagCompound().getString("spellname"));
             }
         } else {
             System.out.println("test");

@@ -25,6 +25,8 @@
  */
 package us.illyohs.civilmagicks.common.core;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -34,6 +36,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import us.illyohs.civilmagicks.common.block.ModBlocks;
 import us.illyohs.civilmagicks.common.core.config.ConfigurationHandler;
 import us.illyohs.civilmagicks.common.core.handler.CivilEventHandler;
@@ -59,14 +62,19 @@ public class CivilMagicks {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         ModBlocks.init();
         ModItems.init();
+        //VanillaCrafting.init();
+
         
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-    	proxy.bindModelsAndTextures();
-    	proxy.renderBlockItems();
-    	VanillaCrafting.init();
+        proxy.bindModelsAndTextures();
+        proxy.renderBlockItems();
+        GameRegistry.addRecipe(new ItemStack(ModItems.itemWrit),
+                "ddd",
+                "dpd",
+                "ddd", 'd', Items.stick, 'p', Items.paper);
 
     }
 

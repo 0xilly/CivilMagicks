@@ -33,7 +33,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class VanillaCrafting {
     
     public static void init() {
-        GameRegistry.addRecipe(new ItemStack(ModItems.itemWrit, 5), "ddd", "dpd", "ddd", 'd', Items.dye, 'p', Items.paper);
+        GameRegistry.addRecipe(new ItemStack(ModItems.itemWrit, 5),new Object[]{ "ddd", "dpd", "ddd", 'd',Items.dye, 'p', Items.paper});
 
     }
 

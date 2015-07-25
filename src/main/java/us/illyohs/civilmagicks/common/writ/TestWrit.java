@@ -44,6 +44,7 @@ public class TestWrit extends WritBase {
     public void spell(EntityPlayer caster) {
         
         caster.addChatMessage(new ChatComponentText("Fooo writ casting"));
+        System.out.println("Casting test spell");
     }
 
 }
