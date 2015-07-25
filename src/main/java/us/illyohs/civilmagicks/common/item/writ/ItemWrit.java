@@ -8,6 +8,7 @@ import net.minecraft.world.World;
 import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
 import us.illyohs.civilmagicks.common.core.handler.WritHandler;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
+//import us.illyohs.civilmagicks.common.writ.TestWrit;
 
 public class ItemWrit extends Item {
     
@@ -26,12 +27,14 @@ public class ItemWrit extends Item {
         is.stackTagCompound.setString("spellname", "nillspell");
 
     }
-    
+
+//    private TestWrit testWrit = new TestWrit();
+
     public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player) {
         WritHandler.instance().initSpell(is, player, "testwrit");
+//        testWrit.spell(player);
         return is;
     }
 
-    
 
 }
