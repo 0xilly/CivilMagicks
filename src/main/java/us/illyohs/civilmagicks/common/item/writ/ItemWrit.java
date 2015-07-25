@@ -24,14 +24,18 @@ public class ItemWrit extends Item {
     
     public void onCreated(ItemStack is, World world, EntityPlayer player) {
         is.stackTagCompound = new NBTTagCompound();
-        is.stackTagCompound.setString("spellname", "nillspell");
-
+//        is.stackTagCompound.setString("spellname", "nillspell");
+        is.stackTagCompound.setString("spellname", "testwrit");
     }
 
 //    private TestWrit testWrit = new TestWrit();
 
     public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player) {
-        WritHandler.instance().initSpell(is, player, "testwrit");
+        if (is != null) {
+            WritHandler.instance().initSpell(is, player, is.getTagCompound().getString("spellname"));
+        } else {
+            System.out.println("Really your stupid illy you suck and should stop");
+        }
 //        testWrit.spell(player);
         return is;
     }

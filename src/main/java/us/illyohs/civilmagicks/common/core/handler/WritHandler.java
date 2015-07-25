@@ -28,6 +28,7 @@ package us.illyohs.civilmagicks.common.core.handler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import org.lwjgl.Sys;
 import us.illyohs.civilmagicks.api.CivilMagicksAPI;
@@ -59,25 +60,38 @@ public class WritHandler {
         return instance;
     }
 
-    public void initSpell(ItemStack is, EntityPlayer player, String spellname) {
-
-        if (is.getTagCompound() != null){
+    public WritBase initSpell(ItemStack is, EntityPlayer player, String spellname) {
+        if (is.getTagCompound() != null) {
             if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
-                player.addChatMessage(new ChatComponentText("No spell bound to this writ"));
+                player.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_PURPLE + "No spell bound to this writ"));
             } else {
-                getspell(is.getTagCompound().getString(spellname));
-                System.out.println(is.getTagCompound().getString("spellname"));
+                System.out.println("TestSpell");
+                return getspell(spellname);
             }
-        } else {
-            System.out.println("test");
         }
+        return null;
     }
+
+//    public WritBase initSpell(ItemStack is, EntityPlayer player, String spellname) {
+//
+//        if (is.getTagCompound() != null){
+//            if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
+//                player.addChatMessage(new ChatComponentText("No spell bound to this writ"));
+//            } else {
+//                return getspell(is.getTagCompound().getString(spellname));
+//                System.out.println(is.getTagCompound().getString("spellname"));
+//            }
+//        } else {
+//            System.out.println("test");
+//        }
+//    }
 
     WritBase getspell(String writName) {
         for (Writ writ : CivilMagicksAPI.getWritList()) {
             if (writ.getName() == writName) {
                 EntityPlayer player = null;
                 MinecraftForge.EVENT_BUS.post(new WritEvent(player, writ.getName(), ActionType.ACTIVATE));
+                System.out.println("Testing this spell in to return writ");
                 return writ.getWrit();
             }
         }
