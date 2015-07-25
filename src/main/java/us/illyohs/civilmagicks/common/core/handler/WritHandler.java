@@ -73,7 +73,7 @@ public class WritHandler {
         }
     }
 
-    private WritBase getspell(String writName) {
+    WritBase getspell(String writName) {
         for (Writ writ : CivilMagicksAPI.getWritList()) {
             if (writ.getName() == writName) {
                 EntityPlayer player = null;
