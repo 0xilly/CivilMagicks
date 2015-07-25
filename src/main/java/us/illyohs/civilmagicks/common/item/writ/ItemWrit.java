@@ -28,7 +28,7 @@ public class ItemWrit extends Item {
     }
     
     public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player) {
-        WritHandler.instance().castSpell(is, player, "testwrit");
+        WritHandler.instance().initSpell(is, player, "testwrit");
         return is;
     }
 

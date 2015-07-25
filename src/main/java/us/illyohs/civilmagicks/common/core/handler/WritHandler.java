@@ -59,7 +59,7 @@ public class WritHandler {
         return instance;
     }
 
-    public void castSpell(ItemStack is, EntityPlayer player, String spellname) {
+    public void initSpell(ItemStack is, EntityPlayer player, String spellname) {
 
         if (is.getTagCompound() != null){
             if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
