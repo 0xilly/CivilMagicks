@@ -30,19 +30,21 @@ import us.illyohs.civilmagicks.api.writ.WritBase;
 
 public class ModWrit {
 
-	public static WritBase testWrit;
+    public static WritBase testWrit;
+    public static WritBase healthWrit;
 
 	public static void init() {
 
-		testWrit = new TestWrit();
-		regWrit();
+        testWrit = new TestWrit();
+        healthWrit = new HeathWrit();
+        regWrit();
 
 	}
 
-	private static void regWrit() {
+    private static void regWrit() {
+        CivilMagicksAPI.registerWrit("testwrit", testWrit);
+        CivilMagicksAPI.registerWrit("heathWrit", healthWrit);
 
-		CivilMagicksAPI.registerWrit("testwrit", testWrit);
-
-	}
+    }
 
 }

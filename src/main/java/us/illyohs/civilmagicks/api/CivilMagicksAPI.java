@@ -25,7 +25,7 @@
  */
 package us.illyohs.civilmagicks.api;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -39,14 +39,14 @@ import us.illyohs.civilmagicks.api.civilregistry.CivilRegistry;
 import us.illyohs.civilmagicks.api.civilregistry.CivilStatus;
 import us.illyohs.civilmagicks.api.mana.BiomeManaRegistry;
 import us.illyohs.civilmagicks.api.mana.ManaType;
-import us.illyohs.civilmagicks.api.writ.Writ;
 import us.illyohs.civilmagicks.api.writ.WritBase;
 
 public class CivilMagicksAPI {
-	
-    public static ArmorMaterial armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
-    public static ArrayList<Writ> writReg = new ArrayList<Writ>();
-     
+
+    public static ArmorMaterial             armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
+    //    public static ArrayList<Writ> writReg = new ArrayList<Writ>();
+    public static HashMap<String, WritBase> writReg    = new HashMap<String, WritBase>();
+
     private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
         if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
             CivilRegistry.civilReg.put(new CivilObject(object, meta), civilstatus);
@@ -59,15 +59,16 @@ public class CivilMagicksAPI {
     private static void registerManaBiome(BiomeGenBase biome, ManaType type) {
         BiomeManaRegistry.biomeManaRegistry.put(biome, type);
     }
-    
+
     /**
      * Adds a writ/spell to the base item
      * @param writ
      */
     public static void registerWrit(String name, WritBase writ) {
-        writReg.add(new Writ(name, writ));
+//        writReg.add(new Writ(name, writ));
+        writReg.put(name, writ);
     }
-    
+
     /**
      * This Registers blocks into the civilregistry as civilized 
      * @param block
@@ -85,7 +86,7 @@ public class CivilMagicksAPI {
     public static void registerUnCivilizedBlock(Block block, int meta) {
         registerObjectStatus(block, meta, CivilStatus.UNCIVILIZED);
     }
-    
+
     /**
      * This Registers items into the civilregistry as civilized
      * @param item
@@ -94,7 +95,7 @@ public class CivilMagicksAPI {
     public static void registerCivilizedItem(Item item, int meta) {
         registerObjectStatus(item, meta, CivilStatus.CIVILIZED);
     }
-    
+
     /**
      * This Registers items into the civilregistry as civilized
      * @param item
@@ -145,8 +146,8 @@ public class CivilMagicksAPI {
         
     }
     
-    public static ArrayList<Writ> getWritList() {
-        return writReg;
-    }
+//    public static ArrayList<Writ> getWritList() {
+//        return writReg;
+//    }
     
 }

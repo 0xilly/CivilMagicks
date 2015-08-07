@@ -29,8 +29,9 @@ public class ItemWrit extends Item {
     
     public void onCreated(ItemStack is, World world, EntityPlayer player) {
         is.stackTagCompound = new NBTTagCompound();
-        is.stackTagCompound.setString("spellname", "nillspell");
+//        is.stackTagCompound.setString("spellname", "nillspell");
 //        is.stackTagCompound.setString("spellname", "testwrit");
+        is.stackTagCompound.setString("spellname", "heathWrit");
     }
 
 //    private TestWrit testWrit = new TestWrit();
