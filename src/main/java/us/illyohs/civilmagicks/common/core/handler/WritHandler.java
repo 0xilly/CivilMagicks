@@ -65,28 +65,15 @@ public class WritHandler {
             if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
                 player.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_PURPLE + "No spell bound to this writ"));
             } else {
-                System.out.println("TestSpell");
+//                System.out.println("TestSpell : " + spellname);
                 return getspell(spellname);
             }
         }
         return null;
     }
 
-//    public WritBase initSpell(ItemStack is, EntityPlayer player, String spellname) {
-//
-//        if (is.getTagCompound() != null){
-//            if (is.getTagCompound().getString("spellname") == null || is.getTagCompound().getString("spellname") == "nillspell") {
-//                player.addChatMessage(new ChatComponentText("No spell bound to this writ"));
-//            } else {
-//                return getspell(is.getTagCompound().getString(spellname));
-//                System.out.println(is.getTagCompound().getString("spellname"));
-//            }
-//        } else {
-//            System.out.println("test");
-//        }
-//    }
-
     WritBase getspell(String writName) {
+        System.out.println("Get spell got " + writName + " now trying to  cast spell");
         for (Writ writ : CivilMagicksAPI.getWritList()) {
             if (writ.getName() == writName) {
                 EntityPlayer player = null;
