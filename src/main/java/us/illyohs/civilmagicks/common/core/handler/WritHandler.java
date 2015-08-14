@@ -65,14 +65,14 @@ public class WritHandler {
             if (is.getTagCompound() == null || is.getTagCompound().getString("spellname") == "nillspell") {
                 player.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_PURPLE + "No spell bound to this writ"));
             } else {
-
-                return getSpell(spellname);
+//                System.out.println("TestSpell : " + spellname);
+                return getspell(spellname);
             }
         }
         return null;
     }
 
-    private WritBase getSpell(String spellname) {
+    private WritBase getspell(String spellname) {
         for (Map.Entry<String, WritBase> entry : CivilMagicksAPI.writReg.entrySet()) {
             if (entry.getKey().equals(spellname)){
                 System.out.printf("Attempting to cast %s writ%n", spellname);
