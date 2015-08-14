@@ -31,8 +31,11 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import us.illyohs.civilmagicks.api.CivilMagicksAPI;
+import us.illyohs.civilmagicks.api.writ.Writ;
 import us.illyohs.civilmagicks.api.writ.WritBase;
 import us.illyohs.civilmagicks.api.writ.WritEvent;
+
+import java.util.Map;
 
 public class WritHandler {
 
@@ -69,16 +72,16 @@ public class WritHandler {
         return null;
     }
 
-//    private WritBase getSpell(String writName) {
-//        for (Writ writ: CivilMagicksAPI.writReg) {
-//            if (writ.getName()==  writName) {
-//                return writ.getWrit();
-//            }
-//        }
-//        return null;
-//    }
-
-    private WritBase getSpell(String writName) {
-        return CivilMagicksAPI.writReg.get(writName);
+    private WritBase getSpell(String spellname) {
+        for (Map.Entry<String, WritBase> entry : CivilMagicksAPI.writReg.entrySet()) {
+            if (entry.getKey().equals(spellname)){
+                System.out.printf("Attempting to cast %s writ%n", spellname);
+                return entry.getValue();
+            }
+        }
+//            return CivilMagicksAPI.writReg.;
+        return null;
     }
+
+
 }
