@@ -66,22 +66,11 @@ public class WritHandler {
                 player.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_PURPLE + "No spell bound to this writ"));
             } else {
 //                System.out.println("TestSpell : " + spellname);
-                return getspell(spellname);
+                return CivilMagicksAPI.writReg.get(spellname).spell(player);
+
             }
         }
         return null;
     }
-
-    private WritBase getspell(String spellname) {
-        for (Map.Entry<String, WritBase> entry : CivilMagicksAPI.writReg.entrySet()) {
-            if (entry.getKey().equals(spellname)){
-                System.out.printf("Attempting to cast %s writ%n", spellname);
-                return entry.getValue();
-            }
-        }
-//            return CivilMagicksAPI.writReg.;
-        return null;
-    }
-
 
 }
