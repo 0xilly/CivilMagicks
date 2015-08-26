@@ -31,6 +31,7 @@ import us.illyohs.civilmagicks.api.block.BlockStar;
 import us.illyohs.civilmagicks.common.block.nodes.BlockGeneralStar;
 import us.illyohs.civilmagicks.common.block.nodes.ManaRing;
 import us.illyohs.civilmagicks.common.block.nodes.NodeCivilAnalyzer;
+import us.illyohs.civilmagicks.common.block.sigil.BlockSigil;
 import us.illyohs.civilmagicks.common.block.tile.TileSigil;
 import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
 import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
@@ -70,17 +71,17 @@ public class ModBlocks {
 
     private static void gameRegBlock() {
         GameRegistry.registerBlock(blockManaStone, "manastone");
-        GameRegistry.registerBlock(blockManaRing, LibInfo.MOD_ID + "_manaring");
-        GameRegistry.registerBlock(blockGeneralStar, "generalstar");
-        GameRegistry.registerBlock(nodeCivilAnalyzer, "civilanalyzer");
-        GameRegistry.registerBlock(blockSigil, "blockSigil");
+//        GameRegistry.registerBlock(blockManaRing, LibInfo.MOD_ID + "_manaring");
+//        GameRegistry.registerBlock(blockGeneralStar, "generalstar");
+//        GameRegistry.registerBlock(nodeCivilAnalyzer, "civilanalyzer");
+//        GameRegistry.registerBlock(blockSigil, "blockSigil");
 
     }
 
     private static void gameRegTile() {
-        GameRegistry.registerTileEntity(TileNodeManaRing.class, LibInfo.MOD_ID + "manaring_tile");
-        GameRegistry.registerTileEntity(TileGeneralStar.class, LibInfo.MOD_ID + "genralstar");
-        GameRegistry.registerTileEntity(TileSigil.class, "tilesigil");
+//        GameRegistry.registerTileEntity(TileNodeManaRing.class, LibInfo.MOD_ID + "manaring_tile");
+//        GameRegistry.registerTileEntity(TileGeneralStar.class, LibInfo.MOD_ID + "genralstar");
+//        GameRegistry.registerTileEntity(TileSigil.class, "tilesigil");
     }
 
 }

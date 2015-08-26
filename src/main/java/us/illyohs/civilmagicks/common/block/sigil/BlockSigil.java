@@ -23,44 +23,29 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.block.brewing;
+package us.illyohs.civilmagicks.common.block.sigil;
 
-import net.minecraft.block.BlockContainer;
+import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
+import us.illyohs.civilmagicks.common.block.tile.TileSigil;
+import us.illyohs.civilmagicks.common.core.lib.LibBlockNames;
+import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
-public class BlockBrewChamber extends BlockContainer {
+public class BlockSigil extends Block implements ITileEntityProvider{
 
-    public BlockBrewChamber() {
-        super(Material.glass);
-        setCreativeTab(CreativeTabs.tabBrewing);
-        setUnlocalizedName(LibInfo.MOD_ID + ":brewchamber");
-//        setBlockTextureName(LibAssets.SLATE);
-        setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
-    }
-
-//    @Override
-//    public boolean renderAsNormalBlock() {
-//        return false;
-//
-//    }
-
-    @Override
-    public boolean isOpaqueCube() {
-        return false;
+    public BlockSigil() {
+        super(Material.rock);
+        setUnlocalizedName(LibBlockNames.SUMMONSIGIL);
+        setBlockBounds(0.0F, 0.0F, 0.0f, 1.0f, 0.0625f, 1.0f);
+        setCreativeTab(CivilTab.BLOCKS);
     }
 
     @Override
-    public int getRenderType() {
-        return -1;
-    }
-
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return null; //new TileBrewChamber();
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return new TileSigil();
     }
 
 }
