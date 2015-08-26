@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
+ * Copyright (c) 2015, Anthony Anderson(Illyohs)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,9 +27,9 @@ package us.illyohs.civilmagicks.api.mana;
 
 public interface IManaStoringMob {
 
-	public abstract boolean canStoreMana();
+	boolean canStoreMana();
 	
-	public abstract int maxMana(int mana);
+	int maxMana(int mana);
 	
-	public abstract ManaType canStore();
+	ManaType canStore();
 }

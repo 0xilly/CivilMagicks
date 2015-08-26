@@ -1,21 +1,6 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-    }
+plugins {
+    id "net.minecraftforge.gradle.forge" version "2.0.0"
 }
-
-apply plugin: 'forge'
 
 ext.configFile = file "build.properties"
 
@@ -61,14 +46,6 @@ processResources {
         exclude 'mcmod.info'
     }
 
-    task deobfJar(type: Jar) {
-        from sourceSets.main.output
-        classifier = 'deobf'
-    }
-
-    artifacts {
-        archives deobfJar
-    }
 }
 
 repositories {
@@ -81,12 +58,5 @@ repositories {
 
 dependencies {
     compile name: 'Baubles', version: '1.8-1.1.1.0-deobf', ext: 'jar'
-}
-
-//apply plugin: 'idea'
-idea {
-    module {
-        inheritOutputDirs = true
-    }
 }
 

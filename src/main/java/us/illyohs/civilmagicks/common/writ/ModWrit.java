@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
+ * Copyright (c) 2014, Anthony Anderson(Illyohs)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

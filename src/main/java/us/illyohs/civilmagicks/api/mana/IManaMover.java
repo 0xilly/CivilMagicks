@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
+ * Copyright (c) 2015, Anthony Anderson(Illyohs)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,8 +27,8 @@ package us.illyohs.civilmagicks.api.mana;
 
 public interface IManaMover extends IManaBlock {
     
-    public int addMana();
+    int addMana();
     
-    public ManaType changeManaType();
+    ManaType changeManaType();
     
 }
