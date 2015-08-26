@@ -13,7 +13,6 @@ import us.illyohs.civilmagicks.common.core.handler.WritHandler;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 import java.util.List;
-//import us.illyohs.civilmagicks.common.writ.TestWrit;
 
 public class ItemWrit extends Item {
     
@@ -35,15 +34,12 @@ public class ItemWrit extends Item {
         is.stackTagCompound.setString("spellname", "testwrit");
     }
 
-//    private TestWrit testWrit = new TestWrit();
-
     public ItemStack onItemRightClick(ItemStack is, World world, EntityPlayer player) {
         if (is.stackTagCompound != null) {
             WritHandler.instance().initSpell(is, player, is.getTagCompound().getString("spellname"));
         } else {
             System.out.println("Really your stupid illy you suck and should stop");
         }
-//        testWrit.spell(player);
         return is;
     }
 
@@ -60,6 +56,4 @@ public class ItemWrit extends Item {
             tip.add(RED + "No spell has been bound to this writ");
         }
     }
-
-
 }

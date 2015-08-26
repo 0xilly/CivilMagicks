@@ -31,11 +31,8 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import us.illyohs.civilmagicks.api.CivilMagicksAPI;
-import us.illyohs.civilmagicks.api.writ.Writ;
 import us.illyohs.civilmagicks.api.writ.WritBase;
 import us.illyohs.civilmagicks.api.writ.WritEvent;
-
-import java.util.Map;
 
 public class WritHandler {
 
@@ -60,17 +57,19 @@ public class WritHandler {
         return instance;
     }
 
-    public WritBase initSpell(ItemStack is, EntityPlayer player, String spellname) {
+    public void initSpell(ItemStack is, EntityPlayer player, String spellname) {
         if (is.getTagCompound() != null) {
             if (is.getTagCompound() == null || is.getTagCompound().getString("spellname") == "nillspell") {
                 player.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_PURPLE + "No spell bound to this writ"));
             } else {
-//                System.out.println("TestSpell : " + spellname);
-                return CivilMagicksAPI.writReg.get(spellname).spell(player);
-
+                getWrit(spellname).spell(player);
             }
         }
-        return null;
+    }
+
+    private WritBase getWrit(String spellname) {
+        System.out.println("TestSpell : " + spellname);
+        return CivilMagicksAPI.writReg.get(spellname);
     }
 
 }
