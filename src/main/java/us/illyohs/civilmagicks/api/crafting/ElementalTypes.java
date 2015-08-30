@@ -27,6 +27,8 @@ package us.illyohs.civilmagicks.api.crafting;
 
 import java.util.LinkedHashMap;
 
+import org.apache.commons.lang3.text.WordUtils;
+
 //Based after Azanors aspect class
 public class ElementalTypes {
 
@@ -47,7 +49,7 @@ public class ElementalTypes {
         this.components = components;
     }
 
-    // Shortcut do not use
+    //Shortcut method do not use
     public ElementalTypes(String key, int color, int blend) {
         this(key, color, blend, (ElementalTypes[]) null);
     }
@@ -83,10 +85,22 @@ public class ElementalTypes {
     public void setBlend(int blend) {
         this.blend = blend;
     }
+    
+    public boolean isBaseElement() {
+        return getComponents()==null || getComponents().length !=2;
+    }
+    
+    public static ElementalTypes getElement(String key) {
+        return elementalTypes.get(key);
+    }
+    
+    public String getName(String key) {
+        return WordUtils.capitalize(key);
+    }
 
     public static LinkedHashMap<String, ElementalTypes> elementalTypes = new LinkedHashMap<String, ElementalTypes>();
 
-    // Base elements there should ONLY be four of these I might break this if somebody adds more of these
+    //Base elements there should ONLY be four of these I might break this if somebody adds more of these
     public static final ElementalTypes EARTH = new ElementalTypes("earth", 0x339933, 1);
     public static final ElementalTypes FIRE  = new ElementalTypes("fire" , 0xcc3300, 1);
     public static final ElementalTypes WATER = new ElementalTypes("water", 0x0099FF, 1);

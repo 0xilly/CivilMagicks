@@ -28,12 +28,13 @@ package us.illyohs.civilmagicks.api.crafting;
 import net.minecraft.item.ItemStack;
 
 public class ElementalCrafting {
-    
-    ItemStack[] inputs;
-    ItemStack   output;
-    
+
+    ItemStack[]    inputs;
+    ItemStack      output;
+    ElementalTypes elemental;
+
     public ElementalCrafting() {
-        
+
     }
 
 }
