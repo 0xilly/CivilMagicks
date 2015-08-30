@@ -23,23 +23,10 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.block.crafting;
+package us.illyohs.civilmagicks.common.block.tile;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.ITileEntityProvider;
-import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
-import us.illyohs.civilmagicks.common.block.tile.TileParchmentEnchanter;
 
-public class BlockParchmentEnchanter extends Block implements ITileEntityProvider{
+public class TileParchmentEnchanter extends TileEntity {
 
-     public BlockParchmentEnchanter() {
-        super(Material.rock);
-    }
-
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileParchmentEnchanter();
-    }
 }
