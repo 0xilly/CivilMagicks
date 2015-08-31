@@ -26,8 +26,13 @@
 package us.illyohs.civilmagicks.api.mana;
 
 public interface IManaMover extends IManaBlock {
-    
-    int addMana();
+   
+    /**
+     * 
+     * @param the amount of Mana the block can move
+     * @return
+     */
+    int moveMana(int mana);
     
     ManaType changeManaType();
     
