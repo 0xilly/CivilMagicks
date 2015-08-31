@@ -11,7 +11,7 @@ before_install:
  - chmod +x gradlew
 
 // install: ./gradlew setupCiWorkspace -S
-install: /gradlew setupDecompWorkspace -s
+install: ./gradlew setupDecompWorkspace -s
 script: ./gradlew build
 
 env:
