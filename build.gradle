@@ -23,14 +23,12 @@ minecraft {
     replace '@VERSION@', project.version
     replace '@MCVERSION@', version
 }
-/*
+
 jar {
         manifest {
         attributes 'FMLAT': 'civilmagicks_at.cfg'
     }
 }
-*/
-
 
 processResources {
     // replace stuff in mcmod.info, nothing else
