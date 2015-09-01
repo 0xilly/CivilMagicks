@@ -27,16 +27,13 @@ package us.illyohs.civilmagicks.common.block;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
 import us.illyohs.civilmagicks.api.block.BlockStar;
 import us.illyohs.civilmagicks.common.block.nodes.BlockGeneralStar;
 import us.illyohs.civilmagicks.common.block.nodes.ManaRing;
 import us.illyohs.civilmagicks.common.block.nodes.NodeCivilAnalyzer;
 import us.illyohs.civilmagicks.common.block.sigil.BlockSigil;
-import us.illyohs.civilmagicks.common.block.tile.TileSigil;
-import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
-import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
 import us.illyohs.civilmagicks.common.block.world.BlockManaStone;
-import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class ModBlocks {
 
@@ -55,7 +52,7 @@ public class ModBlocks {
     public static Block     blockWritingDesk;
 
     public static void init() {
-
+        
         blockManaStone = new BlockManaStone();
         blockManaRing = new ManaRing();
 

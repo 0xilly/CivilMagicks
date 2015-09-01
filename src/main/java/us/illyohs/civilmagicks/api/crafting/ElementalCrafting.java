@@ -23,17 +23,18 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.api.mana;
+package us.illyohs.civilmagicks.api.crafting;
 
-public interface IManaMover extends IManaBlock {
-   
-    /**
-     * 
-     * @param the amount of Mana the block can move
-     * @return
-     */
-    int moveMana(int mana);
-    
-    ManaType changeManaType();
-    
+import net.minecraft.item.ItemStack;
+
+public class ElementalCrafting {
+
+    ItemStack[]    inputs;
+    ItemStack      output;
+    ElementalTypes elemental;
+
+    public ElementalCrafting() {
+
+    }
+
 }

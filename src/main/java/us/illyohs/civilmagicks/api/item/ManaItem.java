@@ -42,7 +42,6 @@ public class ManaItem extends Item implements IManaItem {
 
     @Override
     public void onCreated(ItemStack is, World world, EntityPlayer player) {
-        is.stackTagCompound = new NBTTagCompound();
         is.stackTagCompound.setInteger("ManaLevel", 0);
         is.stackTagCompound.setInteger("MaxManaLevel", setMaxMana());
 //        is.stackTagCompound.setString("ManaType", ManaType.NEUTRAL.toString());
