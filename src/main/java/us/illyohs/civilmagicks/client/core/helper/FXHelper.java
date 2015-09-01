@@ -90,13 +90,7 @@ public class FXHelper {
         GlStateManager.popAttrib();
         GlStateManager.popMatrix();
     }
-    
-    public static void renderAnimatedSprite(World world, double xCoord, double yCoord,double zCoord,double xSpeed, double ySpeed, double zSpeed, int hex, float alpha, ResourceLocation spriteSheet) {
-//        FXHelper.
-        renderAnimatedSpritSheet(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed, alpha, alpha, hex, alpha, spriteSheet);
-        
-    }
-    
+
     public void HexToRgb(int hex) {
         Color color = new Color(hex);
         setRed(color.getRed());
