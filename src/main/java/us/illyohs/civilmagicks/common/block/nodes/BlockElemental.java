@@ -12,8 +12,6 @@ public class BlockElemental extends BlockAiry implements ITileEntityProvider {
     public BlockElemental(Material material) {
         super(material);
         setUnlocalizedName(LibStrings.BLOCK_ELEMENTAL);
-
-
     }
 
     @Override
