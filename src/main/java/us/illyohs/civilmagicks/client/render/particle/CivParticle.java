@@ -23,20 +23,29 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.entity.mob;
+package us.illyohs.civilmagicks.client.render.particle;
 
-import net.minecraft.entity.EntityCreature;
+import net.minecraft.client.particle.EntityFX;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
 
-public class EntityServant extends EntityCreature {
-
-    public EntityServant(World world) {
-        super(world);
+public class CivParticle extends EntityFX {
+    
+    /**
+     * 
+     */
+    public CivParticle(World world, double x, double y, double z) {
+        super(world, x, y, z);
     }
     
-    @Override
-    protected boolean canDespawn() {
-        return false;
+//    public CivParticle(World world, double posX, double posY, double posZ) {
+//        super(world, posX, posY, posZ);
+//        
+//    }
+    
+    public void renderParticle(WorldRenderer wr, Entity entity, float ticks, float rX, float rXZ, float rZ, float rYZ, float rXY) {
         
     }
+
 }
