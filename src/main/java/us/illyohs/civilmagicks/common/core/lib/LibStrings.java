@@ -25,14 +25,24 @@
  */
 package us.illyohs.civilmagicks.common.core.lib;
 
-public class LibBlockNames {
+public final class LibStrings {
 
-    final static String        BASE        = LibInfo.MOD_ID + ":";
+    private static String        BASE             = LibInfo.MOD_ID + ":";
 
-    public static final String MANARING    = BASE + "manaring";
-    public static final String MANASTONE   = BASE + "manastone";
-    public static final String WORKSHOP    = BASE + "workshopcore";
-    public static final String STAR        = BASE + "star";
-    public static final String SUMMONSIGIL = BASE + "summmonsigil";
+    //Blocks
+    public static String BLOCK_ELEMENTAL = BASE + "elemental";
+    public static String BLOCK_ELENENTAL_CATALYST = BASE + "elementalcatalyst";
+    public static String BLOCK_MANARING       = BASE + "manaring";
+    public static String BLOCK_MANASTONE        = BASE + "manastone";
+    public static String BLOCK_WORKSHOP         = BASE + "workshopcore";
+    public static String BLOCK_STAR             = BASE + "star";
+    public static String BLOCK_SUMMONSIGIL      = BASE + "summmonsigil";
+
+    //Items
+    public static String ITEM_CALLING_WHISTEL = BASE + "callingwhistle";
+    public static String ITEM_MANA_SHARD = BASE + "manashard";
+    public static String ITEM_MONOCLE = BASE + "monocle";
+    public static String ITEM_TEA_SEEDS = BASE + "teaseeds";
+    public static String ITEM_WRIT = BASE + "writ";
 
 }

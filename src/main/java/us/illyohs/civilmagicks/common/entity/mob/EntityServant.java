@@ -26,12 +26,24 @@
 package us.illyohs.civilmagicks.common.entity.mob;
 
 import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.ai.EntityAIMoveIndoors;
+import net.minecraft.entity.ai.EntityAIOpenDoor;
+import net.minecraft.entity.ai.EntityAIRestrictOpenDoor;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.world.World;
 
 public class EntityServant extends EntityCreature {
 
-    public EntityServant(World worldIn) {
-        super(worldIn);
+    public EntityServant(World world) {
+        super(world);
+        ((PathNavigateGround)this.getNavigator()).setEnterDoors(true);
+        ((PathNavigateGround)this.getNavigator()).setAvoidsWater(true);
+        this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(1, new EntityAIMoveIndoors(this));
+        this.tasks.addTask(2, new EntityAIRestrictOpenDoor(this));
+        this.tasks.addTask(3, new EntityAIOpenDoor(this, true));
+
     }
     
     @Override
