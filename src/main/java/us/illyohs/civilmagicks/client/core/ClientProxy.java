@@ -32,8 +32,6 @@ import us.illyohs.civilmagicks.client.render.tile.RenderSigil;
 import us.illyohs.civilmagicks.client.render.tile.RenderTileManaRing;
 import us.illyohs.civilmagicks.common.block.ModBlocks;
 import us.illyohs.civilmagicks.common.block.tile.TileSigil;
-import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
-import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
 import us.illyohs.civilmagicks.common.core.lib.IProxy;
 
 public class ClientProxy implements IProxy {

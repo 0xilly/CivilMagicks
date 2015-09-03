@@ -7,17 +7,17 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IChatComponent;
 
-public class TileCommonInventory extends TileEntity implements IInventory {
+public class TileCommonInventory extends TileBase implements IInventory {
 
     ItemStack[] inv = new ItemStack[getSizeInventory()];
 
     @Override
-    public void readFromNBT(NBTTagCompound tag) {
+    public void readFromModNBT(NBTTagCompound bNBT) {
 
     }
 
     @Override
-    public void writeToNBT(NBTTagCompound tag) {
+    public void writeToModNBT(NBTTagCompound bNBT) {
 
     }
 

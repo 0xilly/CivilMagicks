@@ -28,7 +28,6 @@ package us.illyohs.civilmagicks.client.render.tile;
 import us.illyohs.civilmagicks.client.core.helper.FXHelper;
 import us.illyohs.civilmagicks.client.core.lib.LibAssets;
 import us.illyohs.civilmagicks.client.models.ModelTransferNode;
-import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
