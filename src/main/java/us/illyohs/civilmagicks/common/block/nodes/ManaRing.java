@@ -30,7 +30,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
-import us.illyohs.civilmagicks.common.block.tile.node.TileNodeManaRing;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class ManaRing extends BlockContainer {
@@ -43,7 +42,8 @@ public class ManaRing extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileNodeManaRing();
+//        return new TileNodeManaRing();
+        return null;
     }
     
     @Override

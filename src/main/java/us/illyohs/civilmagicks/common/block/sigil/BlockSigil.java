@@ -27,7 +27,7 @@ package us.illyohs.civilmagicks.common.block.sigil;
 
 import us.illyohs.civilmagicks.client.core.creativetab.CivilTab;
 import us.illyohs.civilmagicks.common.block.tile.TileSigil;
-import us.illyohs.civilmagicks.common.core.lib.LibBlockNames;
+import us.illyohs.civilmagicks.common.core.lib.LibStrings;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -38,7 +38,7 @@ public class BlockSigil extends Block implements ITileEntityProvider{
 
     public BlockSigil() {
         super(Material.rock);
-        setUnlocalizedName(LibBlockNames.SUMMONSIGIL);
+        setUnlocalizedName(LibStrings.SUMMONSIGIL);
         setBlockBounds(0.0F, 0.0F, 0.0f, 1.0f, 0.0625f, 1.0f);
         setCreativeTab(CivilTab.BLOCKS);
     }

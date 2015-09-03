@@ -31,7 +31,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import us.illyohs.civilmagicks.api.block.BlockStar;
-import us.illyohs.civilmagicks.common.block.tile.node.TileGeneralStar;
 import us.illyohs.civilmagicks.common.core.lib.LibInfo;
 
 public class StarPassive extends BlockStar {
@@ -44,17 +43,18 @@ public class StarPassive extends BlockStar {
     
     public void onBlockClicked(World world, BlockPos pos, EntityPlayer playerIn) {
     	
-        TileGeneralStar tile = (TileGeneralStar) world.getTileEntity(pos);
-        if(tile != null) {
-            int mana = tile.mana;
-            System.out.println(mana);
-        }
+//        TileGeneralStar tile = (TileGeneralStar) world.getTileEntity(pos);
+//        if(tile != null) {
+//            int mana = tile.mana;
+//            System.out.println(mana);
+//        }
     	
     }
     
     @Override
     public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileGeneralStar();
+//        return new TileGeneralStar();
+        return null;
     }
 
 }

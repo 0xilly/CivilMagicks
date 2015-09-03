@@ -23,55 +23,26 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagicks.common.block.tile.node;
+package us.illyohs.civilmagicks.common.core.lib;
 
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.World;
-import us.illyohs.civilmagicks.api.CivilMagicksAPI;
-import us.illyohs.civilmagicks.api.mana.ManaNetworkEvent;
-import us.illyohs.civilmagicks.api.mana.ManaType;
-import us.illyohs.civilmagicks.api.tile.TileStar;
+public final class LibStrings {
 
-public class TileGeneralStar extends TileStar {
-    
-    int timer;
-    World world;
-    
-    public TileGeneralStar() {
-        timer = 20;
-    }
-    
-    @Override
-    public ManaType canAccept() { 
-        return CivilMagicksAPI.getManaTypeFromBiome(getWorld().getBiomeGenForCoords(getPos()));
-    }
-    
-    public int maxMana(int max) {
-        return 1000;
-    }
-    
-    public int addMana(int add) {
-        ManaNetworkEvent.receiveMana(this, canAccept());
-//        LogHelper.info("Mana Added:"+ add  + "");
-        return add;
-        
-    }
- 
-    @Override
-    public void writeToNBT(NBTTagCompound nbt) {
+    private static String        BASE             = LibInfo.MOD_ID + ":";
 
-        
-    }
-    
-    @Override
-    public void readFromNBT(NBTTagCompound nbt) {
-        super.readFromNBT(nbt);
+    //Blocks
+    public static String BLOCK_ELEMENTAL = BASE + "elemental";
+    public static String BLOCK_ELENENTAL_CATALYST = BASE + "elementalcatalyst";
+    public static String BLOCK_MANARING       = BASE + "manaring";
+    public static String BLOCK_MANASTONE        = BASE + "manastone";
+    public static String BLOCK_WORKSHOP         = BASE + "workshopcore";
+    public static String BLOCK_STAR             = BASE + "star";
+    public static String BLOCK_SUMMONSIGIL      = BASE + "summmonsigil";
 
-    }
-    
-    @Override
-    public void update() {
-    }
-    
-    
+    //Items
+    public static String ITEM_CALLING_WHISTEL = BASE + "callingwhistle";
+    public static String ITEM_MANA_SHARD = BASE + "manashard";
+    public static String ITEM_MONOCLE = BASE + "monocle";
+    public static String ITEM_TEA_SEEDS = BASE + "teaseeds";
+    public static String ITEM_WRIT = BASE + "writ";
+
 }

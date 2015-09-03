@@ -33,9 +33,6 @@ public class EntityButler extends EntityServant {
     public EntityButler(World worldIn) {
         super(worldIn);
         setHealth(40f);
-        ((PathNavigateGround)this.getNavigator()).setEnterDoors(true);;
-        ((PathNavigateGround)this.getNavigator()).setAvoidsWater(true);
-//        this.tasks.addTask(p_75776_1_, p_75776_2_);
     }
 
 }
