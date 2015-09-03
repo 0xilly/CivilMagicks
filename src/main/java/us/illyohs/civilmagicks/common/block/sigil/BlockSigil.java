@@ -38,7 +38,7 @@ public class BlockSigil extends Block implements ITileEntityProvider{
 
     public BlockSigil() {
         super(Material.rock);
-        setUnlocalizedName(LibStrings.SUMMONSIGIL);
+        setUnlocalizedName(LibStrings.BLOCK_SUMMONSIGIL);
         setBlockBounds(0.0F, 0.0F, 0.0f, 1.0f, 0.0625f, 1.0f);
         setCreativeTab(CivilTab.BLOCKS);
     }

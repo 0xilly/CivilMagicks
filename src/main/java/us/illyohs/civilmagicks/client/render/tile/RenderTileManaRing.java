@@ -42,8 +42,8 @@ public class RenderTileManaRing extends TileEntitySpecialRenderer {
 
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick, int arg) {
-		@SuppressWarnings("unused")
-        TileNodeManaRing tnmr = (TileNodeManaRing) tile;
+//		@SuppressWarnings("unused")
+//        TileNodeManaRing tnmr = (TileNodeManaRing) tile;
 		
 		GlStateManager.pushMatrix();
 		
