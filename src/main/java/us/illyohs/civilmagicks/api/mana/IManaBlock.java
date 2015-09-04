@@ -29,14 +29,6 @@ package us.illyohs.civilmagicks.api.mana;
 public interface IManaBlock {
 
     int addMana(int mana);
-    /**
-     * The current amount of mana a block has
-     * 
-     * @param current
-     * @return
-     */
-    @Deprecated
-    int currentMana(int current);
 
     int getCurrentMana();
 

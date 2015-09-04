@@ -4,6 +4,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IChatComponent;
 
@@ -109,5 +111,14 @@ public class TileCommonInventory extends TileBase implements IInventory {
     @Override
     public IChatComponent getDisplayName() {
         return null;
+    }
+
+    /* (non-Javadoc)
+     * @see us.illyohs.civilmagicks.api.tile.TileBase#onModDataPacket(net.minecraft.network.NetworkManager, net.minecraft.network.play.server.S35PacketUpdateTileEntity)
+     */
+    @Override
+    public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+        // TODO Auto-generated method stub
+        
     }
 }

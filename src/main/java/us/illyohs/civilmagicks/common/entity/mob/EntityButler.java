@@ -25,7 +25,6 @@
  */
 package us.illyohs.civilmagicks.common.entity.mob;
 
-import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.world.World;
 
 public class EntityButler extends EntityServant {
