@@ -26,11 +26,26 @@
 package us.illyohs.civilmagicks.api.mana;
 
 
+import net.minecraft.nbt.NBTTagCompound;
+
 public interface IManaBlock {
 
+    /**
+     * @param mana
+     * @return
+     */
     int addMana(int mana);
 
+    int subtractMana(int subtract);
+
+    /**
+     * The amount of mana from a block
+     *
+     * @return
+     */
     int getCurrentMana();
+
+    boolean isManaLocked();
 
     /**
      * The type of mana the Block can accept/send
@@ -38,8 +53,6 @@ public interface IManaBlock {
      * @param type
      * @return
      */
-    ManaType canAccept();
-
-
+    ManaType canAcceptManaType();
 
 }
