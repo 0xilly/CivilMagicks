@@ -28,8 +28,8 @@ package us.illyohs.mod.civilmagiks.common.block;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import us.illyohs.mod.civilmagiks.api.block.BlockStar;
-import us.illyohs.mod.civilmagiks.common.block.nodes.BlockGeneralStar;
+import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockStar;
+import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockGeneralStar;
 import us.illyohs.mod.civilmagiks.common.block.nodes.ManaRing;
 import us.illyohs.mod.civilmagiks.common.block.nodes.NodeCivilAnalyzer;
 import us.illyohs.mod.civilmagiks.common.block.sigil.BlockSigil;

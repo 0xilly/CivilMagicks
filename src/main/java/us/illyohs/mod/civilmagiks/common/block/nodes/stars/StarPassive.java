@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, Anthony Anderson(Illyohs)
+ * Copyright (c) 2015, Anthony Anderson(Illyohs)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,46 +23,38 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.common.block.nodes;
+package us.illyohs.mod.civilmagiks.common.block.nodes.stars;
 
-import java.util.Random;
-
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import us.illyohs.mod.civilmagiks.api.block.BlockStar;
-import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
+import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockStar;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
-public class BlockGeneralStar extends BlockStar {
-
-    public BlockGeneralStar() {
-        setCreativeTab(CivilTab.BLOCKS);
-        setUnlocalizedName(LibInfo.MOD_ID + "generalstar");
+public class StarPassive extends BlockStar {
+    
+    public StarPassive() {
+        setUnlocalizedName(LibInfo.MOD_ID + ":starpassive");
+        setCreativeTab(CreativeTabs.tabBrewing);
         setTickRandomly(true);
     }
     
-    public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
-        if(!worldIn.isRemote) {
-        }
-//        TileGeneralStar tile =  (TileGeneralStar)worldIn.getTileEntity(pos);
-//            tile.get
-//        playerIn.addChatMessage(new ChatComponentText("TYhis star currently has " + tile.current + " Mana"));
-        System.out.println("Boop");
-        
+    public void onBlockClicked(World world, BlockPos pos, EntityPlayer playerIn) {
+    	
+//        TileGeneralStar tile = (TileGeneralStar) world.getTileEntity(pos);
+//        if(tile != null) {
+//            int mana = tile.mana;
+//            System.out.println(mana);
+//        }
+    	
     }
-//    Minecraft.getMinecraft().effectRenderer.addEffect(new BaseParticleFX(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(),2.0, 2.0, 2.0, "0xffff7e", 0.5F, .05F, 200, 200, LibAssets.spark))
     
-    public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-//        FXHelper.spark(worldIn, pos.getX(), pos.getY(), pos.getZ(), 1, 2, 3, 0x3cd4fc, 0.1f, 2.0F, 200, 3);
-//        Minecraft.getMinecraft().effectRenderer.addEffect(new BaseParticleFX(worldIn, pos.getX(), pos.getY(), pos.getZ(), 1, 2, 3, 0x3cd4fc, 0.1f, 2.0F, 200, 3, null));
-
-    }
     @Override
     public TileEntity createNewTileEntity(World world, int meta) {
 //        return new TileGeneralStar();
         return null;
     }
+
 }

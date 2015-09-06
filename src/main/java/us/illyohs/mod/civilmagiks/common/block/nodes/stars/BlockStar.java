@@ -23,37 +23,27 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.common.block.nodes;
+package us.illyohs.mod.civilmagiks.common.block.nodes.stars;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import us.illyohs.mod.civilmagiks.api.block.BlockStar;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+import us.illyohs.mod.civilmagiks.api.block.BlockAiry;
+import us.illyohs.mod.civilmagiks.api.material.CivilMaterials;
 
-public class StarPassive extends BlockStar {
-    
-    public StarPassive() {
-        setUnlocalizedName(LibInfo.MOD_ID + ":starpassive");
-        setCreativeTab(CreativeTabs.tabBrewing);
-        setTickRandomly(true);
+public class BlockStar extends BlockAiry implements ITileEntityProvider {
+
+    public BlockStar() {
+        this(CivilMaterials.starry);
     }
-    
-    public void onBlockClicked(World world, BlockPos pos, EntityPlayer playerIn) {
-    	
-//        TileGeneralStar tile = (TileGeneralStar) world.getTileEntity(pos);
-//        if(tile != null) {
-//            int mana = tile.mana;
-//            System.out.println(mana);
-//        }
-    	
+
+    public BlockStar(Material material) {
+        super(material);
+
     }
-    
     @Override
     public TileEntity createNewTileEntity(World world, int meta) {
-//        return new TileGeneralStar();
         return null;
     }
 

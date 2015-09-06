@@ -23,7 +23,9 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.api.tile;
+package us.illyohs.mod.civilmagiks.common.block.tile.star;
+
+import us.illyohs.mod.civilmagiks.api.tile.TileNode;
 
 public class TileStar extends TileNode {
 

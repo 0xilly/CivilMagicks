@@ -24,7 +24,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.mod.civilmagiks.common.block.nodes;
+package us.illyohs.mod.civilmagiks.common.block.nodes.stars;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
