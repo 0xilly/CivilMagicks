@@ -55,8 +55,8 @@ Mana:
       
 Civility:
     - Blocks/Items/Fluids are all considered civilized or uncivilized
-        - See the us.illyohs.civilmagicks.common.core.registry.RegisterBlocks
-          and us.illyohs.civilmagicks.common.core.registry.RegisterItems for
+        - See the us.illyohs.mod.civilmagiks.common.core.registry.RegisterBlocks
+          and us.illyohs.mod.civilmagiks.common.core.registry.RegisterItems for
           the civil blocks
     - Players also have civil levels that are dependent on the players actions
       i.e. if a player digs dirt or mines stone or coal that is considered 
