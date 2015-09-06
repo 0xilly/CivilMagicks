@@ -8,7 +8,7 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.util.IChatComponent;
 
-public class TileCommonInventory extends TileBase implements IInventory {
+public class TileBaseInventory extends TileBase implements IInventory {
 
     ItemStack[] inv = new ItemStack[getSizeInventory()];
 

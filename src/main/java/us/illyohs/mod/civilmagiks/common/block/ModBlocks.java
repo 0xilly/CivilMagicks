@@ -29,7 +29,6 @@ import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockStar;
-import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockGeneralStar;
 import us.illyohs.mod.civilmagiks.common.block.nodes.ManaRing;
 import us.illyohs.mod.civilmagiks.common.block.nodes.NodeCivilAnalyzer;
 import us.illyohs.mod.civilmagiks.common.block.sigil.BlockSigil;
@@ -58,7 +57,7 @@ public class ModBlocks {
 
         nodeCivilAnalyzer = new NodeCivilAnalyzer();
 
-        blockGeneralStar = new BlockGeneralStar();
+//        blockGeneralStar = new BlockGeneralStar();
 
         blockSigil = new BlockSigil();
 
