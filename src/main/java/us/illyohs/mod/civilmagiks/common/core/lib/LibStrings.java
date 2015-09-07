@@ -47,5 +47,6 @@ public final class LibStrings {
 
     //Stars
     public static String STAR_STARILLUMENATE = BASE + "starillumenate";
+    public static String STAR_PASSIVE = BASE + "passivestar";
 
 }

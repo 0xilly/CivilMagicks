@@ -35,41 +35,32 @@ import us.illyohs.mod.civilmagiks.api.mana.IManaItem;
 
 public class ManaItem extends Item implements IManaItem {
 
+    private int maxMana;
+    private int currnetmana;
+
     public ManaItem() {
         super();
         setMaxStackSize(1);
     }
 
-    @Override
-    public void onCreated(ItemStack is, World world, EntityPlayer player) {
-        is.stackTagCompound.setInteger("ManaLevel", 0);
-        is.stackTagCompound.setInteger("MaxManaLevel", setMaxMana());
-//        is.stackTagCompound.setString("ManaType", ManaType.NEUTRAL.toString());
-    }
 
     @Override
     public int getCurrentMana(ItemStack is) {
-        return is.stackTagCompound.getInteger("ManaLevel");
-    }
-
-    @Override
-    public int setCurrentMana(ItemStack is, int mana) {
-        int oldMana = getCurrentMana(is);
-        is.stackTagCompound = new NBTTagCompound();
-        if (getCurrentMana(is) <= getMaxMana(is)) {
-            is.stackTagCompound.setInteger("ManaLevel", mana + oldMana);
-        }
-        return getCurrentMana(is);
-    }
-
-    @Override
-    public int getMaxMana(ItemStack is) {
-        return is.stackTagCompound.getInteger("MaxManaLevel");
-    }
-    
-    @Override
-    public int setMaxMana() {
         return 0;
     }
 
+    @Override
+    public int setCurrentMana(ItemStack is) {
+        return 0;
+    }
+
+    @Override
+    public int getMaxMana() {
+        return maxMana;
+    }
+
+    @Override
+    public void setMaxMana(int maxMana) {
+        this.maxMana = maxMana;
+    }
 }

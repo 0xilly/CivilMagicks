@@ -64,4 +64,19 @@ public class ItemManaBauble extends ManaItem implements IBauble {
     public boolean canUnequip(ItemStack itemStack, EntityLivingBase entityLivingBase) {
         return false;
     }
+
+    @Override
+    public int setCurrentMana(ItemStack is) {
+        return 0;
+    }
+
+    @Override
+    public int getMaxMana() {
+        return 0;
+    }
+
+    @Override
+    public void setMaxMana(int maxMana) {
+
+    }
 }

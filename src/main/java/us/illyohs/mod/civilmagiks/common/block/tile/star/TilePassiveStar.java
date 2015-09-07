@@ -23,17 +23,16 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.api.mana;
+package us.illyohs.mod.civilmagiks.common.block.tile.star;
 
-public interface IManaMover extends IManaBlock {
-   
-    /**
-     * 
-     * @param the amount of Mana the block can move
-     * @return
-     */
-    int moveMana(int mana);
-    
-    ManaType changeManaType();
-    
+import us.illyohs.mod.civilmagiks.api.tile.TileNode;
+
+public class TilePassiveStar extends TileNode {
+
+
+    @Override
+    public void update() {
+
+    }
+
 }

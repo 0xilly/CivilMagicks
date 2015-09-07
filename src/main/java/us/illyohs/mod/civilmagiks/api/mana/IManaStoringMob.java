@@ -29,7 +29,7 @@ public interface IManaStoringMob {
 
 	boolean canStoreMana();
 	
-	int maxMana(int mana);
+	int maxMana();
 	
 	ManaType canStore();
 }

@@ -32,13 +32,13 @@ public interface IManaItem {
 
     int getCurrentMana(ItemStack is);
 
-    int setCurrentMana(ItemStack is, int mana);
+    int setCurrentMana(ItemStack is);
 
-    int getMaxMana(ItemStack is);
+    int getMaxMana();
 
     /**
      * @return
      */
-    int setMaxMana();
+    void setMaxMana(int maxMana);
 
 }
