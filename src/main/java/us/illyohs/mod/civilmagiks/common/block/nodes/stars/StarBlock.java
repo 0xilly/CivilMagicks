@@ -32,13 +32,14 @@ import net.minecraft.world.World;
 import us.illyohs.mod.civilmagiks.api.block.BlockAiry;
 import us.illyohs.mod.civilmagiks.api.material.CivilMaterials;
 
-public class BlockStar extends BlockAiry implements ITileEntityProvider {
+public class StarBlock extends BlockAiry implements ITileEntityProvider {
 
-    public BlockStar() {
+    public StarBlock() {
         this(CivilMaterials.starry);
+        this.setTickRandomly(true);
     }
 
-    public BlockStar(Material material) {
+    public StarBlock(Material material) {
         super(material);
 
     }

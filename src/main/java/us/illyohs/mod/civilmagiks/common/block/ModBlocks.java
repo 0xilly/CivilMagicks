@@ -28,38 +28,30 @@ package us.illyohs.mod.civilmagiks.common.block;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockStar;
+import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockBasicStar;
+import us.illyohs.mod.civilmagiks.common.block.nodes.stars.StarBlock;
 import us.illyohs.mod.civilmagiks.common.block.nodes.ManaRing;
 import us.illyohs.mod.civilmagiks.common.block.nodes.NodeCivilAnalyzer;
 import us.illyohs.mod.civilmagiks.common.block.sigil.BlockSigil;
+import us.illyohs.mod.civilmagiks.common.block.tile.star.TileBasicStar;
 import us.illyohs.mod.civilmagiks.common.block.world.BlockManaStone;
 
 public class ModBlocks {
 
-    public static Block     blockGrindStone;
-    public static Block     blockManaRing;
-    public static Block     nodeCivilAnalyzer;
-
     public static Block     blockManaStone;
 
-    public static BlockStar blockGeneralStar;
+    //Nodes
+        /*Stars*/
+    public static StarBlock starBasic;
 
-    public static Block     blockSigil;
-
-    // public static Block
-    
-    public static Block     blockWritingDesk;
 
     public static void init() {
         
         blockManaStone = new BlockManaStone();
-        blockManaRing = new ManaRing();
 
-        nodeCivilAnalyzer = new NodeCivilAnalyzer();
-
-//        blockGeneralStar = new BlockGeneralStar();
-
-        blockSigil = new BlockSigil();
+        //Nodes
+            //Stars
+        starBasic = new BlockBasicStar();
 
         gameRegBlock();
         gameRegTile();
@@ -67,17 +59,12 @@ public class ModBlocks {
 
     private static void gameRegBlock() {
         GameRegistry.registerBlock(blockManaStone, "manastone");
-//        GameRegistry.registerBlock(blockManaRing, LibInfo.MOD_ID + "_manaring");
-//        GameRegistry.registerBlock(blockGeneralStar, "generalstar");
-//        GameRegistry.registerBlock(nodeCivilAnalyzer, "civilanalyzer");
-//        GameRegistry.registerBlock(blockSigil, "blockSigil");
+        GameRegistry.registerBlock(starBasic, "starbasic");
 
     }
 
     private static void gameRegTile() {
-//        GameRegistry.registerTileEntity(TileNodeManaRing.class, LibInfo.MOD_ID + "manaring_tile");
-//        GameRegistry.registerTileEntity(TileGeneralStar.class, LibInfo.MOD_ID + "genralstar");
-//        GameRegistry.registerTileEntity(TileSigil.class, "tilesigil");
+        GameRegistry.registerTileEntity(TileBasicStar.class, "tilebasicstar");
     }
 
 }

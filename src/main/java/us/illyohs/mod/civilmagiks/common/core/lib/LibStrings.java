@@ -46,7 +46,8 @@ public final class LibStrings {
     public static String ITEM_WRIT = BASE + "writ";
 
     //Stars
-    public static String STAR_STARILLUMENATE = BASE + "starillumenate";
+    public static String STAR_BASIC = BASE + "basic";
+    public static String STAR_ILLUMENATE = BASE + "starillumenate";
     public static String STAR_PASSIVE = BASE + "passivestar";
 
 }

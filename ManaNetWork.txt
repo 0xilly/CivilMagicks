@@ -1,0 +1,21 @@
+Mana Network Doc
+
+This is a document to help me plan out the network and how it will work. This is
+a temporary document and will be removed once it is implemented.
+
+Definitions:
+    Mana: The magical energy of the world.
+    Node: Any block that interacts with mana.
+    Generator: Any block that generates mana.
+    Receiver: Any Block that can receive mana.
+    Batter: anything that can store mana.
+
+Concepts:
+    - Mana is NOT created only collected using a star Node or using mobs capable
+      of collecting it.
+    - Star Nodes will send mana to the closes receiver node it can find
+    - Mana has three types Dark/Light/Neutral
+    - Nodes can only accept the type of mana they are attuned to unless the node
+      is neutral.
+      -There will be nodes that can convert to other manatypes
+    - Every biome is  assigned a mana type if not it defaults to neutral
