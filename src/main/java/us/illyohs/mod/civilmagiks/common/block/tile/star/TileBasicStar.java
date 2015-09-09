@@ -1,6 +1,7 @@
 package us.illyohs.mod.civilmagiks.common.block.tile.star;
 
 import net.minecraft.nbt.NBTTagCompound;
+import us.illyohs.mod.civilmagiks.api.mana.ManaType;
 import us.illyohs.mod.civilmagiks.api.tile.TileNode;
 
 public class TileBasicStar extends TileNode {
@@ -23,5 +24,11 @@ public class TileBasicStar extends TileNode {
     @Override
     public void writeToModNBT(NBTTagCompound bNBT) {
 
+    }
+
+    @Override
+    public ManaType canAcceptManaType() {
+//        if (getWorld().getBiomeGenForCoords())
+        return null;
     }
 }
