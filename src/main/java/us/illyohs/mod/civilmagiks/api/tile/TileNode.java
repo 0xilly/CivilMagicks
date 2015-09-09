@@ -13,7 +13,6 @@ import us.illyohs.mod.civilmagiks.api.mana.ManaType;
 public class TileNode extends TileBase implements IUpdatePlayerListBox, IManaBlock {
 
     int mana;
-    boolean isLocked;
 
     @Override
     public void update() {
@@ -28,13 +27,11 @@ public class TileNode extends TileBase implements IUpdatePlayerListBox, IManaBlo
     @Override
     public void readFromModNBT(NBTTagCompound bNBT) {
         mana = bNBT.getInteger("mana");
-        isLocked = bNBT.getBoolean("isManalocked");
     }
     
     @Override
     public void writeToModNBT(NBTTagCompound bNBT) {
         bNBT.setInteger("mana", mana);
-        bNBT.setBoolean("isManalocked", isManaLocked());
     }
 
     @Override
@@ -50,11 +47,6 @@ public class TileNode extends TileBase implements IUpdatePlayerListBox, IManaBlo
     @Override
     public int getCurrentMana() {
         return mana;
-    }
-
-    @Override
-    public boolean isManaLocked() {
-        return false;
     }
 
     @Override

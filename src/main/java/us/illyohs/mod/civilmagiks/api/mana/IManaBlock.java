@@ -43,8 +43,6 @@ public interface IManaBlock {
      */
     int getCurrentMana();
 
-    boolean isManaLocked();
-
     /**
      * The type of mana the Block can accept/send
      * 
