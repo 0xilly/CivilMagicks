@@ -43,8 +43,7 @@ public class ResourceLocationHelper {
         return getResourceLocation(LibInfo.MOD_ID.toLowerCase(), "textures/models/" + path + ".png");
     }
 
-    public static ResourceLocation getParticle(String path) {
+    public static ResourceLocation getFxAsset(String path) {
         return getResourceLocation(LibInfo.MOD_ID.toLowerCase(), "textures/fx/" + path + ".png");
     }
-
 }

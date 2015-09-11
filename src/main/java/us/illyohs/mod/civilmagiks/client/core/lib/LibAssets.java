@@ -37,5 +37,8 @@ public class LibAssets {
     public static final ResourceLocation civilTome = ResourceLocationHelper.getGUIAsset("civiltome");
 
     //Particles
-    public static final ResourceLocation spark = ResourceLocationHelper.getParticle("spark");
+    public static final ResourceLocation spark = ResourceLocationHelper.getFxAsset("spark");
+
+    //Other
+    public static final ResourceLocation star = ResourceLocationHelper.getFxAsset("starflares");
 }
