@@ -5,14 +5,13 @@ jdk:
   - oraclejdk8
   - oraclejdk7
   - openjdk7
-//  - openjdk6
 
 before_install:
  - chmod +x gradlew
 
 // install: ./gradlew setupCiWorkspace -S
-install: ./gradlew setupDecompWorkspace -s
-script: ./gradlew build
+install: ./gradlew setupDecompWorkspace -S
+script: ./gradlew build -S
 
 env:
   global:
