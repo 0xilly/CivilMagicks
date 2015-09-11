@@ -5,9 +5,11 @@ tile.civilmagicks:lightstar.name=[WIP] Star of light
 tile.civilmagicks:manapylon.name=[WIP] Mana Pylon
 tile.civilmagicks:starpassive.name=[WIP] Passive Star
 tile.civilmagicks:manastone.name=Mana Stone
+tile.civilmagicks:starbasic.name=[WIP] Little Star
 
 #Item
 item.civilmagicks:whistle.name=[WIP] Whistle of calling
-item.civilmagicks:debugitem.name= Debug item
+item.civilmagicks:debugitem.name=Debug item
+item.civilmagicks:writ.name=[WIP] Writ
 
 item.civilmagicks:manashard.name=[WIP] Mana Shard

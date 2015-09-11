@@ -16,6 +16,7 @@ archivesBaseName = "${config.name}"
 
 minecraft {
 
+    runDir = "run"
     mappings = 'stable_16'
 	version = "${config.mc_version}-${config.forge_version}"
 

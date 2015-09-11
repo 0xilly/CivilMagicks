@@ -37,7 +37,6 @@ public final class LibStrings {
     public static String BLOCK_WORKSHOP = BASE + "workshopcore";
     public static String BLOCK_SUMMONSIGIL = BASE + "summmonsigil";
 
-
     //Items
     public static String ITEM_CALLING_WHISTEL = BASE + "callingwhistle";
     public static String ITEM_MANA_SHARD = BASE + "manashard";
@@ -46,7 +45,7 @@ public final class LibStrings {
     public static String ITEM_WRIT = BASE + "writ";
 
     //Stars
-    public static String STAR_BASIC = BASE + "basic";
+    public static String STAR_BASIC = BASE + "starbasic";
     public static String STAR_ILLUMENATE = BASE + "starillumenate";
     public static String STAR_PASSIVE = BASE + "passivestar";
 

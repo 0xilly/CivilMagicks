@@ -11,6 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
 import us.illyohs.mod.civilmagiks.common.core.handler.WritHandler;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class ItemWrit extends Item {
     
 	public ItemWrit() {
 		setCreativeTab(CivilTab.BLOCKS);
-		setUnlocalizedName(LibInfo.MOD_NAME + "writ");
+		setUnlocalizedName(LibStrings.ITEM_WRIT);
         setMaxStackSize(1);
 	}
 	

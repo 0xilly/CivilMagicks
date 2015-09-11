@@ -26,6 +26,7 @@
 package us.illyohs.mod.civilmagiks.client.core;
 
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+
 import us.illyohs.mod.civilmagiks.client.core.helper.FXHelper;
 import us.illyohs.mod.civilmagiks.client.render.tile.RenderSigil;
 import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
@@ -36,8 +37,6 @@ public class ClientProxy implements IProxy {
 
     @Override
     public void bindModelsAndTextures() {
-//        ClientRegistry.bindTileEntitySpecialRenderer(TileNodeManaRing.class, new RenderTileManaRing());
-//        ClientRegistry.bindTileEntitySpecialRenderer(TileGeneralStar.class, new RenderGeneralStar());
         ClientRegistry.bindTileEntitySpecialRenderer(TileSigil.class, new RenderSigil());
     }
 
@@ -54,8 +53,7 @@ public class ClientProxy implements IProxy {
     @Override
     public void renderBlockItems() {
         FXHelper.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
-        FXHelper.renderItemsBlocks(ModBlocks.nodeCivilAnalyzer, "civilanalyzer");
-//        FXHelper.renderItemsBlocks(ModBlocks.blockGeneralStar);
+        FXHelper.renderItemsBlocks(ModBlocks.starBasic, "civilanalyzer");
     }
 
 }

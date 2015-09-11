@@ -29,13 +29,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
 
 public class BlockManaStone extends Block {
 	
     public BlockManaStone() {
         super(Material.rock);
         setCreativeTab(CivilTab.BLOCKS);
-        setUnlocalizedName(LibInfo.MOD_ID + ":manastone");
+        setUnlocalizedName(LibStrings.BLOCK_MANASTONE);
         setLightLevel(0.5f);
     }
 	
