@@ -20,16 +20,20 @@ public class RenderBasicStar extends TileEntitySpecialRenderer {
         GlStateManager.pushMatrix();
         GlStateManager.pushAttrib();
 
-        Tessellator tess = Tessellator.getInstance();
-        WorldRenderer wr = tess.getWorldRenderer();
+        Tessellator tessellator = Tessellator.getInstance();
+        WorldRenderer tes = tessellator.getWorldRenderer();
 
-        wr.startDrawingQuads();
+        tes.startDrawingQuads();
+        //
+//        tes.addVertexWithUV(x, y, z , u, v);
+//                          x  y  z  tX tY
+//        tes.addVertexWithUV(0, 0, 1, 1, 1);
+//        tes.addVertexWithUV(0, 0, 1, 1, 1);
+//        tes.addVertexWithUV(0, 0, 1, 1, 1);
+//        tes.addVertexWithUV(0, 0, 1, 1, 1);
 
         this.bindTexture(LibAssets.star);
-        tess.draw();
-
-//        wr.addVertexWithUV();
-
+        tessellator.draw();
 
         GlStateManager.popMatrix();
         GlStateManager.popAttrib();

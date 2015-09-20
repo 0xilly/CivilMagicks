@@ -23,7 +23,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.client.core.helper;
+package us.illyohs.mod.civilmagiks.client.core.lib;
 
 import java.awt.Color;
 
@@ -42,14 +42,13 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 import us.illyohs.mod.civilmagiks.client.core.lib.LibAssets;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
-public class FXHelper {
+public class RenderUtils {
     
-    static int red;
-    static int blue;
-    static int green;
-    static int alpha;
-    
-    static int hex;
+    int red;
+    int blue;
+    int green;
+    int alpha;
+    int hex;
     
     public static void bindTextureMC(ResourceLocation texture) {
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
@@ -63,33 +62,28 @@ public class FXHelper {
         Item item = Item.getItemFromBlock(block);
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(LibInfo.MOD_ID + ":" + texture));
     }
-    
-//    Minecraft.getMinecraft().effectRenderer.addEffect(new BaseParticleFX(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(),2.0, 2.0, 2.0, "0xffff7e", 0.5F, .05F, 200, 200, LibAssets.spark))
-    public static void bindEffect(EntityFX entity){
-        Minecraft.getMinecraft().effectRenderer.addEffect(entity);
-    }
-    
-    public static void spark(World world, double xCoord,double yCoord,double zCoord,double xSpeed, double ySpeed, double zSpeed, int color, float alpha, float gravity, int brightness, int age) {
-        ResourceLocation texture = LibAssets.spark;
-//        bindEffect(new BaseParticleFX(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed, color, alpha, gravity, brightness, age, texture));
-    }
-    
-    public static void renderAnimatedSpritSheet(World world, double xCoord, double yCoord,double zCoord,double xSpeed, double ySpeed, double zSpeed, float red, float green, float blue, float alpha, ResourceLocation spriteSheet) {
-//        red = getRed();
-        WorldRenderer wr = Tessellator.getInstance().getWorldRenderer();
-        GlStateManager.pushAttrib();
-        GlStateManager.pushMatrix();
-        
-        
-        wr.setColorRGBA_F((float)getRed(), (float)getGreen(), (float)getBlue(), alpha);
-       
-        wr.startDrawingQuads();
-        
-        Tessellator.getInstance().draw();
-        
-        GlStateManager.popAttrib();
-        GlStateManager.popMatrix();
-    }
+
+    //Note this will only work for horizontal texturessheets not vertivle could add to it but lazy
+//    public static void renderAnaimatedTexture(int HIGHT, int LENGTH, ResourceLocation texture) {
+//
+//        int frames = LENGTH/HIGHT;
+//        GlStateManager.pushMatrix();
+//        GlStateManager.popAttrib();
+//
+//        Tessellator     tessellator = Tessellator.getInstance();
+//        WorldRenderer   tes         = tessellator.getWorldRenderer();
+//
+//        tes.startDrawingQuads();
+//
+//        tes.addVertexWithUV();
+//
+//        bindTextureFML(texture);
+//
+//        tes.finishDrawing();
+//
+//        GlStateManager.popMatrix();
+//        GlStateManager.popAttrib();
+//    }
 
     public void HexToRgb(int hex) {
         Color color = new Color(hex);
@@ -106,7 +100,7 @@ public class FXHelper {
         setAlpha(color.getAlpha());
     }
     
-    public static int getRed() {
+    public int getRed() {
         return red;
     }
     
@@ -114,7 +108,7 @@ public class FXHelper {
         this.red = red;
     }
     
-    public static int getBlue() {
+    public int getBlue() {
         return blue;
     }
     
@@ -122,7 +116,7 @@ public class FXHelper {
         this.blue = blue;
     }
     
-    public static int getGreen() {
+    public int getGreen() {
         return green;
     }
     
@@ -130,7 +124,7 @@ public class FXHelper {
         this.green = green;
     }
     
-    public static int getAlpha() {
+    public int getAlpha() {
         return alpha;
     }
     
@@ -138,12 +132,12 @@ public class FXHelper {
         this.alpha = alpha;
     }
     
-    public static int getHex() {
+    public int getHex() {
         return hex;
     }
     
-    public static void setHex(int hex) {
-        FXHelper.hex = hex;
+    public void setHex(int hex) {
+        this.hex = hex;
     }
 
 }
