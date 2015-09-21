@@ -39,13 +39,14 @@ import us.illyohs.mod.civilmagiks.api.civilregistry.CivilRegistry;
 import us.illyohs.mod.civilmagiks.api.civilregistry.CivilStatus;
 import us.illyohs.mod.civilmagiks.api.mana.BiomeManaRegistry;
 import us.illyohs.mod.civilmagiks.api.mana.ManaType;
+import us.illyohs.mod.civilmagiks.api.sigil.SigilBase;
 import us.illyohs.mod.civilmagiks.api.writ.WritBase;
 
 public class CivilMagicksAPI {
 
-    public static ArmorMaterial             armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
-    //    public static ArrayList<Writ> writReg = new ArrayList<Writ>();
-    public static HashMap<String, WritBase> writReg    = new HashMap<String, WritBase>();
+    public static ArmorMaterial              armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
+    public static HashMap<String, WritBase>  writReg    = new HashMap<String, WritBase>();
+    public static HashMap<String, SigilBase> sigilReg   = new HashMap<String, SigilBase>();
 
     private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
         if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
@@ -65,8 +66,11 @@ public class CivilMagicksAPI {
      * @param writ
      */
     public static void registerWrit(String name, WritBase writ) {
-//        writReg.add(new Writ(name, writ));
         writReg.put(name, writ);
+    }
+
+    public static void registerSigil(String sigilId, SigilBase sigil) {
+        sigilReg.put(sigilId, sigil);
     }
 
     /**
@@ -145,9 +149,5 @@ public class CivilMagicksAPI {
         return CivilRegistry.civilReg.get(object);
         
     }
-    
-//    public static ArrayList<Writ> getWritList() {
-//        return writReg;
-//    }
-    
+
 }
