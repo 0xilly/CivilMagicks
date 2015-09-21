@@ -16,7 +16,7 @@ public abstract class SigilBase {
     boolean usesMana;
     boolean needsSpace;
 
-    abstract void execute(EntityPlayer writer, BlockPos pos);
+    public abstract void execute(EntityPlayer writer, BlockPos pos);
 
     public void setName(String name) {
         this.name = name;

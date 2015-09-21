@@ -30,7 +30,6 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
 import us.illyohs.mod.civilmagiks.client.render.tile.RenderSigil;
 import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
-import us.illyohs.mod.civilmagiks.common.block.tile.TileSigil;
 import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
 
 public class ClientProxy implements IProxy {

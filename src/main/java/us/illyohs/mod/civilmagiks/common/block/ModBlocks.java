@@ -30,9 +30,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockBasicStar;
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.StarBlock;
-import us.illyohs.mod.civilmagiks.common.block.nodes.ManaRing;
-import us.illyohs.mod.civilmagiks.common.block.nodes.NodeCivilAnalyzer;
-import us.illyohs.mod.civilmagiks.common.block.sigil.BlockSigil;
 import us.illyohs.mod.civilmagiks.common.block.tile.star.TileBasicStar;
 import us.illyohs.mod.civilmagiks.common.block.world.BlockManaStone;
 
