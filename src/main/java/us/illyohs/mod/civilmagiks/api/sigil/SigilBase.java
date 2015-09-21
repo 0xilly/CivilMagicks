@@ -1,22 +1,40 @@
 package us.illyohs.mod.civilmagiks.api.sigil;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.ResourceLocation;
 
 public abstract class SigilBase {
 
-    String  name;
-    String  description;
-    String  lore;
-    String  texturePath;
-    int     sigilColor;
-    int     sigilAlphal;
-    int     sizeMultiplier;
-    boolean isPersistent;
-    boolean usesMana;
-    boolean needsSpace;
+    String           name;
+    String           description;
+    String           lore;
+    ResourceLocation texture;
+    int              sizeMultiplier;
+    int              lightLevel;
+    boolean          isPersistent;
+    boolean          usesMana;
+    boolean          needsSpace;
 
     public abstract void execute(EntityPlayer writer, BlockPos pos);
+
+    public abstract void readFromCustomNBT(NBTTagCompound cNBT);
+    public abstract void writeToCustomNBT(NBTTagCompound cNBT);
+
+    public void readFromNBT(NBTTagCompound nbt) {
+        this.readFromCustomNBT(nbt);
+    }
+
+    public void writeToNBT(NBTTagCompound nbt) {
+        nbt.setString("sigilname", name);
+        nbt.setString("sigildescription", description);
+        nbt.setString("sgillore", lore);
+        nbt.setString("sigiltexture", texture.getResourcePath());
+        nbt.setInteger("sigillightlevel", lightLevel);
+        nbt.setInteger("sigilesizemultipler", sizeMultiplier);
+        this.writeToCustomNBT(nbt);
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -42,28 +60,20 @@ public abstract class SigilBase {
         return lore;
     }
 
-    public void setTexturePath(String texturePath) {
-        this.texturePath = texturePath;
+    public void setTexture(ResourceLocation texture) {
+        this.texture = texture;
     }
 
-    public String getTexturePath() {
-        return texturePath;
+    public ResourceLocation getTexture() {
+        return texture;
     }
 
-    public void setSigilColor(int sigilColor) {
-        this.sigilColor = sigilColor;
+    public void setLightLevel(int lightLevel) {
+        this.lightLevel = lightLevel;
     }
 
-    public int getSigilColor() {
-        return sigilColor;
-    }
-
-    public void setSigilAlphal(int sigilAlphal) {
-        this.sigilAlphal = sigilAlphal;
-    }
-
-    public int getSigilAlphal() {
-        return sigilAlphal;
+    public int getLightLevel() {
+        return lightLevel;
     }
 
     public void setSizeMultiplier(int sizeMultiplier) {
