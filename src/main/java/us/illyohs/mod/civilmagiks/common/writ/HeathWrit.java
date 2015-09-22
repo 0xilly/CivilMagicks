@@ -28,9 +28,9 @@ package us.illyohs.mod.civilmagiks.common.writ;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import us.illyohs.mod.civilmagiks.api.writ.WritBase;
+import us.illyohs.mod.civilmagiks.api.writ.Writ;
 
-public class HeathWrit extends WritBase {
+public class HeathWrit extends Writ {
 
     public HeathWrit() {
         setType("Test");

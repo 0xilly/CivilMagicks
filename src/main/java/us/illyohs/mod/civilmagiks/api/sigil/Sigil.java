@@ -5,7 +5,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ResourceLocation;
 
-public abstract class SigilBase {
+public abstract class Sigil {
 
     String           name;
     String           description;

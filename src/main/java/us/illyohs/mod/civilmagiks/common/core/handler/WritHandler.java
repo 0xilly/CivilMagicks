@@ -31,7 +31,7 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import us.illyohs.mod.civilmagiks.api.CivilMagicksAPI;
-import us.illyohs.mod.civilmagiks.api.writ.WritBase;
+import us.illyohs.mod.civilmagiks.api.writ.Writ;
 import us.illyohs.mod.civilmagiks.api.writ.WritEvent;
 
 public class WritHandler {
@@ -67,7 +67,7 @@ public class WritHandler {
         }
     }
 
-    private WritBase getWrit(String spellname) {
+    private Writ getWrit(String spellname) {
         System.out.println("TestSpell : " + spellname);
         return CivilMagicksAPI.writReg.get(spellname);
     }

@@ -26,9 +26,9 @@
 package us.illyohs.mod.civilmagiks.common.writ;
 
 import net.minecraft.entity.player.EntityPlayer;
-import us.illyohs.mod.civilmagiks.api.writ.WritBase;
+import us.illyohs.mod.civilmagiks.api.writ.Writ;
 
-public class WritAOE extends WritBase {
+public class WritAOE extends Writ {
 
     public int    radius;
 

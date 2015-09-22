@@ -26,20 +26,20 @@
 package us.illyohs.mod.civilmagiks.common.writ;
 
 import us.illyohs.mod.civilmagiks.api.CivilMagicksAPI;
-import us.illyohs.mod.civilmagiks.api.writ.WritBase;
+import us.illyohs.mod.civilmagiks.api.writ.Writ;
 
 public class ModWrit {
 
-    public static WritBase testWrit;
-    public static WritBase healthWrit;
+    public static Writ testWrit;
+    public static Writ healthWrit;
 
-	public static void init() {
+    public static void init() {
 
         testWrit = new TestWrit();
         healthWrit = new HeathWrit();
         regWrit();
 
-	}
+    }
 
     private static void regWrit() {
         CivilMagicksAPI.registerWrit("testwrit", testWrit);

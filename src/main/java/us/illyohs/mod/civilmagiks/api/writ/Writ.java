@@ -28,7 +28,7 @@ package us.illyohs.mod.civilmagiks.api.writ;
 
 import net.minecraft.entity.player.EntityPlayer;
 
-public abstract class WritBase {
+public abstract class Writ {
 
     public String       type;
     public String       name;
@@ -37,7 +37,7 @@ public abstract class WritBase {
     public EntityPlayer player;
     public boolean      isProtected;
 
-    public WritBase() {
+    public Writ() {
 
     }
 

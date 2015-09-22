@@ -39,14 +39,14 @@ import us.illyohs.mod.civilmagiks.api.civilregistry.CivilRegistry;
 import us.illyohs.mod.civilmagiks.api.civilregistry.CivilStatus;
 import us.illyohs.mod.civilmagiks.api.mana.BiomeManaRegistry;
 import us.illyohs.mod.civilmagiks.api.mana.ManaType;
-import us.illyohs.mod.civilmagiks.api.sigil.SigilBase;
-import us.illyohs.mod.civilmagiks.api.writ.WritBase;
+import us.illyohs.mod.civilmagiks.api.sigil.Sigil;
+import us.illyohs.mod.civilmagiks.api.writ.Writ;
 
 public class CivilMagicksAPI {
 
-    public static ArmorMaterial              armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
-    public static HashMap<String, WritBase>  writReg    = new HashMap<String, WritBase>();
-    public static HashMap<String, SigilBase> sigilReg   = new HashMap<String, SigilBase>();
+    public static ArmorMaterial          armorCivil = EnumHelper.addArmorMaterial("CIVILARMOR", null, 50, new int[]{4, 6, 6, 4}, 25);
+    public static HashMap<String, Writ>  writReg    = new HashMap<String, Writ>();
+    public static HashMap<String, Sigil> sigilReg   = new HashMap<String, Sigil>();
 
     private static void registerObjectStatus(Object object, int meta, CivilStatus civilstatus) {
         if (object instanceof Block || object instanceof Item || object instanceof Fluid) {
@@ -65,11 +65,11 @@ public class CivilMagicksAPI {
      * Adds a writ/spell to the base item
      * @param writ
      */
-    public static void registerWrit(String name, WritBase writ) {
+    public static void registerWrit(String name, Writ writ) {
         writReg.put(name, writ);
     }
 
-    public static void registerSigil(String sigilId, SigilBase sigil) {
+    public static void registerSigil(String sigilId, Sigil sigil) {
         sigilReg.put(sigilId, sigil);
     }
 

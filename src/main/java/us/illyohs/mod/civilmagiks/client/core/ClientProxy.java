@@ -36,7 +36,7 @@ public class ClientProxy implements IProxy {
 
     @Override
     public void bindModelsAndTextures() {
-        ClientRegistry.bindTileEntitySpecialRenderer(TileSigil.class, new RenderSigil());
+//        ClientRegistry.bindTileEntitySpecialRenderer(TileSigil.class, new RenderSigil());
     }
 
     @Override

@@ -1,10 +1,11 @@
 package us.illyohs.mod.civilmagiks.common.sigil;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
-import us.illyohs.mod.civilmagiks.api.sigil.SigilBase;
+import us.illyohs.mod.civilmagiks.api.sigil.Sigil;
 
-public class WeatherSigil extends SigilBase {
+public class WeatherSigil extends Sigil {
 
     public WeatherSigil() {
         super();
@@ -18,4 +19,10 @@ public class WeatherSigil extends SigilBase {
         writer.getEntityWorld().getWorldInfo().setRaining(true);
         writer.getEntityWorld().getWorldInfo().setThundering(true);
     }
+
+    @Override
+    public void readFromCustomNBT(NBTTagCompound cNBT) {}
+
+    @Override
+    public void writeToCustomNBT(NBTTagCompound cNBT) {}
 }
