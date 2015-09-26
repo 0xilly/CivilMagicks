@@ -1,13 +1,13 @@
 [
 {
-  "modid": "",
-  "name": "",
-  "description": "",
+  "modid": "civilmagicks",
+  "name": "Civil Magicks",
+  "description": "Only for the most civilized of sorcerers",
   "version": "0.1",
   "mcversion": "0.1",
   "url": "",
   "updateUrl": "",
-  "authorList": [LordIllyohs"],
+  "authorList": ["Illyohs"],
   "credits": "TBD",
   "logoFile": "",
   "screenshots": [],
