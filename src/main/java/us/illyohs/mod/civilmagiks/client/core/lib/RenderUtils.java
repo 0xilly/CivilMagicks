@@ -33,8 +33,10 @@ import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.b3d.B3DLoader;
@@ -54,18 +56,22 @@ public class RenderUtils {
     public static void initB3DLOADER() {
         B3DLoader.instance.addDomain(LibInfo.MOD_ID);
     }
-    
-    public static void bindTextureMC(ResourceLocation texture) {
-        Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-    }
 
-    public static void bindTextureFML(ResourceLocation texture) {
+    public static void bindTexture(ResourceLocation texture) {
         FMLClientHandler.instance().getClient().renderEngine.bindTexture(texture);
     }
     
     public static void renderItemsBlocks(Block block, String texture) {
         Item item = Item.getItemFromBlock(block);
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(LibInfo.MOD_ID + ":" + texture));
+        FMLClientHandler.instance().getClient().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(LibInfo.MOD_ID + ":" + texture));
+    }
+
+    public static void renderFloatingTexts(String text, int x, int y, int z, boolean shadow) {
+        FMLClientHandler.instance().getClient().fontRendererObj.drawString(text, x, y, z, shadow);
+    }
+
+    public static void renderItem(ItemStack item) {
+        FMLClientHandler.instance().getClient().getRenderItem().renderItemModel(item);
     }
 
     //Note this will only work for horizontal texturessheets not vertivle could add to it but lazy
@@ -82,13 +88,14 @@ public class RenderUtils {
 //
 //        tes.addVertexWithUV();
 //
-//        bindTextureFML(texture);
+//        bindTexture(texture);
 //
 //        tes.finishDrawing();
 //
 //        GlStateManager.popMatrix();
 //        GlStateManager.popAttrib();
 //    }
+
 
     public void HexToRgb(int hex) {
         Color color = new Color(hex);

@@ -48,7 +48,7 @@ public class RenderTileManaRing extends TileEntitySpecialRenderer {
 		GlStateManager.pushMatrix();
 		
 		GlStateManager.scale(1f, 1f, 1f);
-		RenderUtils.bindTextureMC(LibAssets.manaRing);
+		RenderUtils.bindTexture(LibAssets.manaRing);
 		model.render(.0625F);
 		
 		GlStateManager.popMatrix();
