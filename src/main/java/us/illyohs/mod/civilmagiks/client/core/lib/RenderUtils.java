@@ -37,6 +37,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.b3d.B3DLoader;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
 import us.illyohs.mod.civilmagiks.client.core.lib.LibAssets;
@@ -49,6 +50,10 @@ public class RenderUtils {
     int green;
     int alpha;
     int hex;
+
+    public static void initB3DLOADER() {
+        B3DLoader.instance.addDomain(LibInfo.MOD_ID);
+    }
     
     public static void bindTextureMC(ResourceLocation texture) {
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);

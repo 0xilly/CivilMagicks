@@ -27,26 +27,25 @@ package us.illyohs.mod.civilmagiks.common.core.lib;
 
 public final class LibStrings {
 
-    private static String BASE= LibInfo.MOD_ID + ":";
+    private static String BASE = LibInfo.MOD_ID + ":";
 
     //Blocks
-    public static String BLOCK_ELEMENTAL = BASE + "elemental";
-    public static String BLOCK_ELENENTAL_CATALYST = BASE + "elementalcatalyst";
-    public static String BLOCK_MANARING = BASE + "manaring";
-    public static String BLOCK_MANASTONE = BASE + "manastone";
-    public static String BLOCK_WORKSHOP = BASE + "workshopcore";
-    public static String BLOCK_SUMMONSIGIL = BASE + "summmonsigil";
+    public static String BLOCK_ELEMENTAL_BASIN = BASE + "elementalbasin";
+    public static String BLOCK_MANARING        = BASE + "manaring";
+    public static String BLOCK_MANASTONE       = BASE + "manastone";
+    public static String BLOCK_WORKSHOP        = BASE + "workshopcore";
+    public static String BLOCK_SUMMONSIGIL     = BASE + "summmonsigil";
 
     //Items
     public static String ITEM_CALLING_WHISTEL = BASE + "callingwhistle";
-    public static String ITEM_MANA_SHARD = BASE + "manashard";
-    public static String ITEM_MONOCLE = BASE + "monocle";
-    public static String ITEM_TEA_SEEDS = BASE + "teaseeds";
-    public static String ITEM_WRIT = BASE + "writ";
+    public static String ITEM_MANA_SHARD      = BASE + "manashard";
+    public static String ITEM_MONOCLE         = BASE + "monocle";
+    public static String ITEM_TEA_SEEDS       = BASE + "teaseeds";
+    public static String ITEM_WRIT            = BASE + "writ";
 
     //Stars
-    public static String STAR_BASIC = BASE + "starbasic";
-    public static String STAR_ILLUMENATE = BASE + "starillumenate";
-    public static String STAR_PASSIVE = BASE + "passivestar";
+    public static String STAR_BASIC           = BASE + "starbasic";
+    public static String STAR_ILLUMENATE      = BASE + "starillumenate";
+    public static String STAR_PASSIVE         = BASE + "passivestar";
 
 }

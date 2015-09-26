@@ -25,6 +25,7 @@
  */
 package us.illyohs.mod.civilmagiks.client.core;
 
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
@@ -35,8 +36,16 @@ import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
 public class ClientProxy implements IProxy {
 
     @Override
+    public void initModelLoaders() {
+        RenderUtils.initB3DLOADER();
+
+    }
+
+    @Override
     public void bindModelsAndTextures() {
 //        ClientRegistry.bindTileEntitySpecialRenderer(TileSigil.class, new RenderSigil());
+//        ModelLoader.setCustomModelResourceLocation();
+
     }
 
     @Override

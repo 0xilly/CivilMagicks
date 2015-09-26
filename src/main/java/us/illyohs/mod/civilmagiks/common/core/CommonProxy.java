@@ -31,6 +31,11 @@ public class CommonProxy implements IProxy {
 
 
 	@Override
+	public void initModelLoaders() {
+		//NO-OP
+	}
+
+	@Override
 	public void bindModelsAndTextures() {
 		//NO-OP
 		

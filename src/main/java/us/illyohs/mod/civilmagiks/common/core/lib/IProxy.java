@@ -26,7 +26,9 @@
 package us.illyohs.mod.civilmagiks.common.core.lib;
 
 public interface IProxy {
-	
+
+    void initModelLoaders();
+
     void bindModelsAndTextures();
 
     void registerTileEntitys();

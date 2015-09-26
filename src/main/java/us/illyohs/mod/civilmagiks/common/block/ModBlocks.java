@@ -28,6 +28,7 @@ package us.illyohs.mod.civilmagiks.common.block;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import us.illyohs.mod.civilmagiks.common.block.nodes.BlockElementalBasin;
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockBasicStar;
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.StarBlock;
 import us.illyohs.mod.civilmagiks.common.block.tile.star.TileBasicStar;
@@ -35,19 +36,18 @@ import us.illyohs.mod.civilmagiks.common.block.world.BlockManaStone;
 
 public class ModBlocks {
 
+    public static Block     blockBasin;
     public static Block     blockManaStone;
 
-    //Nodes
-        /*Stars*/
     public static StarBlock starBasic;
 
 
     public static void init() {
+
+        blockBasin = new BlockElementalBasin();
         
         blockManaStone = new BlockManaStone();
 
-        //Nodes
-            //Stars
         starBasic = new BlockBasicStar();
 
         gameRegBlock();
@@ -57,7 +57,7 @@ public class ModBlocks {
     private static void gameRegBlock() {
         GameRegistry.registerBlock(blockManaStone, "manastone");
         GameRegistry.registerBlock(starBasic, "starbasic");
-
+        GameRegistry.registerBlock(blockBasin, "elementalbasin");
     }
 
     private static void gameRegTile() {

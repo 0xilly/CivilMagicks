@@ -62,6 +62,7 @@ public class CivilMagicks {
         ModBlocks.init();
         ModItems.init();
         //VanillaCrafting.init();
+        proxy.initModelLoaders();
 
         
     }
