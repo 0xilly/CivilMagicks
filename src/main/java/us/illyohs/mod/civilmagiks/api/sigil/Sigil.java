@@ -16,25 +16,9 @@ public abstract class Sigil {
     boolean          isPersistent;
     boolean          usesMana;
     boolean          needsSpace;
+    BlockPos         pos;
 
-    public abstract void execute(EntityPlayer writer, BlockPos pos);
-
-    public abstract void readFromCustomNBT(NBTTagCompound cNBT);
-    public abstract void writeToCustomNBT(NBTTagCompound cNBT);
-
-    public void readFromNBT(NBTTagCompound nbt) {
-        this.readFromCustomNBT(nbt);
-    }
-
-    public void writeToNBT(NBTTagCompound nbt) {
-        nbt.setString("sigilname", name);
-        nbt.setString("sigildescription", description);
-        nbt.setString("sgillore", lore);
-        nbt.setString("sigiltexture", texture.getResourcePath());
-        nbt.setInteger("sigillightlevel", lightLevel);
-        nbt.setInteger("sigilesizemultipler", sizeMultiplier);
-        this.writeToCustomNBT(nbt);
-    }
+    public abstract void execute(EntityPlayer writer);
 
     public void setName(String name) {
         this.name = name;
@@ -106,5 +90,13 @@ public abstract class Sigil {
 
     public boolean isNeedsSpace() {
         return needsSpace;
+    }
+
+    public void setPos(BlockPos pos) {
+        this.pos = pos;
+    }
+
+    public BlockPos getPos() {
+        return pos;
     }
 }

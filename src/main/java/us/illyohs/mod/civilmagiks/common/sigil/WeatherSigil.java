@@ -14,15 +14,10 @@ public class WeatherSigil extends Sigil {
         setLore("Will finish this later");
         setIsPersistent(false);
     }
+
     @Override
-    public void execute(EntityPlayer writer, BlockPos pos) {
+    public void execute(EntityPlayer writer) {
         writer.getEntityWorld().getWorldInfo().setRaining(true);
         writer.getEntityWorld().getWorldInfo().setThundering(true);
     }
-
-    @Override
-    public void readFromCustomNBT(NBTTagCompound cNBT) {}
-
-    @Override
-    public void writeToCustomNBT(NBTTagCompound cNBT) {}
 }
