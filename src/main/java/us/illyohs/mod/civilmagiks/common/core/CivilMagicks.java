@@ -55,6 +55,7 @@ public class CivilMagicks {
     public static IProxy proxy;
     
     public WritHandler writhandler;
+    public CivilEventHandler civilEventHandler;
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -81,6 +82,7 @@ public class CivilMagicks {
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
         writhandler = new WritHandler();
-        MinecraftForge.EVENT_BUS.register(new CivilEventHandler());
+        civilEventHandler = new CivilEventHandler();
+//        MinecraftForge.EVENT_BUS.register(new CivilEventHandler());
     }
 }

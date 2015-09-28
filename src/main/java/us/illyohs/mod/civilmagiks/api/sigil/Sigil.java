@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 public abstract class Sigil {
 
@@ -11,7 +12,7 @@ public abstract class Sigil {
     String           description;
     String           lore;
     ResourceLocation texture;
-    int              sizeMultiplier;
+    int              radius;
     int              lightLevel;
     boolean          isPersistent;
     boolean          usesMana;
@@ -60,12 +61,12 @@ public abstract class Sigil {
         return lightLevel;
     }
 
-    public void setSizeMultiplier(int sizeMultiplier) {
-        this.sizeMultiplier = sizeMultiplier;
+    public void setRadius(int radius) {
+        this.radius = radius;
     }
 
-    public int getSizeMultiplier() {
-        return sizeMultiplier;
+    public int getRadius() {
+        return radius;
     }
 
     public void setIsPersistent(boolean isPersistent) {

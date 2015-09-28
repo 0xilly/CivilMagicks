@@ -12,8 +12,9 @@ public class TileBasicStar extends TileNode {
 
     }
 
+
     @Override
-    public void update() {
+    public void updateTB() {
 
     }
 

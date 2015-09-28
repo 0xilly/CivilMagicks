@@ -26,13 +26,20 @@
 package us.illyohs.mod.civilmagiks.common.core.handler;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import us.illyohs.mod.civilmagiks.api.mana.ManaNetworkEvent;
 import us.illyohs.mod.civilmagiks.common.core.helper.LogHelper;
 import us.illyohs.mod.civilmagiks.common.core.lib.CivilPlayer;
 
 public class CivilEventHandler {
+
+    public CivilEventHandler() {
+
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
     @SubscribeEvent
     public void onEntityConstruct(EntityConstructing event) {
@@ -47,4 +54,7 @@ public class CivilEventHandler {
     public void ManaNetworkEvent(ManaNetworkEvent event) {
             LogHelper.info("ManaEvent from "+ event.tile.getPos() + ". Manatype is " +event.manaType);
     }
+
+
+
 }

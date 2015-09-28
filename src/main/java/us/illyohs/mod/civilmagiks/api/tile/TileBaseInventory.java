@@ -13,6 +13,11 @@ public class TileBaseInventory extends TileBase implements IInventory {
     ItemStack[] inv = new ItemStack[getSizeInventory()];
 
     @Override
+    public void updateTB() {
+
+    }
+
+    @Override
     public void readFromModNBT(NBTTagCompound bNBT) {
 
     }

@@ -10,20 +10,20 @@ import us.illyohs.mod.civilmagiks.api.mana.ManaType;
 /**
  * This is the base class for all nodes within the ManaNetwork
  */
-public class TileNode extends TileBase implements IUpdatePlayerListBox, IManaBlock {
+public class TileNode extends TileBase implements IManaBlock {
 
     int mana;
 
     @Override
-    public void update() {
+    public void updateTB() {
 
     }
-    
+
     @Override
     public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
 
     }
-    
+
     @Override
     public void readFromModNBT(NBTTagCompound bNBT) {
         mana = bNBT.getInteger("mana");
