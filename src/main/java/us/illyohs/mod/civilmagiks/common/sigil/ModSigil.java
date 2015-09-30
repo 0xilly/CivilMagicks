@@ -9,7 +9,7 @@ public class ModSigil {
     public static Sigil weatherSigil;
 
     public static void init() {
-        weatherSigil = new WeatherSigil();
+//        weatherSigil = new WeatherSigil();
 
         sigReg();
     }

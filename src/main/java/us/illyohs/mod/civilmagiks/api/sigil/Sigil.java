@@ -1,10 +1,10 @@
 package us.illyohs.mod.civilmagiks.api.sigil;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
 
 public abstract class Sigil {
 
@@ -16,10 +16,38 @@ public abstract class Sigil {
     int              lightLevel;
     boolean          isPersistent;
     boolean          usesMana;
-    boolean          needsSpace;
+    boolean          canOverlap;
     BlockPos         pos;
 
-    public abstract void execute(EntityPlayer writer);
+    public void onEntityCollied(Entity entity) {
+
+    }
+
+    public void onPlayerInteract(EntityPlayer player) {
+
+    }
+
+    public void readFromNBT(NBTTagCompound nbt) {
+        nbt.getString("SigilName");
+        nbt.getString("SigilDescription");
+        nbt.getString("SigilLore");
+        nbt.getInteger("SigilRadius");
+        nbt.getInteger("SigilLightLevel");
+        nbt.getBoolean("isPersistant");
+        nbt.getBoolean("usesMana");
+        nbt.getBoolean("canOverlap");
+    }
+
+    public void writeToNBT(NBTTagCompound nbt) {
+        nbt.setString("StringName", name);
+        nbt.setString("SigilDescription", description);
+        nbt.setString("SigilLore", lore);
+        nbt.setInteger("SigilRadius", radius);
+        nbt.setInteger("SigilLightLevel", lightLevel);
+        nbt.setBoolean("isPersistant", isPersistent);
+        nbt.setBoolean("usesMana", usesMana);
+        nbt.setBoolean("canOverlap", canOverlap);
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -85,12 +113,12 @@ public abstract class Sigil {
         return usesMana;
     }
 
-    public void setNeedsSpace(boolean needsSpace) {
-        this.needsSpace = needsSpace;
+    public void setCanOverlap(boolean canOverlap) {
+        this.canOverlap = canOverlap;
     }
 
-    public boolean isNeedsSpace() {
-        return needsSpace;
+    public boolean isCanOverlap() {
+        return canOverlap;
     }
 
     public void setPos(BlockPos pos) {
