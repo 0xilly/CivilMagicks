@@ -3,7 +3,7 @@ package us.illyohs.mod.civilmagiks.common.block.tile.star;
 import net.minecraft.nbt.NBTTagCompound;
 import us.illyohs.mod.civilmagiks.api.mana.ManaType;
 import us.illyohs.mod.civilmagiks.api.tile.TileNode;
-import us.illyohs.mod.civilmagiks.common.core.helper.BiomaHelper;
+import us.illyohs.mod.civilmagiks.common.core.util.BiomeUtils;
 
 public class TileBasicStar extends TileNode {
 
@@ -30,6 +30,6 @@ public class TileBasicStar extends TileNode {
 
     @Override
     public ManaType canAcceptManaType() {
-        return BiomaHelper.getManaType(getWorld(), getPos());
+        return BiomeUtils.getManaType(getWorld(), getPos());
     }
 }

@@ -25,18 +25,29 @@
  */
 package us.illyohs.mod.civilmagiks.common.core.handler;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import us.illyohs.mod.civilmagiks.api.mana.ManaNetworkEvent;
-import us.illyohs.mod.civilmagiks.common.core.helper.LogHelper;
+import us.illyohs.mod.civilmagiks.common.core.util.LogUtils;
 import us.illyohs.mod.civilmagiks.common.core.lib.CivilPlayer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CivilEventHandler {
 
+    List<Block> acceptableInnerBlocks = new ArrayList<Block>();
+
     public CivilEventHandler() {
+        acceptableInnerBlocks.add(Blocks.stone_slab);
+        acceptableInnerBlocks.add(Blocks.stone_slab2);
+        acceptableInnerBlocks.add(Blocks.wooden_slab);
+//        acceptableInnerBlocks.add(Blocks.brick)
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -44,17 +55,22 @@ public class CivilEventHandler {
     @SubscribeEvent
     public void onEntityConstruct(EntityConstructing event) {
         if (event.entity instanceof EntityPlayer) {
-            if(CivilPlayer.forPlayer((EntityPlayer) event.entity) == null) {
+            if (CivilPlayer.forPlayer((EntityPlayer) event.entity) == null) {
                 event.entity.registerExtendedProperties(CivilPlayer.IDENT, new CivilPlayer((EntityPlayer) event.entity));
             }
         }
     }
-    
+
     @SubscribeEvent
     public void ManaNetworkEvent(ManaNetworkEvent event) {
-            LogHelper.info("ManaEvent from "+ event.tile.getPos() + ". Manatype is " +event.manaType);
+        LogUtils.info("ManaEvent from " + event.tile.getPos() + ". Manatype is " + event.manaType);
     }
 
-
+    public void onPlayerInteractEvent(PlayerInteractEvent event) {
+        EntityPlayer player = event.entityPlayer;
+//        if (!player.worldObj.isRemote &&) {
+//
+//        }
+    }
 
 }

@@ -25,15 +25,16 @@
  */
 package us.illyohs.mod.civilmagiks.common.core.lib;
 
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
 public interface IProxy {
 
-    void initModelLoaders();
+    void preInitialization(FMLPreInitializationEvent event);
 
-    void bindModelsAndTextures();
+    void initialization(FMLInitializationEvent event);
 
-    void registerTileEntitys();
-    
-    void renderBlockItems();
+    void postInitialization(FMLPostInitializationEvent event);
 
-    void registerMobs();
 }

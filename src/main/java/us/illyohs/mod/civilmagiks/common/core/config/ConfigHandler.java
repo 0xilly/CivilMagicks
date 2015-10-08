@@ -27,11 +27,11 @@ package us.illyohs.mod.civilmagiks.common.core.config;
 
 import java.io.File;
 
-import us.illyohs.mod.civilmagiks.common.core.helper.LogHelper;
+import us.illyohs.mod.civilmagiks.common.core.util.LogUtils;
 //import us.illyohs.mod.civilmagiks.common.core.lib.DimIDs;
 import net.minecraftforge.common.config.Configuration;
 
-public class ConfigurationHandler {
+public class ConfigHandler {
     
     public static Configuration config;
     
@@ -48,7 +48,7 @@ public class ConfigurationHandler {
             
             
         } catch(Exception e) {
-            LogHelper.fatal(e);
+            LogUtils.fatal(e);
         } finally {
             config.save();
         }

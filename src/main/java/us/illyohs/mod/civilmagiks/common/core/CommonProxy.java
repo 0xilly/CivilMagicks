@@ -25,38 +25,29 @@
  */
 package us.illyohs.mod.civilmagiks.common.core;
 
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
+import us.illyohs.mod.civilmagiks.common.core.config.ConfigHandler;
 import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
 
-public class CommonProxy implements IProxy {
+public class CommonProxy {
 
+	public void preInit(FMLPreInitializationEvent event) {
+        ConfigHandler.init(event.getSuggestedConfigurationFile());
 
-	@Override
-	public void initModelLoaders() {
-		//NO-OP
-	}
-
-	@Override
-	public void bindModelsAndTextures() {
-		//NO-OP
-		
-	}
-
-	@Override
-	public void registerTileEntitys() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void registerMobs() {
-		// TODO Auto-generated method stub
-		
-	}
-
-    @Override
-    public void renderBlockItems() {
-        //NO-OP
-        
+        ModBlocks.init();
+        ModBlocks.init();
     }
+
+	public void init(FMLInitializationEvent event ) {
+
+    }
+    
+
+	public void postInit(FMLPostInitializationEvent event) {
+
+	}
 
 }

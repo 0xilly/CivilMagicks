@@ -25,8 +25,22 @@
  */
 package us.illyohs.mod.civilmagiks.common.block.tile;
 
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.server.gui.IUpdatePlayerListBox;
 
-public class TileElementalBasin extends TileEntity {
+import us.illyohs.mod.civilmagiks.api.tile.TileNode;
 
+public class TileElementalBasin extends TileNode implements IUpdatePlayerListBox {
+
+    int tier;
+
+    @Override
+    public void updateTB() {
+        super.updateTB();
+
+    }
+
+    private Boolean getNeighboringBlocks() {
+
+        return null;
+    }
 }

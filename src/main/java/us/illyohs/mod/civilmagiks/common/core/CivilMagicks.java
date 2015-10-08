@@ -25,9 +25,6 @@
  */
 package us.illyohs.mod.civilmagiks.common.core;
 
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -36,53 +33,44 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
-import us.illyohs.mod.civilmagiks.common.core.config.ConfigurationHandler;
-import us.illyohs.mod.civilmagiks.common.core.handler.CivilEventHandler;
-import us.illyohs.mod.civilmagiks.common.core.handler.WritHandler;
-import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
-import us.illyohs.mod.civilmagiks.common.item.ModItems;
 
 @Mod(modid = LibInfo.MOD_ID, name = LibInfo.MOD_NAME, version = LibInfo.VERSION)
 public class CivilMagicks {
 
-    @Instance
+    @Instance(LibInfo.MOD_ID)
     public static CivilMagicks instance;
     
     @SidedProxy(serverSide = LibInfo.COMMON_PROXY, clientSide = LibInfo.CLIENT_PROXY)
-    public static IProxy proxy;
+    public static CommonProxy proxy;
     
-    public WritHandler writhandler;
-    public CivilEventHandler civilEventHandler;
+//    public WritHandler writhandler;
+//    public CivilEventHandler civilEventHandler;
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-        ModBlocks.init();
-        ModItems.init();
-        //VanillaCrafting.init();
-        proxy.initModelLoaders();
+        proxy.preInit(event);
 
         
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        proxy.bindModelsAndTextures();
-        proxy.renderBlockItems();
-        GameRegistry.addRecipe(new ItemStack(ModItems.itemWrit),
-                "ddd",
-                "dpd",
-                "ddd", 'd', Items.stick, 'p', Items.paper);
+        proxy.init(event);
+//        proxy.bindModelsAndTextures();
+//        proxy.renderBlockItems();
+//        GameRegistry.addRecipe(new ItemStack(ModItems.itemWrit),
+//                "ddd",
+//                "dpd",
+//                "ddd", 'd', Items.stick, 'p', Items.paper);
 
     }
 
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-        writhandler = new WritHandler();
-        civilEventHandler = new CivilEventHandler();
-//        MinecraftForge.EVENT_BUS.register(new CivilEventHandler());
+        proxy.postInit(event);
+//        writhandler = new WritHandler();
+//        civilEventHandler = new CivilEventHandler();
+////        MinecraftForge.EVENT_BUS.register(new CivilEventHandler());
     }
 }

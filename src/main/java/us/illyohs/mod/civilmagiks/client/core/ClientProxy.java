@@ -25,43 +25,32 @@
  */
 package us.illyohs.mod.civilmagiks.client.core;
 
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
-import us.illyohs.mod.civilmagiks.client.render.tile.RenderSigil;
 import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
-import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
+import us.illyohs.mod.civilmagiks.common.core.CommonProxy;
 
-public class ClientProxy implements IProxy {
+public class ClientProxy extends CommonProxy {
 
     @Override
-    public void initModelLoaders() {
-        RenderUtils.initB3DLOADER();
-
+    public void preInit(FMLPreInitializationEvent event) {
+        super.preInit(event);
     }
 
     @Override
-    public void bindModelsAndTextures() {
-//        ClientRegistry.bindTileEntitySpecialRenderer(TileSigil.class, new RenderSigil());
-//        ModelLoader.setCustomModelResourceLocation();
-
-    }
-
-    @Override
-    public void registerTileEntitys() {
-        //NO-OP
-    }
-
-    @Override
-    public void registerMobs() {
-        //NO-OP
-    }
-
-    @Override
-    public void renderBlockItems() {
+    public void init(FMLInitializationEvent event) {
+        super.init(event);
         RenderUtils.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
-        RenderUtils.renderItemsBlocks(ModBlocks.starBasic, "civilanalyzer");
+
+        RenderUtils.initB3DLOADER();
+    }
+
+    @Override
+    public void postInit(FMLPostInitializationEvent event) {
+        super.postInit(event);
+
     }
 
 }
