@@ -50,13 +50,13 @@ processResources {
 
 repositories {
     mavenCentral()
-    ivy {
-        name 'Baubles'
-        artifactPattern 'https://dl.dropboxusercontent.com/u/47135879/[module]-[revision].[ext]'
+    maven {
+        name "RX14 repo"
+        url "http://mvn.rx14.co.uk/repo/"
     }
 }
 
 dependencies {
-    compile name: 'Baubles', version: '1.8-1.1.1.0-deobf', ext: 'jar'
+    compile 'com.azanor.baubles:Baubles:1.8-1.1.1.0.2:deobf'
 }
 

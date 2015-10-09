@@ -23,3 +23,5 @@ setupidea.bat
 /libs/
 
 /run/
+
+*.launch
