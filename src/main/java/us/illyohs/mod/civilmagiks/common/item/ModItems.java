@@ -25,12 +25,12 @@
  */
 package us.illyohs.mod.civilmagiks.common.item;
 
-import us.illyohs.mod.civilmagiks.common.item.armor.ArmorMonocle;
-import us.illyohs.mod.civilmagiks.common.item.mana.ItemManaShard;
-import us.illyohs.mod.civilmagiks.common.item.writ.ItemWrit;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import us.illyohs.mod.civilmagiks.common.item.armor.ArmorMonocle;
+import us.illyohs.mod.civilmagiks.common.item.mana.ItemManaShard;
+import us.illyohs.mod.civilmagiks.common.item.writ.ItemWrit;
 
 public class ModItems {
 
@@ -38,9 +38,9 @@ public class ModItems {
     
     public static Item itemWand;
     
-    public static Item itemContract;
     public static Item itemWrit;
-//    public static Item
+
+    public static Item itemManaCatalyst;
     
     
     //Armor
@@ -50,6 +50,8 @@ public class ModItems {
 
         itemManaShard = new ItemManaShard();
         itemWrit = new ItemWrit();
+        
+        itemManaCatalyst = new ItemManaCatalyst();
         
         //Armor
         armorMonocle = new ArmorMonocle();
