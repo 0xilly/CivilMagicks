@@ -25,20 +25,23 @@
  */
 package us.illyohs.mod.civilmagiks.common.core;
 
+import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
+import us.illyohs.mod.civilmagiks.common.core.config.ConfigHandler;
+import us.illyohs.mod.civilmagiks.common.core.handler.CivilEventHandler;
+
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
-import us.illyohs.mod.civilmagiks.common.core.config.ConfigHandler;
-import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
 
 public class CommonProxy {
+    
+    public CivilEventHandler civilEventHandler;
 
 	public void preInit(FMLPreInitializationEvent event) {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
 
         ModBlocks.init();
-        ModBlocks.init();
+//        ModBlocks.init();
     }
 
 	public void init(FMLInitializationEvent event ) {
@@ -47,7 +50,7 @@ public class CommonProxy {
     
 
 	public void postInit(FMLPostInitializationEvent event) {
-
+	    civilEventHandler = new CivilEventHandler();
 	}
 
 }

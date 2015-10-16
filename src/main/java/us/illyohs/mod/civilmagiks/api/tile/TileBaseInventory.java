@@ -4,10 +4,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.util.IChatComponent;
 
+/**
+ * Note this class is based off of Vazkii's TileSimpleInventory see http://git.io/vCisi
+ * for her implementation.
+ */
 public class TileBaseInventory extends TileBase implements IInventory {
 
     ItemStack[] inv = new ItemStack[getSizeInventory()];
@@ -19,6 +24,8 @@ public class TileBaseInventory extends TileBase implements IInventory {
 
     @Override
     public void readFromModNBT(NBTTagCompound bNBT) {
+        NBTTagList tag = bNBT.getTagList("Items", 10);
+        inv = new ItemStack[getSizeInventory()];
 
     }
 
@@ -117,9 +124,6 @@ public class TileBaseInventory extends TileBase implements IInventory {
         return null;
     }
 
-    /* (non-Javadoc)
-     * @see us.illyohs.mod.civilmagiks.api.tile.TileBase#onModDataPacket(net.minecraft.network.NetworkManager, net.minecraft.network.play.server.S35PacketUpdateTileEntity)
-     */
     @Override
     public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
         // TODO Auto-generated method stub

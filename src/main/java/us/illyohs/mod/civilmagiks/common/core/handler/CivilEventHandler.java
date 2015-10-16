@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
+ * Copyright (c) 2014, Anthony Anderson(Illyohs)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,19 +25,24 @@
  */
 package us.illyohs.mod.civilmagiks.common.core.handler;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import us.illyohs.mod.civilmagiks.api.mana.ManaNetworkEvent;
+import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
+import us.illyohs.mod.civilmagiks.common.core.lib.CivilPlayer;
+import us.illyohs.mod.civilmagiks.common.core.util.BlockUtils;
+import us.illyohs.mod.civilmagiks.common.core.util.LogUtils;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import us.illyohs.mod.civilmagiks.api.mana.ManaNetworkEvent;
-import us.illyohs.mod.civilmagiks.common.core.util.LogUtils;
-import us.illyohs.mod.civilmagiks.common.core.lib.CivilPlayer;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CivilEventHandler {
 
@@ -47,7 +52,7 @@ public class CivilEventHandler {
         acceptableInnerBlocks.add(Blocks.stone_slab);
         acceptableInnerBlocks.add(Blocks.stone_slab2);
         acceptableInnerBlocks.add(Blocks.wooden_slab);
-//        acceptableInnerBlocks.add(Blocks.brick)
+        // acceptableInnerBlocks.add(Blocks.brick)
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -66,11 +71,15 @@ public class CivilEventHandler {
         LogUtils.info("ManaEvent from " + event.tile.getPos() + ". Manatype is " + event.manaType);
     }
 
+    @SubscribeEvent
     public void onPlayerInteractEvent(PlayerInteractEvent event) {
-        EntityPlayer player = event.entityPlayer;
-//        if (!player.worldObj.isRemote &&) {
-//
-//        }
+        if (!event.entityPlayer.worldObj.isRemote
+                && event.entityPlayer.getHeldItem().getItem() == Items.written_book
+                && event.action == Action.RIGHT_CLICK_BLOCK && event.action != Action.RIGHT_CLICK_AIR) {
+//            BlockUtils.replaceBlock(event.world, event.pos, Blocks.cauldron, ModBlocks.blockManaStone);
+//            SoundUtils.blast(event.world, event.entityPlayer, 3, 4);
+            BlockUtils.replaceBlockWithSound(event.entityPlayer, event.world, event.pos, "blast", 3, 4, Blocks.cauldron, ModBlocks.blockManaStone);
+        }
     }
 
 }

@@ -6,11 +6,11 @@
  * modification, are permitted provided that the following conditions are met:
  *
  * * Redistributions of source code must retain the above copyright notice, this
- * list of conditions and the following disclaimer.
+ *   list of conditions and the following disclaimer.
  *
  * * Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
+ *   this list of conditions and the following disclaimer in the documentation
+ *   and/or other materials provided with the distribution.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -23,18 +23,27 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.common.core.lib;
+package us.illyohs.mod.civilmagiks.common.core.util;
 
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
-public interface IProxy {
+public class SoundUtils {
 
-    void preInitialization(FMLPreInitializationEvent event);
+    public static void whisle(World world, EntityPlayer player, float volume, float pitch) {
+        world.playSoundAtEntity(player, (LibInfo.MOD_ID + ":spriteknowledge1"), volume, pitch);
 
-    void initialization(FMLInitializationEvent event);
+    }
+    
+    public static void blast(World world, EntityPlayer player, float volume, float pitch) {
+        world.playSoundAtEntity(player, (LibInfo.MOD_ID + ":blast"), volume, pitch);
 
-    void postInitialization(FMLPostInitializationEvent event);
+    }
 
+
+    public static void faerieChime(World world, EntityPlayer player, float volume, float pitch) {
+        world.playSoundAtEntity(player, (LibInfo.MOD_ID + ":faeriechime"), volume, pitch);
+
+    }
 }

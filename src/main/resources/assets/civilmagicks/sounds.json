@@ -1,4 +1,6 @@
 {
     "spirtechime": {"category": "master","sounds": [{"name": "spirtechime", "stream": false}]},
-    "spriteknowledge1": {"category": "master","sounds": [{"name": "spriteknowledge1", "stream": false}]}
+    "spriteknowledge1": {"category": "master","sounds": [{"name": "spriteknowledge1", "stream": false}]},
+    "faeriechime": {"category": "master","sounds": [{"name": "faeriechime", "stream": false}]},
+    "blast": {"category": "master", "sounds": [{"name": "blast", "stream": false}]}
 }

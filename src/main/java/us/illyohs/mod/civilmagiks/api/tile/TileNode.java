@@ -3,7 +3,7 @@ package us.illyohs.mod.civilmagiks.api.tile;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
+
 import us.illyohs.mod.civilmagiks.api.mana.IManaBlock;
 import us.illyohs.mod.civilmagiks.api.mana.ManaType;
 

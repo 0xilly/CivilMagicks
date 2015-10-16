@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, Anthony Anderson(Lord Illyohs)
+ * Copyright (c) 2015, Anthony Anderson(Illyohs)
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,16 +23,32 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.common.core.handler;
+package us.illyohs.mod.civilmagiks.common.core.util;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.world.World;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
-public class SoundHandler {
+import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.BlockPos;
+import net.minecraft.world.World;
 
-    public static void whisle(World world, EntityPlayer player, float volume, float pitch) {
-        world.playSoundAtEntity(player, (LibInfo.MOD_ID + ":spriteknowledge1"), volume, pitch);
-
+public class BlockUtils {
+    
+    public static void replaceBlock(World world, BlockPos pos, Block target, Block replacement) {
+        Block origin = world.getBlockState(pos).getBlock();
+        if (origin == target) {
+            world.setBlockState(pos, replacement.getDefaultState());
+        } 
     }
+    
+    public static void replaceBlockWithSound(EntityPlayer player,  World world, BlockPos pos, String sound, int volume, int pitch, Block target, Block replacement) {
+        Block origin = world.getBlockState(pos).getBlock();
+        if (origin == target) {
+            player.worldObj.playSoundAtEntity(player, (LibInfo.MOD_ID + ":" + sound), volume, pitch);
+            world.setBlockState(pos, replacement.getDefaultState());
+            
+        }
+        
+    }
+
 }
