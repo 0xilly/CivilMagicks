@@ -34,14 +34,32 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 public class BlockUtils {
-    
+   
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @param target
+     * @param replacement
+     */
     public static void replaceBlock(World world, BlockPos pos, Block target, Block replacement) {
         Block origin = world.getBlockState(pos).getBlock();
         if (origin == target) {
             world.setBlockState(pos, replacement.getDefaultState());
         } 
     }
-    
+   
+    /**
+     * 
+     * @param player
+     * @param world
+     * @param pos
+     * @param sound
+     * @param volume
+     * @param pitch
+     * @param target
+     * @param replacement
+     */
     public static void replaceBlockWithSound(EntityPlayer player,  World world, BlockPos pos, String sound, int volume, int pitch, Block target, Block replacement) {
         Block origin = world.getBlockState(pos).getBlock();
         if (origin == target) {
@@ -52,15 +70,42 @@ public class BlockUtils {
         
     }
     
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @return
+     */
     public static Block getBlockBelow(World world, BlockPos pos) {
         Block below = world.getBlockState(pos.down()).getBlock();
         return below;
         
     }
     
-//    public static Block getBlockFromFacing(World world, EnumFacing facing, int dist) {
-//        return null;
-//        
-//    }
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @param facing
+     * @param distance
+     * @return
+     */
+    public static Block getBlockFromDistance(World world, BlockPos pos, EnumFacing facing, int distance) {
+        Block blockDist = world.getBlockState(pos.offset(facing, distance)).getBlock();
+        return blockDist;
+    }
+    
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @param facing
+     * @param distance
+     * @return
+     */
+    public static Block getBlockBelowFromDistance(World world, BlockPos pos, EnumFacing facing, int distance) {
+        Block blockDist = world.getBlockState(pos.offset(facing, distance).down()).getBlock();
+        return blockDist;
+    }
 
 }
