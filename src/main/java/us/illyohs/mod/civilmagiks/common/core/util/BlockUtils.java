@@ -30,6 +30,7 @@ import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 public class BlockUtils {
@@ -50,5 +51,16 @@ public class BlockUtils {
         }
         
     }
+    
+    public static Block getBlockBelow(World world, BlockPos pos) {
+        Block below = world.getBlockState(pos.down()).getBlock();
+        return below;
+        
+    }
+    
+//    public static Block getBlockFromFacing(World world, EnumFacing facing, int dist) {
+//        return null;
+//        
+//    }
 
 }
