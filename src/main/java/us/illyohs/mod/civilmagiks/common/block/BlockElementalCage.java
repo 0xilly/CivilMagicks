@@ -23,30 +23,19 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.common.core.lib;
+package us.illyohs.mod.civilmagiks.common.block;
 
-public final class LibStrings {
+import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
 
-    private static String BASE                  = LibInfo.MOD_ID + ":";
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 
-    // Blocks
-    public static String  BLOCK_ELEMENTAL_BASIN = BASE + "elementalbasin";
-    public static String  BLOCK_ELEMENTAL_CAGE  = BASE + "cage";
-    public static String  BLOCK_MANARING        = BASE + "manaring";
-    public static String  BLOCK_MANASTONE       = BASE + "manastone";
-    public static String  BLOCK_WORKSHOP        = BASE + "workshopcore";
-    public static String  BLOCK_SUMMONSIGIL     = BASE + "summmonsigil";
+public class BlockElementalCage extends Block {
 
-    // Items
-    public static String  ITEM_CALLING_WHISTEL  = BASE + "callingwhistle";
-    public static String  ITEM_MANA_SHARD       = BASE + "manashard";
-    public static String  ITEM_MONOCLE          = BASE + "monocle";
-    public static String  ITEM_TEA_SEEDS        = BASE + "teaseeds";
-    public static String  ITEM_WRIT             = BASE + "writ";
-
-    // Stars
-    public static String  STAR_BASIC            = BASE + "starbasic";
-    public static String  STAR_ILLUMENATE       = BASE + "starillumenate";
-    public static String  STAR_PASSIVE          = BASE + "passivestar";
+    public BlockElementalCage() {
+        super(Material.iron);
+        setUnlocalizedName(LibStrings.BLOCK_ELEMENTAL_CAGE);
+        
+    }
 
 }

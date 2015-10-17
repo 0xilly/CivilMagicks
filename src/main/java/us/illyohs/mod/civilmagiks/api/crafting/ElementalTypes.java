@@ -41,8 +41,7 @@ public class ElementalTypes {
      * 
      */
     public ElementalTypes(String key, int color, int blend, ElementalTypes[] components) {
-        if (elementalTypes.containsKey(key))
-            throw new IllegalArgumentException("The element: " + key + " has already been registerd");
+        if (elementalTypes.containsKey(key)) throw new IllegalArgumentException("The element: " + key + " has already been registerd");
         this.key = key;
         this.color = color;
         this.blend = blend;

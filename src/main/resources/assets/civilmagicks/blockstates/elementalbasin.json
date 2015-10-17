@@ -2,12 +2,12 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "texture": "civilmagicks:basin"
+            "#texture": "civilmagicks:basin"
         },
         "model": "civilmagicks:elementalbasin.b3d"
-     },
-    "variants": {
-        "normal": [{}]
-
-    }
+     }
+//    "variants": {
+//        "normal": [{}]
+//
+//    }
 }
