@@ -23,61 +23,16 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.api.crafting;
+package us.illyohs.mod.civilmagiks.common.core.lib;
 
-import net.minecraft.item.ItemStack;
-
-public class ElementalCrafting {
-
-    ItemStack[]    inputs;
-    ItemStack      output;
-    ElementalTypes elemental;
-    
-    /**
-     * @param inputs
-     * @param output
-     * @param elemental
-     */
-    public ElementalCrafting(ItemStack[] inputs, ItemStack output, ElementalTypes elemental) {
-        this.inputs = inputs;
-        this.output = output;
-        this.elemental = elemental;
-    }
-    /**
-     * @return the inputs
-     */
-    public ItemStack[] getInputs() {
-        return inputs;
-    }
-    /**
-     * @param inputs the inputs to set
-     */
-    public void setInputs(ItemStack[] inputs) {
-        this.inputs = inputs;
-    }
-    /**
-     * @return the output
-     */
-    public ItemStack getOutput() {
-        return output;
-    }
-    /**
-     * @param output the output to set
-     */
-    public void setOutput(ItemStack output) {
-        this.output = output;
-    }
-    /**
-     * @return the elemental
-     */
-    public ElementalTypes getElemental() {
-        return elemental;
-    }
-    /**
-     * @param elemental the elemental to set
-     */
-    public void setElemental(ElementalTypes elemental) {
-        this.elemental = elemental;
-    }
+public interface IProxy {
+	
+	void renderModels();
+	
+	void renderBlockItems();
+	
+	void regMobs();
+	
+	void renderMobs();
 
 }

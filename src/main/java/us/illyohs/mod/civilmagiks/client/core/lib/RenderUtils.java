@@ -59,7 +59,7 @@ public class RenderUtils {
 
     public static void bindTexture(ResourceLocation texture) {
         FMLClientHandler.instance().getClient().renderEngine.bindTexture(texture);
-    }
+    } 
     
     public static void renderItemsBlocks(Block block, String texture) {
         Item item = Item.getItemFromBlock(block);
@@ -73,6 +73,10 @@ public class RenderUtils {
     public static void renderItem(ItemStack item) {
         FMLClientHandler.instance().getClient().getRenderItem().renderItemModel(item);
     }
+    
+	public static void renderFloatingTexts(String text, double x, double y, double z, boolean shadow) {
+        FMLClientHandler.instance().getClient().fontRendererObj.drawString(text, (int)x, (int)y, (int)z, shadow);
+	}
 
     //Note this will only work for horizontal texturessheets not vertivle could add to it but lazy
 //    public static void renderAnaimatedTexture(int HIGHT, int LENGTH, ResourceLocation texture) {
@@ -151,5 +155,6 @@ public class RenderUtils {
     public void setHex(int hex) {
         this.hex = hex;
     }
+
 
 }

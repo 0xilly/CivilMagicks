@@ -54,9 +54,15 @@ repositories {
         name "RX14 repo"
         url "http://mvn.rx14.co.uk/repo/"
     }
+    
+    maven {
+        name "forge maven"
+        url "http://files.minecraftforge.net/maven"
+    }
 }
 
 dependencies {
     compile 'com.azanor.baubles:Baubles:1.8-1.1.1.0.2:deobf'
+    compile 'codechicken:CodeChickenLib:1.8-1.1.2.139:dev'
 }
 

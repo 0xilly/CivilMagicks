@@ -7,6 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
+import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
 
 public class BlockElementalBasin extends Block implements ITileEntityProvider {
@@ -28,6 +29,6 @@ public class BlockElementalBasin extends Block implements ITileEntityProvider {
 
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return null;
+        return new TileElementalBasin();
     }
 }

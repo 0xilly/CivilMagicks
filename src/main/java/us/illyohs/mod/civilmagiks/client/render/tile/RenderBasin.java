@@ -23,60 +23,48 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.client.core;
+package us.illyohs.mod.civilmagiks.client.render.tile;
+
+import java.util.Map;
 
 import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
-import us.illyohs.mod.civilmagiks.client.render.tile.RenderBasin;
-import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
 import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
-import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
-import net.minecraftforge.fml.client.registry.ClientRegistry;
+import codechicken.lib.render.CCModel;
+import codechicken.lib.render.CCRenderState;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ResourceLocation;
 
+public class RenderBasin extends TileEntitySpecialRenderer {
 
-public class ClientProxy implements IProxy {
+    public static CCModel basin;
 
-	@Override
-	public void renderModels() {
-		ClientRegistry.bindTileEntitySpecialRenderer(TileElementalBasin.class, new RenderBasin());
-	}
+    static {
+        Map<String, CCModel> model = CCModel.parseObjModels(new ResourceLocation(LibInfo.MOD_ID, "models/block/elementalbasin.obj"));
+        basin = model.get("Basin");
+        // CCModel.
+    }
 
-	@Override
-	public void renderBlockItems() {
-		RenderUtils.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
-	}
+    @Override
+    public void renderTileEntityAt(TileEntity te, double x, double y, double z, float p_180535_8_, int p_180535_9_) {
+        TileElementalBasin tile = (TileElementalBasin) te;
 
-	@Override
-	public void regMobs() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void renderMobs() {
-		// TODO Auto-generated method stub
-		
-	}
-
-//    @Override
-//    public void preInit(FMLPreInitializationEvent event) {
-//        super.preInit(event);
-//                
-//        RenderUtils.initB3DLOADER();
-//    }
+//        GlStateManager.pushMatrix();
+//        GlStateManager.pushAttrib();
+//        CCRenderState.changeTexture(LibInfo.MOD_ID + ":textures/basin.png");
+////        CCRenderState.changeTexture(new ResourceLocation(LibInfo.MOD_ID, "block/basin.png"));
+//        CCRenderState.startDrawing();
+//        basin.render();
+//        CCRenderState.draw();
 //
-//    @Override
-//    public void init(FMLInitializationEvent event) {
-//        super.init(event);
-//        RenderUtils.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
-//        System.out.println("----------------------------------------test------------------------------------");
-//
-//    }
-//
-//    @Override
-//    public void postInit(FMLPostInitializationEvent event) {
-//        super.postInit(event);
-//
-//    }
+//        GlStateManager.popMatrix();
+//        GlStateManager.popAttrib();
+
+        RenderUtils.renderFloatingTexts("Testing ths", x, y + 1, z, true);
+
+    }
 
 }
