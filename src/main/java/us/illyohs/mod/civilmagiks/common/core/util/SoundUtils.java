@@ -25,9 +25,10 @@
  */
 package us.illyohs.mod.civilmagiks.common.core.util;
 
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class SoundUtils {
 

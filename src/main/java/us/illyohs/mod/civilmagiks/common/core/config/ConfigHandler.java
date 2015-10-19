@@ -28,6 +28,7 @@ package us.illyohs.mod.civilmagiks.common.core.config;
 import java.io.File;
 
 import us.illyohs.mod.civilmagiks.common.core.util.LogUtils;
+
 //import us.illyohs.mod.civilmagiks.common.core.lib.DimIDs;
 import net.minecraftforge.common.config.Configuration;
 

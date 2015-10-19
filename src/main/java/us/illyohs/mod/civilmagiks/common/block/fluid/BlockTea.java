@@ -25,11 +25,13 @@
  */
 package us.illyohs.mod.civilmagiks.common.block.fluid;
 
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class BlockTea extends BlockFluidClassic {
 

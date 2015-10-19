@@ -25,10 +25,11 @@
  */
 package us.illyohs.mod.civilmagiks.common.writ;
 
+import us.illyohs.mod.civilmagiks.api.writ.Writ;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import us.illyohs.mod.civilmagiks.api.writ.Writ;
 
 public class HeathWrit extends Writ {
 

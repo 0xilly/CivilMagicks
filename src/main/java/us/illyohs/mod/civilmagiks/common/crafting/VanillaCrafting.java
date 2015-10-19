@@ -26,8 +26,10 @@
 package us.illyohs.mod.civilmagiks.common.crafting;
 
 import us.illyohs.mod.civilmagiks.common.item.ModItems;
+
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class VanillaCrafting {

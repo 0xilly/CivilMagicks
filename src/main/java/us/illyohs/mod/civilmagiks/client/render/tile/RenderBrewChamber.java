@@ -25,12 +25,13 @@
  */
 package us.illyohs.mod.civilmagiks.client.render.tile;
 
+import us.illyohs.mod.civilmagiks.client.models.ModelBrewChamber;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySignRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-import us.illyohs.mod.civilmagiks.client.models.ModelBrewChamber;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class RenderBrewChamber extends TileEntitySignRenderer {
 

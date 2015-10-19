@@ -31,12 +31,11 @@ import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
 import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
-import codechicken.lib.render.CCModel;
-import codechicken.lib.render.CCRenderState;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+
+import codechicken.lib.render.CCModel;
 
 public class RenderBasin extends TileEntitySpecialRenderer {
 

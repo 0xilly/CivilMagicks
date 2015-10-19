@@ -26,10 +26,12 @@
 package us.illyohs.mod.civilmagiks.common.core.lib;
 
 import us.illyohs.mod.civilmagiks.api.mana.ManaType;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+
 import net.minecraftforge.common.IExtendedEntityProperties;
 
 public class CivilPlayer implements IExtendedEntityProperties {

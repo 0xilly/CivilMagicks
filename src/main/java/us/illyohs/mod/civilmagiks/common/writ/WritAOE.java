@@ -25,8 +25,9 @@
  */
 package us.illyohs.mod.civilmagiks.common.writ;
 
-import net.minecraft.entity.player.EntityPlayer;
 import us.illyohs.mod.civilmagiks.api.writ.Writ;
+
+import net.minecraft.entity.player.EntityPlayer;
 
 public class WritAOE extends Writ {
 

@@ -25,10 +25,7 @@
  */
 package us.illyohs.mod.civilmagiks.common.core.util;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import us.illyohs.mod.civilmagiks.api.civilregistry.CivilRegistry;
-import us.illyohs.mod.civilmagiks.api.civilregistry.CivilStatus;
 
 public class CivilUtils {
 

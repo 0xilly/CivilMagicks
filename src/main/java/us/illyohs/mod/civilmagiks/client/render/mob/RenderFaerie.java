@@ -26,12 +26,13 @@
 
 package us.illyohs.mod.civilmagiks.client.render.mob;
 
+import us.illyohs.mod.civilmagiks.client.core.lib.LibAssets;
+
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
-import us.illyohs.mod.civilmagiks.client.core.lib.LibAssets;
 
 public class RenderFaerie extends Render {
 

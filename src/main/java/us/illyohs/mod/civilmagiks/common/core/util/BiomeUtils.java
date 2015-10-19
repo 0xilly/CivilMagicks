@@ -1,10 +1,11 @@
 package us.illyohs.mod.civilmagiks.common.core.util;
 
+import us.illyohs.mod.civilmagiks.api.mana.BiomeManaRegistry;
+import us.illyohs.mod.civilmagiks.api.mana.ManaType;
+
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
-import us.illyohs.mod.civilmagiks.api.mana.BiomeManaRegistry;
-import us.illyohs.mod.civilmagiks.api.mana.ManaType;
 
 public class BiomeUtils {
 

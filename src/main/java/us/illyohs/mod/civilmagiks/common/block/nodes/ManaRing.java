@@ -25,12 +25,13 @@
  */
 package us.illyohs.mod.civilmagiks.common.block.nodes;
 
+import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class ManaRing extends BlockContainer {
 

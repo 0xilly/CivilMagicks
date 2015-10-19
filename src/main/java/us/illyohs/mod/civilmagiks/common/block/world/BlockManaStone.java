@@ -25,11 +25,11 @@
  */
 package us.illyohs.mod.civilmagiks.common.block.world;
 
+import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
 
 public class BlockManaStone extends Block {
 	

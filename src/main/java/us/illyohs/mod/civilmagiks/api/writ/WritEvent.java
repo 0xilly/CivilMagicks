@@ -26,6 +26,7 @@
 package us.illyohs.mod.civilmagiks.api.writ;
 
 import net.minecraft.entity.player.EntityPlayer;
+
 import net.minecraftforge.fml.common.eventhandler.Event;
 
 public class WritEvent extends Event {

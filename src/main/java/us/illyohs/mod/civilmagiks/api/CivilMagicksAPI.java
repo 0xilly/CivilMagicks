@@ -27,13 +27,6 @@ package us.illyohs.mod.civilmagiks.api;
 
 import java.util.HashMap;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fluids.Fluid;
-
 import us.illyohs.mod.civilmagiks.api.civilregistry.CivilObject;
 import us.illyohs.mod.civilmagiks.api.civilregistry.CivilRegistry;
 import us.illyohs.mod.civilmagiks.api.civilregistry.CivilStatus;
@@ -41,6 +34,14 @@ import us.illyohs.mod.civilmagiks.api.mana.BiomeManaRegistry;
 import us.illyohs.mod.civilmagiks.api.mana.ManaType;
 import us.illyohs.mod.civilmagiks.api.sigil.Sigil;
 import us.illyohs.mod.civilmagiks.api.writ.Writ;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.world.biome.BiomeGenBase;
+
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fluids.Fluid;
 
 public class CivilMagicksAPI {
 

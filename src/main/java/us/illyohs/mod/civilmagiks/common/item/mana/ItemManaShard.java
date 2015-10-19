@@ -27,6 +27,7 @@ package us.illyohs.mod.civilmagiks.common.item.mana;
 
 import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.item.Item;
 
 public class ItemManaShard extends Item {

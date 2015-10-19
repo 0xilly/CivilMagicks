@@ -27,6 +27,7 @@ package us.illyohs.mod.civilmagiks.common.block.nodes;
 
 import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 

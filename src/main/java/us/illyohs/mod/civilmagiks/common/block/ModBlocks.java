@@ -25,15 +25,16 @@
  */
 package us.illyohs.mod.civilmagiks.common.block;
 
-import net.minecraft.block.Block;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
 import us.illyohs.mod.civilmagiks.common.block.nodes.BlockElementalBasin;
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockBasicStar;
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.StarBlock;
 import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
 import us.illyohs.mod.civilmagiks.common.block.tile.star.TileBasicStar;
 import us.illyohs.mod.civilmagiks.common.block.world.BlockManaStone;
+
+import net.minecraft.block.Block;
+
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 

@@ -27,6 +27,7 @@ package us.illyohs.mod.civilmagiks.common.item.armor;
 
 import us.illyohs.mod.civilmagiks.api.CivilMagicksAPI;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.item.ItemArmor;
 
 public class ArmorMonocle extends ItemArmor {

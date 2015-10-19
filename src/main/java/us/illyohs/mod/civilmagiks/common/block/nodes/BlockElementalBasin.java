@@ -1,14 +1,14 @@
 package us.illyohs.mod.civilmagiks.common.block.nodes;
 
+import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
+import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-
-import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
-import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
 
 public class BlockElementalBasin extends Block implements ITileEntityProvider {
 

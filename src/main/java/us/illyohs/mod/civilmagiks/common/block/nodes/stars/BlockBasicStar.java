@@ -1,10 +1,11 @@
 package us.illyohs.mod.civilmagiks.common.block.nodes.stars;
 
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
 import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
 import us.illyohs.mod.civilmagiks.common.block.tile.star.TileBasicStar;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
+
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 public class BlockBasicStar extends StarBlock {
 

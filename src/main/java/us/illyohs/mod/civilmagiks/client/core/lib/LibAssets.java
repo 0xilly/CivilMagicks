@@ -26,6 +26,7 @@
 package us.illyohs.mod.civilmagiks.client.core.lib;
 
 import us.illyohs.mod.civilmagiks.client.core.helper.ResourceLocationHelper;
+
 import net.minecraft.util.ResourceLocation;
 
 public class LibAssets {

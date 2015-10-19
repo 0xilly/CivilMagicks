@@ -25,9 +25,10 @@
  */
 package us.illyohs.mod.civilmagiks.common.item.lore;
 
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class ItemCallingWhistle extends Item {
 

@@ -1,9 +1,10 @@
 package us.illyohs.mod.civilmagiks.common.block.tile.star;
 
-import net.minecraft.nbt.NBTTagCompound;
 import us.illyohs.mod.civilmagiks.api.mana.ManaType;
 import us.illyohs.mod.civilmagiks.api.tile.TileNode;
 import us.illyohs.mod.civilmagiks.common.core.util.BiomeUtils;
+
+import net.minecraft.nbt.NBTTagCompound;
 
 public class TileBasicStar extends TileNode {
 

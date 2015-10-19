@@ -1,6 +1,7 @@
 package us.illyohs.mod.civilmagiks.api.sigil;
 
 import net.minecraft.entity.Entity;
+
 import net.minecraftforge.fml.common.eventhandler.Event;
 
 public class SigilEvent extends Event {

@@ -26,9 +26,11 @@
 
 package us.illyohs.mod.civilmagiks.common.item.baubles;
 
+import us.illyohs.mod.civilmagiks.api.item.ManaItem;
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
-import us.illyohs.mod.civilmagiks.api.item.ManaItem;
+
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 

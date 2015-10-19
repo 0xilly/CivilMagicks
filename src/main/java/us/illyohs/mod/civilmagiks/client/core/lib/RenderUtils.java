@@ -27,23 +27,16 @@ package us.illyohs.mod.civilmagiks.client.core.lib;
 
 import java.awt.Color;
 
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.EntityFX;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.WorldRenderer;
-import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
+
 import net.minecraftforge.client.model.b3d.B3DLoader;
 import net.minecraftforge.fml.client.FMLClientHandler;
-
-import us.illyohs.mod.civilmagiks.client.core.lib.LibAssets;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class RenderUtils {
     

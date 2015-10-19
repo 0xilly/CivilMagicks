@@ -25,12 +25,13 @@
  */
 package us.illyohs.mod.civilmagiks.common.block.nodes.stars;
 
+import us.illyohs.mod.civilmagiks.api.block.BlockAiry;
+import us.illyohs.mod.civilmagiks.api.material.CivilMaterials;
+
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import us.illyohs.mod.civilmagiks.api.block.BlockAiry;
-import us.illyohs.mod.civilmagiks.api.material.CivilMaterials;
 
 public class StarBlock extends BlockAiry implements ITileEntityProvider {
 

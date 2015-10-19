@@ -25,9 +25,9 @@
  */
 package us.illyohs.mod.civilmagiks.common.block.tile;
 
-import net.minecraft.server.gui.IUpdatePlayerListBox;
-
 import us.illyohs.mod.civilmagiks.api.tile.TileNode;
+
+import net.minecraft.server.gui.IUpdatePlayerListBox;
 
 public class TileElementalBasin extends TileNode implements IUpdatePlayerListBox {
 

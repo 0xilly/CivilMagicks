@@ -25,13 +25,14 @@
  */
 package us.illyohs.mod.civilmagiks.client.render.tile;
 
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class RenderSigil extends TileEntitySpecialRenderer {
 

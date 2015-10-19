@@ -26,12 +26,10 @@
 
 package us.illyohs.mod.civilmagiks.api.item;
 
-import net.minecraft.entity.player.EntityPlayer;
+import us.illyohs.mod.civilmagiks.api.mana.IManaItem;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.World;
-import us.illyohs.mod.civilmagiks.api.mana.IManaItem;
 
 public class ManaItem extends Item implements IManaItem {
 

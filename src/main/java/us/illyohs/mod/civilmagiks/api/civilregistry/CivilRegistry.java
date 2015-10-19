@@ -25,10 +25,10 @@
  */
 package us.illyohs.mod.civilmagiks.api.civilregistry;
 
+import java.util.HashMap;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-
-import java.util.HashMap;
 
 public class CivilRegistry {
     

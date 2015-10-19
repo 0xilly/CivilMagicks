@@ -1,19 +1,23 @@
 package us.illyohs.mod.civilmagiks.common.item.writ;
 
+import static net.minecraft.util.EnumChatFormatting.AQUA;
+import static net.minecraft.util.EnumChatFormatting.RED;
+import static net.minecraft.util.EnumChatFormatting.RESET;
+
+import java.util.List;
+
+import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
+import us.illyohs.mod.civilmagiks.common.core.handler.WritHandler;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import static net.minecraft.util.EnumChatFormatting.*;
 import net.minecraft.world.World;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
-import us.illyohs.mod.civilmagiks.common.core.handler.WritHandler;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
-
-import java.util.List;
 
 public class ItemWrit extends Item {
     

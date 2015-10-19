@@ -25,11 +25,13 @@
  */
 package us.illyohs.mod.civilmagiks.common.block.fluid;
 
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class TeaFluid {
 

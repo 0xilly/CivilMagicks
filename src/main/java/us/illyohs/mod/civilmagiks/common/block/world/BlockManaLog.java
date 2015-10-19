@@ -26,13 +26,14 @@
 
 package us.illyohs.mod.civilmagiks.common.block.world;
 
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class BlockManaLog extends Block {
 

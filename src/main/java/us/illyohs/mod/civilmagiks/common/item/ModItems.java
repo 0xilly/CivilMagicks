@@ -25,12 +25,14 @@
  */
 package us.illyohs.mod.civilmagiks.common.item;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import us.illyohs.mod.civilmagiks.common.item.armor.ArmorMonocle;
 import us.illyohs.mod.civilmagiks.common.item.mana.ItemManaShard;
 import us.illyohs.mod.civilmagiks.common.item.writ.ItemWrit;
+
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
 

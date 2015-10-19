@@ -26,6 +26,7 @@
 package us.illyohs.mod.civilmagiks.api.mana;
 
 import net.minecraft.tileentity.TileEntity;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.Event;
 

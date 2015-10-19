@@ -26,9 +26,9 @@
 
 package us.illyohs.mod.civilmagiks.api.mana;
 
-import net.minecraft.world.biome.BiomeGenBase;
-
 import java.util.HashMap;
+
+import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeManaRegistry {
 

@@ -25,9 +25,10 @@
  */
 package us.illyohs.mod.civilmagiks.common.writ;
 
+import us.illyohs.mod.civilmagiks.api.writ.Writ;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
-import us.illyohs.mod.civilmagiks.api.writ.Writ;
 
 public class TestWrit extends Writ {
 

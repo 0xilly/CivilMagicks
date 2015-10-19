@@ -1,11 +1,11 @@
 package us.illyohs.mod.civilmagiks.api.tile;
 
+import us.illyohs.mod.civilmagiks.api.mana.IManaBlock;
+import us.illyohs.mod.civilmagiks.api.mana.ManaType;
+
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
-
-import us.illyohs.mod.civilmagiks.api.mana.IManaBlock;
-import us.illyohs.mod.civilmagiks.api.mana.ManaType;
 
 /**
  * This is the base class for all nodes within the ManaNetwork
