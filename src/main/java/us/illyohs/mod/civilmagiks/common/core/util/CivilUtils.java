@@ -25,7 +25,14 @@
  */
 package us.illyohs.mod.civilmagiks.common.core.util;
 
+import us.illyohs.mod.civilmagiks.api.civilregistry.CivilRegistry;
+import us.illyohs.mod.civilmagiks.api.civilregistry.CivilStatus;
+
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+
+import net.minecraftforge.fluids.Fluid;
 
 public class CivilUtils {
 
@@ -42,6 +49,15 @@ public class CivilUtils {
 //
 //        }
 //    }
+    
+    
+    public static CivilStatus getStatus(Object civob) {
+        if(civob instanceof Block || civob instanceof Item || civob instanceof Fluid) {
+            return CivilRegistry.civilReg.get(civob);
+        }
+        
+        return null;
+    }
 
 //    private CivilStatus isCivilivi
 

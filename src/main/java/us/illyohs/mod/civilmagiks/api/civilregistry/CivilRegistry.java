@@ -32,7 +32,10 @@ import net.minecraft.init.Items;
 
 public class CivilRegistry {
     
+    @Deprecated
     public static HashMap<CivilObject, CivilStatus> civilReg = new HashMap<CivilObject, CivilStatus>();
+    
+    public static HashMap<Object, CivilStatus> reg2 = new HashMap<Object, CivilStatus>();
     
 
     public CivilRegistry() {
@@ -45,6 +48,11 @@ public class CivilRegistry {
     
     private void registerCivilBlocks(CivilStatus civilized) {
         civilReg.put(new CivilObject(Blocks.acacia_stairs, 0), civilized);
+        reg2.put(Blocks.acacia_door, civilized);
+        reg2.put(Blocks.acacia_fence, civilized);
+        reg2.put(Blocks.acacia_fence_gate, civilized);
+        reg2.put(Blocks.acacia_stairs, civilized);
+        
         civilReg.put(new CivilObject(Blocks.oak_stairs, 0), civilized);
         civilReg.put(new CivilObject(Blocks.oak_stairs, 0), civilized);
         civilReg.put(new CivilObject(Blocks.birch_stairs, 0), civilized);
