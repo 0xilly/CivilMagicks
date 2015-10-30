@@ -28,6 +28,7 @@ package us.illyohs.mod.civilmagiks.common.core.util;
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.BlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
@@ -64,10 +65,8 @@ public class BlockUtils {
         Block origin = world.getBlockState(pos).getBlock();
         if (origin == target) {
             player.worldObj.playSoundAtEntity(player, (LibInfo.MOD_ID + ":" + sound), volume, pitch);
-            world.setBlockState(pos, replacement.getDefaultState());
-            
-        }
-        
+            world.setBlockState(pos, replacement.getDefaultState());            
+        }      
     }
     
     /**
@@ -78,8 +77,7 @@ public class BlockUtils {
      */
     public static Block getBlockBelow(World world, BlockPos pos) {
         Block below = world.getBlockState(pos.down()).getBlock();
-        return below;
-        
+        return below;   
     }
     
     /**
@@ -94,6 +92,78 @@ public class BlockUtils {
         Block blockDist = world.getBlockState(pos.offset(facing, distance)).getBlock();
         return blockDist;
     }
+   
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @param dis
+     * @return
+     */
+    public static Block getBlockFromUpDistance(World world, BlockPos pos, int dis) {
+    	Block blockDis = world.getBlockState(pos.offset(EnumFacing.UP, dis)).getBlock();
+    	return blockDis;
+    }
+    
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @param dis
+     * @return
+     */
+    public static Block getBlockFromDownDistance(World world, BlockPos pos, int dis) {
+    	Block blockDis = world.getBlockState(pos.offset(EnumFacing.DOWN, dis)).getBlock();
+    	return blockDis;
+    }
+    
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @param dis
+     * @return
+     */
+    public static Block getBlockFromNorthDistance(World world, BlockPos pos, int dis) {
+    	Block blockDis = world.getBlockState(pos.offset(EnumFacing.NORTH, dis)).getBlock();
+    	return blockDis;
+    }
+    
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @param dis
+     * @return
+     */
+    public static Block getBlockFromSouthDistance(World world, BlockPos pos, int dis) {
+    	Block blockDis = world.getBlockState(pos.offset(EnumFacing.SOUTH, dis)).getBlock();
+    	return blockDis;
+    }
+   
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @param dis
+     * @return
+     */
+    public static Block getBlockFromEastDistance(World world, BlockPos pos, int dis) {
+    	Block blockDis = world.getBlockState(pos.offset(EnumFacing.EAST, dis)).getBlock();
+    	return blockDis;
+    }
+    
+    /**
+     * 
+     * @param world
+     * @param pos
+     * @param dis
+     * @return
+     */
+    public static Block getBlockFromWestDistance(World world, BlockPos pos, int dis) {
+    	Block blockDis = world.getBlockState(pos.offset(EnumFacing.WEST, dis)).getBlock();
+    	return blockDis;
+    }
     
     /**
      * 
@@ -107,5 +177,7 @@ public class BlockUtils {
         Block blockDist = world.getBlockState(pos.offset(facing, distance).down()).getBlock();
         return blockDist;
     }
+    
+    
 
 }

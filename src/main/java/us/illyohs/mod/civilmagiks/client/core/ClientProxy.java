@@ -26,7 +26,6 @@
 package us.illyohs.mod.civilmagiks.client.core;
 
 import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
-import us.illyohs.mod.civilmagiks.client.render.tile.RenderBasin;
 import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
 import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
 import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
@@ -38,7 +37,7 @@ public class ClientProxy implements IProxy {
 
 	@Override
 	public void renderModels() {
-		ClientRegistry.bindTileEntitySpecialRenderer(TileElementalBasin.class, new RenderBasin());
+//		ClientRegistry.bindTileEntitySpecialRenderer(TileElementalBasin.class, new RenderBasin());
 	}
 
 	@Override
