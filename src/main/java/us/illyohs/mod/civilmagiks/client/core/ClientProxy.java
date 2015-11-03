@@ -25,9 +25,11 @@
  */
 package us.illyohs.mod.civilmagiks.client.core;
 
+import net.minecraftforge.client.model.obj.OBJLoader;
 import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
 import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
 import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
+import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 public class ClientProxy implements IProxy {
 
@@ -38,7 +40,7 @@ public class ClientProxy implements IProxy {
 
 	@Override
 	public void renderBlockItems() {
-		RenderUtils.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
+		RenderUtils.renderItemsBlocks(ModBlocks.manaStone, "manastone");
 		RenderUtils.renderItemsBlocks(ModBlocks.clearFarmland, "clearsoil");
 	}
 
@@ -54,25 +56,9 @@ public class ClientProxy implements IProxy {
 		
 	}
 
-//    @Override
-//    public void preInit(FMLPreInitializationEvent event) {
-//        super.preInit(event);
-//                
-//        RenderUtils.initB3DLOADER();
-//    }
-//
-//    @Override
-//    public void init(FMLInitializationEvent event) {
-//        super.init(event);
-//        RenderUtils.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
-//        System.out.println("----------------------------------------test------------------------------------");
-//
-//    }
-//
-//    @Override
-//    public void postInit(FMLPostInitializationEvent event) {
-//        super.postInit(event);
-//
-//    }
+    @Override
+    public void registerLoaders() {
+        OBJLoader.instance.addDomain(LibInfo.MOD_ID);
+    }
 
 }

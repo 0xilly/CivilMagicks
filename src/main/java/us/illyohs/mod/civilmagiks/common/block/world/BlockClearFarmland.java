@@ -3,8 +3,6 @@ package us.illyohs.mod.civilmagiks.common.block.world;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -24,11 +22,12 @@ public class BlockClearFarmland extends BaseBlock {
         super(material, name, hardness, resistance, light, tick, tab);
         
     }
-    
+     
     @Override
-    public boolean isFullCube() {
+    public boolean isOpaqueCube() {
         return false;
     }
+
  
     @Override
     @SideOnly(Side.CLIENT)

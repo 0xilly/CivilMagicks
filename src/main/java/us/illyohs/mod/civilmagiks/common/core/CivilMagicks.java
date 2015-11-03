@@ -56,7 +56,8 @@ public class CivilMagicks {
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-    	RenderUtils.initB3DLOADER();    	
+    	RenderUtils.initB3DLOADER();  
+//    	proxy.registerLoaders();
         ConfigHandler.init(event.getSuggestedConfigurationFile());
 
         ModBlocks.init();

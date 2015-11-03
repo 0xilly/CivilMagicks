@@ -27,6 +27,8 @@ package us.illyohs.mod.civilmagiks.common.core.lib;
 
 public interface IProxy {
 	
+    void registerLoaders();
+    
 	void renderModels();
 	
 	void renderBlockItems();

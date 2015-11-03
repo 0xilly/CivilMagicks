@@ -78,7 +78,7 @@ public class CivilEventHandler {
                 && event.entityPlayer.getHeldItem().getItem() == Items.written_book
                 && event.action == Action.RIGHT_CLICK_BLOCK && event.action != Action.RIGHT_CLICK_AIR) {
 //            BlockUtils.replaceBlock(event.world, event.pos, Blocks.cauldron, ModBlocks.blockManaStone);
-            BlockUtils.replaceBlockWithSound(event.entityPlayer, event.world, event.pos, "blast", 3, 4, Blocks.cauldron, ModBlocks.blockManaStone);
+            BlockUtils.replaceBlockWithSound(event.entityPlayer, event.world, event.pos, "blast", 3, 4, Blocks.cauldron, ModBlocks.manaStone);
 //            if () {
 //                
 //            }

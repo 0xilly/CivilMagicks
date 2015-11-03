@@ -53,4 +53,9 @@ public class CommonProxy implements IProxy {
 
 	}
 
+    @Override
+    public void registerLoaders() {
+        //NO-OP
+    }
+
 }

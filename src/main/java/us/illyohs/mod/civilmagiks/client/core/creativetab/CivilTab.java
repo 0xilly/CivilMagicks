@@ -37,7 +37,7 @@ public class CivilTab  {
         
         @Override
         public Item getTabIconItem() {
-            return Item.getItemFromBlock(ModBlocks.blockManaStone);
+            return Item.getItemFromBlock(ModBlocks.manaStone);
         }
     };
 }
