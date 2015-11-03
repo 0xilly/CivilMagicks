@@ -27,11 +27,7 @@ package us.illyohs.mod.civilmagiks.client.core;
 
 import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
 import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
-import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
 import us.illyohs.mod.civilmagiks.common.core.lib.IProxy;
-
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-
 
 public class ClientProxy implements IProxy {
 
@@ -43,6 +39,7 @@ public class ClientProxy implements IProxy {
 	@Override
 	public void renderBlockItems() {
 		RenderUtils.renderItemsBlocks(ModBlocks.blockManaStone, "manastone");
+		RenderUtils.renderItemsBlocks(ModBlocks.clearFarmland, "clearsoil");
 	}
 
 	@Override

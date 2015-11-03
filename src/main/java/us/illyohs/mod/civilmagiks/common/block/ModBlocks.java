@@ -25,32 +25,36 @@
  */
 package us.illyohs.mod.civilmagiks.common.block;
 
+import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
 import us.illyohs.mod.civilmagiks.common.block.nodes.BlockElementalBasin;
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockBasicStar;
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.StarBlock;
 import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
 import us.illyohs.mod.civilmagiks.common.block.tile.star.TileBasicStar;
+import us.illyohs.mod.civilmagiks.common.block.world.BlockClearFarmland;
 import us.illyohs.mod.civilmagiks.common.block.world.BlockManaStone;
 
 import net.minecraft.block.Block;
-
+import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 
     public static Block     blockBasin;
-    public static Block     blockManaStone;
 
     public static StarBlock starBasic;
 
+    public static BaseBlock blockManaStone;
+    public static BaseBlock clearFarmland;
 
     public static void init() {
 
         blockBasin = new BlockElementalBasin();
-        
-        blockManaStone = new BlockManaStone();
 
         starBasic = new BlockBasicStar();
+
+        blockManaStone = new BlockManaStone(Material.rock, "manastone", 3, 1, 0.5f, false, CivilTab.BLOCKS);
+        clearFarmland = new BlockClearFarmland(Material.grass, "clearsoil", 3, 2, 0, true, CivilTab.BLOCKS);
 
         gameRegBlock();
         gameRegTile();
@@ -60,6 +64,7 @@ public class ModBlocks {
         GameRegistry.registerBlock(blockManaStone, "manastone");
         GameRegistry.registerBlock(starBasic, "starbasic");
         GameRegistry.registerBlock(blockBasin, "elementalbasin");
+        GameRegistry.registerBlock(clearFarmland, "clearsoil");
     }
 
     private static void gameRegTile() {

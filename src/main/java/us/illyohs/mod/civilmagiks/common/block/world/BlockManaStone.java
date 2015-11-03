@@ -25,20 +25,15 @@
  */
 package us.illyohs.mod.civilmagiks.common.block.world;
 
-import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
-import us.illyohs.mod.civilmagiks.common.core.lib.LibStrings;
-
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import us.illyohs.mod.civilmagiks.common.block.BaseBlock;
 
-public class BlockManaStone extends Block {
-	
-    public BlockManaStone() {
-        super(Material.rock);
-        setCreativeTab(CivilTab.BLOCKS);
-        setUnlocalizedName(LibStrings.BLOCK_MANASTONE);
-        setLightLevel(0.5f);
+public class BlockManaStone extends BaseBlock {
+
+    public BlockManaStone(Material material, String name, float hardness, float resistance, float light, boolean tick,
+            CreativeTabs tab) {
+        super(material, name, hardness, resistance, light, tick, tab);
     }
-	
-
+		
 }

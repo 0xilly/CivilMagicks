@@ -8,7 +8,7 @@ tile.civilmagicks:manastone.name=Mana Stone
 tile.civilmagicks:starbasic.name=[WIP] Little Star
 tile.civilmagicks:starpassive.name=[WIP] Passive Star
 tile.civilmagicks:sigil.name=[WIP] Sigil
-
+tile.civilmagicks:clearsoil.name=[WIP] Clear Soil
 
 #Item
 item.civilmagicks:debugitem.name=Debug item
