@@ -23,14 +23,14 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.client.core.helper;
+package us.illyohs.mod.civilmagiks.client.core.util;
 
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 
 import net.minecraft.util.ResourceLocation;
 
 
-public class ResourceLocationHelper {
+public class AssestUtils {
 
     public static ResourceLocation getResourceLocation(String modid, String path) {
         return new ResourceLocation(modid, path);
@@ -46,5 +46,9 @@ public class ResourceLocationHelper {
 
     public static ResourceLocation getFxAsset(String path) {
         return getResourceLocation(LibInfo.MOD_ID.toLowerCase(), "textures/fx/" + path + ".png");
+    }
+    
+    public static ResourceLocation gitSigilAsset(String sigil) {
+        return getResourceLocation(LibInfo.MOD_ID.toLowerCase(), "textures/sigil/" + sigil);
     }
 }

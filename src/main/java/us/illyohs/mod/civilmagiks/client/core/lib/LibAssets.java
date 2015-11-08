@@ -25,21 +25,23 @@
  */
 package us.illyohs.mod.civilmagiks.client.core.lib;
 
-import us.illyohs.mod.civilmagiks.client.core.helper.ResourceLocationHelper;
-
 import net.minecraft.util.ResourceLocation;
+import us.illyohs.mod.civilmagiks.client.core.util.AssestUtils;
 
 public class LibAssets {
     //Models
-    public static final ResourceLocation manaRing = ResourceLocationHelper.getModelAsset("woodslate");
+    public static final ResourceLocation manaRing = AssestUtils.getModelAsset("woodslate");
 
     //GUIs
-    public static final ResourceLocation civilBar  = ResourceLocationHelper.getGUIAsset("civilbar");
-    public static final ResourceLocation civilTome = ResourceLocationHelper.getGUIAsset("civiltome");
+    public static final ResourceLocation civilBar  = AssestUtils.getGUIAsset("civilbar");
+    public static final ResourceLocation civilTome = AssestUtils.getGUIAsset("civiltome");
 
     //Particles
-    public static final ResourceLocation spark = ResourceLocationHelper.getFxAsset("spark");
+    public static final ResourceLocation spark = AssestUtils.getFxAsset("spark");
 
     //Other
-    public static final ResourceLocation star = ResourceLocationHelper.getFxAsset("starflares");
+    public static final ResourceLocation star = AssestUtils.getFxAsset("starflares");
+    
+    //Sigil
+    public static final ResourceLocation stormSigil = AssestUtils.gitSigilAsset("stormsigil");
 }

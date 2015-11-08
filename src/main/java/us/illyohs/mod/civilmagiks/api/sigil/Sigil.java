@@ -6,7 +6,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ResourceLocation;
 
-public abstract class Sigil {
+public class Sigil {
 
     String           name;
     String           description;
@@ -18,6 +18,19 @@ public abstract class Sigil {
     boolean          usesMana;
     boolean          canOverlap;
     BlockPos         pos;
+
+    public Sigil(String name, String description, String lore, ResourceLocation texture, int radius, int lightLevel,
+            boolean isPersistent, boolean usesMana, boolean canOverlap) {
+        this.name = name;
+        this.description = description;
+        this.lore = lore;
+        this.texture = texture;
+        this.radius = radius;
+        this.lightLevel = lightLevel;
+        this.isPersistent = isPersistent;
+        this.usesMana = usesMana;
+        this.canOverlap = canOverlap;
+    }
 
     public void onEntityCollied(Entity entity) {
 
@@ -120,12 +133,13 @@ public abstract class Sigil {
     public boolean isCanOverlap() {
         return canOverlap;
     }
-
+    
     public void setPos(BlockPos pos) {
         this.pos = pos;
     }
-
+    
     public BlockPos getPos() {
         return pos;
     }
+
 }

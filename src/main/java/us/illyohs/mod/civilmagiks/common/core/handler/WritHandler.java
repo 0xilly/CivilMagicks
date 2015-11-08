@@ -35,6 +35,7 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class WritHandler {
 
@@ -48,6 +49,7 @@ public class WritHandler {
         civilMagicksAPI = new CivilMagicksAPI();
     }
 
+    @SubscribeEvent
     public void WritEvent(WritEvent event) {
 
     }
