@@ -19,12 +19,38 @@ public class Sigil {
     boolean          canOverlap;
     BlockPos         pos;
 
+    /**
+     * 
+     * @param name
+     * @param description
+     * @param lore
+     * @param texture
+     * @param radius
+     * @param lightLevel
+     * @param isPersistent
+     * @param usesMana
+     * @param canOverlap
+     */
     public Sigil(String name, String description, String lore, ResourceLocation texture, int radius, int lightLevel,
             boolean isPersistent, boolean usesMana, boolean canOverlap) {
         this.name = name;
         this.description = description;
         this.lore = lore;
         this.texture = texture;
+        this.radius = radius;
+        this.lightLevel = lightLevel;
+        this.isPersistent = isPersistent;
+        this.usesMana = usesMana;
+        this.canOverlap = canOverlap;
+    }
+    //DO NOT USE
+    //This is a short cut constructor cause illy is a lazy bastard.
+    public Sigil(String name, String description, String lore, int radius, int lightLevel,
+            boolean isPersistent, boolean usesMana, boolean canOverlap) {
+        this.name = name;
+        this.description = description;
+        this.lore = lore;
+        this.setTexture(new ResourceLocation("civilmagicks:sigils/" + name));
         this.radius = radius;
         this.lightLevel = lightLevel;
         this.isPersistent = isPersistent;
