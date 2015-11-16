@@ -1,20 +1,16 @@
 package us.illyohs.mod.civilmagiks.common.block.nodes;
 
+import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
+
+import us.illyohs.libilly.block.BaseBlock;
+
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import us.illyohs.mod.civilmagiks.common.block.BaseBlock;
-import us.illyohs.mod.civilmagiks.common.block.tile.TileElementalBasin;
 
 public class BlockElementalBasin extends BaseBlock implements ITileEntityProvider {
-
-//    public BlockElementalBasin() {
-//        super(Material.rock);
-//        setCreativeTab(CivilTab.BLOCKS);
-//        setUnlocalizedName(LibStrings.BLOCK_ELEMENTAL_BASIN);
-//    }
 
     public BlockElementalBasin(Material material, String name, float hardness, float resistance, float light,
             boolean tick, CreativeTabs tab) {

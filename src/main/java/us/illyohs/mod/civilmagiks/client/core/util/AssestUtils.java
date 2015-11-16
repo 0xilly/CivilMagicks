@@ -35,6 +35,10 @@ public class AssestUtils {
     public static ResourceLocation getResourceLocation(String modid, String path) {
         return new ResourceLocation(modid, path);
     }
+    
+    public static String getSoundLocation(String path) {
+        return LibInfo.MOD_ID.toLowerCase() + ":" + path;
+    }
 
     public static ResourceLocation getGUIAsset(String path) {
         return getResourceLocation(LibInfo.MOD_ID.toLowerCase(), "textures/gui/" + path + ".png");

@@ -27,7 +27,7 @@ package us.illyohs.mod.civilmagiks.common.block.world;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import us.illyohs.mod.civilmagiks.common.block.BaseBlock;
+import us.illyohs.libilly.block.BaseBlock;
 
 public class BlockManaStone extends BaseBlock {
 

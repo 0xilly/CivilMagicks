@@ -23,7 +23,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.mod.civilmagiks.common.core.util;
+package us.illyohs.mod.civilmagiks.client.core.util;
 
 import us.illyohs.mod.civilmagiks.common.core.lib.LibInfo;
 

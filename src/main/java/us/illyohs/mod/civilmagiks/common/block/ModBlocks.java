@@ -27,6 +27,7 @@ package us.illyohs.mod.civilmagiks.common.block;
 
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import us.illyohs.libilly.block.BaseBlock;
 import us.illyohs.mod.civilmagiks.client.core.creativetab.CivilTab;
 import us.illyohs.mod.civilmagiks.common.block.nodes.BlockElementalBasin;
 import us.illyohs.mod.civilmagiks.common.block.nodes.stars.BlockBasicStar;

@@ -30,6 +30,7 @@ public class LibInfo {
     public static final String MOD_ID = "civilmagicks";
     public static final String MOD_NAME = "Civil Magicks";
     public static final String VERSION = "@VERSION@";
+    public static final String DEPENDS = "required-after:Forge@[11.14.4,);LibIlly";
 
     public static final String CLIENT_PROXY = "us.illyohs.mod.civilmagiks.client.core.ClientProxy";
     public static final String COMMON_PROXY = "us.illyohs.mod.civilmagiks.common.core.CommonProxy";

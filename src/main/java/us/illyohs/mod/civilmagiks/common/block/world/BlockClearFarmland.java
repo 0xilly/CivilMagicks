@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import us.illyohs.mod.civilmagiks.common.block.BaseBlock;
+import us.illyohs.libilly.block.BaseBlock;
 
 public class BlockClearFarmland extends BaseBlock {
 

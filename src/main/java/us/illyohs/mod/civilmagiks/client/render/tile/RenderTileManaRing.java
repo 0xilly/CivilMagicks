@@ -26,7 +26,7 @@
 package us.illyohs.mod.civilmagiks.client.render.tile;
 
 import us.illyohs.mod.civilmagiks.client.core.lib.LibAssets;
-import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
+import us.illyohs.mod.civilmagiks.client.core.util.RenderUtils;
 import us.illyohs.mod.civilmagiks.client.models.ModelTransferNode;
 
 import net.minecraft.client.renderer.GlStateManager;

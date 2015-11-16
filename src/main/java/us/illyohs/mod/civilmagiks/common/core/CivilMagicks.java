@@ -25,7 +25,6 @@
  */
 package us.illyohs.mod.civilmagiks.common.core;
 
-import us.illyohs.mod.civilmagiks.client.core.lib.RenderUtils;
 import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
 import us.illyohs.mod.civilmagiks.common.core.config.ConfigHandler;
 import us.illyohs.mod.civilmagiks.common.core.handler.CivilEventHandler;
@@ -42,37 +41,43 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = LibInfo.MOD_ID, name = LibInfo.MOD_NAME, version = LibInfo.VERSION)
+@Mod(
+    modid = LibInfo.MOD_ID,
+    name = LibInfo.MOD_NAME,
+    version = LibInfo.VERSION,
+    dependencies = LibInfo.DEPENDS
+    )
 public class CivilMagicks {
 
     @Instance(LibInfo.MOD_ID)
     public static CivilMagicks instance;
-    
+
     @SidedProxy(serverSide = LibInfo.COMMON_PROXY, clientSide = LibInfo.CLIENT_PROXY)
-    public static IProxy proxy;
-    
-    public WritHandler writhandler;
-    public CivilEventHandler civilEventHandler;
-    
+    public static IProxy       proxy;
+
+    public WritHandler         writhandler;
+    public CivilEventHandler   civilEventHandler;
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-    	RenderUtils.initB3DLOADER();  
-//    	proxy.registerLoaders();
+         proxy.registerLoaders();
         ConfigHandler.init(event.getSuggestedConfigurationFile());
 
         ModBlocks.init();
         ModItems.init();
-        
+
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+//        OBJLoader.instance.addDomain(LibInfo.MOD_ID);
+        proxy.registerLoaders();
         proxy.renderModels();
-        proxy.renderBlockItems();        
-//        GameRegistry.addRecipe(new ItemStack(ModItems.itemWrit),
-//                "ddd",
-//                "dpd",
-//                "ddd", 'd', Items.stick, 'p', Items.paper);
+        proxy.renderBlockItems();
+        // GameRegistry.addRecipe(new ItemStack(ModItems.itemWrit),
+        // "ddd",
+        // "dpd",
+        // "ddd", 'd', Items.stick, 'p', Items.paper);
 
     }
 

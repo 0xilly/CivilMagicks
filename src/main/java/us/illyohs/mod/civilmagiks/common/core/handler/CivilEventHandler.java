@@ -29,10 +29,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import us.illyohs.mod.civilmagiks.api.mana.ManaNetworkEvent;
+import us.illyohs.mod.civilmagiks.client.core.lib.LibAssets;
 import us.illyohs.mod.civilmagiks.common.block.ModBlocks;
 import us.illyohs.mod.civilmagiks.common.core.lib.CivilPlayer;
-import us.illyohs.mod.civilmagiks.common.core.util.BlockUtils;
+//import us.illyohs.mod.civilmagiks.common.core.util.BlockUtils;
 import us.illyohs.mod.civilmagiks.common.core.util.LogUtils;
+
+import us.illyohs.libilly.util.BlockUtils;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -62,7 +65,8 @@ public class CivilEventHandler {
     public void onEntityConstruct(EntityConstructing event) {
         if (event.entity instanceof EntityPlayer) {
             if (CivilPlayer.forPlayer((EntityPlayer) event.entity) == null) {
-                event.entity.registerExtendedProperties(CivilPlayer.IDENT, new CivilPlayer((EntityPlayer) event.entity));
+                event.entity.registerExtendedProperties(CivilPlayer.IDENT,
+                        new CivilPlayer((EntityPlayer) event.entity));
             }
         }
     }
@@ -74,14 +78,12 @@ public class CivilEventHandler {
 
     @SubscribeEvent
     public void onPlayerInteractEvent(PlayerInteractEvent event) {
-        if (!event.entityPlayer.worldObj.isRemote
-                && event.entityPlayer.getHeldItem().getItem() == Items.written_book
+        if (!event.entityPlayer.worldObj.isRemote && event.entityPlayer.getHeldItem().getItem() == Items.written_book
                 && event.action == Action.RIGHT_CLICK_BLOCK && event.action != Action.RIGHT_CLICK_AIR) {
-//            BlockUtils.replaceBlock(event.world, event.pos, Blocks.cauldron, ModBlocks.blockManaStone);
-            BlockUtils.replaceBlockWithSound(event.entityPlayer, event.world, event.pos, "blast", 3, 4, Blocks.cauldron, ModBlocks.manaStone);
-//            if () {
-//                
-//            }
+
+            BlockUtils.replaceBlockWithSoundPlayer(event.entityPlayer, event.world, event.pos, LibAssets.soundBlast, 3,
+                    4, Blocks.cauldron, ModBlocks.manaStone);
+
         }
     }
 

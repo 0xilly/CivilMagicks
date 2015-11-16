@@ -29,19 +29,23 @@ import net.minecraft.util.ResourceLocation;
 import us.illyohs.mod.civilmagiks.client.core.util.AssestUtils;
 
 public class LibAssets {
-    //Models
-    public static final ResourceLocation manaRing = AssestUtils.getModelAsset("woodslate");
 
-    //GUIs
-    public static final ResourceLocation civilBar  = AssestUtils.getGUIAsset("civilbar");
-    public static final ResourceLocation civilTome = AssestUtils.getGUIAsset("civiltome");
+    // Models
+    public static final ResourceLocation manaRing   = AssestUtils.getModelAsset("woodslate");
 
-    //Particles
-    public static final ResourceLocation spark = AssestUtils.getFxAsset("spark");
+    // GUIs
+    public static final ResourceLocation civilBar   = AssestUtils.getGUIAsset("civilbar");
+    public static final ResourceLocation civilTome  = AssestUtils.getGUIAsset("civiltome");
 
-    //Other
-    public static final ResourceLocation star = AssestUtils.getFxAsset("starflares");
-    
-    //Sigil
+    // Particles
+    public static final ResourceLocation spark      = AssestUtils.getFxAsset("spark");
+
+    // Other
+    public static final ResourceLocation star       = AssestUtils.getFxAsset("starflares");
+
+    // Sigil
     public static final ResourceLocation stormSigil = AssestUtils.gitSigilAsset("stormsigil");
+
+    // sound
+    public static final String           soundBlast = AssestUtils.getSoundLocation("blast");
 }

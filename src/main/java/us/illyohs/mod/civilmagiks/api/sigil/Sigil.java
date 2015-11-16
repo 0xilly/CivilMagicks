@@ -43,6 +43,7 @@ public class Sigil {
         this.usesMana = usesMana;
         this.canOverlap = canOverlap;
     }
+    
     //DO NOT USE
     //This is a short cut constructor cause illy is a lazy bastard.
     public Sigil(String name, String description, String lore, int radius, int lightLevel,
@@ -58,10 +59,18 @@ public class Sigil {
         this.canOverlap = canOverlap;
     }
 
+    /**
+     * 
+     * @param entity
+     */
     public void onEntityCollied(Entity entity) {
 
     }
 
+    /**
+     * 
+     * @param player
+     */
     public void onPlayerInteract(EntityPlayer player) {
 
     }
