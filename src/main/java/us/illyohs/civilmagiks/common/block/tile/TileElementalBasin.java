@@ -25,8 +25,6 @@
  */
 package us.illyohs.civilmagiks.common.block.tile;
 
-import us.illyohs.civilmagiks.api.tile.TileNode;
-
 import net.minecraft.server.gui.IUpdatePlayerListBox;
 
 public class TileElementalBasin extends TileNode implements IUpdatePlayerListBox {
@@ -34,8 +32,8 @@ public class TileElementalBasin extends TileNode implements IUpdatePlayerListBox
     int tier;
 
     @Override
-    public void updateTB() {
-        super.updateTB();
+    public void updateTile() {
+        super.updateTile();
 
     }
 
