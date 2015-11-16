@@ -60,7 +60,7 @@ public class CivilMagicks {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-         proxy.registerLoaders();
+        proxy.registerLoaders();
         ConfigHandler.init(event.getSuggestedConfigurationFile());
 
         ModBlocks.init();

@@ -10,8 +10,12 @@ configFile.withReader {
     prop.load(it)
     project.ext.config = new ConfigSlurper().parse prop
 }
+if (System.getenv('BUILD_NUMBER') != null) {
+    version = "${config.mc_version}-${config.mod_version}.${config.minor_version}.${config.patch_version}.${System.getenv('BUILD_NUMBER')}"
+} else {
+    version = "${config.mc_version}-${config.mod_version}.${config.minor_version}.${config.patch_version}.local"
+}
 
-version = "${config.mc_version}-${config.mod_version}.${config.api_version}.${config.minor_version}.${config.patch_version}"
 group= "${config.group}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "${config.name}"
 
@@ -22,8 +26,8 @@ minecraft {
 	version = "${config.mc_version}-${config.forge_version}"
 
 
+    replaceIn "us/illyohs/civilmagiks/common/core/lib/LibInfo.java"
     replace '@VERSION@', project.version
-    replace '@MCVERSION@', version
 }
 
 jar {
@@ -59,6 +63,23 @@ repositories {
         name "forge maven"
         url "http://files.minecraftforge.net/maven"
     }
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'deobf'
+}
+
+task apiJar(type: Jar) {
+    from(sourceSets.main.java) {
+        include "us/illyohs/api/**"
+    }
+    classifier = 'api'
+}
+
+artifacts {
+    archives deobfJar
+    archives apiJar
 }
 
 dependencies {
