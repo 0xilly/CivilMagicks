@@ -14,9 +14,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import us.illyohs.libilly.block.BaseBlock;
 
-public class BlockClearFarmland extends BaseBlock {
+import us.illyohs.libilly.block.BlockBase;
+
+public class BlockClearFarmland extends BlockBase {
 
     public BlockClearFarmland(Material material, String name, float hardness, float resistance, float light, boolean tick, CreativeTabs tab) {
         super(material, name, hardness, resistance, light, tick, tab);

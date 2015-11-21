@@ -1,11 +1,11 @@
 package us.illyohs.civilmagiks.common.block.nodes;
 
-import us.illyohs.libilly.block.BaseBlock;
+import us.illyohs.libilly.block.BlockBase;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class BlockSigil extends BaseBlock {
+public class BlockSigil extends BlockBase {
 
     public BlockSigil(Material material, String name, float hardness, float resistance, float light, boolean tick,
             CreativeTabs tab) {

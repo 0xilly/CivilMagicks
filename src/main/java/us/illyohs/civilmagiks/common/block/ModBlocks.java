@@ -34,7 +34,7 @@ import us.illyohs.civilmagiks.common.block.tile.TileSigil;
 import us.illyohs.civilmagiks.common.block.world.BlockClearFarmland;
 import us.illyohs.civilmagiks.common.block.world.BlockManaStone;
 
-import us.illyohs.libilly.block.BaseBlock;
+import us.illyohs.libilly.block.BlockBase;
 
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -43,12 +43,12 @@ public class ModBlocks {
 
     public static StarBlock starBasic;
 
-    public static BaseBlock basin;
-    public static BaseBlock clearFarmland;
-    public static BaseBlock inkWell;
-    public static BaseBlock manaStone;
+    public static BlockBase basin;
+    public static BlockBase clearFarmland;
+    public static BlockBase inkWell;
+    public static BlockBase manaStone;
 
-    public static BaseBlock sigil;
+    public static BlockBase sigil;
 
     public static void init() {
 

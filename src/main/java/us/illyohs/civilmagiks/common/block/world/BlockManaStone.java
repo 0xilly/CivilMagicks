@@ -27,9 +27,10 @@ package us.illyohs.civilmagiks.common.block.world;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import us.illyohs.libilly.block.BaseBlock;
 
-public class BlockManaStone extends BaseBlock {
+import us.illyohs.libilly.block.BlockBase;
+
+public class BlockManaStone extends BlockBase {
 
     public BlockManaStone(Material material, String name, float hardness, float resistance, float light, boolean tick,
             CreativeTabs tab) {

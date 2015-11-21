@@ -84,6 +84,6 @@ artifacts {
 
 dependencies {
     compile 'com.azanor.baubles:Baubles:1.8-1.1.1.0.2:deobf'
-    compile 'us.illyohs.libilly:LibIlly:1.8-0.1.1.18:deobf'
+    compile 'us.illyohs.libilly:LibIlly:1.8-0.2.0.22:deobf'
 }
 

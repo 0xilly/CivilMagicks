@@ -1,6 +1,6 @@
 package us.illyohs.civilmagiks.common.block;
 
-import us.illyohs.libilly.block.BaseBlock;
+import us.illyohs.libilly.block.BlockBase;
 
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -8,7 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockInkWell extends BaseBlock implements ITileEntityProvider{
+public class BlockInkWell extends BlockBase implements ITileEntityProvider{
 
     public BlockInkWell(Material material, String name, float hardness, float resistance, float light, boolean tick,
             CreativeTabs tab) {

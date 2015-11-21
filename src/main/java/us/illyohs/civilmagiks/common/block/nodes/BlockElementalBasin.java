@@ -2,7 +2,7 @@ package us.illyohs.civilmagiks.common.block.nodes;
 
 import us.illyohs.civilmagiks.common.block.tile.TileElementalBasin;
 
-import us.illyohs.libilly.block.BaseBlock;
+import us.illyohs.libilly.block.BlockBase;
 
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -10,7 +10,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockElementalBasin extends BaseBlock implements ITileEntityProvider {
+public class BlockElementalBasin extends BlockBase implements ITileEntityProvider {
 
     public BlockElementalBasin(Material material, String name, float hardness, float resistance, float light,
             boolean tick, CreativeTabs tab) {
