@@ -25,15 +25,18 @@
  */
 package us.illyohs.civilmagiks.client.core.proxy;
 
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraftforge.fml.client.FMLClientHandler;
-import us.illyohs.civilmagiks.client.core.util.RenderUtils;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import us.illyohs.civilmagiks.client.render.tile.RenderSigil;
 import us.illyohs.civilmagiks.common.block.ModBlocks;
+import us.illyohs.civilmagiks.common.block.tile.TileSigil;
 import us.illyohs.civilmagiks.common.core.lib.IProxy;
 import us.illyohs.civilmagiks.common.core.lib.LibInfo;
 
 import net.minecraftforge.client.model.obj.OBJLoader;
 import us.illyohs.civilmagiks.common.item.ModItems;
+
+import us.illyohs.libilly.util.RenderUtils;
 
 public class ClientProxy implements IProxy {
 
@@ -41,16 +44,15 @@ public class ClientProxy implements IProxy {
     public void renderModels() {
 
 //        ClientRegistry.bindTileEntitySpecialRenderer(TileElementalBasin.class, new RenderBasin());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileSigil.class, new RenderSigil());
     }
 
     @Override
     public void renderBlockItems() {
-        RenderUtils.renderItemsBlocks(ModBlocks.manaStone, "manastone");
-		RenderUtils.renderItemsBlocks(ModBlocks.clearFarmland, "clearsoil");
-        ModelResourceLocation irs = new ModelResourceLocation("civilmagicks:fountainpen", "inventory");
-        FMLClientHandler.instance().getClient().getRenderItem().getItemModelMesher().register(ModItems.pen, 0, irs);
-
-	}
+        RenderUtils.renderBlocksItems(ModBlocks.manaStone, new ResourceLocation(LibInfo.MOD_NAME + ":manastone"));
+        RenderUtils.renderBlocksItems(ModBlocks.clearFarmland, new ResourceLocation(LibInfo.MOD_NAME + ":clearsoil"));
+        RenderUtils.renderItems(ModItems.pen, new ResourceLocation(LibInfo.MOD_NAME + ":fountainpen"));
+    }
 
 	@Override
 	public void regMobs() {
@@ -60,7 +62,6 @@ public class ClientProxy implements IProxy {
 
 	@Override
 	public void renderMobs() {
-		// TODO Auto-generated method stub
 		
 	}
 

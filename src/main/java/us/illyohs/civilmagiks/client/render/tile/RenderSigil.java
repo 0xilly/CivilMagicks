@@ -33,6 +33,7 @@ import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import us.illyohs.libilly.util.RenderUtils;
 
 public class RenderSigil extends TileEntitySpecialRenderer {
 
@@ -40,23 +41,30 @@ public class RenderSigil extends TileEntitySpecialRenderer {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LibInfo.MOD_ID, "textures/fx/summoningsigil.png");
     
     @Override
-    public void renderTileEntityAt(TileEntity te, double x, double y, double z, float yaw, int pitcch) {
+    public void renderTileEntityAt(TileEntity te, double x, double y, double z, float yaw, int pitch) {
+        RenderUtils.bindTexture(TEXTURE);
         WorldRenderer wr = Tessellator.getInstance().getWorldRenderer();
         GlStateManager.pushAttrib();
         GlStateManager.pushMatrix();
-        
-        this.bindTexture(TEXTURE);
-        
+        GlStateManager.enableNormalize();
+        GlStateManager.enableBlend();
+        GlStateManager.color(1f, 1f, 1f, 1f);
+
+
+
+
         wr.startDrawingQuads();
-        wr.addVertex(0, 0, 0);
-        wr.addVertex(0, 1, 0);
-        wr.addVertex(1, 1, 0);
-        wr.addVertex(1, 0, 0);
-                
+        wr.addVertexWithUV(-0.5D, 0.5D, 0F, 0, 1);
+        wr.addVertexWithUV(0.5D, 0.5D, 0F, 1, 1);
+        wr.addVertexWithUV(0.5D, -0.5D, 0F, 1, 0);
+        wr.addVertexWithUV(-0.5D, -0.5D, 0F, 0, 0);
+
         Tessellator.getInstance().draw();
 
-        GlStateManager.translate(0, 2, 0);
-        GlStateManager.enableBlend(); 
+//        GlStateManager.translate(0, y+2, 0);
+
+        GlStateManager.disableBlend();
+        GlStateManager.disableNormalize();
         GlStateManager.popAttrib();
         GlStateManager.popMatrix();
         

@@ -1,14 +1,18 @@
 package us.illyohs.civilmagiks.common.block.nodes;
 
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import us.illyohs.civilmagiks.common.block.tile.TileSigil;
 import us.illyohs.libilly.block.BlockBase;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class BlockSigil extends BlockBase {
+public class BlockSigil extends BlockBase implements ITileEntityProvider{
 
     public BlockSigil(Material material, String name, float hardness, float resistance, float light, boolean tick,
             CreativeTabs tab) {
@@ -36,4 +40,8 @@ public class BlockSigil extends BlockBase {
         return 3;
     }
 
+    @Override
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return new TileSigil();
+    }
 }

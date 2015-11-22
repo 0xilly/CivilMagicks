@@ -26,12 +26,12 @@
 package us.illyohs.civilmagiks.client.render.tile;
 
 import us.illyohs.civilmagiks.client.core.lib.LibAssets;
-import us.illyohs.civilmagiks.client.core.util.RenderUtils;
 import us.illyohs.civilmagiks.client.models.ModelTransferNode;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
+import us.illyohs.libilly.util.RenderUtils;
 
 public class RenderTileManaRing extends TileEntitySpecialRenderer {
 	
@@ -49,7 +49,8 @@ public class RenderTileManaRing extends TileEntitySpecialRenderer {
 		GlStateManager.pushMatrix();
 		
 		GlStateManager.scale(1f, 1f, 1f);
-		RenderUtils.bindTexture(LibAssets.manaRing);
+        RenderUtils.bindTexture(LibAssets.manaRing);
+
 		model.render(.0625F);
 		
 		GlStateManager.popMatrix();
