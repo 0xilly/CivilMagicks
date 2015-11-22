@@ -25,6 +25,7 @@
  */
 package us.illyohs.civilmagiks.common.item;
 
+import us.illyohs.civilmagiks.client.core.creativetab.CivilTab;
 import us.illyohs.civilmagiks.common.item.armor.ArmorMonocle;
 import us.illyohs.civilmagiks.common.item.mana.ItemManaShard;
 import us.illyohs.civilmagiks.common.item.writ.ItemWrit;
@@ -33,6 +34,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import us.illyohs.libilly.item.ItemBase;
 
 public class ModItems {
 
@@ -43,6 +45,8 @@ public class ModItems {
     public static Item itemWrit;
 
     public static Item itemManaCatalyst;
+
+    public static ItemBase pen;
     
     
     //Armor
@@ -54,15 +58,21 @@ public class ModItems {
         itemWrit = new ItemWrit();
         
         itemManaCatalyst = new ItemManaCatalyst();
+
+        pen = new ItemPen("civilmagicks:pen", false, CivilTab.BLOCKS);
         
         //Armor
         armorMonocle = new ArmorMonocle();
         
         gameReg();
+
+        
     }
 
     private static void gameReg() {
         GameRegistry.registerItem(itemManaShard, "manashard");
         GameRegistry.registerItem(itemWrit, "writ");
+        GameRegistry.registerItem(pen, "fountainpen");
+
     }	
 }

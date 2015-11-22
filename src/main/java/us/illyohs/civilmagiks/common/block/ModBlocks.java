@@ -60,7 +60,7 @@ public class ModBlocks {
         clearFarmland = new BlockClearFarmland(Material.grass, "clearsoil", 3, 2, 0, true, CivilTab.BLOCKS);
         inkWell = new BlockInkWell(Material.glass, "glass", 3, 4, 0.1f, true, CivilTab.BLOCKS);
         manaStone = new BlockManaStone(Material.rock, "manastone", 3, 1, 0.5f, false, CivilTab.BLOCKS);
-        sigil = new BlockSigil(Material.air, "sigil", 1, 10, 10, true, CivilTab.BLOCKS);
+        sigil = new BlockSigil(Material.air, "civilmagicks:sigil", 1, 10, 10, true, CivilTab.BLOCKS);
 
         gameRegBlock();
         gameRegTile();

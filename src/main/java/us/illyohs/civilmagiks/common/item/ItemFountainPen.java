@@ -1,13 +1,11 @@
 package us.illyohs.civilmagiks.common.item;
 
-import net.minecraftforge.fluids.ItemFluidContainer;
+import net.minecraft.creativetab.CreativeTabs;
+import us.illyohs.libilly.item.ItemBaseFluid;
 
-/**
- * Created by illyohs on 11/20/15.
- */
-public class ItemFountainPen extends ItemFluidContainer{
+public class ItemFountainPen extends ItemBaseFluid {
 
-    public ItemFountainPen(int itemID) {
-        super(itemID);
+    public ItemFountainPen(String name, boolean hasSubtypes, CreativeTabs tabs, int capacity) {
+        super(name, hasSubtypes, tabs, capacity);
     }
 }

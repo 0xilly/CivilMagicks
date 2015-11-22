@@ -28,12 +28,14 @@ package us.illyohs.civilmagiks.common.core.handler;
 import java.util.ArrayList;
 import java.util.List;
 
+import us.illyohs.civilmagiks.api.item.ITransfrom;
 import us.illyohs.civilmagiks.api.mana.ManaNetworkEvent;
 import us.illyohs.civilmagiks.client.core.lib.LibAssets;
 import us.illyohs.civilmagiks.common.block.ModBlocks;
 import us.illyohs.civilmagiks.common.core.lib.CivilPlayer;
 import us.illyohs.civilmagiks.common.core.util.LogUtils;
 
+import us.illyohs.civilmagiks.common.core.util.PlayerUtils;
 import us.illyohs.libilly.util.BlockUtils;
 
 import net.minecraft.block.Block;
@@ -77,11 +79,19 @@ public class CivilEventHandler {
 
     @SubscribeEvent
     public void onPlayerInteractEvent(PlayerInteractEvent event) {
-        if (!event.entityPlayer.worldObj.isRemote && event.entityPlayer.getHeldItem().getItem() == Items.written_book
-                && event.action == Action.RIGHT_CLICK_BLOCK && event.action != Action.RIGHT_CLICK_AIR) {
-
-            BlockUtils.replaceBlockWithSoundPlayer(event.entityPlayer, event.world, event.pos, LibAssets.soundBlast, 3,
-                    4, Blocks.cauldron, ModBlocks.manaStone);
+//        if (!event.entityPlayer.worldObj.isRemote && PlayerUtils.getHeldItem(event.entityPlayer) == Items.written_book
+//                && event.action == Action.RIGHT_CLICK_BLOCK && event.action != Action.RIGHT_CLICK_AIR) {
+//
+//            BlockUtils.replaceBlockWithSoundPlayer(event.entityPlayer, event.world, event.pos, LibAssets.soundBlast, 3,
+//                    4, Blocks.cauldron, ModBlocks.manaStone);
+//
+//        } else {
+//
+//        }
+        if (!event.entityPlayer.worldObj.isRemote && event.action == Action.RIGHT_CLICK_BLOCK &&
+                event.action != Action.RIGHT_CLICK_AIR && PlayerUtils.getHeldItem(event.entityPlayer) instanceof ITransfrom) {
+            BlockUtils.replaceBlockWithSoundPlayer(event.entityPlayer, event.world, event.pos, LibAssets.soundBlast, 3, 4, Blocks.cauldron, ModBlocks.manaStone);
+        } else {
 
         }
     }
