@@ -54,10 +54,14 @@ public class RenderSigil extends TileEntitySpecialRenderer {
 
 
         wr.startDrawingQuads();
-        wr.addVertexWithUV(-0.5D, 0.5D, 0F, 0, 1);
-        wr.addVertexWithUV(0.5D, 0.5D, 0F, 1, 1);
-        wr.addVertexWithUV(0.5D, -0.5D, 0F, 1, 0);
-        wr.addVertexWithUV(-0.5D, -0.5D, 0F, 0, 0);
+//        wr.addVertexWithUV(-0.5D, 0.5D, 0F, 0, 1);
+//        wr.addVertexWithUV(0.5D, 0.5D, 0F, 1, 1);
+//        wr.addVertexWithUV(0.5D, -0.5D, 0F, 1, 0);
+//        wr.addVertexWithUV(-0.5D, -0.5D, 0F, 0, 0);
+        wr.addVertexWithUV(0, 0, 0, 0, 0); //Bottom left texture
+        wr.addVertexWithUV(0, 1, 0, 0, 1); //Top left
+        wr.addVertexWithUV(1, 1, 0, 1, 1); //Top right
+        wr.addVertexWithUV(1, 0, 0, 1, 0); //Bottom right
 
         Tessellator.getInstance().draw();
 
