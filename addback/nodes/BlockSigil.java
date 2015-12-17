@@ -6,7 +6,8 @@ import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import us.illyohs.civilmagiks.common.block.tile.TileSigil;
+
+import us.illyohs.civilmagiks.common.tile.TileSigil;
 import us.illyohs.libilly.block.BlockBase;
 
 import net.minecraft.block.material.Material;

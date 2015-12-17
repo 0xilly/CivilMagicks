@@ -25,28 +25,23 @@
  */
 package us.illyohs.civilmagiks.common.block.nodes.stars;
 
-import us.illyohs.civilmagiks.api.block.BlockAiry;
 import us.illyohs.civilmagiks.api.material.CivilMaterials;
+import us.illyohs.civilmagiks.client.core.creativetab.CivilTab;
+import us.illyohs.libilly.block.AirBlockBase;
 
 import net.minecraft.block.ITileEntityProvider;
-import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class StarBlock extends BlockAiry implements ITileEntityProvider {
+public class StarBlock extends AirBlockBase implements ITileEntityProvider {
 
-    public StarBlock() {
-        this(CivilMaterials.starry);
-        this.setTickRandomly(true);
-    }
-
-    public StarBlock(Material material) {
-        super(material);
-
-    }
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return null;
-    }
+    public StarBlock(String name) {
+		super(CivilMaterials.starry, name, 2, 10, 15, true, true, CivilTab.BLOCKS);
+	}
+    
+	@Override
+	public TileEntity createNewTileEntity(World world, int meta) {
+		return null;
+	}
 
 }

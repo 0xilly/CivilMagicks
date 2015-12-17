@@ -25,15 +25,14 @@
  */
 package us.illyohs.civilmagiks.common.block;
 
-import us.illyohs.civilmagiks.client.core.creativetab.CivilTab;
-import us.illyohs.civilmagiks.common.block.nodes.BlockElementalBasin;
-import us.illyohs.civilmagiks.common.block.nodes.BlockSigil;
-import us.illyohs.civilmagiks.common.block.nodes.stars.StarBlock;
-import us.illyohs.civilmagiks.common.block.tile.TileElementalBasin;
-import us.illyohs.civilmagiks.common.block.tile.TileSigil;
+//import us.illyohs.civilmagiks.client.core.creativetab.CivilTab;
+//import us.illyohs.civilmagiks.common.block.nodes.BlockElementalBasin;
+//import us.illyohs.civilmagiks.common.block.nodes.BlockSigil;
+//import us.illyohs.civilmagiks.common.block.nodes.stars.StarBlock;
 import us.illyohs.civilmagiks.common.block.world.BlockClearFarmland;
 import us.illyohs.civilmagiks.common.block.world.BlockManaStone;
-
+import us.illyohs.civilmagiks.common.tile.TileElementalBasin;
+import us.illyohs.civilmagiks.common.tile.TileSigil;
 import us.illyohs.libilly.block.BlockBase;
 
 import net.minecraft.block.material.Material;
@@ -41,9 +40,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
 
-    public static StarBlock starBasic;
+//    public static  starBasic;
 
-    public static BlockBase basin;
+//    public static BlockBase basin;
     public static BlockBase clearFarmland;
     public static BlockBase inkWell;
     public static BlockBase manaStone;
@@ -56,29 +55,28 @@ public class ModBlocks {
 
         // starBasic = new BlockBasicStar();
 
-        basin = new BlockElementalBasin(Material.rock, "elementalbasin", 3, 2, 4, false, CivilTab.BLOCKS);
-        clearFarmland = new BlockClearFarmland(Material.grass, "clearsoil", 3, 2, 0, true, CivilTab.BLOCKS);
-        inkWell = new BlockInkWell(Material.glass, "glass", 3, 4, 0.1f, true, CivilTab.BLOCKS);
-        manaStone = new BlockManaStone(Material.rock, "manastone", 3, 1, 0.5f, false, CivilTab.BLOCKS);
-        sigil = new BlockSigil(Material.air, "civilmagicks:sigil", 1, 10, 10, true, CivilTab.BLOCKS);
+//        basin = new BlockElementalBasin(Material.rock, "elementalbasin", 3, 2, 4, false, CivilTab.BLOCKS);
+//        clearFarmland = new BlockClearFarmland(Material.grass, "clearsoil", 3, 2, 0, true, CivilTab.BLOCKS);
+//        inkWell = new BlockInkWell(Material.glass, "glass", 3, 4, 0.1f, true, CivilTab.BLOCKS);
+//        manaStone = new BlockManaStone(Material.rock, "manastone", 3, 1, 0.5f, false, CivilTab.BLOCKS);
+//        sigil = new BlockSigil(Material.air, "civilmagicks:sigil", 1, 10, 10, true, CivilTab.BLOCKS);
 
         gameRegBlock();
         gameRegTile();
     }
 
     private static void gameRegBlock() {
-        GameRegistry.registerBlock(basin, "elementalbasin");
-        GameRegistry.registerBlock(clearFarmland, "clearsoil");
-        GameRegistry.registerBlock(manaStone, "manastone");
-        GameRegistry.registerBlock(sigil, "sigil");
-        // GameRegistry.registerBlock(starBasic, "starbasic");
+//        GameRegistry.registerBlock(basin, "elementalbasin");
+//        GameRegistry.registerBlock(clearFarmland, "clearsoil");
+//        GameRegistry.registerBlock(manaStone, "manastone");
+//        GameRegistry.registerBlock(sigil, "sigil");
+//        GameRegistry.registerBlock(starBasic, "starbasic");
     }
 
     private static void gameRegTile() {
-        // GameRegistry.registerTileEntity(TileBasicStar.class,
-        // "tilebasicstar");
-        GameRegistry.registerTileEntity(TileElementalBasin.class, "tileelementalstar");
-        GameRegistry.registerTileEntity(TileSigil.class, "tileSigil");
+//        GameRegistry.registerTileEntity(TileBasicStar.class,"tilebasicstar");
+//        GameRegistry.registerTileEntity(TileElementalBasin.class, "tileelementalstar");
+//        GameRegistry.registerTileEntity(TileSigil.class, "tileSigil");
     }
 
 }

@@ -1,7 +1,6 @@
 package us.illyohs.civilmagiks.common.block.nodes;
 
-import us.illyohs.civilmagiks.common.block.tile.TileElementalBasin;
-
+import us.illyohs.civilmagiks.common.tile.TileElementalBasin;
 import us.illyohs.libilly.block.BlockBase;
 
 import net.minecraft.block.ITileEntityProvider;

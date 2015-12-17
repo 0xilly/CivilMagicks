@@ -1,4 +1,4 @@
-package us.illyohs.civilmagiks.common.block.tile;
+package us.illyohs.civilmagiks.common.tile;
 
 import us.illyohs.civilmagiks.api.mana.IManaBlock;
 import us.illyohs.civilmagiks.api.mana.ManaType;

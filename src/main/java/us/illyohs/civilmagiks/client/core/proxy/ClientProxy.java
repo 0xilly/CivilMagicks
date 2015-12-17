@@ -29,13 +29,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import us.illyohs.civilmagiks.client.render.tile.RenderSigil;
 import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.block.tile.TileSigil;
 import us.illyohs.civilmagiks.common.core.lib.IProxy;
 import us.illyohs.civilmagiks.common.core.lib.LibInfo;
 
 import net.minecraftforge.client.model.obj.OBJLoader;
 import us.illyohs.civilmagiks.common.item.ModItems;
-
+import us.illyohs.civilmagiks.common.tile.TileSigil;
 import us.illyohs.libilly.util.RenderUtils;
 
 public class ClientProxy implements IProxy {
