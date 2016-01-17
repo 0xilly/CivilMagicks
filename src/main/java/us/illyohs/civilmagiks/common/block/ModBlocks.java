@@ -25,14 +25,15 @@
  */
 package us.illyohs.civilmagiks.common.block;
 
+import us.illyohs.civilmagiks.common.block.star.BlockStar;
 //import us.illyohs.civilmagiks.client.core.creativetab.CivilTab;
 //import us.illyohs.civilmagiks.common.block.nodes.BlockElementalBasin;
 //import us.illyohs.civilmagiks.common.block.nodes.BlockSigil;
 //import us.illyohs.civilmagiks.common.block.nodes.stars.StarBlock;
 import us.illyohs.civilmagiks.common.block.world.BlockClearFarmland;
 import us.illyohs.civilmagiks.common.block.world.BlockManaStone;
-import us.illyohs.civilmagiks.common.tile.TileElementalBasin;
-import us.illyohs.civilmagiks.common.tile.TileSigil;
+//import us.illyohs.civilmagiks.common.tile.TileElementalBasin;
+//import us.illyohs.civilmagiks.common.tile.TileSigil;
 import us.illyohs.libilly.block.BlockBase;
 
 import net.minecraft.block.material.Material;
@@ -46,6 +47,8 @@ public class ModBlocks {
     public static BlockBase clearFarmland;
     public static BlockBase inkWell;
     public static BlockBase manaStone;
+    
+    public static BlockBase blockManaStar;
 
     public static BlockBase sigil;
 
@@ -54,6 +57,9 @@ public class ModBlocks {
         // basin = new BlockElementalBasin();
 
         // starBasic = new BlockBasicStar();
+        
+        //Stars
+        blockManaStar = new BlockStar("starbasic");
 
 //        basin = new BlockElementalBasin(Material.rock, "elementalbasin", 3, 2, 4, false, CivilTab.BLOCKS);
 //        clearFarmland = new BlockClearFarmland(Material.grass, "clearsoil", 3, 2, 0, true, CivilTab.BLOCKS);

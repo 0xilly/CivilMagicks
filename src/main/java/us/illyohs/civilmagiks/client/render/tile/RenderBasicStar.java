@@ -23,7 +23,7 @@ public class RenderBasicStar extends TileEntitySpecialRenderer {
         Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer tes = tessellator.getWorldRenderer();
 
-        tes.startDrawingQuads();
+//        tes.startDrawingQuads();
         //
 //        tes.addVertexWithUV(x, y, z , u, v);
 //                          x  y  z  tX tY

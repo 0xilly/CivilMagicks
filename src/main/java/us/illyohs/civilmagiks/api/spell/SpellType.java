@@ -1,6 +1,6 @@
 package us.illyohs.civilmagiks.api.spell;
 
-public enum SellType {
+public enum SpellType {
     AERIS,
     AQUA,
     INGUS,

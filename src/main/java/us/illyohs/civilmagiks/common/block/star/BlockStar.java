@@ -37,7 +37,7 @@ import net.minecraft.world.World;
 public class BlockStar extends AirBlockBase implements ITileEntityProvider{
     
     public BlockStar(String name) {
-        super(Material.air, name, 3, 10, 15f, true, true);
+        super(Material.air, "civilmagicks:" + name, 3, 10, 15f, true, true);
     }
 
     /* (non-Javadoc)

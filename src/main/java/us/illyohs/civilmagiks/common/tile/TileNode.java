@@ -15,6 +15,7 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 public class TileNode extends BaseTile implements IManaBlock {
 
     int mana;
+    int max;
 
     @Override
     public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
@@ -30,6 +31,8 @@ public class TileNode extends BaseTile implements IManaBlock {
     public void writeToModNBT(NBTTagCompound bNBT) {
         bNBT.setInteger("mana", mana);
     }
+    
+//    public int setMax()
 
     @Override
     public int addMana(int add) {

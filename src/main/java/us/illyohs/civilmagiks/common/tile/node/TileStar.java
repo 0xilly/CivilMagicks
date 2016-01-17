@@ -23,41 +23,41 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagiks.client.render.tile;
+package us.illyohs.civilmagiks.common.tile.node;
 
-import us.illyohs.civilmagiks.client.models.ModelBrewChamber;
-import us.illyohs.civilmagiks.common.core.lib.LibInfo;
+import us.illyohs.civilmagiks.api.mana.ManaType;
+import us.illyohs.civilmagiks.common.core.util.BiomeUtils;
+import us.illyohs.civilmagiks.common.tile.TileNode;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.tileentity.TileEntitySignRenderer;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.nbt.NBTTagCompound;
 
-public class RenderBrewChamber extends TileEntitySignRenderer {
+import net.minecraftforge.common.BiomeManager.BiomeType;
 
-    private ModelBrewChamber model;
-
-    public RenderBrewChamber() {
-        model = new ModelBrewChamber();
+public class TileStar extends TileNode {
+    
+//    ManaType type;
+    
+    @Override
+    public void writeToModNBT(NBTTagCompound bNBT) {
+        super.writeToModNBT(bNBT);
     }
-
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LibInfo.MOD_ID, "textures/models/woodslate.png");
-
-//    @Override
-//    public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float tick, int arg) {
-////        TileBrewChamber tbc = (TileBrewChamber) tile
-//
-////        GL11.glPushMatrix();
-////
-////        GL11.glTranslated((float) x + 0.5, (float) y + 1.5, (float) z + 0.5);
-////        GL11.glScalef(1F, -1F, -1F);
-////        Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
-////        model.render(.0625F);
-////        GL11.glScalef(1F, -1F, -1F);
-////        GL11.glBlendFunc(0, 1);
-////        GL11.glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
-////        GL11.glPopMatrix();
-//
-//    }
+    
+    @Override
+    public void readFromModNBT(NBTTagCompound bNBT) {
+        super.readFromModNBT(bNBT);
+    }
+    
+    @Override
+    public void updateTile() { 
+        super.updateTile();
+        
+        if (getCurrentManaType() != null) {
+            addMana(600);
+        }
+    }
+    
+    private ManaType getCurrentManaType() {
+       return new BiomeUtils().getManaType(this.getWorld(), this.getPos());
+    }
 
 }
