@@ -25,12 +25,12 @@
 
 package us.illyohs.civilmagiks.common.core.util;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
+public class InfoUtil {
 
-public class PlayerUtils {
+    public static final String MOD_ID       = "civilmagicks";
+    public static final String MOD_NAME     = "Civil Magicks";
+    public static final String MOD_VERSION  = "@VERSION@";
 
-    public static Item getHeldItem(EntityPlayer player) {
-        return player.getHeldItem().getItem();
-    }
+    public static final String CLIENT_PROXY = "us.illyohs.civilmagiks.client.core.proxy.ClientProxy";
+    public static final String COMMON_PROXY = "us.illyohs.civilmagiks.common.core.proxy.CommonProxy";
 }

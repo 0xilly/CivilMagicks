@@ -23,14 +23,11 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.util;
+package us.illyohs.civilmagiks.api.basin;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 
-public class PlayerUtils {
+public interface ITuner {
 
-    public static Item getHeldItem(EntityPlayer player) {
-        return player.getHeldItem().getItem();
-    }
+    boolean canTuneBasin(EntityPlayer player);
 }

@@ -23,14 +23,16 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.util;
+package us.illyohs.civilmagiks.common.block.node;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 
-public class PlayerUtils {
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import us.illyohs.libilly.block.BlockBase;
 
-    public static Item getHeldItem(EntityPlayer player) {
-        return player.getHeldItem().getItem();
+public class BasinBlock extends BlockBase {
+
+    public BasinBlock(Material material, String name, float hardness, float resistance, float light, boolean tick, CreativeTabs tab) {
+        super(material, name, hardness, resistance, light, tick, tab);
     }
 }

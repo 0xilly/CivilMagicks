@@ -23,14 +23,13 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.util;
+package us.illyohs.civilmagiks.api.basin;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
-public class PlayerUtils {
+public class BasinRecipe {
 
-    public static Item getHeldItem(EntityPlayer player) {
-        return player.getHeldItem().getItem();
-    }
+    ItemStack   catalyst;
+    Elements[]  element;
+
 }

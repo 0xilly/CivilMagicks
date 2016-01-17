@@ -23,14 +23,21 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.util;
+package us.illyohs.civilmagiks.common.item.tuner;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
+import us.illyohs.civilmagiks.api.basin.ITuner;
+import us.illyohs.libilly.item.ItemBase;
 
-public class PlayerUtils {
+public class ItemBasinTuner extends ItemBase implements ITuner {
 
-    public static Item getHeldItem(EntityPlayer player) {
-        return player.getHeldItem().getItem();
+    public ItemBasinTuner(String name, boolean hasSubtypes, CreativeTabs tabs) {
+        super(name, hasSubtypes, tabs);
+    }
+
+    @Override
+    public boolean canTuneBasin(EntityPlayer player) {
+        return true;
     }
 }
