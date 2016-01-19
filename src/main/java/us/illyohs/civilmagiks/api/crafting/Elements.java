@@ -23,33 +23,13 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.handler;
+package us.illyohs.civilmagiks.api.crafting;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import us.illyohs.civilmagiks.api.basin.ITuner;
-import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.core.util.PlayerUtils;
-import us.illyohs.libilly.util.BlockUtils;
-
-public class CivilEvenHandler {
-
-    public CivilEvenHandler() {
-        MinecraftForge.EVENT_BUS.register(this);
-    }
-
-    @SubscribeEvent
-    public void playerInteract(PlayerInteractEvent event) {
-        Item held = PlayerUtils.getHeldItem(event.entityPlayer);
-        if (!event.entityPlayer.worldObj.isRemote && event.action == Action.RIGHT_CLICK_BLOCK && event.action !=
-                Action.RIGHT_CLICK_AIR && held instanceof ITuner && (((ITuner) held).canTuneBasin(event.entityPlayer))) {
-
-            BlockUtils.replaceBlockWithSoundPlayer(event.entityPlayer, event.world, event.pos, "", 3,4, Blocks.cauldron,
-                    ModBlocks.basin);
-        }
-    }
+public enum Elements {
+    WIND,
+    EARTH,
+    FIRE,
+    WATER,
+    NONE,
+    ANY
 }

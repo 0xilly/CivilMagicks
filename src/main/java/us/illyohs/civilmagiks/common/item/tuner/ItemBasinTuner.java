@@ -27,7 +27,8 @@ package us.illyohs.civilmagiks.common.item.tuner;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import us.illyohs.civilmagiks.api.basin.ITuner;
+import us.illyohs.civilmagiks.api.crafting.ITuner;
+import us.illyohs.civilmagiks.api.mana.ManaType;
 import us.illyohs.libilly.item.ItemBase;
 
 public class ItemBasinTuner extends ItemBase implements ITuner {
@@ -39,5 +40,10 @@ public class ItemBasinTuner extends ItemBase implements ITuner {
     @Override
     public boolean canTuneBasin(EntityPlayer player) {
         return true;
+    }
+
+    @Override
+    public ManaType manaType(ManaType type) {
+        return null;
     }
 }

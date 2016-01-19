@@ -33,4 +33,8 @@ public class PlayerUtils {
     public static Item getHeldItem(EntityPlayer player) {
         return player.getHeldItem().getItem();
     }
+
+//    public static Item getHelmet(EntityPlayer player) {
+//        player.getCurrentArmor(1);
+//    }
 }

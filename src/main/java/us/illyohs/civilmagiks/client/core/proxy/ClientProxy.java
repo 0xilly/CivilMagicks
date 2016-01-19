@@ -28,4 +28,14 @@ package us.illyohs.civilmagiks.client.core.proxy;
 import us.illyohs.civilmagiks.common.core.proxy.CommonProxy;
 
 public class ClientProxy extends CommonProxy {
+
+    @Override
+    public void registerRenderers() {
+
+    }
+
+    @Override
+    public void registerBlockItems() {
+        /** NO-OP **/
+    }
 }

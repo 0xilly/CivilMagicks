@@ -23,13 +23,33 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.api.basin;
+package us.illyohs.civilmagiks.common.tile;
 
-public enum Elements {
-    WIND,
-    EARTH,
-    FIRE,
-    WATER,
-    NONE,
-    ANY
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.util.ITickable;
+import us.illyohs.libilly.block.tile.BaseTile;
+
+public class TileBasin extends BaseTile implements ITickable{
+
+    @Override
+    public void readFromModNBT(NBTTagCompound mNBT) {
+
+    }
+
+    @Override
+    public void writeToModNBT(NBTTagCompound mNBT) {
+
+    }
+
+    @Override
+    public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+
+    }
+
+    @Override
+    public void update() {
+
+    }
 }

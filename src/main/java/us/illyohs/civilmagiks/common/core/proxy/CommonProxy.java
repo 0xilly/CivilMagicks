@@ -25,5 +25,17 @@
 
 package us.illyohs.civilmagiks.common.core.proxy;
 
+import us.illyohs.civilmagiks.common.block.ModBlocks;
+import us.illyohs.civilmagiks.common.item.ModItems;
+
 public class CommonProxy {
+
+    public void registerRenderers() {
+
+    }
+
+    public void registerBlockItems() {
+        ModBlocks.init();
+        ModItems.init();
+    }
 }

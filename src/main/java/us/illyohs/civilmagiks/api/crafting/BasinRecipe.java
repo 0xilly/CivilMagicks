@@ -23,13 +23,22 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.api.basin;
+package us.illyohs.civilmagiks.api.crafting;
 
 import net.minecraft.item.ItemStack;
+import us.illyohs.civilmagiks.api.mana.ManaType;
 
 public class BasinRecipe {
 
-    ItemStack   catalyst;
-    Elements[]  element;
+    Object      catalyst;
+    ItemStack   output;
+    int         typeLimit;
+    ManaType[]  manaType;
 
+    public BasinRecipe(Object catalyst, ItemStack itemStack, int typeLimit, ManaType[] manaType) {
+        this.catalyst   = catalyst;
+        this.output     = itemStack;
+        this.typeLimit  = typeLimit;
+        this.manaType   = manaType;
+    }
 }

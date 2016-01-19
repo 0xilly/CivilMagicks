@@ -23,24 +23,11 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.block.node;
+package us.illyohs.civilmagiks.common.tile;
+
+import us.illyohs.libilly.block.tile.BaseTile;
+
+public abstract class CivilTIle extends BaseTile {
 
 
-import net.minecraft.block.ITileEntityProvider;
-import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
-import us.illyohs.libilly.block.BlockBase;
-
-public class BasinBlock extends BlockBase implements ITileEntityProvider{
-
-    public BasinBlock(Material material, String name, float hardness, float resistance, float light, boolean tick, CreativeTabs tab) {
-        super(material, name, hardness, resistance, light, tick, tab);
-    }
-
-    @Override
-    public TileEntity createNewTileEntity(World world, int i) {
-        return null;
-    }
 }
