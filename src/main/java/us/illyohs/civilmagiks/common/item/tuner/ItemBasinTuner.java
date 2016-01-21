@@ -44,6 +44,6 @@ public class ItemBasinTuner extends ItemBase implements ITuner {
 
     @Override
     public ManaType manaType(ManaType type) {
-        return null;
+        return type.WATER;
     }
 }

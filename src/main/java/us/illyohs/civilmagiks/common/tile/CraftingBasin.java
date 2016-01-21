@@ -23,24 +23,16 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.api.crafting;
+package us.illyohs.civilmagiks.common.tile;
 
-import net.minecraft.item.ItemStack;
-import us.illyohs.civilmagiks.api.mana.ManaType;
+import net.minecraft.client.renderer.texture.ITickable;
+import net.minecraft.tileentity.TileEntity;
 
-public class BasinRecipe {
+public class CraftingBasin extends TileEntity implements ITickable {
 
-    Object      catalyst;
-    Object[]    input;
-    ItemStack   output;
-    int         typeLimit;
-    ManaType[]  manaType;
 
-    public BasinRecipe(Object catalyst, Object[] input, ItemStack output, int typeLimit, ManaType[] manaType) {
-        this.catalyst   = catalyst;
-        this.input      = input;
-        this.output     = output;
-        this.typeLimit  = typeLimit;
-        this.manaType   = manaType;
+    @Override
+    public void tick() {
+
     }
 }
