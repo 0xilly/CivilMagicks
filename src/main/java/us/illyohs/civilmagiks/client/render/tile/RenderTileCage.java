@@ -23,34 +23,19 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.handler;
+package us.illyohs.civilmagiks.client.render.tile;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import us.illyohs.civilmagiks.api.crafting.ITuner;
-import us.illyohs.civilmagiks.client.core.lib.LibAssets;
-import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.core.util.PlayerUtils;
-import us.illyohs.libilly.util.BlockUtils;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import us.illyohs.civilmagiks.client.model.ModelElementalCage;
+import us.illyohs.civilmagiks.common.tile.TileElementalCage;
 
-public class CivilEventHandler {
+public class RenderTileCage extends TileEntitySpecialRenderer<TileElementalCage> {
 
-    public CivilEventHandler() {
-        MinecraftForge.EVENT_BUS.register(this);
-    }
+    ModelElementalCage model = new ModelElementalCage();
+    public TileElementalCage nicolasCage;
 
-    @SubscribeEvent
-    public void playerInteract(PlayerInteractEvent event) {
-        Item held = PlayerUtils.getHeldItem(event.entityPlayer);
-        if (!event.entityPlayer.worldObj.isRemote && event.action == Action.RIGHT_CLICK_BLOCK && event.action !=
-                Action.RIGHT_CLICK_AIR && held instanceof ITuner && (((ITuner) held).canTuneBasin(event.entityPlayer))) {
+    @Override
+    public void renderTileEntityAt(TileElementalCage cage, double x, double y, double z, float v3, int i) {
 
-            BlockUtils.replaceBlockWithSoundPlayer(event.entityPlayer, event.world, event.pos, LibAssets.soundBlast, 3,
-                    4, Blocks.cauldron, ModBlocks.basin);
-        }
     }
 }

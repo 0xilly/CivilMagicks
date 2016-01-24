@@ -23,34 +23,35 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.handler;
+package us.illyohs.civilmagiks.client.core.util;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import us.illyohs.civilmagiks.api.crafting.ITuner;
-import us.illyohs.civilmagiks.client.core.lib.LibAssets;
-import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.core.util.PlayerUtils;
-import us.illyohs.libilly.util.BlockUtils;
+import net.minecraft.util.ResourceLocation;
+import us.illyohs.civilmagiks.common.core.util.InfoUtil;
 
-public class CivilEventHandler {
+public class AssetUtils {
 
-    public CivilEventHandler() {
-        MinecraftForge.EVENT_BUS.register(this);
+    private static ResourceLocation getResourceLocation(String modId, String path) {
+        return new ResourceLocation(modId, path);
     }
 
-    @SubscribeEvent
-    public void playerInteract(PlayerInteractEvent event) {
-        Item held = PlayerUtils.getHeldItem(event.entityPlayer);
-        if (!event.entityPlayer.worldObj.isRemote && event.action == Action.RIGHT_CLICK_BLOCK && event.action !=
-                Action.RIGHT_CLICK_AIR && held instanceof ITuner && (((ITuner) held).canTuneBasin(event.entityPlayer))) {
-
-            BlockUtils.replaceBlockWithSoundPlayer(event.entityPlayer, event.world, event.pos, LibAssets.soundBlast, 3,
-                    4, Blocks.cauldron, ModBlocks.basin);
-        }
+    public static String getSoundLocation(String path) {
+        return InfoUtil.MOD_ID + ":" + path;
     }
+
+    public static ResourceLocation getGuiAsset(String path) {
+        return getResourceLocation(InfoUtil.MOD_ID, "textures/gui/" + path + ".png");
+    }
+
+    public static ResourceLocation getModelAsset(String path) {
+        return getResourceLocation(InfoUtil.MOD_ID, "textures/models/" + path + ".png");
+    }
+
+    public static ResourceLocation getFxAsset(String path) {
+        return getResourceLocation(InfoUtil.MOD_ID, "textures/fx/" + path + ".png");
+    }
+
+    public static ResourceLocation getItemAsset(String path) {
+        return getResourceLocation(InfoUtil.MOD_ID, "textures/items/" + path);
+    }
+
 }

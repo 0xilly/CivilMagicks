@@ -23,34 +23,49 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.handler;
+package us.illyohs.civilmagiks.common.tile;
 
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import us.illyohs.civilmagiks.api.crafting.ITuner;
-import us.illyohs.civilmagiks.client.core.lib.LibAssets;
-import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.core.util.PlayerUtils;
-import us.illyohs.libilly.util.BlockUtils;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraftforge.items.IItemHandler;
+import us.illyohs.libilly.block.tile.BaseTile;
 
-public class CivilEventHandler {
+public class TileElementalCage extends BaseTile  implements IItemHandler{
 
-    public CivilEventHandler() {
-        MinecraftForge.EVENT_BUS.register(this);
+    @Override
+    public void readFromModNBT(NBTTagCompound mNBT) {
+
     }
 
-    @SubscribeEvent
-    public void playerInteract(PlayerInteractEvent event) {
-        Item held = PlayerUtils.getHeldItem(event.entityPlayer);
-        if (!event.entityPlayer.worldObj.isRemote && event.action == Action.RIGHT_CLICK_BLOCK && event.action !=
-                Action.RIGHT_CLICK_AIR && held instanceof ITuner && (((ITuner) held).canTuneBasin(event.entityPlayer))) {
+    @Override
+    public void writeToModNBT(NBTTagCompound mNBT) {
 
-            BlockUtils.replaceBlockWithSoundPlayer(event.entityPlayer, event.world, event.pos, LibAssets.soundBlast, 3,
-                    4, Blocks.cauldron, ModBlocks.basin);
-        }
+    }
+
+    @Override
+    public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+
+    }
+
+    @Override
+    public int getSlots() {
+        return 0;
+    }
+
+    @Override
+    public ItemStack getStackInSlot(int i) {
+        return null;
+    }
+
+    @Override
+    public ItemStack insertItem(int i, ItemStack itemStack, boolean b) {
+        return null;
+    }
+
+    @Override
+    public ItemStack extractItem(int i, int i1, boolean b) {
+        return null;
     }
 }

@@ -23,22 +23,19 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.client.core.proxy;
+package us.illyohs.civilmagiks.client.core.lib;
 
-import us.illyohs.civilmagiks.client.core.lib.LibAssets;
-import us.illyohs.civilmagiks.common.core.proxy.CommonProxy;
-import us.illyohs.civilmagiks.common.item.ModItems;
-import us.illyohs.libilly.util.RenderUtils;
+import net.minecraft.util.ResourceLocation;
+import us.illyohs.civilmagiks.client.core.util.AssetUtils;
 
-public class ClientProxy extends CommonProxy {
+public class LibAssets {
 
-    @Override
-    public void registerRenderers() {
-        RenderUtils.renderItems(ModItems.tuner, LibAssets.basinAugmenter);
-    }
+    //Item assets
+    public static ResourceLocation  basinAugmenter  = AssetUtils.getItemAsset("basinaugmenter");
 
-    @Override
-    public void registerBlockItems() {
-        /** NO-OP **/
-    }
+    //Models assets
+    public static ResourceLocation  ElementalCage   = AssetUtils.getModelAsset("woodslate");
+
+    //sounds
+    public static String            soundBlast      = AssetUtils.getSoundLocation("blast");
 }
