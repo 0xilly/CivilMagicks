@@ -44,7 +44,7 @@ public class ModItems {
     }
 
     private static void gameReg() {
-        GameRegistry.registerItem(tuner);
+        GameRegistry.registerItem(tuner, "tuner");
         GameRegistry.registerItem(spwan, "spawn");
     }
 

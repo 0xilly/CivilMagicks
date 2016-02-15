@@ -62,17 +62,6 @@ public class ManaWell extends WorldGenerator {
         }
 
 
-
-        //core block
-        world.setBlockState(new BlockPos(x, y, z), lamp);
-
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-
         return false;
     }
 }

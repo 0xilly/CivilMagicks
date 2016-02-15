@@ -48,19 +48,136 @@ public class ItemWellSpawner extends ItemBase {
         int y = pos.getY();
         int z = pos.getZ();
 
-        IBlockState stairs = Blocks.stone_stairs.getDefaultState();
         IBlockState stone  = Blocks.stonebrick.getDefaultState();
         IBlockState lamp   = Blocks.sea_lantern.getDefaultState();
         IBlockState wall   = Blocks.cobblestone_wall.getDefaultState();
 
-        world.setBlockState(new BlockPos(x, y, z), lamp);
+        //core
+        world.setBlockState(new BlockPos(x, y, z), Blocks.air.getDefaultState());
+        world.setBlockState(new BlockPos(x, y-1, z), lamp);
 
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
-        world.setBlockState(new BlockPos(x, y+1, z), stairs);
+        //wellkeep
+        world.setBlockState(new BlockPos(x, y, z-1), Blocks.stone_brick_stairs.getStateFromMeta(2)); //North
+        world.setBlockState(new BlockPos(x+1, y, z), Blocks.stone_brick_stairs.getStateFromMeta(1)); //East
+        world.setBlockState(new BlockPos(x, y, z+1), Blocks.stone_brick_stairs.getStateFromMeta(3)); //South
+        world.setBlockState(new BlockPos(x-1, y, z), Blocks.stone_brick_stairs.getStateFromMeta(0)); //West
+        world.setBlockState(new BlockPos(x-1, y, z+1), Blocks.stone_brick_stairs.getStateFromMeta(0)); //corner
+        world.setBlockState(new BlockPos(x-1, y, z-1), Blocks.stone_brick_stairs.getStateFromMeta(0)); //corner
+        world.setBlockState(new BlockPos(x+1, y, z+1), Blocks.stone_brick_stairs.getStateFromMeta(1)); //corner
+        world.setBlockState(new BlockPos(x+1, y, z-1), Blocks.stone_brick_stairs.getStateFromMeta(1)); //corner
+
+        //keepstep
+        world.setBlockState(new BlockPos(x, y, z-2), Blocks.stone_brick_stairs.getStateFromMeta(3)); //North
+        world.setBlockState(new BlockPos(x+1, y, z-2), Blocks.stone_brick_stairs.getStateFromMeta(3)); //North
+        world.setBlockState(new BlockPos(x-1, y, z-2), Blocks.stone_brick_stairs.getStateFromMeta(3)); //North
+        world.setBlockState(new BlockPos(x+2, y, z), Blocks.stone_brick_stairs.getStateFromMeta(0)); //East
+        world.setBlockState(new BlockPos(x+2, y, z-1), Blocks.stone_brick_stairs.getStateFromMeta(0)); //East
+        world.setBlockState(new BlockPos(x+2, y, z+1), Blocks.stone_brick_stairs.getStateFromMeta(0)); //East
+        world.setBlockState(new BlockPos(x, y, z+2), Blocks.stone_brick_stairs.getStateFromMeta(2)); //South
+        world.setBlockState(new BlockPos(x+1, y, z+2), Blocks.stone_brick_stairs.getStateFromMeta(2)); //South
+        world.setBlockState(new BlockPos(x-1, y, z+2), Blocks.stone_brick_stairs.getStateFromMeta(2)); //South
+        world.setBlockState(new BlockPos(x-2, y, z), Blocks.stone_brick_stairs.getStateFromMeta(1)); //East
+        world.setBlockState(new BlockPos(x-2, y, z-1), Blocks.stone_brick_stairs.getStateFromMeta(1)); //East
+        world.setBlockState(new BlockPos(x-2, y, z+1), Blocks.stone_brick_stairs.getStateFromMeta(1)); //East
+        world.setBlockState(new BlockPos(x-2, y, z+2), Blocks.stonebrick.getStateFromMeta(2)); //corner
+        world.setBlockState(new BlockPos(x-2, y, z-2), Blocks.stonebrick.getStateFromMeta(2)); //corner
+        world.setBlockState(new BlockPos(x+2, y, z+2), Blocks.stonebrick.getStateFromMeta(2)); //corner
+        world.setBlockState(new BlockPos(x+2, y, z-2), Blocks.stonebrick.getStateFromMeta(2)); //corner
+
+        //Floor
+        for (int i = 0; i <= 7; i++) {
+            world.setBlockState(new BlockPos(x+1, y, z-(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //North
+            world.setBlockState(new BlockPos(x-1, y, z-(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //North
+            world.setBlockState(new BlockPos(x, y, z-(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //North
+            world.setBlockState(new BlockPos(x-2, y, z-(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //North
+            world.setBlockState(new BlockPos(x+2, y, z-(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //North
+            world.setBlockState(new BlockPos(x+(3+i), y, z), Blocks.stonebrick.getStateFromMeta(2)); //East
+            world.setBlockState(new BlockPos(x+(3+i), y, z-1), Blocks.stonebrick.getStateFromMeta(2)); //East
+            world.setBlockState(new BlockPos(x+(3+i), y, z+1), Blocks.stonebrick.getStateFromMeta(2)); //East
+            world.setBlockState(new BlockPos(x+(3+i), y, z-2), Blocks.stonebrick.getStateFromMeta(2)); //East
+            world.setBlockState(new BlockPos(x+(3+i), y, z+2), Blocks.stonebrick.getStateFromMeta(2)); //East
+            world.setBlockState(new BlockPos(x+1, y, z+(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //South
+            world.setBlockState(new BlockPos(x-1, y, z+(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //South
+            world.setBlockState(new BlockPos(x, y, z+(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //South
+            world.setBlockState(new BlockPos(x-2, y, z+(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //South
+            world.setBlockState(new BlockPos(x+2, y, z+(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //South
+            world.setBlockState(new BlockPos(x-(3+i), y, z), Blocks.stonebrick.getStateFromMeta(2)); //West
+            world.setBlockState(new BlockPos(x-(3+i), y, z-1), Blocks.stonebrick.getStateFromMeta(2)); //West
+            world.setBlockState(new BlockPos(x-(3+i), y, z+1), Blocks.stonebrick.getStateFromMeta(2)); //West
+            world.setBlockState(new BlockPos(x-(3+i), y, z-2), Blocks.stonebrick.getStateFromMeta(2)); //West
+            world.setBlockState(new BlockPos(x-(3+i), y, z+2), Blocks.stonebrick.getStateFromMeta(2)); //West
+        }
+
+        for (int i = 0; i <= 6; i++) {
+            world.setBlockState(new BlockPos(x+3, y, z-(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //North East
+            world.setBlockState(new BlockPos(x+(3+i), y, z-3), Blocks.stonebrick.getStateFromMeta(2)); //North East
+            world.setBlockState(new BlockPos(x+3, y, z+(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //South East
+            world.setBlockState(new BlockPos(x+(3+i), y, z+3), Blocks.stonebrick.getStateFromMeta(2)); //South East
+            world.setBlockState(new BlockPos(x-3, y, z-(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //North West
+            world.setBlockState(new BlockPos(x-(3+i), y, z-3), Blocks.stonebrick.getStateFromMeta(2)); //North West
+            world.setBlockState(new BlockPos(x-3, y, z+(3+i)), Blocks.stonebrick.getStateFromMeta(2)); //South West
+            world.setBlockState(new BlockPos(x-(3+i), y, z+3), Blocks.stonebrick.getStateFromMeta(2)); //South West
+        }
+
+        for (int i = 0; i <= 5; i++) {
+            world.setBlockState(new BlockPos(x+4, y, z-(4+i)), Blocks.stonebrick.getStateFromMeta(2)); //North East
+            world.setBlockState(new BlockPos(x+(4+i), y, z-4), Blocks.stonebrick.getStateFromMeta(2)); //North East
+            world.setBlockState(new BlockPos(x+4, y, z+(4+i)), Blocks.stonebrick.getStateFromMeta(2)); //South East
+            world.setBlockState(new BlockPos(x+(4+i), y, z+4), Blocks.stonebrick.getStateFromMeta(2)); //South East
+            world.setBlockState(new BlockPos(x-4, y, z-(4+i)), Blocks.stonebrick.getStateFromMeta(2)); //North West
+            world.setBlockState(new BlockPos(x-(4+i), y, z-4), Blocks.stonebrick.getStateFromMeta(2)); //North West
+            world.setBlockState(new BlockPos(x-4, y, z+(4+i)), Blocks.stonebrick.getStateFromMeta(2)); //South West
+            world.setBlockState(new BlockPos(x-(4+i), y, z+4), Blocks.stonebrick.getStateFromMeta(2)); //South West
+        }
+
+        for (int i = 0; i <= 3; i++) {
+            world.setBlockState(new BlockPos(x+5, y, z-(5+i)), Blocks.stonebrick.getStateFromMeta(2)); //North East
+            world.setBlockState(new BlockPos(x+(5+i), y, z-5), Blocks.stonebrick.getStateFromMeta(2)); //North East
+            world.setBlockState(new BlockPos(x+5, y, z+(5+i)), Blocks.stonebrick.getStateFromMeta(2)); //South East
+            world.setBlockState(new BlockPos(x+(5+i), y, z+5), Blocks.stonebrick.getStateFromMeta(2)); //South East
+            world.setBlockState(new BlockPos(x-5, y, z-(5+i)), Blocks.stonebrick.getStateFromMeta(2)); //North West
+            world.setBlockState(new BlockPos(x-(5+i), y, z-5), Blocks.stonebrick.getStateFromMeta(2)); //North West
+            world.setBlockState(new BlockPos(x-5, y, z+(5+i)), Blocks.stonebrick.getStateFromMeta(2)); //South West
+            world.setBlockState(new BlockPos(x-(5+i), y, z+5), Blocks.stonebrick.getStateFromMeta(2)); //South West
+        }
+
+        world.setBlockState(new BlockPos(x+6, y, z-6), Blocks.stonebrick.getStateFromMeta(2)); //North East
+        world.setBlockState(new BlockPos(x+6, y, z-7), Blocks.stonebrick.getStateFromMeta(2)); //North East
+        world.setBlockState(new BlockPos(x+7, y, z-6), Blocks.stonebrick.getStateFromMeta(2)); //North East
+        world.setBlockState(new BlockPos(x+6, y, z+6), Blocks.stonebrick.getStateFromMeta(2)); //South East
+        world.setBlockState(new BlockPos(x+6, y, z+7), Blocks.stonebrick.getStateFromMeta(2)); //South East
+        world.setBlockState(new BlockPos(x+7, y, z+6), Blocks.stonebrick.getStateFromMeta(2)); //South East
+        world.setBlockState(new BlockPos(x-6, y, z-6), Blocks.stonebrick.getStateFromMeta(2)); //North West
+        world.setBlockState(new BlockPos(x-6, y, z-7), Blocks.stonebrick.getStateFromMeta(2)); //North West
+        world.setBlockState(new BlockPos(x-7, y, z-6), Blocks.stonebrick.getStateFromMeta(2)); //North West
+        world.setBlockState(new BlockPos(x-6, y, z+6), Blocks.stonebrick.getStateFromMeta(2)); //South West
+        world.setBlockState(new BlockPos(x-6, y, z+7), Blocks.stonebrick.getStateFromMeta(2)); //South West
+        world.setBlockState(new BlockPos(x-7, y, z+6), Blocks.stonebrick.getStateFromMeta(2)); //South West
+
+        //Wall
+        world.setBlockState(new BlockPos(x, y+1, z-10), Blocks.stonebrick.getStateFromMeta(1)); //North
+        world.setBlockState(new BlockPos(x+1, y+1, z-10), Blocks.stonebrick.getStateFromMeta(2)); //North
+        world.setBlockState(new BlockPos(x+2, y+1, z-10), Blocks.stonebrick.getStateFromMeta(2)); //North
+        world.setBlockState(new BlockPos(x-1, y+1, z-10), Blocks.stonebrick.getStateFromMeta(2)); //North
+        world.setBlockState(new BlockPos(x-2, y+1, z-10), Blocks.stonebrick.getStateFromMeta(2)); //North
+
+        world.setBlockState(new BlockPos(x+10, y+1, z), Blocks.stonebrick.getStateFromMeta(1)); //East
+        world.setBlockState(new BlockPos(x+10, y+1, z+1), Blocks.stonebrick.getStateFromMeta(2)); //East
+        world.setBlockState(new BlockPos(x+10, y+1, z+2), Blocks.stonebrick.getStateFromMeta(2)); //East
+        world.setBlockState(new BlockPos(x+10, y+1, z-1), Blocks.stonebrick.getStateFromMeta(2)); //East
+        world.setBlockState(new BlockPos(x+10, y+1, z-2), Blocks.stonebrick.getStateFromMeta(2)); //East
+
+        world.setBlockState(new BlockPos(x, y+1, z+10), Blocks.stonebrick.getStateFromMeta(1)); //South
+        world.setBlockState(new BlockPos(x+1, y+1, z+10), Blocks.stonebrick.getStateFromMeta(2)); //South
+        world.setBlockState(new BlockPos(x+2, y+1, z+10), Blocks.stonebrick.getStateFromMeta(2)); //South
+        world.setBlockState(new BlockPos(x-1, y+1, z+10), Blocks.stonebrick.getStateFromMeta(2)); //South
+        world.setBlockState(new BlockPos(x-2, y+1, z+10), Blocks.stonebrick.getStateFromMeta(2)); //South
+
+        world.setBlockState(new BlockPos(x-10, y+1, z), Blocks.stonebrick.getStateFromMeta(1)); //West
+        world.setBlockState(new BlockPos(x-10, y+1, z+1), Blocks.stonebrick.getStateFromMeta(2)); //West
+        world.setBlockState(new BlockPos(x-10, y+1, z+2), Blocks.stonebrick.getStateFromMeta(2)); //West
+        world.setBlockState(new BlockPos(x-10, y+1, z-1), Blocks.stonebrick.getStateFromMeta(2)); //West
+        world.setBlockState(new BlockPos(x-10, y+1, z-2), Blocks.stonebrick.getStateFromMeta(2)); //West
         return true;
     }
 }

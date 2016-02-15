@@ -48,6 +48,6 @@ public class ModBlocks {
 
     private static void gameReg() {
 
-        GameRegistry.registerBlock(basin);
+        GameRegistry.registerBlock(basin, "basin");
     }
 }
