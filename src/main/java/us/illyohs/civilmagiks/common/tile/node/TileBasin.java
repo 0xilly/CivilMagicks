@@ -23,18 +23,33 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.proxy;
+package us.illyohs.civilmagiks.common.tile.node;
 
-import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.item.ModItems;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.util.ITickable;
+import us.illyohs.libilly.block.tile.BaseTile;
 
-public class CommonProxy {
+public class TileBasin extends BaseTile implements ITickable{
 
-    public void registerRenderers() {
+    @Override
+    public void readFromModNBT(NBTTagCompound mNBT) {
 
     }
 
-    public void registerBlockItems() {
+    @Override
+    public void writeToModNBT(NBTTagCompound mNBT) {
+
+    }
+
+    @Override
+    public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+
+    }
+
+    @Override
+    public void update() {
 
     }
 }

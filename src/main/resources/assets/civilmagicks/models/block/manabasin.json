@@ -1,0 +1,24 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "blocks/log_acacia",
+    "top": "blocks/log_acacia_top",
+    "piller": "blocks/log_acacia",
+    "base": "blocks/stone_granite_smooth"
+  },
+  "elements": [
+    {
+      "from": [0, 8, 8],
+      "to": [16, 16, 16],
+      "faces": {
+        "down":  {"uv": [0, 0, 16, 16], "texture": "#base"},
+        "up":    {"uv": [0, 0, 16, 16], "texture": "#base", "cullface": "up" },
+        "north": {"uv": [0, 0, 16, 8 ], "texture": "#base", "cullface": "north" },
+        "south": {"uv": [0, 0, 16, 8 ], "texture": "#base", "cullface": "south" },
+        "east":  {"uv": [0, 0, 16, 8 ], "texture": "#base", "cullface": "west" },
+        "west":  {"uv": [0, 0, 16, 8 ], "texture": "#base", "cullface": "east" }
+      },
+      "__comment": "Base"
+    }
+  ]
+}

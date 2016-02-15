@@ -23,16 +23,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.tile;
+package us.illyohs.civilmagiks.api;
 
-import net.minecraft.client.renderer.texture.ITickable;
-import net.minecraft.tileentity.TileEntity;
-
-public class CraftingBasin extends TileEntity implements ITickable {
-
-
-    @Override
-    public void tick() {
-
-    }
+public interface IRestrictWell {
 }

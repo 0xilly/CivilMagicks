@@ -29,6 +29,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import us.illyohs.civilmagiks.common.block.node.BasinBlock;
+import us.illyohs.civilmagiks.common.block.world.ManaOre;
 import us.illyohs.civilmagiks.common.core.util.InfoUtil;
 import us.illyohs.libilly.block.BlockBase;
 
@@ -36,9 +37,12 @@ public class ModBlocks {
 
     public static BlockBase basin;
 
+    public static BlockBase manaOre;
+
     public static void init() {
         basin = new BasinBlock(Material.rock, InfoUtil.MOD_ID + ":basin", 5, 5, 3, true, CreativeTabs.tabFood);
 
+        manaOre = new ManaOre(Material.rock, InfoUtil.MOD_ID + ":manaore", 5,5, 1, false, CreativeTabs.tabFood);
         gameReg();
     }
 

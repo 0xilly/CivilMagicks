@@ -25,47 +25,95 @@
 
 package us.illyohs.civilmagiks.common.tile;
 
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
-import net.minecraftforge.items.IItemHandler;
-import us.illyohs.libilly.block.tile.BaseTile;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IChatComponent;
 
-public class TileElementalCage extends BaseTile  implements IItemHandler{
-
+public class InvTile extends TileEntity implements IInventory {
     @Override
-    public void readFromModNBT(NBTTagCompound mNBT) {
-
-    }
-
-    @Override
-    public void writeToModNBT(NBTTagCompound mNBT) {
-
-    }
-
-    @Override
-    public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
-
-    }
-
-    @Override
-    public int getSlots() {
+    public int getSizeInventory() {
         return 0;
     }
 
     @Override
-    public ItemStack getStackInSlot(int i) {
+    public ItemStack getStackInSlot(int index) {
         return null;
     }
 
     @Override
-    public ItemStack insertItem(int i, ItemStack itemStack, boolean b) {
+    public ItemStack decrStackSize(int index, int count) {
         return null;
     }
 
     @Override
-    public ItemStack extractItem(int i, int i1, boolean b) {
+    public ItemStack removeStackFromSlot(int index) {
+        return null;
+    }
+
+    @Override
+    public void setInventorySlotContents(int index, ItemStack stack) {
+
+    }
+
+    @Override
+    public int getInventoryStackLimit() {
+        return 0;
+    }
+
+    @Override
+    public boolean isUseableByPlayer(EntityPlayer player) {
+        return false;
+    }
+
+    @Override
+    public void openInventory(EntityPlayer player) {
+
+    }
+
+    @Override
+    public void closeInventory(EntityPlayer player) {
+
+    }
+
+    @Override
+    public boolean isItemValidForSlot(int index, ItemStack stack) {
+        return false;
+    }
+
+    @Override
+    public int getField(int id) {
+        return 0;
+    }
+
+    @Override
+    public void setField(int id, int value) {
+
+    }
+
+    @Override
+    public int getFieldCount() {
+        return 0;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public boolean hasCustomName() {
+        return false;
+    }
+
+    @Override
+    public IChatComponent getDisplayName() {
         return null;
     }
 }

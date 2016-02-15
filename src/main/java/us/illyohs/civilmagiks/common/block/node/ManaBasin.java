@@ -23,18 +23,15 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.proxy;
+package us.illyohs.civilmagiks.common.block.node;
 
-import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.item.ModItems;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import us.illyohs.libilly.block.BlockBase;
 
-public class CommonProxy {
+public class ManaBasin extends BlockBase {
 
-    public void registerRenderers() {
-
-    }
-
-    public void registerBlockItems() {
-
+    public ManaBasin(Material material, String name, float hardness, float resistance, float light, boolean tick, CreativeTabs tab) {
+        super(material, name, hardness, resistance, light, tick, tab);
     }
 }

@@ -23,18 +23,16 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.proxy;
+package us.illyohs.civilmagiks.common.tile.node;
 
-import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.item.ModItems;
+import net.minecraft.client.renderer.texture.ITickable;
+import net.minecraft.tileentity.TileEntity;
 
-public class CommonProxy {
+public class ManaBasin extends TileEntity implements ITickable {
 
-    public void registerRenderers() {
 
-    }
-
-    public void registerBlockItems() {
+    @Override
+    public void tick() {
 
     }
 }

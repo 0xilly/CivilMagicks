@@ -23,18 +23,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.proxy;
+package us.illyohs.civilmagiks.common.world;
 
-import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.item.ModItems;
-
-public class CommonProxy {
-
-    public void registerRenderers() {
-
-    }
-
-    public void registerBlockItems() {
-
-    }
+public class ModGen {
 }

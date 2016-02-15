@@ -25,27 +25,42 @@
 
 package us.illyohs.civilmagiks.common.item;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import us.illyohs.civilmagiks.common.core.util.InfoUtil;
-import us.illyohs.civilmagiks.common.item.tuner.ItemBasinTuner;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.world.World;
 import us.illyohs.libilly.item.ItemBase;
 
-public class ModItems {
+public class ItemWellSpawner extends ItemBase {
 
-    public static ItemBase tuner;
-    public static ItemBase spwan;
-
-    public static void init() {
-        tuner = new ItemBasinTuner(InfoUtil.MOD_ID + "tuner", false, CreativeTabs.tabFood);
-        spwan = new ItemWellSpawner(InfoUtil.MOD_NAME + "spawner", false, CreativeTabs.tabFood);
-
-        gameReg();
+    public ItemWellSpawner(String name, boolean hasSubtypes, CreativeTabs tabs) {
+        super(name, hasSubtypes, tabs);
     }
 
-    private static void gameReg() {
-        GameRegistry.registerItem(tuner);
-        GameRegistry.registerItem(spwan, "spawn");
-    }
+    @Override
+    public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
 
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
+
+        IBlockState stairs = Blocks.stone_stairs.getDefaultState();
+        IBlockState stone  = Blocks.stonebrick.getDefaultState();
+        IBlockState lamp   = Blocks.sea_lantern.getDefaultState();
+        IBlockState wall   = Blocks.cobblestone_wall.getDefaultState();
+
+        world.setBlockState(new BlockPos(x, y, z), lamp);
+
+        world.setBlockState(new BlockPos(x, y+1, z), stairs);
+        world.setBlockState(new BlockPos(x, y+1, z), stairs);
+        world.setBlockState(new BlockPos(x, y+1, z), stairs);
+        world.setBlockState(new BlockPos(x, y+1, z), stairs);
+        world.setBlockState(new BlockPos(x, y+1, z), stairs);
+        world.setBlockState(new BlockPos(x, y+1, z), stairs);
+        return true;
+    }
 }

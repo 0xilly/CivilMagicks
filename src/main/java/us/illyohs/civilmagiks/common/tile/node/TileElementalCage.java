@@ -23,15 +23,16 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.tile;
+package us.illyohs.civilmagiks.common.tile.node;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
-import net.minecraft.util.ITickable;
+import net.minecraftforge.items.IItemHandler;
 import us.illyohs.libilly.block.tile.BaseTile;
 
-public class TileBasin extends BaseTile implements ITickable{
+public class TileElementalCage extends BaseTile  implements IItemHandler {
 
     @Override
     public void readFromModNBT(NBTTagCompound mNBT) {
@@ -49,7 +50,22 @@ public class TileBasin extends BaseTile implements ITickable{
     }
 
     @Override
-    public void update() {
+    public int getSlots() {
+        return 0;
+    }
 
+    @Override
+    public ItemStack getStackInSlot(int i) {
+        return null;
+    }
+
+    @Override
+    public ItemStack insertItem(int i, ItemStack itemStack, boolean b) {
+        return null;
+    }
+
+    @Override
+    public ItemStack extractItem(int i, int i1, boolean b) {
+        return null;
     }
 }

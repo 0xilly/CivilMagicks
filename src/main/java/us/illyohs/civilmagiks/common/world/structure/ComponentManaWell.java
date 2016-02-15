@@ -23,18 +23,29 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.core.proxy;
+package us.illyohs.civilmagiks.common.world.structure;
 
-import us.illyohs.civilmagiks.common.block.ModBlocks;
-import us.illyohs.civilmagiks.common.item.ModItems;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
+import net.minecraft.world.gen.structure.StructureBoundingBox;
+import net.minecraft.world.gen.structure.StructureComponent;
 
-public class CommonProxy {
+import java.util.Random;
 
-    public void registerRenderers() {
+public class ComponentManaWell extends StructureComponent {
+
+    @Override
+    protected void writeStructureToNBT(NBTTagCompound tagCompound) {
 
     }
 
-    public void registerBlockItems() {
+    @Override
+    protected void readStructureFromNBT(NBTTagCompound tagCompound) {
 
+    }
+
+    @Override
+    public boolean addComponentParts(World worldIn, Random randomIn, StructureBoundingBox structureBoundingBoxIn) {
+        return false;
     }
 }

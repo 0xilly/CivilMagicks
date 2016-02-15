@@ -27,15 +27,16 @@ package us.illyohs.civilmagiks.client.render.tile;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import us.illyohs.civilmagiks.client.model.ModelElementalCage;
-import us.illyohs.civilmagiks.common.tile.TileElementalCage;
+import us.illyohs.civilmagiks.common.tile.node.TileElementalCage;
 
 public class RenderTileCage extends TileEntitySpecialRenderer<TileElementalCage> {
 
-    ModelElementalCage model = new ModelElementalCage();
-    public TileElementalCage nicolasCage;
+    ModelElementalCage          model = new ModelElementalCage();
+    public TileElementalCage    nicolasCage;
 
     @Override
     public void renderTileEntityAt(TileElementalCage cage, double x, double y, double z, float v3, int i) {
+        this.nicolasCage = cage;
 
     }
 }
