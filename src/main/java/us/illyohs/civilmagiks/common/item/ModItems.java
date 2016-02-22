@@ -38,7 +38,7 @@ public class ModItems {
 
     public static void init() {
         tuner = new ItemBasinTuner(InfoUtil.MOD_ID + "tuner", false, CreativeTabs.tabFood);
-        spwan = new ItemWellSpawner(InfoUtil.MOD_NAME + "spawner", false, CreativeTabs.tabFood);
+        spwan = new ItemWellSpawner(InfoUtil.MOD_ID + "spawner", false, CreativeTabs.tabFood);
 
         gameReg();
     }

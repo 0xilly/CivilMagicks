@@ -27,8 +27,91 @@ package us.illyohs.civilmagiks.common.core.util;
 
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import us.illyohs.civilmagiks.api.IRestrictWell;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
+import us.illyohs.civilmagiks.api.mana.ManaType;
+
+import java.util.HashMap;
+import java.util.Random;
 
 public class WorldUtils {
+
+    HashMap<Type, ManaType> manaTypeReg = new HashMap<Type, ManaType>();
+
+    public WorldUtils() {
+        setEarth(ManaType.EARTH);
+        setFire(ManaType.FIRE);
+        setWater(ManaType.WATER);
+        setWind(ManaType.WIND);
+    }
+
+    /**
+     *
+     * @param world
+     * @param pos
+     * @return
+     */
+    public BiomeGenBase getBiome(World world, BlockPos pos) {
+        return world.getBiomeGenForCoords(pos);
+    }
+
+    /**
+     *
+     * @param biome
+     * @return
+     */
+    public Type[] getAllBiomeTypesForBiome(BiomeGenBase biome) {
+        return BiomeDictionary.getTypesForBiome(biome);
+    }
+
+    public Type getRandomTypeFromBiome(BiomeGenBase biome) {
+        Type[] tupe = getAllBiomeTypesForBiome(biome);
+        Random random = new Random();
+        int index = random.nextInt(tupe.length);
+        return tupe[index];
+    }
+
+    public ManaType getManaTypeFromBiomeType(Type type) {
+        return manaTypeReg.get(type);
+    }
+
+    private void setWind(ManaType wind) {
+        manaTypeReg.put(Type.SPARSE, wind);
+        manaTypeReg.put(Type.DRY, wind);
+        manaTypeReg.put(Type.SPOOKY, wind);
+        manaTypeReg.put(Type.DEAD, wind);
+        manaTypeReg.put(Type.HILLS, wind);
+        manaTypeReg.put(Type.MOUNTAIN, wind);
+    }
+
+    private void setWater(ManaType water) {
+        manaTypeReg.put(Type.WET, water);
+        manaTypeReg.put(Type.COLD, water);
+        manaTypeReg.put(Type.BEACH, water);
+        manaTypeReg.put(Type.OCEAN, water);
+        manaTypeReg.put(Type.RIVER, water);
+        manaTypeReg.put(Type.WATER, water);
+    }
+
+    private void setEarth(ManaType earth) {
+        manaTypeReg.put(Type.DENSE, earth);
+        manaTypeReg.put(Type.SAVANNA, earth);
+        manaTypeReg.put(Type.CONIFEROUS, earth);
+        manaTypeReg.put(Type.JUNGLE, earth);
+        manaTypeReg.put(Type.DENSE, earth);
+        manaTypeReg.put(Type.LUSH, earth);
+        manaTypeReg.put(Type.FOREST, earth);
+        manaTypeReg.put(Type.PLAINS, earth);
+
+    }
+
+    private void setFire(ManaType fire) {
+        manaTypeReg.put(Type.HOT, fire);
+        manaTypeReg.put(Type.NETHER, fire);
+        manaTypeReg.put(Type.MESA, fire);
+        manaTypeReg.put(Type.SANDY, fire);
+        manaTypeReg.put(Type.WASTELAND, fire);
+    }
 
 }
