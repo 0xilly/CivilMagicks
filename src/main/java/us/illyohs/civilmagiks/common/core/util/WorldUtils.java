@@ -37,7 +37,7 @@ import java.util.Random;
 
 public class WorldUtils {
 
-    HashMap<Type, ManaType> manaTypeReg = new HashMap<Type, ManaType>();
+    static HashMap<Type, ManaType> manaTypeReg = new HashMap<Type, ManaType>();
 
     public WorldUtils() {
         setEarth(ManaType.EARTH);
@@ -48,11 +48,10 @@ public class WorldUtils {
 
     /**
      *
-     * @param world
      * @param pos
      * @return
      */
-    public BiomeGenBase getBiome(World world, BlockPos pos) {
+    public static BiomeGenBase getBiome(World world, BlockPos pos) {
         return world.getBiomeGenForCoords(pos);
     }
 
@@ -61,19 +60,23 @@ public class WorldUtils {
      * @param biome
      * @return
      */
-    public Type[] getAllBiomeTypesForBiome(BiomeGenBase biome) {
+    public static Type[] getAllBiomeTypesForBiome(BiomeGenBase biome) {
         return BiomeDictionary.getTypesForBiome(biome);
     }
 
-    public Type getRandomTypeFromBiome(BiomeGenBase biome) {
-        Type[] tupe = getAllBiomeTypesForBiome(biome);
+    public static Type getRandomTypeFromBiome(World world,BlockPos pos) {
+        Type[] tupe = getAllBiomeTypesForBiome(getBiome(world, pos));
         Random random = new Random();
         int index = random.nextInt(tupe.length);
         return tupe[index];
     }
 
-    public ManaType getManaTypeFromBiomeType(Type type) {
+    public static ManaType getManaTypeFromBiomeType(Type type) {
         return manaTypeReg.get(type);
+    }
+
+    public static ManaType getManaFromPos(World world, BlockPos pos) {
+        return getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos));
     }
 
     private void setWind(ManaType wind) {

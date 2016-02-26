@@ -11,6 +11,7 @@ buildscript {
                                                                                         }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+//apply plugin: 'maven'
 
 ext.configFile = file "build.properties"
 
