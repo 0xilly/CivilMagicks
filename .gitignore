@@ -18,10 +18,3 @@ out
 *.iml
 *.ipr
 *.iws
-setupidea.bat
-/assets
-/libs/
-
-/run/
-
-*.launch
