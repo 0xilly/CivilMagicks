@@ -32,7 +32,7 @@ archivesBaseName = "${config.name}"
 minecraft {
 
     runDir = "run"
-    mappings = "${congig.mappings}"
+    mappings = "${config.mappings}"
     version = "${config.mc_version}-${config.forge_version}"
 
 
