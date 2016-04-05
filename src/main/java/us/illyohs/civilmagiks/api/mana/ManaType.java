@@ -25,10 +25,9 @@
 
 package us.illyohs.civilmagiks.api.mana;
 
-import net.minecraft.util.StatCollector;
 
-import java.util.ArrayList;
-import java.util.List;
+import net.minecraft.util.text.translation.I18n;
+
 
 public class ManaType {
 
@@ -56,7 +55,7 @@ public class ManaType {
 
 
     public String getLocalizedName() {
-        return StatCollector.translateToLocal("civil.manatype." + name);
+        return I18n.translateToLocal("civil.manatype." + name);
     }
 
     public boolean isSpawnable() {

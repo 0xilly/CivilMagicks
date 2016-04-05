@@ -33,6 +33,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import us.illyohs.civilmagiks.common.block.ModBlocks;
+import us.illyohs.civilmagiks.common.core.capability.ModCapabilities;
 import us.illyohs.civilmagiks.common.core.proxy.CommonProxy;
 import us.illyohs.civilmagiks.common.core.util.InfoUtil;
 import us.illyohs.civilmagiks.common.item.ModItems;
@@ -55,6 +56,7 @@ public class CivilMagicks {
     public void preInit(FMLPreInitializationEvent event) {
         ModBlocks.init();
         ModItems.init();
+        ModCapabilities.init();
         proxy.registerBlockItems();
     }
 
