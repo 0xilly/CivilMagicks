@@ -27,11 +27,12 @@ package us.illyohs.civilmagiks.common.core.util;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.util.EnumHand;
 
 public class PlayerUtils {
 
-    public static Item getHeldItem(EntityPlayer player) {
-        return player.getHeldItem().getItem();
+    public static Item getHeldItem(EntityPlayer player, EnumHand hand) {
+        return player.getHeldItem(hand).getItem();
     }
 
 //    public static Item getHelmet(EntityPlayer player) {

@@ -45,12 +45,13 @@ public class CivilEventHandler {
 
     @SubscribeEvent
     public void playerInteract(PlayerInteractEvent event) {
-        Item held = PlayerUtils.getHeldItem(event.entityPlayer);
-        if (!event.entityPlayer.worldObj.isRemote && event.action == Action.RIGHT_CLICK_BLOCK && event.action !=
-                Action.RIGHT_CLICK_AIR && held instanceof ITuner && (((ITuner) held).canTuneBasin(event.entityPlayer))) {
+        Item held = PlayerUtils.getHeldItem(event.getEntityPlayer());
+        if (!event.getEntity().worldObj.isRemote && event.getAction() == Action.RIGHT_CLICK_BLOCK && event.getAction() !=
+                Action.RIGHT_CLICK_AIR && held instanceof ITuner && (((ITuner) held).canTuneBasin(event.getEntityPlayer()))) {
 
-            BlockUtils.replaceBlockWithSoundPlayer(event.entityPlayer, event.world, event.pos, LibAssets.soundBlast, 3,
-                    4, Blocks.cauldron, ModBlocks.basin);
+//            BlockUtils.replaceBlock(event.getEntityPlayer(), event.getWorld(), event.getPos(), LibAssets.soundBlast, 3,
+//                    4, Blocks.cauldron, ModBlocks.basin);
+            BlockUtils.replaceBlock(event.getWorld(), event.getPos(), Blocks.cauldron, ModBlocks.basin);
         }
     }
 }
