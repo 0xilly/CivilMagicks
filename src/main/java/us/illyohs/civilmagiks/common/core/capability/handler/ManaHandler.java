@@ -1,39 +1,42 @@
 package us.illyohs.civilmagiks.common.core.capability.handler;
 
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.common.util.INBTSerializable;
 import us.illyohs.civilmagiks.api.capability.IManaHandler;
 import us.illyohs.civilmagiks.api.mana.ManaType;
 
-public class ManaHandler implements IManaHandler, INBTSerializable<NBTTagCompound> {
+public class ManaHandler implements IManaHandler {
 
-    @Override
-    public NBTTagCompound serializeNBT() {
-        return null;
+    private int currentMana, maxMana;
+    private ManaType type;
+
+    public void setMaxMana(int maxMana) {
+        this.maxMana = maxMana;
     }
 
-    @Override
-    public void deserializeNBT(NBTTagCompound nbt) {
-
+    public void addMana(int add) {
+        if (getCurrentMana() + add > maxMana) {
+            this.currentMana = getCurrentMana() + 0;
+        } else if (getCurrentMana() + add <= maxMana) {
+            this.currentMana = getCurrentMana() + add;
+        }
     }
 
     @Override
     public int getMaxStorage() {
-        return 0;
+        return maxMana;
     }
 
     @Override
-    public int getMana() {
-        return 0;
+    public int getCurrentMana() {
+        return currentMana;
+    }
+
+    public void setType(ManaType type) {
+        this.type = type;
     }
 
     @Override
     public ManaType getManaType() {
-        return null;
+        return ManaType.GREY;
     }
 
-    @Override
-    public boolean canAcceptMana() {
-        return false;
-    }
 }

@@ -6,9 +6,8 @@ public interface IManaHandler {
 
     int getMaxStorage();
 
-    int getMana();
+    int getCurrentMana();
 
     ManaType getManaType();
 
-    boolean canAcceptMana();
 }
