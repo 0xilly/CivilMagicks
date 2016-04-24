@@ -72,11 +72,16 @@ public class ManaUtils {
     }
 
     public static ManaType getManaTypeFromBiomeType(Type type) {
+        System.out.println(type.toString());
         return manaTypeReg.get(type);
     }
 
     public static ManaType getManaFromPos(World world, BlockPos pos) {
-        return getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos));
+        if (getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos)) == null) {
+            return ManaType.GREY;
+        } else {
+            return getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos));
+        }
     }
 
     private static void setWind(ManaType wind) {
@@ -95,6 +100,7 @@ public class ManaUtils {
         manaTypeReg.put(Type.OCEAN, water);
         manaTypeReg.put(Type.RIVER, water);
         manaTypeReg.put(Type.WATER, water);
+        manaTypeReg.put(Type.SWAMP, water);
     }
 
     private static void setEarth(ManaType earth) {
@@ -106,6 +112,7 @@ public class ManaUtils {
         manaTypeReg.put(Type.LUSH, earth);
         manaTypeReg.put(Type.FOREST, earth);
         manaTypeReg.put(Type.PLAINS, earth);
+        manaTypeReg.put(Type.SWAMP, earth);
 
     }
 

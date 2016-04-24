@@ -7,15 +7,15 @@ import us.illyohs.civilmagiks.api.mana.ManaType;
 import us.illyohs.civilmagiks.common.core.util.ManaUtils;
 import us.illyohs.civilmagiks.common.core.util.tile.BaseTile;
 
-public class TileManSpring extends BaseTile implements ITickable {
+public class TileManaSpring extends BaseTile implements ITickable {
 
     public ManaType manaType;
 
     @Override
     public void update() {
-//        if (!worldObj.isRemote) {
+        if (!worldObj.isRemote) {
 //            System.out.println(getManaType().getLocalizedName());
-//        }
+        }
     }
 
     @Override
@@ -25,7 +25,7 @@ public class TileManSpring extends BaseTile implements ITickable {
 
     @Override
     public void writeToModNBT(NBTTagCompound mNBT) {
-        mNBT.setString("manatyoe", getManaType().getLocalizedName());
+        mNBT.setString("manatype", getManaType().getLocalizedName());
     }
 
     public ManaType getManaType() {

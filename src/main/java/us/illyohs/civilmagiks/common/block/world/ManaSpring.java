@@ -30,7 +30,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import us.illyohs.civilmagiks.common.core.util.block.BlockBase;
-import us.illyohs.civilmagiks.common.tile.node.TileManSpring;
+import us.illyohs.civilmagiks.common.tile.node.TileManaSpring;
 
 public class ManaSpring extends BlockBase implements ITileEntityProvider {
 
@@ -40,6 +40,6 @@ public class ManaSpring extends BlockBase implements ITileEntityProvider {
 
     @Override
     public TileEntity createNewTileEntity(World world, int i) {
-        return new TileManSpring();
+        return new TileManaSpring();
     }
 }

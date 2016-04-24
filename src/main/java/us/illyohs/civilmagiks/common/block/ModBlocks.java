@@ -33,7 +33,7 @@ import us.illyohs.civilmagiks.common.block.world.ManaOre;
 import us.illyohs.civilmagiks.common.block.world.ManaSpring;
 import us.illyohs.civilmagiks.common.core.util.InfoUtil;
 import us.illyohs.civilmagiks.common.core.util.block.BlockBase;
-import us.illyohs.civilmagiks.common.tile.node.TileManSpring;
+import us.illyohs.civilmagiks.common.tile.node.TileManaSpring;
 
 public class ModBlocks {
 
@@ -56,7 +56,7 @@ public class ModBlocks {
 
     private static void gameReg() {
         GameRegistry.register(manaSpring);
-        GameRegistry.registerTileEntity(TileManSpring.class, "tilemanaspring");
+        GameRegistry.registerTileEntity(TileManaSpring.class, "tilemanaspring");
 //        GameRegistry.register()
 
 //        GameRegistry.registerBlock(basin, "basin");

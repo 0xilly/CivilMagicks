@@ -9,6 +9,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import us.illyohs.civilmagiks.common.block.ModBlocks;
 import us.illyohs.civilmagiks.common.core.util.ManaUtils;
 import us.illyohs.civilmagiks.common.core.util.item.ItemBase;
 
@@ -21,8 +22,12 @@ public class ItemSpringWand extends ItemBase {
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand,
                                       EnumFacing facing, float hitX, float hitY, float hitZ) {
 
-//        world.setBlockState(pos.up(), ModBlocks.manaSpring.getDefaultState());
-        System.out.println(ManaUtils.getManaFromPos(world, pos).getLocalizedName());
+        world.setBlockState(pos.up(), ModBlocks.manaSpring.getDefaultState());
+//        try {
+//            System.out.println(ManaUtils.getManaFromPos(world, pos).getLocalizedName());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         return EnumActionResult.PASS;
     }
 

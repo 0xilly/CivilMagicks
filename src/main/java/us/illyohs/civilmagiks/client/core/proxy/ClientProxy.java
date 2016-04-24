@@ -25,19 +25,23 @@
 
 package us.illyohs.civilmagiks.client.core.proxy;
 
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import us.illyohs.civilmagiks.client.render.tile.RenderManaSpring;
+import us.illyohs.civilmagiks.common.block.world.ManaSpring;
 import us.illyohs.civilmagiks.common.core.proxy.CommonProxy;
 import us.illyohs.civilmagiks.common.item.ModItems;
+import us.illyohs.civilmagiks.common.tile.node.TileManaSpring;
 
 public class ClientProxy extends CommonProxy {
 
     @Override
     public void preInit(FMLPreInitializationEvent e) {
         super.preInit(e);
-
         ModItems.initModels();
+        ClientRegistry.bindTileEntitySpecialRenderer(TileManaSpring.class, new RenderManaSpring());
     }
 
     @Override
