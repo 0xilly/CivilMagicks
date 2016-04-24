@@ -30,8 +30,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import us.illyohs.civilmagiks.common.block.node.BasinBlock;
 import us.illyohs.civilmagiks.common.block.world.ManaOre;
+import us.illyohs.civilmagiks.common.block.world.ManaSpring;
 import us.illyohs.civilmagiks.common.core.util.InfoUtil;
-import us.illyohs.libilly.block.BlockBase;
+import us.illyohs.civilmagiks.common.core.util.block.BlockBase;
+import us.illyohs.civilmagiks.common.tile.node.TileManSpring;
 
 public class ModBlocks {
 
@@ -39,15 +41,24 @@ public class ModBlocks {
 
     public static BlockBase manaOre;
 
+    public static BlockBase manaSpring;
+
+
     public static void init() {
         basin = new BasinBlock(Material.rock, InfoUtil.MOD_ID + ":basin", 5, 5, 3, true, CreativeTabs.tabFood);
 
         manaOre = new ManaOre(Material.rock, InfoUtil.MOD_ID + ":manaore", 5,5, 1, false, CreativeTabs.tabFood);
+
+        manaSpring = new ManaSpring(Material.rock, "manaspring", 50, 2000, 15, true);
+
         gameReg();
     }
 
     private static void gameReg() {
+        GameRegistry.register(manaSpring);
+        GameRegistry.registerTileEntity(TileManSpring.class, "tilemanaspring");
+//        GameRegistry.register()
 
-        GameRegistry.registerBlock(basin, "basin");
+//        GameRegistry.registerBlock(basin, "basin");
     }
 }

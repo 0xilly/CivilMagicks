@@ -40,12 +40,6 @@ minecraft {
     replace '@VERSION@', project.version
 }
 
-jar {
-        manifest {
-        attributes 'FMLAT': 'civilmagicks_at.cfg'
-    }
-}
-
 processResources {
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
@@ -98,6 +92,6 @@ artifacts {
 
 dependencies {
  //   compile 'com.azanor.baubles:Baubles:1.8.9-1.1.1.0.2:deobf'
-    compile 'us.illyohs.libilly:LibIlly:1.9-0.3.0.42:deobf'
+//    compile 'us.illyohs.libilly:LibIlly:1.9-0.3.0.42:deobf'
 //    deobfCompile "MCMultiPart:MCMultiPart:1.0.4:universal"
 }

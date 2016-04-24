@@ -29,7 +29,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import us.illyohs.civilmagiks.api.crafting.ITuner;
 import us.illyohs.civilmagiks.api.mana.ManaType;
-import us.illyohs.libilly.item.ItemBase;
+import us.illyohs.civilmagiks.common.core.util.item.ItemBase;
+
 
 public class ItemBasinTuner extends ItemBase implements ITuner {
 

@@ -22,46 +22,53 @@
  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
+package us.illyohs.civilmagiks.common.core.util.block;
 
-package us.illyohs.civilmagiks.common.item;
-
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import us.illyohs.civilmagiks.common.core.util.InfoUtil;
 
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import us.illyohs.civilmagiks.client.core.util.FxUtil;
-import us.illyohs.civilmagiks.common.core.util.item.ItemBase;
-import us.illyohs.civilmagiks.common.item.tuner.ItemBasinTuner;
-
-public class ModItems {
-
-    public static ItemBase tuner;
-    public static ItemBase spwan;
-
-    public static ItemBase springWand;
-
-    public static void init() {
-        tuner = new ItemBasinTuner("tuner", false, CreativeTabs.tabFood);
-        spwan = new ItemWellSpawner("spawner", false, CreativeTabs.tabFood);
-        springWand = new ItemSpringWand("springwand", false, CreativeTabs.tabFood);
-
-        gameReg();
+public class BlockBase extends Block {
+    
+    /**
+     * 
+     * @param material
+     * @param name
+     * @param hardness
+     * @param resistance
+     * @param light
+     * @param tick
+     * @param tab
+     */
+    public BlockBase(Material material, String name, float hardness, float resistance, float light, boolean tick, CreativeTabs tab) {
+        super(material);
+        this.setRegistryName(name);
+        this.setUnlocalizedName(InfoUtil.MOD_ID+ ":" +name);
+        this.setLightLevel(light);
+        this.setTickRandomly(tick);
+        this.setCreativeTab(tab);
+        this.setHardness(hardness);
+        this.setResistance(resistance);
     }
 
-    @SideOnly(Side.CLIENT)
-    public static void initModels() {
-        FxUtil.bindBasicItemModel(springWand);
+    /**
+     *
+     * @param material
+     * @param name
+     * @param hardness
+     * @param resistance
+     * @param light
+     * @param tick
+     */
+    public BlockBase(Material material, String name, float hardness, float resistance, float light, boolean tick) {
+        super(material);
+        this.setRegistryName(name);
+        this.setUnlocalizedName(InfoUtil.MOD_ID+ ":" +name);
+        this.setLightLevel(light);
+        this.setTickRandomly(tick);
+        this.setHardness(hardness);
+        this.setResistance(resistance);
     }
-
-    private static void gameReg() {
-        GameRegistry.register(springWand);
-//        GameRegistry.registerItem(tuner, "tuner");
-//        GameRegistry.registerItem(spwan, "spawn");
-    }
-
-
 
 }

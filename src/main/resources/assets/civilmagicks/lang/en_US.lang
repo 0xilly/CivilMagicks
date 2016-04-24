@@ -16,3 +16,10 @@ item.civilmagicks:whistle.name=[WIP] Whistle of calling
 item.civilmagicks:writ.name=[WIP] Writ
 
 item.civilmagicks:manashard.name=[WIP] Mana Shard
+
+#ManaType
+civil.manatype.earth=Earth
+civil.manatype.fire=Fire
+civil.manatype.water=Water
+civil.manatype.wind=Wind
+civil.manatype.grey=Grey

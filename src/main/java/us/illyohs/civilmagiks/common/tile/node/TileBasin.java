@@ -25,13 +25,18 @@
 
 package us.illyohs.civilmagiks.common.tile.node;
 
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
-import net.minecraft.util.ITickable;
-import us.illyohs.libilly.block.tile.BaseTile;
 
-public class TileBasin extends BaseTile implements ITickable{
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ITickable;
+import us.illyohs.civilmagiks.common.core.util.tile.BaseTile;
+
+public class TileBasin extends BaseTile implements ITickable {
+
+
+    @Override
+    public void update() {
+
+    }
 
     @Override
     public void readFromModNBT(NBTTagCompound mNBT) {
@@ -40,16 +45,6 @@ public class TileBasin extends BaseTile implements ITickable{
 
     @Override
     public void writeToModNBT(NBTTagCompound mNBT) {
-
-    }
-
-    @Override
-    public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
-
-    }
-
-    @Override
-    public void update() {
 
     }
 }

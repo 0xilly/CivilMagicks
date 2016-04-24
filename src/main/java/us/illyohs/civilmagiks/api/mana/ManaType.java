@@ -76,5 +76,5 @@ public class ManaType {
     public static final ManaType WATER  = new ManaType("water", true, 0x3030ff, 1);
     public static final ManaType WIND   = new ManaType("wind",  true, 0x8c8c8c, 1);
     //Gray is a neutral manatype that accepts all mana types
-    public static final ManaType GREY   = new ManaType("grey",  true, 0x8c8c8c, 1); //Fix the color
+    public static final ManaType GREY   = new ManaType("grey",  true, 0x34332d, 1);
 }

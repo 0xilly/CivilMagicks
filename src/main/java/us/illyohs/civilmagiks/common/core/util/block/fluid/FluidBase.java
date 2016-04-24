@@ -22,46 +22,26 @@
  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
+package us.illyohs.civilmagiks.common.core.util.block.fluid;
 
-package us.illyohs.civilmagiks.common.item;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.Fluid;
 
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
-
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import us.illyohs.civilmagiks.client.core.util.FxUtil;
-import us.illyohs.civilmagiks.common.core.util.item.ItemBase;
-import us.illyohs.civilmagiks.common.item.tuner.ItemBasinTuner;
-
-public class ModItems {
-
-    public static ItemBase tuner;
-    public static ItemBase spwan;
-
-    public static ItemBase springWand;
-
-    public static void init() {
-        tuner = new ItemBasinTuner("tuner", false, CreativeTabs.tabFood);
-        spwan = new ItemWellSpawner("spawner", false, CreativeTabs.tabFood);
-        springWand = new ItemSpringWand("springwand", false, CreativeTabs.tabFood);
-
-        gameReg();
+public class FluidBase extends Fluid {
+    
+    public FluidBase(String name, ResourceLocation still, ResourceLocation flowing) {
+        super(name, still, flowing);
+        
     }
-
-    @SideOnly(Side.CLIENT)
-    public static void initModels() {
-        FxUtil.bindBasicItemModel(springWand);
+    
+    public FluidBase(String name, ResourceLocation still, ResourceLocation flowing, int light, int density, int temp, int viscosity, boolean isGas) {
+        super(name, still, flowing);
+        this.setLuminosity(light);
+        this.setDensity(density);
+        this.setTemperature(temp);
+        this.setViscosity(viscosity);
+        this.setGaseous(isGas);
+        
     }
-
-    private static void gameReg() {
-        GameRegistry.register(springWand);
-//        GameRegistry.registerItem(tuner, "tuner");
-//        GameRegistry.registerItem(spwan, "spawn");
-    }
-
-
 
 }

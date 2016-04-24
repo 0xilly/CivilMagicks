@@ -29,13 +29,10 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import us.illyohs.civilmagiks.api.crafting.ITuner;
-import us.illyohs.civilmagiks.client.core.lib.LibAssets;
 import us.illyohs.civilmagiks.common.block.ModBlocks;
 import us.illyohs.civilmagiks.common.core.util.PlayerUtils;
-import us.illyohs.libilly.util.BlockUtils;
 
 public class CivilEventHandler {
 
@@ -43,15 +40,15 @@ public class CivilEventHandler {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    @SubscribeEvent
-    public void playerInteract(PlayerInteractEvent event) {
-        Item held = PlayerUtils.getHeldItem(event.getEntityPlayer());
-        if (!event.getEntity().worldObj.isRemote && event.getAction() == Action.RIGHT_CLICK_BLOCK && event.getAction() !=
-                Action.RIGHT_CLICK_AIR && held instanceof ITuner && (((ITuner) held).canTuneBasin(event.getEntityPlayer()))) {
-
-//            BlockUtils.replaceBlock(event.getEntityPlayer(), event.getWorld(), event.getPos(), LibAssets.soundBlast, 3,
-//                    4, Blocks.cauldron, ModBlocks.basin);
-            BlockUtils.replaceBlock(event.getWorld(), event.getPos(), Blocks.cauldron, ModBlocks.basin);
-        }
-    }
+//    @SubscribeEvent
+//    public void playerInteract(PlayerInteractEvent event) {
+//        Item held = PlayerUtils.getHeldItem(event.getEntityPlayer(), event.getEntityPlayer().getActiveHand());
+//        if (!event.getEntity().worldObj.isRemote && event.getHand() == Action.RIGHT_CLICK_BLOCK && event.getAction() !=
+//                Action.RIGHT_CLICK_AIR && held instanceof ITuner && (((ITuner) held).canTuneBasin(event.getEntityPlayer()))) {
+//
+////            BlockUtils.replaceBlock(event.getEntityPlayer(), event.getWorld(), event.getPos(), LibAssets.soundBlast, 3,
+////                    4, Blocks.cauldron, ModBlocks.basin);
+//            BlockUtils.replaceBlock(event.getWorld(), event.getPos(), Blocks.cauldron, ModBlocks.basin);
+//        }
+//    }
 }

@@ -26,28 +26,13 @@
 package us.illyohs.civilmagiks.common.tile.node;
 
 import net.minecraft.item.ItemStack;
+
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraftforge.items.IItemHandler;
-import us.illyohs.libilly.block.tile.BaseTile;
+import us.illyohs.civilmagiks.common.core.util.tile.BaseTile;
 
-public class TileElementalCage extends BaseTile  implements IItemHandler {
+public class TileElementalCage extends BaseTile implements IItemHandler {
 
-    @Override
-    public void readFromModNBT(NBTTagCompound mNBT) {
-
-    }
-
-    @Override
-    public void writeToModNBT(NBTTagCompound mNBT) {
-
-    }
-
-    @Override
-    public void onModDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
-
-    }
 
     @Override
     public int getSlots() {
@@ -67,5 +52,15 @@ public class TileElementalCage extends BaseTile  implements IItemHandler {
     @Override
     public ItemStack extractItem(int i, int i1, boolean b) {
         return null;
+    }
+
+    @Override
+    public void readFromModNBT(NBTTagCompound mNBT) {
+
+    }
+
+    @Override
+    public void writeToModNBT(NBTTagCompound mNBT) {
+
     }
 }

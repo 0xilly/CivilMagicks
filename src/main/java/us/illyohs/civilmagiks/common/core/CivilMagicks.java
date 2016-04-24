@@ -41,8 +41,7 @@ import us.illyohs.civilmagiks.common.item.ModItems;
 @Mod(
     modid = InfoUtil.MOD_ID,
     name = InfoUtil.MOD_NAME,
-    version =  InfoUtil.MOD_VERSION,
-    dependencies = "required-after:LibIlly"
+    version =  InfoUtil.MOD_VERSION
 )
 public class CivilMagicks {
 
@@ -54,19 +53,16 @@ public class CivilMagicks {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ModBlocks.init();
-        ModItems.init();
-        ModCapabilities.init();
-        proxy.registerBlockItems();
+        proxy.preInit(event);
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-
+        proxy.init(event);
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
+        proxy.postInit(event);
     }
 }

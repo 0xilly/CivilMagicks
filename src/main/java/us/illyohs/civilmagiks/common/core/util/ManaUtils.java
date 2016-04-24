@@ -35,17 +35,17 @@ import us.illyohs.civilmagiks.api.mana.ManaType;
 import java.util.HashMap;
 import java.util.Random;
 
-public class WorldUtils {
+public class ManaUtils {
 
     static HashMap<Type, ManaType> manaTypeReg = new HashMap<Type, ManaType>();
 
-    public WorldUtils() {
+
+    public static void manaRegInit() {
         setEarth(ManaType.EARTH);
         setFire(ManaType.FIRE);
         setWater(ManaType.WATER);
         setWind(ManaType.WIND);
     }
-
     /**
      *
      * @param pos
@@ -79,7 +79,7 @@ public class WorldUtils {
         return getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos));
     }
 
-    private void setWind(ManaType wind) {
+    private static void setWind(ManaType wind) {
         manaTypeReg.put(Type.SPARSE, wind);
         manaTypeReg.put(Type.DRY, wind);
         manaTypeReg.put(Type.SPOOKY, wind);
@@ -88,7 +88,7 @@ public class WorldUtils {
         manaTypeReg.put(Type.MOUNTAIN, wind);
     }
 
-    private void setWater(ManaType water) {
+    private static void setWater(ManaType water) {
         manaTypeReg.put(Type.WET, water);
         manaTypeReg.put(Type.COLD, water);
         manaTypeReg.put(Type.BEACH, water);
@@ -97,7 +97,7 @@ public class WorldUtils {
         manaTypeReg.put(Type.WATER, water);
     }
 
-    private void setEarth(ManaType earth) {
+    private static void setEarth(ManaType earth) {
         manaTypeReg.put(Type.DENSE, earth);
         manaTypeReg.put(Type.SAVANNA, earth);
         manaTypeReg.put(Type.CONIFEROUS, earth);
@@ -109,7 +109,7 @@ public class WorldUtils {
 
     }
 
-    private void setFire(ManaType fire) {
+    private static void setFire(ManaType fire) {
         manaTypeReg.put(Type.HOT, fire);
         manaTypeReg.put(Type.NETHER, fire);
         manaTypeReg.put(Type.MESA, fire);

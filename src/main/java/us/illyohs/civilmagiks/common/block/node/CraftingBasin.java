@@ -30,7 +30,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import us.illyohs.libilly.block.BlockBase;
+import us.illyohs.civilmagiks.common.core.util.block.BlockBase;
 
 public class CraftingBasin extends BlockBase implements ITileEntityProvider {
 

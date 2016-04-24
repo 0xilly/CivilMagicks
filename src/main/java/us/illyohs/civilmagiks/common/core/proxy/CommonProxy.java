@@ -25,16 +25,30 @@
 
 package us.illyohs.civilmagiks.common.core.proxy;
 
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import us.illyohs.civilmagiks.common.block.ModBlocks;
+import us.illyohs.civilmagiks.common.core.capability.ModCapabilities;
+import us.illyohs.civilmagiks.common.core.util.ManaUtils;
 import us.illyohs.civilmagiks.common.item.ModItems;
 
 public class CommonProxy {
 
-    public void registerRenderers() {
+    public void preInit(FMLPreInitializationEvent e) {
+        ModBlocks.init();
+        ModItems.init();
+        ManaUtils.manaRegInit();
+
+        ModCapabilities.init();
+    }
+
+    public void init(FMLInitializationEvent e) {
 
     }
 
-    public void registerBlockItems() {
+    public void postInit(FMLPostInitializationEvent e) {
 
     }
+
 }

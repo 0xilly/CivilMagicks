@@ -25,20 +25,30 @@
 
 package us.illyohs.civilmagiks.client.core.proxy;
 
-import us.illyohs.civilmagiks.client.core.lib.LibAssets;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import us.illyohs.civilmagiks.common.core.proxy.CommonProxy;
 import us.illyohs.civilmagiks.common.item.ModItems;
-import us.illyohs.libilly.util.RenderUtils;
 
 public class ClientProxy extends CommonProxy {
 
     @Override
-    public void registerRenderers() {
-        RenderUtils.renderItems(ModItems.tuner, LibAssets.basinAugmenter);
+    public void preInit(FMLPreInitializationEvent e) {
+        super.preInit(e);
+
+        ModItems.initModels();
     }
 
     @Override
-    public void registerBlockItems() {
-        /** NO-OP **/
+    public void init(FMLInitializationEvent e) {
+        super.init(e);
+
     }
+
+    @Override
+    public void postInit(FMLPostInitializationEvent e) {
+
+    }
+
 }

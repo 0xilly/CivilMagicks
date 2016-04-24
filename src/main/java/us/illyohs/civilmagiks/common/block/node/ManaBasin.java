@@ -27,7 +27,7 @@ package us.illyohs.civilmagiks.common.block.node;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import us.illyohs.libilly.block.BlockBase;
+import us.illyohs.civilmagiks.common.core.util.block.BlockBase;
 
 public class ManaBasin extends BlockBase {
 

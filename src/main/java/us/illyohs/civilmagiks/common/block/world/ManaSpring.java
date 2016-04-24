@@ -23,23 +23,23 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
 
-package us.illyohs.civilmagiks.common.block.node;
+package us.illyohs.civilmagiks.common.block.world;
 
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import us.illyohs.libilly.block.BlockBase;
+import us.illyohs.civilmagiks.common.core.util.block.BlockBase;
+import us.illyohs.civilmagiks.common.tile.node.TileManSpring;
 
 public class ManaSpring extends BlockBase implements ITileEntityProvider {
 
-    public ManaSpring(Material material, String name, float hardness, float resistance, float light, boolean tick, CreativeTabs tab) {
-        super(material, name, hardness, resistance, light, tick, tab);
+    public ManaSpring(Material material, String name, float hardness, float resistance, float light, boolean tick) {
+        super(material, name, hardness, resistance, light, tick);
     }
 
     @Override
     public TileEntity createNewTileEntity(World world, int i) {
-        return null;
+        return new TileManSpring();
     }
 }

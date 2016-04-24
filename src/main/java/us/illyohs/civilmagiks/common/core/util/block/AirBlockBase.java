@@ -22,16 +22,57 @@
  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  */
-
-package us.illyohs.civilmagiks.common.block.world;
+package us.illyohs.civilmagiks.common.core.util.block;
 
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import us.illyohs.civilmagiks.common.core.util.block.BlockBase;
+import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
-public class ManaOre extends BlockBase {
+public class AirBlockBase extends BlockBase {
 
-    public ManaOre(Material material, String name, float hardness, float resistance, float light, boolean tick, CreativeTabs tab) {
+    /**
+     * @param material
+     * @param name
+     * @param hardness
+     * @param resistance
+     * @param light
+     * @param tick
+     * @param tab
+     */
+    public AirBlockBase(Material material, String name, float hardness, float resistance, float light, boolean tick,
+                        CreativeTabs tab) {
         super(material, name, hardness, resistance, light, tick, tab);
+    }
+
+    public AirBlockBase(Material material, String name, float hardness, float resistance, float light, boolean tick,
+                        boolean isBlockAir) {
+        super(material, name, hardness, resistance, light, tick);
+    }
+    
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
+        return null;
+    }
+
+    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
+        return null;
+    }
+
+    @Override
+    public EnumBlockRenderType getRenderType(IBlockState state) {
+        return EnumBlockRenderType.INVISIBLE;
+    }
+
+    @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
+    public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos) {
+        return true;
     }
 }
