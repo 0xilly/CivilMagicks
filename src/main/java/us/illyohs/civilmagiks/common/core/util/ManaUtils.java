@@ -72,7 +72,7 @@ public class ManaUtils {
     }
 
     public static ManaType getManaTypeFromBiomeType(Type type) {
-        System.out.println(type.toString());
+//        System.out.println(type.toString());
         return manaTypeReg.get(type);
     }
 
