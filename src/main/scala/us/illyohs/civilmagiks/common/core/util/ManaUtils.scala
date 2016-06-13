@@ -1,7 +1,6 @@
 package us.illyohs.civilmagiks.common.core.util
 
-import java.util
-import java.util.Random
+import java.util.{Random, HashMap}
 
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
@@ -11,7 +10,7 @@ import net.minecraftforge.common.BiomeDictionary.Type
 import us.illyohs.civilmagiks.api.mana.ManaType
 
 object ManaUtils {
-  private[util] val manaTypeReg: util.HashMap[BiomeDictionary.Type, ManaType] = new util.HashMap[BiomeDictionary.Type, ManaType]
+  private val manaTypeReg: HashMap[BiomeDictionary.Type, ManaType] = new HashMap[BiomeDictionary.Type, ManaType]
 
   def manaRegInit() {
     setEarth(ManaType.EARTH)
@@ -21,30 +20,29 @@ object ManaUtils {
   }
 
   def getBiome(world: World, pos: BlockPos): Biome = {
-    return world.getBiome(pos)
+    world.getBiome(pos)
   }
 
   def getAllBiomeTypesForBiome(biome: Biome): Array[BiomeDictionary.Type] = {
-    return BiomeDictionary.getTypesForBiome(biome)
+    BiomeDictionary.getTypesForBiome(biome)
   }
 
   def getRandomTypeFromBiome(world: World, pos: BlockPos): BiomeDictionary.Type = {
     val tupe: Array[BiomeDictionary.Type] = getAllBiomeTypesForBiome(getBiome(world, pos))
     val random: Random = new Random
     val index: Int = random.nextInt(tupe.length)
-    return tupe(index)
+    tupe(index)
   }
 
   def getManaTypeFromBiomeType(`type`: BiomeDictionary.Type): ManaType = {
-    return manaTypeReg.get(`type`)
+    manaTypeReg.get(`type`)
   }
 
   def getManaFromPos(world: World, pos: BlockPos): ManaType = {
     if (getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos)) == null) {
-      return ManaType.GREY
-    }
-    else {
-      return getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos))
+      ManaType.GREY
+    } else {
+      getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos))
     }
   }
 

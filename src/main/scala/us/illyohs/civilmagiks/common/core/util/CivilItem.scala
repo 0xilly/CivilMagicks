@@ -22,33 +22,17 @@
   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
   */
-package us.illyohs.civilmagiks.client.util
+package us.illyohs.civilmagiks.common.core.util
 
-import net.minecraft.util.ResourceLocation
-import us.illyohs.civilmagiks.common.core.util.InfoUtil
+import net.minecraft.creativetab.CreativeTabs
+import net.minecraft.item.Item
 
-object AssetUtils {
-  private def getResourceLocation(modId: String, path: String): ResourceLocation = {
-    return new ResourceLocation(modId, path)
-  }
+class CivilItem(name: String, hasSub: Boolean, tabs: CreativeTabs) extends Item {
 
-  def getSoundLocation(path: String): String = {
-    return InfoUtil.MOD_ID + ":" + path
-  }
-
-  def getGuiAsset(path: String): ResourceLocation = {
-    return getResourceLocation(InfoUtil.MOD_ID, "textures/gui/" + path + ".png")
-  }
-
-  def getModelAsset(path: String): ResourceLocation = {
-    return getResourceLocation(InfoUtil.MOD_ID, "textures/models/" + path + ".png")
-  }
-
-  def getFxAsset(path: String): ResourceLocation = {
-    return getResourceLocation(InfoUtil.MOD_ID, "textures/fx/" + path + ".png")
-  }
-
-  def getItemAsset(path: String): ResourceLocation = {
-    return getResourceLocation(InfoUtil.MOD_ID, "textures/items/" + path)
+  this.setRegistryName(name)
+  this.setUnlocalizedName(ModInfo.MOD_ID + ":" + name)
+  this.setHasSubtypes(hasSub)
+  if(tabs != null) {
+    this.setCreativeTab(tabs)
   }
 }

@@ -22,26 +22,33 @@
   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
   */
-package us.illyohs.civilmagiks.common.block
+package us.illyohs.civilmagiks.client.core.util
 
-import net.minecraft.block.Block
-import net.minecraftforge.fml.common.registry.GameRegistry
-import us.illyohs.civilmagiks.common.tile.TileManaSpring
+import net.minecraft.util.ResourceLocation
+import us.illyohs.civilmagiks.common.core.util.InfoUtil
 
-object ModBlocks {
-  var basin: Block = null
-  var manaOre: Block = null
-  var manaSpring: Block = null
-
-  def init: Unit ={
-//    manaSpring = new ManaSpring(Material.ROCK, "manaspring", 50, 2000, 15, true)
-    this.manaSpring = ManaSpring
-
-    gameReg
+object AssetUtils {
+  private def getResourceLocation(modId: String, path: String): ResourceLocation = {
+    return new ResourceLocation(modId, path)
   }
 
-  private def gameReg: Unit = {
-    GameRegistry.register(manaSpring)
-    GameRegistry.registerTileEntity(classOf[TileManaSpring], "tilemanaspring")
+  def getSoundLocation(path: String): String = {
+    return InfoUtil.MOD_ID + ":" + path
+  }
+
+  def getGuiAsset(path: String): ResourceLocation = {
+    return getResourceLocation(InfoUtil.MOD_ID, "textures/gui/" + path + ".png")
+  }
+
+  def getModelAsset(path: String): ResourceLocation = {
+    return getResourceLocation(InfoUtil.MOD_ID, "textures/models/" + path + ".png")
+  }
+
+  def getFxAsset(path: String): ResourceLocation = {
+    return getResourceLocation(InfoUtil.MOD_ID, "textures/fx/" + path + ".png")
+  }
+
+  def getItemAsset(path: String): ResourceLocation = {
+    return getResourceLocation(InfoUtil.MOD_ID, "textures/items/" + path)
   }
 }

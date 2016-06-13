@@ -24,24 +24,9 @@
   */
 package us.illyohs.civilmagiks.common.core.proxy
 
-
-import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
-import us.illyohs.civilmagiks.common.block.ModBlocks
-import us.illyohs.civilmagiks.common.core.util.ManaUtils
-import us.illyohs.civilmagiks.common.core.capability.ModCapabilities
-
 class CommonProxy {
 
-  def preInit(e: FMLPreInitializationEvent) {
-    ModBlocks.init
-//    ModItems.init
-    ManaUtils.manaRegInit
-    ModCapabilities.init
-  }
-
-  def init(e: FMLInitializationEvent) {
-  }
-
-  def postInit(e: FMLPostInitializationEvent) {
+  def bindRenderers: Unit = {
+    /**NO_OP**/
   }
 }

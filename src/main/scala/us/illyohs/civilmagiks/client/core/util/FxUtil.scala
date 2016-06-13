@@ -1,4 +1,4 @@
-package us.illyohs.civilmagiks.client.util
+package us.illyohs.civilmagiks.client.core.util
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.item.Item

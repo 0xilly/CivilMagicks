@@ -31,19 +31,19 @@ import net.minecraft.util.text.translation.I18n;
 
 public class ManaType {
 
-    String  name;
+    String  key;
     boolean spawnable;
     int     blend, color;
 
     /**
      *
-     * @param name the name of the manaType
+     * @param key the key of the manaType
      * @param spawnable will this spawn with a monolith
      * @param color the color of the mana
      * @param blend the blend
      */
-    public ManaType(String name, boolean spawnable, int color, int blend) {
-        this.name       = name;
+    public ManaType(String key, boolean spawnable, int color, int blend) {
+        this.key = key;
         this.spawnable  = spawnable;
         this.color      = color;
         this.blend      = blend;
@@ -55,9 +55,12 @@ public class ManaType {
 
 
     public String getLocalizedName() {
-        return I18n.translateToLocal("civil.manatype." + name);
+        return I18n.translateToLocal("civil.manatype." + key);
     }
 
+    public String getKey() {
+        return key;
+    }
     public boolean isSpawnable() {
         return spawnable;
     }

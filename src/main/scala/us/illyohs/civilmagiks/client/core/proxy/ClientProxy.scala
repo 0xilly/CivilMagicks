@@ -22,25 +22,18 @@
   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
   */
-package us.illyohs.civilmagiks.client.core
+package us.illyohs.civilmagiks.client.core.proxy
 
 import net.minecraftforge.fml.client.registry.ClientRegistry
-import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
 import us.illyohs.civilmagiks.client.render.tile.RenderManaSpring
 import us.illyohs.civilmagiks.common.core.proxy.CommonProxy
 import us.illyohs.civilmagiks.common.tile.TileManaSpring
 
 class ClientProxy extends CommonProxy {
 
-  override def preInit(e: FMLPreInitializationEvent) {
-//    ModItems.initModels
+  override def bindRenderers: Unit = {
     ClientRegistry.bindTileEntitySpecialRenderer(classOf[TileManaSpring], RenderManaSpring)
   }
 
-  override def init(e: FMLInitializationEvent) {
-    super.init(e)
-  }
 
-  override def postInit(e: FMLPostInitializationEvent) {
-  }
 }
