@@ -1,6 +1,7 @@
 package us.illyohs.civilmagiks.common.core.capability.handler
 
 import us.illyohs.civilmagiks.api.capability.IManaHandler
+import us.illyohs.civilmagiks.api.init.Mana
 import us.illyohs.civilmagiks.api.mana.ManaType
 
 class ManaHandler extends IManaHandler {
@@ -35,6 +36,6 @@ class ManaHandler extends IManaHandler {
   }
 
   def getManaType: ManaType = {
-    return ManaType.GREY
+    Mana.GREY
   }
 }

@@ -23,7 +23,7 @@ class ServantEntity(world: World)
 
   override def entityInit(): Unit = {
     super.entityInit()
-    this.dataManager.register(MASTER_ID, Optional.absent()[UUID])
+//    this.dataManager.register(MASTER_ID, Optional.absent())
   }
 
   override def initEntityAI(): Unit = {

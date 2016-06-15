@@ -25,21 +25,22 @@
 
 package us.illyohs.civilmagiks.api;
 
-import net.minecraft.item.ItemStack;
-import us.illyohs.civilmagiks.api.crafting.BasinRecipe;
-import us.illyohs.civilmagiks.api.mana.ManaType;
+
 
 import java.util.ArrayList;
 
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.IForgeRegistry;
+
+import us.illyohs.civilmagiks.api.mana.ManaType;
+import us.illyohs.civilmagiks.api.sigil.Sigil;
+
 public class CivilMagicksApi {
+
+    ////////////// CIVIL REGISTRIES///////////////////
+    public static IForgeRegistry<Sigil>    SIGIL    = GameRegistry.findRegistry(Sigil.class);
+    public static IForgeRegistry<ManaType> MANATYPE = GameRegistry.findRegistry(ManaType.class);
 
     private static ArrayList baisnStuff = new ArrayList();
 
-    public BasinRecipe addBasinRecipe(Object catalyst, Object[] input, ItemStack output, int typeLimit, ManaType[] manaType) {
-        if (!(output instanceof ItemStack || output instanceof Object)) return null;
-
-        BasinRecipe b = new BasinRecipe(catalyst, input, output, typeLimit, manaType);
-        baisnStuff.add(b);
-        return b;
-    }
 }

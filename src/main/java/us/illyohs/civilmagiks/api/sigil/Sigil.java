@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.IForgeRegistryEntry;
 
-public class Sigil extends IForgeRegistryEntry.Impl<Sigil> implements ISigil {
+public class Sigil extends IForgeRegistryEntry.Impl<Sigil> {
 
     String              modid, unLocalizedName;
     int                 radius;
@@ -21,7 +21,6 @@ public class Sigil extends IForgeRegistryEntry.Impl<Sigil> implements ISigil {
         this.modid = modid;
     }
 
-    @Override
     public String getModid() {
         return modid;
     }
@@ -30,7 +29,6 @@ public class Sigil extends IForgeRegistryEntry.Impl<Sigil> implements ISigil {
         this.radius = radius;
     }
 
-    @Override
     public int getRadius() {
         return radius;
     }
@@ -39,7 +37,6 @@ public class Sigil extends IForgeRegistryEntry.Impl<Sigil> implements ISigil {
         this.unLocalizedName = unLocalizedName;
     }
 
-    @Override
     public String getUnLocalizedName() {
         return unLocalizedName;
     }
@@ -48,32 +45,26 @@ public class Sigil extends IForgeRegistryEntry.Impl<Sigil> implements ISigil {
         this.texture = texture;
     }
 
-    @Override
     public ResourceLocation getTexture() {
         return texture;
     }
 
-    @Override
     public void onUpdate() {
 
     }
 
-    @Override
     public void writeToNBT(NBTTagCompound tag) {
 
     }
 
-    @Override
     public void readFromNBT(NBTTagCompound tag) {
 
     }
 
-    @Override
     public EnumActionResult onPlayerHit(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         return null;
     }
 
-    @Override
     public EnumActionResult onEntityCollied(Entity entity, World world, BlockPos pos, EnumFacing facing, float x, float y, float z) {
         return null;
     }

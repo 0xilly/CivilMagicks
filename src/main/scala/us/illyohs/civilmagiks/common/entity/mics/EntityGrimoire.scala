@@ -6,9 +6,9 @@ import net.minecraft.item.ItemStack
 import net.minecraft.util.EnumHandSide
 import net.minecraft.world.World
 
-class EntityGrimoire(world: World) extends EntityLivingBase(world) {
+abstract class EntityGrimoire(world: World) extends EntityLivingBase(world) {
 
-  override def getItemStackFromSlot(slotIn: EntityEquipmentSlot): ItemStack = ???
+  override def getItemStackFromSlot(slotIn: EntityEquipmentSlot): ItemStack = null
 
-  override def getPrimaryHand: EnumHandSide = ???
+  override def getPrimaryHand: EnumHandSide = EnumHandSide.RIGHT
 }

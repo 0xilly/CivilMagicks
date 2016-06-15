@@ -27,9 +27,24 @@ package us.illyohs.civilmagiks.common.core.util
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.item.Item
 import net.minecraft.util.EnumHand
+import net.minecraft.util.math.BlockPos
 import net.minecraft.util.text.ITextComponent
+
+import us.illyohs.civilmagiks.common.core.util.math.WorldPos
 
 object PlayerUtils {
   def getHeldItem(player: EntityPlayer, hand: EnumHand): Item = player.getHeldItem(hand).getItem
   def sendMessage(player: EntityPlayer, text:ITextComponent) = player.addChatComponentMessage(text)
+
+
+  def teleportPlayer(player:EntityPlayer, pos:BlockPos): Unit = {
+    player.setPositionAndUpdate(pos.getX+.5, pos.getY, pos.getZ+.5)
+  }
+
+
+  def teleportPlayer(player:EntityPlayer, pos: WorldPos): Unit = {
+    player.changeDimension(pos.getDem)
+    player.setPositionAndUpdate(pos.getX+.5, pos.getY, pos.getZ+.5)
+  }
+
 }
