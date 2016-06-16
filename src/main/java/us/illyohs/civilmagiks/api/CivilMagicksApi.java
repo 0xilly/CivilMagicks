@@ -32,14 +32,14 @@ import java.util.ArrayList;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.registry.IForgeRegistry;
 
-import us.illyohs.civilmagiks.api.mana.ManaType;
+import us.illyohs.civilmagiks.api.mana.Mana;
 import us.illyohs.civilmagiks.api.sigil.Sigil;
 
 public class CivilMagicksApi {
 
     ////////////// CIVIL REGISTRIES///////////////////
-    public static IForgeRegistry<Sigil>    SIGIL    = GameRegistry.findRegistry(Sigil.class);
-    public static IForgeRegistry<ManaType> MANATYPE = GameRegistry.findRegistry(ManaType.class);
+    public static IForgeRegistry<Sigil> SIGIL    = GameRegistry.findRegistry(Sigil.class);
+    public static IForgeRegistry<Mana>  MANATYPE = GameRegistry.findRegistry(Mana.class);
 
     private static ArrayList baisnStuff = new ArrayList();
 

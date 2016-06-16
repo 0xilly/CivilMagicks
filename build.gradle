@@ -39,6 +39,8 @@ minecraft {
 
     replaceIn "us/illyohs/civilmagiks/common/core/lib/LibInfo.java"
     replace '@VERSION@', project.version
+
+    useDepAts = true
 }
 
 processResources {
@@ -72,6 +74,11 @@ repositories {
         name "Amadornes maven"
         url "http://maven.amadornes.com/"
     }
+    maven {
+        name "maven"
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+
 }
 
 task deobfJar(type: Jar) {
@@ -95,4 +102,5 @@ dependencies {
  //   compile 'com.azanor.baubles:Baubles:1.8.9-1.1.1.0.2:deobf'
 //    compile 'us.illyohs.libilly:LibIlly:1.9-0.3.0.42:deobf'
 //    deobfCompile "MCMultiPart:MCMultiPart:1.0.4:universal"
+    deobfCompile 'mezz.jei:jei_1.9.4:3.6.3.212'
 }

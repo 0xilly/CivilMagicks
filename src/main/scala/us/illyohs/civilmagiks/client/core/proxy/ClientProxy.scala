@@ -25,14 +25,25 @@
 package us.illyohs.civilmagiks.client.core.proxy
 
 import net.minecraftforge.fml.client.registry.ClientRegistry
+import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
+
 import us.illyohs.civilmagiks.client.render.tile.RenderManaSpring
 import us.illyohs.civilmagiks.common.core.proxy.CommonProxy
 import us.illyohs.civilmagiks.common.tile.TileManaSpring
 
 class ClientProxy extends CommonProxy {
 
-  override def bindRenderers: Unit = {
-    ClientRegistry.bindTileEntitySpecialRenderer(classOf[TileManaSpring], RenderManaSpring)
+  override def preInit(event:FMLPreInitializationEvent): Unit = {
+    super.preInit(event)
+  }
+
+  override def init(event: FMLInitializationEvent): Unit = {
+    super.init(event)
+
+  }
+
+  override def postInit(event: FMLPostInitializationEvent): Unit = {
+    super.postInit(event)
   }
 
 

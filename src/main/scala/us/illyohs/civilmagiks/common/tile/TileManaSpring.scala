@@ -19,7 +19,7 @@ class TileManaSpring extends ManaTile with ITickable {
   }
 
   override def writeToModNBT(mNBT: NBTTagCompound): NBTTagCompound = {
-    mNBT.setString("ManaType", getManaType.getLocalizedName)
+    mNBT.setString("ManaTypes", getManaType.getLocalizedName)
 
     mNBT
   }

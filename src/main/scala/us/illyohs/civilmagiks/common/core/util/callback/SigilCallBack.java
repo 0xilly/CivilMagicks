@@ -24,45 +24,31 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagiks.common.manatype
+package us.illyohs.civilmagiks.common.core.util.callback;
 
-import net.minecraftforge.fml.common.registry.GameRegistry
+import java.util.Map;
 
-import us.illyohs.civilmagiks.api.init.ManaTypes
-import us.illyohs.civilmagiks.api.mana
-import us.illyohs.civilmagiks.api.mana.Mana
-import us.illyohs.civilmagiks.common.core.util.ModInfo
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.IForgeRegistry;
 
-class CivilMana(key: String, spawnable: Boolean, color: Int, blend: Int)
-  extends mana.Mana(key, spawnable, color, blend) {
-  this.setRegistryName(ModInfo.MOD_ID, key)
+import us.illyohs.civilmagiks.api.sigil.Sigil;
 
-}
+public class SigilCallBack implements IForgeRegistry.AddCallback<Sigil>, IForgeRegistry.ClearCallback<Sigil>, IForgeRegistry.CreateCallback<Sigil> {
 
-object ModMana {
+    public static final SigilCallBack INSTANCE = new SigilCallBack();
 
-  private var _Earth  = ManaTypes.EARTH
-  private var _Fire   = ManaTypes.FIRE
-  private var _Water  = ManaTypes.WATER
-  private var _Wind   = ManaTypes.WIND
-  private var _Grey   = ManaTypes.GREY
+    @Override
+    public void onAdd(Sigil obj, int id, Map<ResourceLocation, ?> slaveset) {
 
-  def init: Unit = {
-    _Earth  = new CivilMana("earth", true, 0x4ca54c, 1)
-    _Fire   = new CivilMana("fire", true, 0xffb732, 1)
-    _Water  = new CivilMana("water", true, 0x3030ff, 1)
-    _Wind   = new CivilMana("wind", true, 0x8c8c8c, 1)
-    _Grey   = new CivilMana("grey", true, 0x34332d, 1)
+    }
 
-    gameReg
-  }
+    @Override
+    public void onClear(Map<ResourceLocation, ?> slaveset) {
 
-  private def gameReg(): Unit = {
-    GameRegistry.register(_Earth)
-    GameRegistry.register(_Fire)
-    GameRegistry.register(_Water)
-    GameRegistry.register(_Wind)
-    GameRegistry.register(_Grey)
+    }
 
-  }
+    @Override
+    public void onCreate(Map<ResourceLocation, ?> slaveset) {
+
+    }
 }

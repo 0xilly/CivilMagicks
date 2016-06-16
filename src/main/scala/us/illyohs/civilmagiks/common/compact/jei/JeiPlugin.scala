@@ -24,16 +24,17 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagiks.api.init;
+package us.illyohs.civilmagiks.common.compact.jei
 
-import us.illyohs.civilmagiks.api.mana.ManaType;
+import javax.annotation.Nonnull
 
-public final class Mana {
+import mezz.jei.api.{BlankModPlugin, IModRegistry, JEIPlugin}
 
-    public static ManaType EARTH;
-    public static ManaType FIRE;
-    public static ManaType WATER;
-    public static ManaType WIND;
-    //Gray is a neutral manatype that accepts all mana types
-    public static ManaType GREY;
+@JEIPlugin
+object JeiPlugin extends BlankModPlugin {
+
+  override def register(@Nonnull registry: IModRegistry): Unit = {
+
+  }
+
 }

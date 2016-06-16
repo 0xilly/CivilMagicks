@@ -1,19 +1,12 @@
 package us.illyohs.civilmagiks.common.core
 
-import net.minecraftforge.fml.client.registry.ClientRegistry
-import net.minecraftforge.fml.common.{Mod, SidedProxy}
 import net.minecraftforge.fml.common.Mod.{EventHandler, Instance}
 import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
+import net.minecraftforge.fml.common.{Mod, SidedProxy}
 
-import us.illyohs.civilmagiks.client.render.tile.RenderManaSpring
-import us.illyohs.civilmagiks.common.block.ModBlocks
-import us.illyohs.civilmagiks.common.core.capability.ModCapabilities
-import us.illyohs.civilmagiks.common.core.proxy.CommonProxy
 import us.illyohs.civilmagiks.common.core.util.ModInfo
-import us.illyohs.civilmagiks.common.core.util.mana.ManaUtils
-import us.illyohs.civilmagiks.common.item.ModItems
-import us.illyohs.civilmagiks.common.manatype.ModMana
-import us.illyohs.civilmagiks.common.tile.TileManaSpring
+import us.illyohs.civilmagiks.common.core.proxy.CommonProxy
+
 
 
 @Mod(
@@ -27,26 +20,22 @@ object CivilMagicks {
   @Instance(ModInfo.MOD_NAME)
   var instance = this
 
-  @SidedProxy(clientSide = ModInfo.CLIENT_PROXY, serverSide = ModInfo.COMMON_PROXY)
+  @SidedProxy(modId = ModInfo.MOD_ID, clientSide = ModInfo.CLIENT_PROXY, serverSide = ModInfo.COMMON_PROXY)
   var proxy: CommonProxy = null
 
   @EventHandler
   def preInit(event: FMLPreInitializationEvent): Unit = {
-//    ModBlocks.init
-//    ModItems.init
-//    ManaUtils.manaRegInit
-//    ModCapabilities.init
-    ModMana.init
+
+    proxy.preInit(event)
   }
 
   @EventHandler
   def init(event: FMLInitializationEvent) {
-
-
-    ClientRegistry.bindTileEntitySpecialRenderer(classOf[TileManaSpring], RenderManaSpring)
+    this.proxy.init(event)
   }
 
   @EventHandler
-  def postInit(event: FMLPostInitializationEvent) {
+  def postInit(event: FMLPostInitializationEvent): Unit = {
+    this.proxy.postInit(event)
   }
 }

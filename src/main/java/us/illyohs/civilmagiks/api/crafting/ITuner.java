@@ -26,11 +26,11 @@
 package us.illyohs.civilmagiks.api.crafting;
 
 import net.minecraft.entity.player.EntityPlayer;
-import us.illyohs.civilmagiks.api.mana.ManaType;
+import us.illyohs.civilmagiks.api.mana.Mana;
 
 public interface ITuner {
 
     boolean canTuneBasin(EntityPlayer player);
 
-    ManaType manaType(ManaType type);
+    Mana manaType(Mana type);
 }

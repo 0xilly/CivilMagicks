@@ -2,7 +2,9 @@ package us.illyohs.civilmagiks.common.core.util
 
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.tileentity.TileEntity
-import us.illyohs.civilmagiks.api.mana.ManaType
+
+import us.illyohs.civilmagiks.api.mana.Mana
+
 
 abstract class CivilTile extends TileEntity {
 
@@ -23,9 +25,9 @@ abstract class CivilTile extends TileEntity {
 
 abstract class ManaTile extends CivilTile {
 
-  private var _manaType: ManaType = null
+  private var _manaType: Mana = null
 
-  def getManaType: ManaType= _manaType
+  def getManaType: Mana= _manaType
 
-  def setManaType(manaType: ManaType) = _manaType = manaType
+  def setManaType(manaType: Mana) = _manaType = manaType
 }

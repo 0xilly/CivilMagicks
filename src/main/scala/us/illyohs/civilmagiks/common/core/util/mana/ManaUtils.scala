@@ -35,16 +35,16 @@ import net.minecraft.world.biome.Biome
 import net.minecraftforge.common.BiomeDictionary
 import net.minecraftforge.common.BiomeDictionary.Type
 
-import us.illyohs.civilmagiks.api.mana.ManaType
+import us.illyohs.civilmagiks.api.mana.Mana
 
 object ManaUtils {
-//  private val manaTypeReg: HashMap[BiomeDictionary.Type, ManaType] = new HashMap[BiomeDictionary.Type, ManaType]
+//  private val manaTypeReg: HashMap[BiomeDictionary.Type, ManaTypes] = new HashMap[BiomeDictionary.Type, ManaTypes]
 //
 //  def manaRegInit() {
 //    setEarth(Man.EARTH)
-//    setFire(ManaType.FIRE)
-//    setWater(ManaType.WATER)
-//    setWind(ManaType.WIND)
+//    setFire(ManaTypes.FIRE)
+//    setWater(ManaTypes.WATER)
+//    setWind(ManaTypes.WIND)
 //  }
 //
 //  def getBiome(world: World, pos: BlockPos): Biome = {
@@ -62,19 +62,19 @@ object ManaUtils {
 //    tupe(index)
 //  }
 //
-//  def getManaTypeFromBiomeType(`type`: BiomeDictionary.Type): ManaType = {
+//  def getManaTypeFromBiomeType(`type`: BiomeDictionary.Type): ManaTypes = {
 //    manaTypeReg.get(`type`)
 //  }
 //
-//  def getManaFromPos(world: World, pos: BlockPos): ManaType = {
+//  def getManaFromPos(world: World, pos: BlockPos): ManaTypes = {
 //    if (getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos)) == null) {
-//      ManaType.GREY
+//      ManaTypes.GREY
 //    } else {
 //      getManaTypeFromBiomeType(getRandomTypeFromBiome(world, pos))
 //    }
 //  }
 //
-//  private def setWind(wind: ManaType) {
+//  private def setWind(wind: ManaTypes) {
 //    manaTypeReg.put(Type.SPARSE, wind)
 //    manaTypeReg.put(Type.DRY, wind)
 //    manaTypeReg.put(Type.SPOOKY, wind)
@@ -83,7 +83,7 @@ object ManaUtils {
 //    manaTypeReg.put(Type.MOUNTAIN, wind)
 //  }
 //
-//  private def setWater(water: ManaType) {
+//  private def setWater(water: ManaTypes) {
 //    manaTypeReg.put(Type.WET, water)
 //    manaTypeReg.put(Type.COLD, water)
 //    manaTypeReg.put(Type.BEACH, water)
@@ -93,7 +93,7 @@ object ManaUtils {
 //    manaTypeReg.put(Type.SWAMP, water)
 //  }
 //
-//  private def setEarth(earth: ManaType) {
+//  private def setEarth(earth: ManaTypes) {
 //    manaTypeReg.put(Type.DENSE, earth)
 //    manaTypeReg.put(Type.SAVANNA, earth)
 //    manaTypeReg.put(Type.CONIFEROUS, earth)
@@ -105,7 +105,7 @@ object ManaUtils {
 //    manaTypeReg.put(Type.SWAMP, earth)
 //  }
 //
-//  private def setFire(fire: ManaType) {
+//  private def setFire(fire: ManaTypes) {
 //    manaTypeReg.put(Type.HOT, fire)
 //    manaTypeReg.put(Type.NETHER, fire)
 //    manaTypeReg.put(Type.MESA, fire)

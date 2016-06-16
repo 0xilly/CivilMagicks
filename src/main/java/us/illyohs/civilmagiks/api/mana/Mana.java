@@ -30,7 +30,7 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.common.registry.IForgeRegistryEntry;
 
 
-public class ManaType extends IForgeRegistryEntry.Impl<ManaType> {
+public class Mana extends IForgeRegistryEntry.Impl<Mana> {
 
     String  key;
     boolean spawnable;
@@ -43,7 +43,7 @@ public class ManaType extends IForgeRegistryEntry.Impl<ManaType> {
      * @param color the color of the mana
      * @param blend the blend
      */
-    public ManaType(String key, boolean spawnable, int color, int blend) {
+    public Mana(String key, boolean spawnable, int color, int blend) {
         this.key = key;
         this.spawnable  = spawnable;
         this.color      = color;

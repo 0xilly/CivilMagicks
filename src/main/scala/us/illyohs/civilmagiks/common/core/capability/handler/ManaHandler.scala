@@ -1,14 +1,14 @@
 package us.illyohs.civilmagiks.common.core.capability.handler
 
 import us.illyohs.civilmagiks.api.capability.IManaHandler
-import us.illyohs.civilmagiks.api.init.Mana
-import us.illyohs.civilmagiks.api.mana.ManaType
+import us.illyohs.civilmagiks.api.init.ManaTypes
+import us.illyohs.civilmagiks.api.mana.Mana
 
 class ManaHandler extends IManaHandler {
 
   private var currentMana: Int = 0
   private var maxMana: Int = 0
-  private var manaType: ManaType = null
+  private var manaType: Mana = null
 
   def setMaxMana(maxMana: Int) {
     this.maxMana = maxMana
@@ -24,18 +24,18 @@ class ManaHandler extends IManaHandler {
   }
 
   def getMaxStorage: Int = {
-    return maxMana
+    maxMana
   }
 
   def getCurrentMana: Int = {
-    return currentMana
+    currentMana
   }
 
-  def setType(`type`: ManaType) {
-    this.manaType = `type`
+  def setType(mana: Mana) {
+    this.manaType = mana
   }
 
-  def getManaType: ManaType = {
-    Mana.GREY
+  def getManaType: Mana = {
+    ManaTypes.GREY
   }
 }

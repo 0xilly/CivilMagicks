@@ -24,9 +24,43 @@
   */
 package us.illyohs.civilmagiks.common.core.proxy
 
+import java.util
+
+import net.minecraft.util.ResourceLocation
+
+import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
+import net.minecraftforge.fml.common.registry.{FMLControlledNamespacedRegistry, IForgeRegistry, PersistentRegistryManager}
+
+import us.illyohs.civilmagiks.api.mana.Mana
+import us.illyohs.civilmagiks.api.sigil.Sigil
+import us.illyohs.civilmagiks.common.core.util.callback.{ManaCallBack, SigilCallBack}
+import us.illyohs.civilmagiks.common.manatype.ModMana
+
 class CommonProxy {
 
-  def bindRenderers: Unit = {
-    /**NO_OP**/
+  final private val SIGILS:ResourceLocation     = new ResourceLocation("civilmagiks:sigils")
+  final private val MANATYPES:ResourceLocation  = new ResourceLocation("civilmagiks:manatypes")
+  final private var iSigilRegistry:FMLControlledNamespacedRegistry[Sigil] = null
+  final private var iManaRegistry:FMLControlledNamespacedRegistry[Mana] = null
+
+  this.iSigilRegistry = PersistentRegistryManager.createRegistry(SIGILS, classOf[Sigil],null, 0, 255, false, SigilCallBack.INSTANCE, SigilCallBack.INSTANCE, SigilCallBack.INSTANCE)
+  this.iManaRegistry = PersistentRegistryManager.createRegistry(MANATYPES, classOf[Mana], null, 0, 255, false, ManaCallBack.INSTANCE, ManaCallBack.INSTANCE, ManaCallBack.INSTANCE)
+
+  def preInit(event:FMLPreInitializationEvent): Unit = {
+    ModMana.init
+//    ModBlocks.init
   }
+
+  def init(event: FMLInitializationEvent): Unit = {
+
+  }
+
+  def postInit(event: FMLPostInitializationEvent): Unit = {
+
+  }
+
+
 }
+
+
+

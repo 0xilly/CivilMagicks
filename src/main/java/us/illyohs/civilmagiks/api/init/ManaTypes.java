@@ -24,45 +24,16 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagiks.common.manatype
+package us.illyohs.civilmagiks.api.init;
 
-import net.minecraftforge.fml.common.registry.GameRegistry
+import us.illyohs.civilmagiks.api.mana.Mana;
 
-import us.illyohs.civilmagiks.api.init.ManaTypes
-import us.illyohs.civilmagiks.api.mana
-import us.illyohs.civilmagiks.api.mana.Mana
-import us.illyohs.civilmagiks.common.core.util.ModInfo
+public final class ManaTypes {
 
-class CivilMana(key: String, spawnable: Boolean, color: Int, blend: Int)
-  extends mana.Mana(key, spawnable, color, blend) {
-  this.setRegistryName(ModInfo.MOD_ID, key)
-
-}
-
-object ModMana {
-
-  private var _Earth  = ManaTypes.EARTH
-  private var _Fire   = ManaTypes.FIRE
-  private var _Water  = ManaTypes.WATER
-  private var _Wind   = ManaTypes.WIND
-  private var _Grey   = ManaTypes.GREY
-
-  def init: Unit = {
-    _Earth  = new CivilMana("earth", true, 0x4ca54c, 1)
-    _Fire   = new CivilMana("fire", true, 0xffb732, 1)
-    _Water  = new CivilMana("water", true, 0x3030ff, 1)
-    _Wind   = new CivilMana("wind", true, 0x8c8c8c, 1)
-    _Grey   = new CivilMana("grey", true, 0x34332d, 1)
-
-    gameReg
-  }
-
-  private def gameReg(): Unit = {
-    GameRegistry.register(_Earth)
-    GameRegistry.register(_Fire)
-    GameRegistry.register(_Water)
-    GameRegistry.register(_Wind)
-    GameRegistry.register(_Grey)
-
-  }
+    public static Mana EARTH;
+    public static Mana FIRE;
+    public static Mana WATER;
+    public static Mana WIND;
+    //Gray is a neutral manatype that accepts all mana types
+    public static Mana GREY;
 }

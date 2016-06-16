@@ -3,14 +3,15 @@ package us.illyohs.civilmagiks.common.core.capability
 import net.minecraft.nbt.NBTBase
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.util.EnumFacing
+
 import net.minecraftforge.common.capabilities.Capability
 import net.minecraftforge.common.capabilities.Capability.IStorage
+
 import us.illyohs.civilmagiks.api.capability.IManaHandler
-import us.illyohs.civilmagiks.api.mana.ManaType
-
 import us.illyohs.civilmagiks.common.core.capability.handler.ManaHandler
-
 import java.util.concurrent.Callable
+
+import us.illyohs.civilmagiks.api.mana.Mana
 
 
 object ManaStorage {
@@ -30,7 +31,7 @@ class ManaStorage extends IStorage[IManaHandler] {
     val tag: NBTTagCompound = new NBTTagCompound
     val imh: IManaHandler = instance.asInstanceOf[IManaHandler]
     val manalevel: Int = imh.getCurrentMana
-    val getType: ManaType = imh.getManaType
+    val getType: Mana = imh.getManaType
     tag
   }
 

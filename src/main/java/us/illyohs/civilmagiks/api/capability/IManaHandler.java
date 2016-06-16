@@ -1,6 +1,6 @@
 package us.illyohs.civilmagiks.api.capability;
 
-import us.illyohs.civilmagiks.api.mana.ManaType;
+import us.illyohs.civilmagiks.api.mana.Mana;
 
 public interface IManaHandler {
 
@@ -8,6 +8,6 @@ public interface IManaHandler {
 
     int getCurrentMana();
 
-    ManaType getManaType();
+    Mana getManaType();
 
 }
