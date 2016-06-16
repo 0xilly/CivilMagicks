@@ -11,11 +11,21 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.IForgeRegistryEntry;
 
-public class Sigil extends IForgeRegistryEntry.Impl<Sigil> {
+public abstract class Sigil extends IForgeRegistryEntry.Impl<Sigil> {
 
     String              modid, unLocalizedName;
     int                 radius;
     ResourceLocation    texture;
+
+    abstract public void onUpdate();
+
+    abstract public void writeToNBT(NBTTagCompound tag);
+
+    abstract public void readFromNBT(NBTTagCompound tag);
+
+    abstract public EnumActionResult onPlayerHit(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ);
+
+    abstract public EnumActionResult onEntityCollied(Entity entity, World world, BlockPos pos, EnumFacing facing, float x, float y, float z);
 
     public void setModid(String modid) {
         this.modid = modid;
@@ -49,23 +59,5 @@ public class Sigil extends IForgeRegistryEntry.Impl<Sigil> {
         return texture;
     }
 
-    public void onUpdate() {
 
-    }
-
-    public void writeToNBT(NBTTagCompound tag) {
-
-    }
-
-    public void readFromNBT(NBTTagCompound tag) {
-
-    }
-
-    public EnumActionResult onPlayerHit(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        return null;
-    }
-
-    public EnumActionResult onEntityCollied(Entity entity, World world, BlockPos pos, EnumFacing facing, float x, float y, float z) {
-        return null;
-    }
 }
