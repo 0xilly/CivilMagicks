@@ -1,31 +1,43 @@
 package us.illyohs.civilmagiks.api.sigil;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.fml.common.registry.IForgeRegistryEntry;
 
-public abstract class Sigil extends IForgeRegistryEntry.Impl<Sigil> {
+public abstract class Sigil extends IForgeRegistryEntry.Impl<Sigil> implements INBTSerializable<NBTTagCompound> {
 
     String              modid, unLocalizedName;
-    int                 radius;
+    int                 radius, uses;
     ResourceLocation    texture;
+    BlockPos            pos;
+
+    public Sigil(int uses) {
+        this.uses = uses;
+    }
+
+    abstract public void onPlayerClick(World world, BlockPos pos, EntityPlayer player);
+
+    abstract public void onEntityCollied(World world, BlockPos pos, Entity entity);
+
+    abstract public void onEntityLivingCollied(World world, BlockPos pos, EntityLivingBase entity);
 
     abstract public void onUpdate();
 
-    abstract public void writeToNBT(NBTTagCompound tag);
+    public NBTTagCompound writeToNBT(NBTTagCompound tag) {
+        return tag;
+    }
 
-    abstract public void readFromNBT(NBTTagCompound tag);
-
-    abstract public EnumActionResult onPlayerHit(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ);
-
-    abstract public EnumActionResult onEntityCollied(Entity entity, World world, BlockPos pos, EnumFacing facing, float x, float y, float z);
+    public void readFromNBT(NBTTagCompound tag) {
+        tag.getInteger("Uses");
+    }
 
     public void setModid(String modid) {
         this.modid = modid;
@@ -59,5 +71,29 @@ public abstract class Sigil extends IForgeRegistryEntry.Impl<Sigil> {
         return texture;
     }
 
+    public BlockPos getPos() {
+        return pos;
+    }
 
+    //INTERNAL DO NOT USE
+    @Deprecated
+    public void setPos(BlockPos pos) {
+        this.pos = pos;
+    }
+
+    public int getUses() {
+        return uses;
+    }
+
+    @Override
+    public NBTTagCompound serializeNBT() {
+        NBTTagCompound tag = new NBTTagCompound();
+
+        return this.writeToNBT(tag);
+    }
+
+    @Override
+    public void deserializeNBT(NBTTagCompound tag) {
+        this.readFromNBT(tag);
+    }
 }

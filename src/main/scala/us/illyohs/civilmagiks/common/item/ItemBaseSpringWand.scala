@@ -11,10 +11,10 @@ import net.minecraft.util.EnumHand
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 import us.illyohs.civilmagiks.common.block.ModBlocks
-import us.illyohs.civilmagiks.common.core.util.CivilItem
+import us.illyohs.civilmagiks.common.core.util.ItemBase
 
-class ItemSpringWand(name: String, hasSubtypes: Boolean, tabs: CreativeTabs)
-  extends CivilItem(name, hasSubtypes, tabs) {
+class ItemBaseSpringWand(name: String, hasSubtypes: Boolean, tabs: CreativeTabs)
+  extends ItemBase(name, hasSubtypes, tabs) {
 
   override def onItemUse(stack: ItemStack, player: EntityPlayer, world: World, pos: BlockPos, hand: EnumHand, facing: EnumFacing, hitX: Float, hitY: Float, hitZ: Float): EnumActionResult = {
 

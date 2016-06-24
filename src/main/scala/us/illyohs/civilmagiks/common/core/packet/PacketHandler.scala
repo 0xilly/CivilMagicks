@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, Anthony Anderson(Illyohs)
+ * Copyright (c) 2016, Anthony Anderson<Illyohs>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -21,9 +21,27 @@
  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+package us.illyohs.civilmagiks.common.core.packet
 
-package us.illyohs.civilmagiks.api;
+import net.minecraftforge.fml.common.network.NetworkRegistry
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper
 
-public interface IRestrictWell {
+object PacketHandler {
+  private var packetId: Int = 0
+  var INSTANCE: SimpleNetworkWrapper = null
+
+
+
+  def registerMessages(channelName: String) {
+    INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(channelName)
+    packReg
+  }
+
+  private def packReg: Unit = {
+
+  }
+
 }
+

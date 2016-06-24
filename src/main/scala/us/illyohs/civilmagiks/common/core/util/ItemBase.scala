@@ -27,7 +27,7 @@ package us.illyohs.civilmagiks.common.core.util
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.item.Item
 
-class CivilItem(name: String, hasSub: Boolean, tabs: CreativeTabs) extends Item {
+class ItemBase(name: String, hasSub: Boolean, tabs: CreativeTabs) extends Item {
 
   this.setRegistryName(name)
   this.setUnlocalizedName(ModInfo.MOD_ID + ":" + name)

@@ -23,27 +23,54 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagiks.common.entity.mics
+
+package us.illyohs.civilmagiks.common.core.handler
 
 import net.minecraft.entity.Entity
 import net.minecraft.entity.player.EntityPlayer
-import net.minecraft.nbt.NBTTagCompound
-import net.minecraft.world.World
+import net.minecraft.util.math.BlockPos
 
-class EntitySigil(val worldIn: World)
-  extends Entity(worldIn) {
+import net.minecraftforge.common.MinecraftForge
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 
+import us.illyohs.civilmagiks.api.event.SigilEvent._
 
-  override def entityInit: Unit = {
-  }
+object SigilHandler {
 
-  override def readEntityFromNBT(compound: NBTTagCompound): Unit = {
-  }
-
-  override def writeEntityToNBT(compound: NBTTagCompound): Unit = {
-  }
-
-  override def onCollideWithPlayer(player:EntityPlayer): Unit = {
+  def sigilPlace(player: EntityPlayer): Unit = {
 
   }
+
+
+  @SubscribeEvent
+  def onSigilPlaceEvent(event:SigilPlaceEvent): Unit = {
+
+  }
+
+  @SubscribeEvent
+  def onSigilDestroyEvent(event:SigilDestroyedEvent): Unit = {
+
+  }
+
+  @SubscribeEvent
+  def onSigilActivatedEvent(event: SigilActivateEvent): Unit = {
+
+  }
+
+}
+
+object SigilEventDispatcher {
+
+  def placeSigilEvent(name:String, id:String, pos:BlockPos, player:EntityPlayer): Unit = {
+    MinecraftForge.EVENT_BUS.post(new SigilPlaceEvent(name,id,pos,player))
+  }
+
+  def destroyedSigilEvent(name:String, id:String, pos:BlockPos, player:EntityPlayer): Unit = {
+    MinecraftForge.EVENT_BUS.post(new SigilDestroyedEvent(name,id,pos,player))
+  }
+
+  def activateSigilEvent(name:String, id:String, pos:BlockPos, entity:Entity): Unit = {
+    MinecraftForge.EVENT_BUS.post(new SigilActivateEvent(name,id,pos,entity))
+  }
+
 }

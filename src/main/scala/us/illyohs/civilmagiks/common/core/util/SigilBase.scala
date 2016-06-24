@@ -5,12 +5,12 @@
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
- *     * Redistributions of source code must retain the above copyright notice, this
- *        list of conditions and the following disclaimer.
+ *  Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
  *
- *     * Redistributions in binary form must reproduce the above copyright notice,
- *        this list of conditions and the following disclaimer in the documentation
- *        and/or other materials provided with the distribution.
+ *  Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -23,27 +23,21 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagiks.common.entity.mics
 
-import net.minecraft.entity.Entity
-import net.minecraft.entity.player.EntityPlayer
-import net.minecraft.nbt.NBTTagCompound
-import net.minecraft.world.World
+package us.illyohs.civilmagiks.common.core.util
 
-class EntitySigil(val worldIn: World)
-  extends Entity(worldIn) {
+import net.minecraft.util.ResourceLocation
+import net.minecraft.util.text.translation.I18n
 
+import us.illyohs.civilmagiks.api.sigil.Sigil
 
-  override def entityInit: Unit = {
-  }
-
-  override def readEntityFromNBT(compound: NBTTagCompound): Unit = {
-  }
-
-  override def writeEntityToNBT(compound: NBTTagCompound): Unit = {
-  }
-
-  override def onCollideWithPlayer(player:EntityPlayer): Unit = {
-
-  }
+abstract class SigilBase(name:String, radius:Int, uses:Int)
+  extends Sigil(uses) {
+  this.setModid(ModInfo.MOD_ID)
+  this.setRegistryName(getModid, name)
+  this.setRadius(radius)
+  this.setUnLocalizedName(I18n.translateToLocal("sigil." + name))
+  this.setTexture(new ResourceLocation(getModid, "texture/sigil/" + name))
+  def getKey = name
 }
+

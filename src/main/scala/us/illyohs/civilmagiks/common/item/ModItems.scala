@@ -9,7 +9,7 @@ object ModItems {
   var springWand: Item = null
 
   def init: Unit = {
-    this.springWand = new ItemSpringWand("springwand", true, CreativeTabs.FOOD)
+    this.springWand = new ItemBaseSpringWand("springwand", true, CreativeTabs.FOOD)
     gameReg
   }
 

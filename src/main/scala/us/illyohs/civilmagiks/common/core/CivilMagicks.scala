@@ -25,8 +25,7 @@ object CivilMagicks {
 
   @EventHandler
   def preInit(event: FMLPreInitializationEvent): Unit = {
-
-    proxy.preInit(event)
+    this.proxy.preInit(event)
   }
 
   @EventHandler

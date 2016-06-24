@@ -23,27 +23,17 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package us.illyohs.civilmagiks.common.entity.mics
 
-import net.minecraft.entity.Entity
-import net.minecraft.entity.player.EntityPlayer
-import net.minecraft.nbt.NBTTagCompound
-import net.minecraft.world.World
-
-class EntitySigil(val worldIn: World)
-  extends Entity(worldIn) {
+package us.illyohs.civilmagiks.client.render.entity
 
 
-  override def entityInit: Unit = {
-  }
+import net.minecraft.client.renderer.entity.{Render, RenderManager}
+import net.minecraft.util.ResourceLocation
 
-  override def readEntityFromNBT(compound: NBTTagCompound): Unit = {
-  }
+import us.illyohs.civilmagiks.common.entity.mics.EntitySigil
 
-  override def writeEntityToNBT(compound: NBTTagCompound): Unit = {
-  }
+class RenderEntitySigil(manager:RenderManager)
+  extends Render[EntitySigil](manager) {
 
-  override def onCollideWithPlayer(player:EntityPlayer): Unit = {
-
-  }
+  override def getEntityTexture(entity: EntitySigil): ResourceLocation = null
 }

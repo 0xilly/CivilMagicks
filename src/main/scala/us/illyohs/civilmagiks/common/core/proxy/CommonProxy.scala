@@ -29,7 +29,7 @@ import java.util
 import net.minecraft.util.ResourceLocation
 
 import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
-import net.minecraftforge.fml.common.registry.{FMLControlledNamespacedRegistry, IForgeRegistry, PersistentRegistryManager}
+import net.minecraftforge.fml.common.registry.{EntityRegistry, FMLControlledNamespacedRegistry, IForgeRegistry, PersistentRegistryManager}
 
 import us.illyohs.civilmagiks.api.mana.Mana
 import us.illyohs.civilmagiks.api.sigil.Sigil
@@ -38,17 +38,17 @@ import us.illyohs.civilmagiks.common.manatype.ModMana
 
 class CommonProxy {
 
-  final private val SIGILS:ResourceLocation     = new ResourceLocation("civilmagiks:sigils")
-  final private val MANATYPES:ResourceLocation  = new ResourceLocation("civilmagiks:manatypes")
-  final private var iSigilRegistry:FMLControlledNamespacedRegistry[Sigil] = null
-  final private var iManaRegistry:FMLControlledNamespacedRegistry[Mana] = null
+  final private val SIGILS: ResourceLocation = new ResourceLocation("civilmagiks:sigils")
+  final private val MANATYPES: ResourceLocation = new ResourceLocation("civilmagiks:manatypes")
+  final private var iSigilRegistry: FMLControlledNamespacedRegistry[Sigil] = null
+  final private var iManaRegistry: FMLControlledNamespacedRegistry[Mana] = null
 
-  this.iSigilRegistry = PersistentRegistryManager.createRegistry(SIGILS, classOf[Sigil],null, 0, 255, false, SigilCallBack.INSTANCE, SigilCallBack.INSTANCE, SigilCallBack.INSTANCE)
+  this.iSigilRegistry = PersistentRegistryManager.createRegistry(SIGILS, classOf[Sigil], null, 0, 255, false, SigilCallBack.INSTANCE, SigilCallBack.INSTANCE, SigilCallBack.INSTANCE)
   this.iManaRegistry = PersistentRegistryManager.createRegistry(MANATYPES, classOf[Mana], null, 0, 255, false, ManaCallBack.INSTANCE, ManaCallBack.INSTANCE, ManaCallBack.INSTANCE)
 
-  def preInit(event:FMLPreInitializationEvent): Unit = {
+  def preInit(event: FMLPreInitializationEvent): Unit = {
     ModMana.init
-//    ModBlocks.init
+    //    ModBlocks.init
   }
 
   def init(event: FMLInitializationEvent): Unit = {
@@ -58,7 +58,6 @@ class CommonProxy {
   def postInit(event: FMLPostInitializationEvent): Unit = {
 
   }
-
 
 }
 

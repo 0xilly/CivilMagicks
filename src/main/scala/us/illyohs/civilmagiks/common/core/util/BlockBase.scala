@@ -9,7 +9,7 @@ import net.minecraft.util.math.{AxisAlignedBB, BlockPos}
 import net.minecraft.world.{IBlockAccess, World}
 
 
-class CivilBlock(material: Material, name: String, hardness:Float, resistance:Float,light:Float, tick:Boolean, tab: CreativeTabs)
+class BlockBase(material: Material, name: String, hardness:Float, resistance:Float, light:Float, tick:Boolean, tab: CreativeTabs)
   extends Block(material) {
   this.setRegistryName(name)
   this.setUnlocalizedName(ModInfo.MOD_ID + ":" + name)
@@ -22,8 +22,8 @@ class CivilBlock(material: Material, name: String, hardness:Float, resistance:Fl
   }
 }
 
-class CivilBlockAir(material: Material, name: String, hardness:Float, resistance:Float,light:Float, tick:Boolean, tab: CreativeTabs)
-  extends CivilBlock(material, name, hardness, resistance,light,tick,tab) {
+class BlockBaseAir(material: Material, name: String, hardness:Float, resistance:Float, light:Float, tick:Boolean, tab: CreativeTabs)
+  extends BlockBase(material, name, hardness, resistance,light,tick,tab) {
 
   if(tab != null) {
     this.setCreativeTab(tab)

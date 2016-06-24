@@ -24,17 +24,38 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagiks.common.compact.jei
+package us.illyohs.civilmagiks.common.sigil
 
-import javax.annotation.Nonnull
+import net.minecraft.entity.{Entity, EntityLivingBase}
+import net.minecraft.entity.player.EntityPlayer
+import net.minecraft.init.MobEffects
+import net.minecraft.nbt.NBTTagCompound
+import net.minecraft.potion.PotionEffect
+import net.minecraft.util.math.BlockPos
+import net.minecraft.world.World
 
-import mezz.jei.api.{BlankModPlugin, IModRegistry, JEIPlugin}
+import us.illyohs.civilmagiks.common.core.util.SigilBase
 
-@JEIPlugin
-object JeiPlugin extends BlankModPlugin {
+class SpeedSigil extends
+  SigilBase("speed", 3, 20) {
 
-  override def register(@Nonnull registry: IModRegistry): Unit = {
+  override def onUpdate(): Unit = {
 
   }
 
+  override def onPlayerClick(world: World, pos: BlockPos, player: EntityPlayer): Unit = {
+  }
+
+  override def onEntityCollied(world: World, pos: BlockPos, entity: Entity): Unit = {
+  }
+
+  override def onEntityLivingCollied(world: World, pos: BlockPos, entity: EntityLivingBase): Unit = {
+    entity.addPotionEffect(new PotionEffect(MobEffects.SPEED, 600))
+  }
+
+  override def writeToNBT(tag: NBTTagCompound): Unit = {
+  }
+
+  override def readFromNBT(tag: NBTTagCompound): Unit = {
+  }
 }

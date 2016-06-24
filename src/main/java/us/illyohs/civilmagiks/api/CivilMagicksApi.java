@@ -29,6 +29,8 @@ package us.illyohs.civilmagiks.api;
 
 import java.util.ArrayList;
 
+import net.minecraft.creativetab.CreativeTabs;
+
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.registry.IForgeRegistry;
 
@@ -40,6 +42,9 @@ public class CivilMagicksApi {
     ////////////// CIVIL REGISTRIES///////////////////
     public static IForgeRegistry<Sigil> SIGIL    = GameRegistry.findRegistry(Sigil.class);
     public static IForgeRegistry<Mana>  MANATYPE = GameRegistry.findRegistry(Mana.class);
+
+    ////////////// CREATIVE TABS///////////////////////
+    CreativeTabs CIVILMAGICKS;
 
     private static ArrayList baisnStuff = new ArrayList();
 
