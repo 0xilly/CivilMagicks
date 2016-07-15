@@ -39,8 +39,8 @@ class CivilMana(@Nonnull key: String,
                 @Nonnull spawnable: Boolean,
                 @Nonnull color: Int,
                 @Nonnull blend: Int,
-                @Nonnull biome:Type*)
-  extends Mana(key, spawnable, color, blend, biome.toArray) {
+                @Nonnull biome:Array[Type])
+  extends Mana(key, spawnable, color, blend, biome) {
   this.setRegistryName(ModInfo.MOD_ID, key)
 
 }
@@ -54,14 +54,21 @@ object ModMana {
   private var _Grey   = ManaTypes.GREY
 
   def init: Unit = {
-    _Earth  = new CivilMana("earth", true, 0x4ca54c, 1)
-    _Fire   = new CivilMana("fire", true, 0xffb732, 1)
-    _Water  = new CivilMana("water", true, 0x3030ff, 1)
-    _Wind   = new CivilMana("wind", true, 0x8c8c8c, 1)
-    _Grey   = new CivilMana("grey", true, 0x34332d, 1)
+    val earhArray   = Array(Type.FOREST, Type.SAVANNA, Type.CONIFEROUS, Type.JUNGLE, Type.LUSH, Type.PLAINS, Type.SWAMP)
+    val fireArray   = Array(Type.HOT, Type.NETHER, Type.MESA, Type.SANDY, Type.WASTELAND, Type.DRY)
+    val windArray   = Array(Type.SPARSE, Type.DRY, Type.SPOOKY, Type.DEAD, Type.HILLS, Type.MOUNTAIN, Type.COLD, Type.WET)
+    val waterArray  = Array(Type.WATER, Type.COLD, Type.BEACH, Type.OCEAN, Type.RIVER, Type.WET, Type.SNOWY, Type.SWAMP)
+
+    _Earth  = new CivilMana("earth", true, 0x4ca54c, 1, earhArray)
+    _Fire   = new CivilMana("fire", true, 0xffb732, 1, fireArray)
+    _Water  = new CivilMana("water", true, 0x3030ff, 1, waterArray)
+    _Wind   = new CivilMana("wind", true, 0x8c8c8c, 1, windArray)
+    _Grey   = new CivilMana("grey", true, 0x34332d, 1, Type.values)
 
     gameReg
   }
+
+
 
   private def gameReg(): Unit = {
     GameRegistry.register(_Earth)
