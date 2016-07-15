@@ -40,7 +40,7 @@ class CivilMana(@Nonnull key: String,
                 @Nonnull color: Int,
                 @Nonnull blend: Int,
                 @Nonnull biome:Type*)
-  extends Mana(key, spawnable, color, blend, Array(biome)) {
+  extends Mana(key, spawnable, color, blend, biome.toArray) {
   this.setRegistryName(ModInfo.MOD_ID, key)
 
 }
