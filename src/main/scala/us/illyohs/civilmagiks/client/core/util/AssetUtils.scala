@@ -25,30 +25,26 @@
 package us.illyohs.civilmagiks.client.core.util
 
 import net.minecraft.util.ResourceLocation
-import us.illyohs.civilmagiks.common.core.util.InfoUtil
+
+import us.illyohs.civilmagiks.common.core.util.ModInfo._
 
 object AssetUtils {
-  private def getResourceLocation(modId: String, path: String): ResourceLocation = {
-    return new ResourceLocation(modId, path)
-  }
 
-  def getSoundLocation(path: String): String = {
-    return InfoUtil.MOD_ID + ":" + path
-  }
+  private def getResourceLocation(modId: String, path: String): ResourceLocation = new ResourceLocation(modId, path)
 
-  def getGuiAsset(path: String): ResourceLocation = {
-    return getResourceLocation(InfoUtil.MOD_ID, "textures/gui/" + path + ".png")
-  }
 
-  def getModelAsset(path: String): ResourceLocation = {
-    return getResourceLocation(InfoUtil.MOD_ID, "textures/models/" + path + ".png")
-  }
+  def getSoundLocation(path: String): String = MOD_ID + ":" + path
 
-  def getFxAsset(path: String): ResourceLocation = {
-    return getResourceLocation(InfoUtil.MOD_ID, "textures/fx/" + path + ".png")
-  }
 
-  def getItemAsset(path: String): ResourceLocation = {
-    return getResourceLocation(InfoUtil.MOD_ID, "textures/items/" + path)
-  }
+  def getGuiAsset(path: String): ResourceLocation = getResourceLocation(MOD_ID, "textures/gui/" + path + ".png")
+
+
+  def getModelAsset(path: String): ResourceLocation = getResourceLocation(MOD_ID, "textures/models/" + path + ".png")
+
+
+  def getFxAsset(path: String): ResourceLocation = getResourceLocation(MOD_ID, "textures/fx/" + path + ".png")
+
+
+  def getItemAsset(path: String): ResourceLocation = getResourceLocation(MOD_ID, "textures/items/" + path)
+
 }

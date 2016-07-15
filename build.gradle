@@ -37,8 +37,9 @@ minecraft {
     version = "${config.mc_version}-${config.forge_version}"
 
 
-    replaceIn "us/illyohs/civilmagiks/common/core/lib/LibInfo.java"
-    replace '@VERSION@', project.version
+//    replaceIn "us/illyohs/civilmagiks/common/core/lib/LibInfo.java"
+//    replace '@VERSION@', project.version
+    useDepAts = true
 
 }
 
@@ -87,7 +88,7 @@ task deobfJar(type: Jar) {
 
 task apiJar(type: Jar) {
     from(sourceSets.main.java) {
-        include "us/illyohs/api/**"
+        include "us/illyohs/civilmagiks/api/**"
     }
     classifier = 'api'
 }
@@ -101,5 +102,5 @@ dependencies {
  //   compile 'com.azanor.baubles:Baubles:1.8.9-1.1.1.0.2:deobf'
 //    compile 'us.illyohs.libilly:LibIlly:1.9-0.3.0.42:deobf'
 //    deobfCompile "MCMultiPart:MCMultiPart:1.0.4:universal"
-//    deobfCompile 'mezz.jei:jei_1.9.4:3.6.3.212'
+    deobfCompile 'mezz.jei:jei_1.10.2:3.7.6.232'
 }

@@ -30,17 +30,20 @@ import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.world.World
 
-class EntitySigil(val worldIn: World)
-  extends Entity(worldIn) {
+class EntitySigil(world: World)
+  extends Entity(world) {
 
 
   override def entityInit: Unit = {
+
   }
 
   override def readEntityFromNBT(compound: NBTTagCompound): Unit = {
+
   }
 
   override def writeEntityToNBT(compound: NBTTagCompound): Unit = {
+
   }
 
   override def onCollideWithPlayer(player:EntityPlayer): Unit = {

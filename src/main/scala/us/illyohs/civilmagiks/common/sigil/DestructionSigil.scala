@@ -5,12 +5,12 @@
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
- *  Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer.
+ *     * Redistributions of source code must retain the above copyright notice, this
+ *        list of conditions and the following disclaimer.
  *
- *  Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
+ *     * Redistributions in binary form must reproduce the above copyright notice,
+ *        this list of conditions and the following disclaimer in the documentation
+ *        and/or other materials provided with the distribution.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -28,29 +28,29 @@ package us.illyohs.civilmagiks.common.sigil
 
 import net.minecraft.entity.{Entity, EntityLivingBase}
 import net.minecraft.entity.player.EntityPlayer
-import net.minecraft.init.MobEffects
-import net.minecraft.nbt.NBTTagCompound
-import net.minecraft.potion.PotionEffect
+import net.minecraft.util.EnumHand
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
 import us.illyohs.civilmagiks.common.core.util.SigilBase
 
-class SpeedSigil extends
-  SigilBase("speed", 3) {
+class DestructionSigil
+  extends SigilBase("destruction", 1) {
+
+
+  override def onPlayerRightClick(world: World, pos: BlockPos, player: EntityPlayer): Unit = {
+    player.setHeldItem(EnumHand.MAIN_HAND, null)
+  }
+
+  override def onEntityCollied(world: World, pos: BlockPos, entity: Entity): Unit = {
+
+  }
+
+  override def onEntityLivingCollied(world: World, pos: BlockPos, entity: EntityLivingBase): Unit = {
+
+  }
 
   override def onUpdate(): Unit = {
 
   }
-
-  override def onPlayerRightClick(world: World, pos: BlockPos, player: EntityPlayer): Unit = {
-  }
-
-  override def onEntityCollied(world: World, pos: BlockPos, entity: Entity): Unit = {
-  }
-
-  override def onEntityLivingCollied(world: World, pos: BlockPos, entity: EntityLivingBase): Unit = {
-    entity.addPotionEffect(new PotionEffect(MobEffects.SPEED, 600))
-  }
-
 }
