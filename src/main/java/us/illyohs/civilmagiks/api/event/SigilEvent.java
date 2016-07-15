@@ -32,66 +32,80 @@ import net.minecraft.util.math.BlockPos;
 
 import net.minecraftforge.fml.common.eventhandler.Event;
 
-public class SigilEvent extends Event {
+public class SigilEvent extends Event
+{
 
     String      name, id;
     BlockPos    pos;
 
-    public SigilEvent(String name, String id, BlockPos pos) {
+    public SigilEvent(String name, String id, BlockPos pos)
+    {
         this.name = name;
         this.id = id;
         this.pos = pos;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public String getId() {
+    public String getId()
+    {
         return id;
     }
 
-    public BlockPos getPos() {
+    public BlockPos getPos()
+    {
         return pos;
     }
 
-    public static class SigilPlaceEvent extends SigilEvent {
+    public static class SigilPlaceEvent extends SigilEvent
+    {
 
         EntityPlayer player;
 
-        public SigilPlaceEvent(String name, String id, BlockPos pos, EntityPlayer player) {
+        public SigilPlaceEvent(String name, String id, BlockPos pos, EntityPlayer player)
+        {
             super(name, id, pos);
             this.player = player;
         }
 
-        public EntityPlayer getPlayer() {
+        public EntityPlayer getPlayer()
+        {
             return player;
         }
     }
 
-    public static class SigilDestroyedEvent extends SigilEvent {
+    public static class SigilDestroyedEvent extends SigilEvent
+    {
 
         EntityPlayer player;
 
-        public SigilDestroyedEvent(String name, String id, BlockPos pos, EntityPlayer player) {
+        public SigilDestroyedEvent(String name, String id, BlockPos pos, EntityPlayer player)
+        {
             super(name, id, pos);
             this.player = player;
         }
 
-        public EntityPlayer getPlayer() {
+        public EntityPlayer getPlayer()
+        {
             return player;
         }
     }
 
-    public static class SigilActivateEvent extends SigilEvent {
+    public static class SigilActivateEvent extends SigilEvent
+    {
 
         Entity entity;
 
-        public SigilActivateEvent(String name, String id, BlockPos pos, Entity entity) {
+        public SigilActivateEvent(String name, String id, BlockPos pos, Entity entity)
+        {
             super(name, id, pos);
         }
 
-        public Entity getEntity() {
+        public Entity getEntity()
+        {
             return entity;
         }
     }

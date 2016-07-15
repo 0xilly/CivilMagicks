@@ -28,7 +28,8 @@ package us.illyohs.civilmagiks.api.init;
 
 import us.illyohs.civilmagiks.api.mana.Mana;
 
-public final class ManaTypes {
+public final class ManaTypes
+{
 
     public static Mana EARTH;
     public static Mana FIRE;

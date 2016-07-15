@@ -28,7 +28,8 @@ package us.illyohs.civilmagiks.api.crafting;
 import net.minecraft.entity.player.EntityPlayer;
 import us.illyohs.civilmagiks.api.mana.Mana;
 
-public interface ITuner {
+public interface ITuner
+{
 
     boolean canTuneBasin(EntityPlayer player);
 

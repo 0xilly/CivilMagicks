@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, Anthony Anderson(Illyohs)
+ * Copyright (c) 2016, Anthony Anderson<Illyohs>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -21,15 +21,20 @@
  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package us.illyohs.civilmagiks.api.crafting;
+package us.illyohs.civilmagiks.common.core.util
 
-public enum Elements {
-    WIND,
-    EARTH,
-    FIRE,
-    WATER,
-    NONE,
-    ANY
+import org.apache.logging.log4j.{LogManager, Logger}
+
+object LogUtils {
+  private val log:Logger = LogManager.getLogger(ModInfo.MOD_ID)
+
+  def debug(string: String) = log.debug(string)
+  def error(string: String) = log.error(string)
+  def info(string: String)  = log.info(string)
+  def warn(string: String)  = log.warn(string)
+
+
 }

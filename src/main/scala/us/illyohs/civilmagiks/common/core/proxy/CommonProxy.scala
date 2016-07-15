@@ -31,12 +31,15 @@ import net.minecraft.util.ResourceLocation
 import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
 import net.minecraftforge.fml.common.registry.{EntityRegistry, FMLControlledNamespacedRegistry, IForgeRegistry, PersistentRegistryManager}
 
+import us.illyohs.civilmagiks.api.CivilMagicksApi
 import us.illyohs.civilmagiks.api.mana.Mana
 import us.illyohs.civilmagiks.api.sigil.Sigil
+import us.illyohs.civilmagiks.common.core.util.LogUtils
 import us.illyohs.civilmagiks.common.core.util.callback.{ManaCallBack, SigilCallBack}
 import us.illyohs.civilmagiks.common.manatype.ModMana
 
 class CommonProxy {
+
 
   final private val SIGILS: ResourceLocation = new ResourceLocation("civilmagiks:sigils")
   final private val MANATYPES: ResourceLocation = new ResourceLocation("civilmagiks:manatypes")
@@ -52,7 +55,10 @@ class CommonProxy {
   }
 
   def init(event: FMLInitializationEvent): Unit = {
-
+    val manType = CivilMagicksApi.MANA_TYPE
+    for (i <- 0 until manType.getValues.size()) {
+      LogUtils.info("Found ManaType: " + manType.getValues.get(i).getRegistryName)
+    }
   }
 
   def postInit(event: FMLPostInitializationEvent): Unit = {

@@ -30,7 +30,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public interface IRendererSigilAddition {
+public interface IRendererSigilAddition
+{
     
     void render(boolean overriedBase, float x, float y, float z);
 }

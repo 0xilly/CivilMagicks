@@ -28,7 +28,8 @@ package us.illyohs.civilmagiks.api.crafting;
 import net.minecraft.item.ItemStack;
 import us.illyohs.civilmagiks.api.mana.Mana;
 
-public class BasinRecipe {
+public class BasinRecipe
+{
 
     Object    catalyst;
     Object[]  input;
@@ -36,7 +37,8 @@ public class BasinRecipe {
     int       typeLimit;
     Mana[]    mana;
 
-    public BasinRecipe(Object catalyst, Object[] input, ItemStack output, int typeLimit, Mana[] mana) {
+    public BasinRecipe(Object catalyst, Object[] input, ItemStack output, int typeLimit, Mana[] mana)
+    {
         this.catalyst   = catalyst;
         this.input      = input;
         this.output     = output;

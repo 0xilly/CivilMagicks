@@ -19,8 +19,8 @@ item.civilmagicks:manashard.name=[WIP] Mana Shard
 item.civilmagicks:springwand.name=[WIP] Mana Spring
 
 #ManaType
-civil.manatype.earth=Earth
-civil.manatype.fire=Fire
-civil.manatype.water=Water
-civil.manatype.wind=Wind
-civil.manatype.grey=Grey
+manatype.earth=Earth
+manatype.fire=Fire
+manatype.water=Water
+manatype.wind=Wind
+manatype.grey=Grey

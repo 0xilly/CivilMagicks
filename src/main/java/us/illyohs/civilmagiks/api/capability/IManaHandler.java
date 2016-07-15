@@ -2,7 +2,8 @@ package us.illyohs.civilmagiks.api.capability;
 
 import us.illyohs.civilmagiks.api.mana.Mana;
 
-public interface IManaHandler {
+public interface IManaHandler
+{
 
     int getMaxStorage();
 

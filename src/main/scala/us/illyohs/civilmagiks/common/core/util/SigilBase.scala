@@ -26,10 +26,6 @@
 
 package us.illyohs.civilmagiks.common.core.util
 
-import java.util.UUID
-
-import net.minecraft.nbt.NBTTagCompound
-import net.minecraft.network.Packet
 import net.minecraft.util.ResourceLocation
 import net.minecraft.util.text.translation.I18n
 

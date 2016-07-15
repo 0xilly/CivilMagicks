@@ -2,7 +2,8 @@ package us.illyohs.civilmagiks.api.crafting;
 
 import net.minecraft.item.ItemStack;
 
-public class SpinningWheelRecipe {
+public class SpinningWheelRecipe
+{
 
     Object      input;
     ItemStack   output;

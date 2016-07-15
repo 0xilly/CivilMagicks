@@ -4,7 +4,8 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 
-public interface IContract {
+public interface IContract
+{
 
     String getName();
 

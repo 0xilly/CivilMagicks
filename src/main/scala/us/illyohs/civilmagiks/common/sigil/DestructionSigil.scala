@@ -28,18 +28,18 @@ package us.illyohs.civilmagiks.common.sigil
 
 import net.minecraft.entity.{Entity, EntityLivingBase}
 import net.minecraft.entity.player.EntityPlayer
-import net.minecraft.util.EnumHand
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
-import us.illyohs.civilmagiks.common.core.util.SigilBase
+import us.illyohs.civilmagiks.common.core.util.{PlayerUtils, SigilBase}
 
 class DestructionSigil
   extends SigilBase("destruction", 1) {
 
+  this.setSingleUse(true)
 
   override def onPlayerRightClick(world: World, pos: BlockPos, player: EntityPlayer): Unit = {
-    player.setHeldItem(EnumHand.MAIN_HAND, null)
+    PlayerUtils.clearHeldItem(player)
   }
 
   override def onEntityCollied(world: World, pos: BlockPos, entity: Entity): Unit = {

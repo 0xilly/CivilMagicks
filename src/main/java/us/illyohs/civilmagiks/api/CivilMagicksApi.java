@@ -37,11 +37,12 @@ import net.minecraftforge.fml.common.registry.IForgeRegistry;
 import us.illyohs.civilmagiks.api.mana.Mana;
 import us.illyohs.civilmagiks.api.sigil.Sigil;
 
-public class CivilMagicksApi {
+public class CivilMagicksApi
+{
 
     ////////////// CIVIL REGISTRIES///////////////////
-    public static IForgeRegistry<Sigil> SIGIL    = GameRegistry.findRegistry(Sigil.class);
-    public static IForgeRegistry<Mana>  MANATYPE = GameRegistry.findRegistry(Mana.class);
+    public static IForgeRegistry<Sigil> SIGIL     = GameRegistry.findRegistry(Sigil.class);
+    public static IForgeRegistry<Mana>  MANA_TYPE = GameRegistry.findRegistry(Mana.class);
 
     ////////////// CREATIVE TABS///////////////////////
     CreativeTabs CIVILMAGICKS;

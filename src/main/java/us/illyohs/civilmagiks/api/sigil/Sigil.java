@@ -16,6 +16,7 @@ public abstract class Sigil extends IForgeRegistryEntry.Impl<Sigil> {
     int              radius;
     ResourceLocation texture;
     BlockPos         pos;
+    boolean          isSingleUse = false;
 
     abstract public void onPlayerRightClick(World world, BlockPos pos, EntityPlayer player);
 
@@ -62,6 +63,16 @@ public abstract class Sigil extends IForgeRegistryEntry.Impl<Sigil> {
 
     public ResourceLocation getTexture() {
         return texture;
+    }
+
+    public boolean isSingleUse()
+    {
+        return isSingleUse;
+    }
+
+    public void setSingleUse(boolean singleUse)
+    {
+        isSingleUse = singleUse;
     }
 
     public BlockPos getPos() {

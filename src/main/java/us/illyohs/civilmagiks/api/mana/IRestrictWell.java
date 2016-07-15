@@ -26,5 +26,6 @@
 
 package us.illyohs.civilmagiks.api.mana;
 
-public interface IRestrictWell {
+public interface IRestrictWell
+{
 }
