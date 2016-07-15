@@ -29,18 +29,18 @@ package us.illyohs.civilmagiks.api.mana;
 import javax.annotation.Nonnull;
 
 import net.minecraft.util.text.translation.I18n;
-import net.minecraft.world.biome.Biome;
 
+import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.fml.common.registry.IForgeRegistryEntry;
 
 
 public class Mana extends IForgeRegistryEntry.Impl<Mana>
 {
 
-    String  key;
-    boolean spawnable;
-    int     blend, color;
-    Biome   biome;
+    String      key;
+    boolean     spawnable;
+    int         blend, color;
+    Type[] biome;
 
     /**
      *
@@ -49,13 +49,14 @@ public class Mana extends IForgeRegistryEntry.Impl<Mana>
      * @param color the color of the mana
      * @param blend the blend
      */
-    public Mana(@Nonnull String key, @Nonnull boolean spawnable, @Nonnull int color, @Nonnull int blend, Biome biome)
+    public Mana(@Nonnull String key, @Nonnull boolean spawnable, @Nonnull int color, @Nonnull int blend, @Nonnull Type[] biome)
     {
         this.key        = key;
         this.spawnable  = spawnable;
         this.color      = color;
         this.blend      = blend;
         this.biome      = biome;
+
     }
 
     public String getLocalizedName()
@@ -63,12 +64,10 @@ public class Mana extends IForgeRegistryEntry.Impl<Mana>
         return I18n.translateToLocal("manatype." + key);
     }
 
-    public Biome getBiome()
+    public Type[] getBiome()
     {
         return biome;
     }
-
-
 
     public String getKey()
     {

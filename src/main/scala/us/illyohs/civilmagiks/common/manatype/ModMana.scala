@@ -26,15 +26,21 @@
 
 package us.illyohs.civilmagiks.common.manatype
 
+import javax.annotation.Nonnull
+
+import net.minecraftforge.common.BiomeDictionary._
 import net.minecraftforge.fml.common.registry.GameRegistry
 
 import us.illyohs.civilmagiks.api.init.ManaTypes
-import us.illyohs.civilmagiks.api.mana
 import us.illyohs.civilmagiks.api.mana.Mana
 import us.illyohs.civilmagiks.common.core.util.ModInfo
 
-class CivilMana(key: String, spawnable: Boolean, color: Int, blend: Int)
-  extends mana.Mana(key, spawnable, color, blend) {
+class CivilMana(@Nonnull key: String,
+                @Nonnull spawnable: Boolean,
+                @Nonnull color: Int,
+                @Nonnull blend: Int,
+                @Nonnull biome:Type*)
+  extends Mana(key, spawnable, color, blend, Array(biome)) {
   this.setRegistryName(ModInfo.MOD_ID, key)
 
 }
