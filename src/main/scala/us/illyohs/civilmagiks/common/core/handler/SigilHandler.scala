@@ -28,11 +28,11 @@ package us.illyohs.civilmagiks.common.core.handler
 
 import net.minecraft.entity.Entity
 import net.minecraft.entity.player.EntityPlayer
+import net.minecraft.util.EnumHand
 import net.minecraft.util.math.BlockPos
-
 import net.minecraftforge.common.MinecraftForge
+import net.minecraftforge.event.entity.player.PlayerInteractEvent
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
-
 import us.illyohs.civilmagiks.api.event.SigilEvent._
 
 object SigilHandler {
@@ -55,6 +55,12 @@ object SigilHandler {
   @SubscribeEvent
   def onSigilActivatedEvent(event: SigilActivateEvent): Unit = {
 
+  }
+
+  @SubscribeEvent
+  def onPlayerEvent(event: PlayerInteractEvent): Unit = {
+    val hand = event.getHand
+    if (event)
   }
 
 }

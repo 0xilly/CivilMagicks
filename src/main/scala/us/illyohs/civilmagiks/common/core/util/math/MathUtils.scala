@@ -29,6 +29,7 @@ package us.illyohs.civilmagiks.common.core.util.math
 import Math.PI
 import java.util
 
+import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
 object MathUtils {
@@ -38,21 +39,23 @@ object MathUtils {
   def degreesToRadians_F(degrees: Float): Float = degrees*(PI.toFloat/180)
   def degreesToRadians_D(degrees: Double): Double = degrees*(PI/180)
 
+
   def checkRadius(x:Int, y:Int, z:Int, radius:Int): Boolean=  (x * x) + (y * y) + (z * z) < ((radius + 0.5) * (radius + 0.5))
 
   //Fucking scala for loops
-//  def getBlocksSpere(world: World, wpos: WorldPos, radius: Int): util.HashSet[WorldPos] = {
-//    val worldHight = world.getHeight
-//
-//    val rSqrd   = (radius.toFloat+ .5F) * (radius.toFloat + .5F)
-//    val wValuse =  util.HashSet[WorldPos]
-//
-//    val bottom  = Math.max(-radius - 1, -1 * (wpos.getY - 1))
-//    val top     = Math.min(radius + 1, worldHight - wpos.getY)
-//
-//
-//
-//    wValuse
-//  }
+  def getBlocksSpere(world: World, wpos: WorldPos, radius: Int): util.HashSet[WorldPos] = {
+    val worldHight = world.getHeight
+
+    val rSqrd   = (radius.toFloat+ .5F) * (radius.toFloat + .5F)
+    val wValuse =  util.HashSet[WorldPos]
+
+    val bottom  = Math.max(-radius - 1, -1 * (wpos.getY - 1))
+    val top     = Math.min(radius + 1, worldHight - wpos.getY)
+
+
+
+    wValuse
+  }
+
 
 }
