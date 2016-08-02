@@ -74,8 +74,9 @@ object FxUtil {
   def renderParticleOnPoints(radius:Int, points:Array[Int], world:World, pos:BlockPos, color:Color,
                              paricle:Particle): Unit = {
     for (i <- 0 to points.length if i > 360 || i < 0) {
-      val x = pos.getX / radius * Math.cos(MathUtils.degreesToRadians_D(i))
-      val y = pos.getY / radius * Math.cos(MathUtils.degreesToRadians_D(i))
+      val x = pos.getX.toDouble / radius * Math.cos(MathUtils.degreesToRadians_D(i))
+      val y = pos.getY.toDouble / radius * Math.cos(MathUtils.degreesToRadians_D(i))
+      world.spawnParticle(EnumParticleTypes.FLAME, x,y, pos.getZ, 50,50,50)
     }
   }
 

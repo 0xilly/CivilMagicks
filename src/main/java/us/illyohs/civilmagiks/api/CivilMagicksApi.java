@@ -41,8 +41,8 @@ public class CivilMagicksApi
 {
 
     ////////////// CIVIL REGISTRIES///////////////////
-    public static IForgeRegistry<Sigil> SIGIL     = GameRegistry.findRegistry(Sigil.class);
-    public static IForgeRegistry<Mana>  MANA_TYPE = GameRegistry.findRegistry(Mana.class);
+    public static IForgeRegistry<Sigil> SIGIL   = GameRegistry.findRegistry(Sigil.class);
+    public static IForgeRegistry<Mana>  MANA    = GameRegistry.findRegistry(Mana.class);
 
     ////////////// CREATIVE TABS///////////////////////
     CreativeTabs CIVILMAGICKS;

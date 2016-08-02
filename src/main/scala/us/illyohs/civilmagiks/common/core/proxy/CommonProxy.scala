@@ -27,10 +27,9 @@ package us.illyohs.civilmagiks.common.core.proxy
 import java.util
 
 import net.minecraft.util.ResourceLocation
-
+import net.minecraft.world.World
 import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
 import net.minecraftforge.fml.common.registry.{EntityRegistry, FMLControlledNamespacedRegistry, IForgeRegistry, PersistentRegistryManager}
-
 import us.illyohs.civilmagiks.api.CivilMagicksApi
 import us.illyohs.civilmagiks.api.mana.Mana
 import us.illyohs.civilmagiks.api.sigil.Sigil
@@ -55,7 +54,7 @@ class CommonProxy {
   }
 
   def init(event: FMLInitializationEvent): Unit = {
-    val manType = CivilMagicksApi.MANA_TYPE
+    val manType = CivilMagicksApi.MANA
     for (i <- 0 until manType.getValues.size()) {
       LogUtils.info("Found ManaType: " + manType.getValues.get(i).getRegistryName)
     }
@@ -63,6 +62,10 @@ class CommonProxy {
 
   def postInit(event: FMLPostInitializationEvent): Unit = {
 
+  }
+
+  def particleRing(world: World, x:Int, y:Int, z:Int): Unit = {
+    /** NO-OP **/
   }
 
 }

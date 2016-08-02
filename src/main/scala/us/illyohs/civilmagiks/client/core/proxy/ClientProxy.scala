@@ -24,9 +24,9 @@
   */
 package us.illyohs.civilmagiks.client.core.proxy
 
+import net.minecraft.world.World
 import net.minecraftforge.fml.client.registry.ClientRegistry
 import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
-
 import us.illyohs.civilmagiks.client.render.tile.RenderManaSpring
 import us.illyohs.civilmagiks.common.core.proxy.CommonProxy
 import us.illyohs.civilmagiks.common.tile.TileManaSpring
@@ -39,6 +39,11 @@ class ClientProxy extends CommonProxy {
 
   override def init(event: FMLInitializationEvent): Unit = {
     super.init(event)
+
+  }
+
+  override def particleRing(world: World, x:Int, y:Int, z:Int): Unit ={
+    super.particleRing(world, x, y, z)
 
   }
 
