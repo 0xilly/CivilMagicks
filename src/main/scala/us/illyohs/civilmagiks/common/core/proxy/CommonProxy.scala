@@ -24,29 +24,40 @@
   */
 package us.illyohs.civilmagiks.common.core.proxy
 
-import java.util
-
+import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.util.ResourceLocation
 import net.minecraft.world.World
+
 import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
-import net.minecraftforge.fml.common.registry.{EntityRegistry, FMLControlledNamespacedRegistry, IForgeRegistry, PersistentRegistryManager}
+import net.minecraftforge.fml.common.registry.{FMLControlledNamespacedRegistry, RegistryBuilder}
+
 import us.illyohs.civilmagiks.api.CivilMagicksApi
 import us.illyohs.civilmagiks.api.mana.Mana
 import us.illyohs.civilmagiks.api.sigil.Sigil
 import us.illyohs.civilmagiks.common.core.util.LogUtils
-import us.illyohs.civilmagiks.common.core.util.callback.{ManaCallBack, SigilCallBack}
 import us.illyohs.civilmagiks.common.manatype.ModMana
 
 class CommonProxy {
 
 
-  final private val SIGILS: ResourceLocation = new ResourceLocation("civilmagiks:sigils")
-  final private val MANATYPES: ResourceLocation = new ResourceLocation("civilmagiks:manatypes")
-  final private var iSigilRegistry: FMLControlledNamespacedRegistry[Sigil] = null
-  final private var iManaRegistry: FMLControlledNamespacedRegistry[Mana] = null
+  final private val SIGIL: ResourceLocation = new ResourceLocation("civilmagiks:sigils")
+  final private val MANA: ResourceLocation  = new ResourceLocation("civilmagiks:mana")
 
-  this.iSigilRegistry = PersistentRegistryManager.createRegistry(SIGILS, classOf[Sigil], null, 0, 255, false, SigilCallBack.INSTANCE, SigilCallBack.INSTANCE, SigilCallBack.INSTANCE)
-  this.iManaRegistry = PersistentRegistryManager.createRegistry(MANATYPES, classOf[Mana], null, 0, 255, false, ManaCallBack.INSTANCE, ManaCallBack.INSTANCE, ManaCallBack.INSTANCE)
+  final private var iSigilRegistry: FMLControlledNamespacedRegistry[Sigil]  = null
+  final private var iManaRegistry: FMLControlledNamespacedRegistry[Mana]    = null
+
+  this.iSigilRegistry = new RegistryBuilder[Sigil]
+    .setName(SIGIL)
+    .setIDRange(0, Short.MaxValue)
+    .setType(classOf[Sigil])
+    .asInstanceOf[FMLControlledNamespacedRegistry[Sigil]]
+
+
+  this.iManaRegistry = new RegistryBuilder[Mana]
+    .setName(MANA)
+    .setIDRange(0, Short.MaxValue)
+    .setType(classOf[Mana])
+    .asInstanceOf[FMLControlledNamespacedRegistry[Mana]]
 
   def preInit(event: FMLPreInitializationEvent): Unit = {
     ModMana.init
@@ -65,6 +76,10 @@ class CommonProxy {
   }
 
   def particleRing(world: World, x:Int, y:Int, z:Int): Unit = {
+    /** NO-OP **/
+  }
+
+  def openGui(id: Int, player: EntityPlayer): Unit = {
     /** NO-OP **/
   }
 

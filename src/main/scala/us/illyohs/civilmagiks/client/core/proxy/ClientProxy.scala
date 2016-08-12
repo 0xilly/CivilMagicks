@@ -24,12 +24,14 @@
   */
 package us.illyohs.civilmagiks.client.core.proxy
 
+import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.world.World
-import net.minecraftforge.fml.client.registry.ClientRegistry
+
+import net.minecraftforge.fml.client.FMLClientHandler
 import net.minecraftforge.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
-import us.illyohs.civilmagiks.client.render.tile.RenderManaSpring
+
+import us.illyohs.civilmagiks.client.gui.ManaGui
 import us.illyohs.civilmagiks.common.core.proxy.CommonProxy
-import us.illyohs.civilmagiks.common.tile.TileManaSpring
 
 class ClientProxy extends CommonProxy {
 
@@ -42,7 +44,7 @@ class ClientProxy extends CommonProxy {
 
   }
 
-  override def particleRing(world: World, x:Int, y:Int, z:Int): Unit ={
+  override def particleRing(world: World, x:Int, y:Int, z:Int): Unit = {
     super.particleRing(world, x, y, z)
 
   }
@@ -51,5 +53,10 @@ class ClientProxy extends CommonProxy {
     super.postInit(event)
   }
 
+  override def openGui(id: Int, player: EntityPlayer): Unit = {
+    id match {
+      case 1 => FMLClientHandler.instance().displayGuiScreen(player, ManaGui)
+    }
+  }
 
 }

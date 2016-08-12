@@ -63,7 +63,7 @@ object ModMana {
     _Fire   = new CivilMana("fire", true, 0xffb732, 1, fireArray)
     _Water  = new CivilMana("water", true, 0x3030ff, 1, waterArray)
     _Wind   = new CivilMana("wind", true, 0x8c8c8c, 1, windArray)
-    _Grey   = new CivilMana("grey", true, 0x34332d, 1, Type.values)
+    _Grey   = new CivilMana("grey", true, 0x34332d, 1, Array())
 
     gameReg
   }
