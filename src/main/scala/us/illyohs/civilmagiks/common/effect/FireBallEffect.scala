@@ -13,9 +13,9 @@ class FireBallEffect
 
   override def effectPlayer(player: EntityPlayer): Unit = null
 
-  override def effectTarget(player: EntityPlayer, target: _): Unit = {
+  override def effectTarget(player: EntityPlayer, target: Object): Unit = {
     if (target.isInstanceOf[Block] || target.isInstanceOf[EntityLivingBase]) {
-      player.get
+//      player.get
     }
   }
 }

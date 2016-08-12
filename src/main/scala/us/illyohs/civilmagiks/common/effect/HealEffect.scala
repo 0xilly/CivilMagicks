@@ -16,7 +16,7 @@ class HealEffect(seconds:Int)
     player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, getTime, 4))
   }
 
-  override def effectTarget(player: EntityPlayer, target:_): Unit = {
+  override def effectTarget(player: EntityPlayer, target: Object): Unit = {
     if (target.isInstanceOf[EntityLivingBase]) {
       player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, getTime, 4))
     }

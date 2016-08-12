@@ -50,6 +50,7 @@ class CommonProxy {
     .setName(SIGIL)
     .setIDRange(0, Short.MaxValue)
     .setType(classOf[Sigil])
+    .create()
     .asInstanceOf[FMLControlledNamespacedRegistry[Sigil]]
 
 
@@ -57,6 +58,7 @@ class CommonProxy {
     .setName(MANA)
     .setIDRange(0, Short.MaxValue)
     .setType(classOf[Mana])
+    .create()
     .asInstanceOf[FMLControlledNamespacedRegistry[Mana]]
 
   def preInit(event: FMLPreInitializationEvent): Unit = {
