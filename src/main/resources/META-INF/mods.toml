@@ -1,0 +1,16 @@
+modLoader="scorge" #mandatory
+loaderVersion="[1,)"
+issueTrackerURL="https://github.com/illyohs/CivilMagicks/issues"
+# A list of mods - how many allowed here is determined by the individual mod loader
+[[mods]] #mandatory
+    modId="civilmagicks"
+    version="0.0.1"
+    entryObject="info.mdhs.mods.civilmagicks.common.CivilMagicks"
+
+displayName="Civil Magicks" #mandatory
+logoFile="examplemod.png" #optional
+credits="illy" #optional
+authors="Anthony Anderson(Illyohs)" #optional
+description='''
+Only for the most civilized of sorcerers
+'''
