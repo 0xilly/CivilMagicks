@@ -26,6 +26,7 @@ class EffectRegistry extends IEffectRegistry {
     effectRegistry.forEach(ef => 
     {
       if (ef.getKey == effect.getKey) {
+        effectRegistry.add(effect)
          //TODO nag or hard crash on conflicting effects also how would you do that these are resource locations!?!!?!?
       } else {
         effectRegistry.add(effect)

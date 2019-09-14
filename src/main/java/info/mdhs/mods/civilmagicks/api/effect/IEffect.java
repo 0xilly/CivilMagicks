@@ -17,5 +17,10 @@ import javax.annotation.Nullable;
 public interface IEffect
 {
     ResourceLocation getKey();
+
+    String getDescription();
+
+    boolean isBottleAble();
+
     ActionResultType execute(@Nonnull Entity caster, @Nullable Entity target);
 }

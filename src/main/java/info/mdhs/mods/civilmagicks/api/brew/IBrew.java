@@ -7,8 +7,12 @@ import net.minecraft.item.ItemStack;
 public interface IBrew
 {
     String getName();
+
     ItemStack getCatalyst();
+
     ItemStack[] getInputs();
+
     ManaType[] getManaTypes();
+
     IEffect effect();
 }

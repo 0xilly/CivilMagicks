@@ -8,7 +8,6 @@
 package info.mdhs.mods.civilmagicks.client
 
 import net.minecraftforge.event.RegistryEvent
-import net.minecraftforge.fml.client.registry.ClientRegistry
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 
 import net.minecraft.block.Block
@@ -16,11 +15,11 @@ import net.minecraft.item.Item
 import net.minecraft.tileentity.TileEntityType
 
 import info.mdhs.mods.civilmagicks.api.mana.ManaType
-import info.mdhs.mods.civilmagicks.client.render.tile.RenderManaSpring
-import info.mdhs.mods.civilmagicks.common.block.TileManaSpring
 import info.mdhs.mods.civilmagicks.common.util.CProxy
 
 class ClientProxy extends CProxy {
+
+//  ScorgeModLoadingContext.get.getModEventBus.addListener(clientSetup)
 
   override def registerBlocks(event: RegistryEvent.Register[Block]): Unit = super.registerBlocks(event)
 
@@ -32,6 +31,6 @@ class ClientProxy extends CProxy {
 
   override def clientSetup(event: FMLClientSetupEvent): Unit = {
     super.clientSetup(event)
-    ClientRegistry.bindTileEntitySpecialRenderer(classOf[TileManaSpring], new RenderManaSpring)
+
   }
 }

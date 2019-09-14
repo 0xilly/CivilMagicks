@@ -11,7 +11,7 @@ import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.event.RegistryEvent
 import net.minecraftforge.eventbus.api.IEventBus
 import net.minecraftforge.fml.DistExecutor
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent
 import net.minecraftforge.scorge.lang.ScorgeModLoadingContext
 
 import net.minecraft.block.Block
@@ -22,6 +22,7 @@ import info.mdhs.mods.civilmagicks.api.ICivilMagicksAPI
 import info.mdhs.mods.civilmagicks.api.mana.ManaType
 import info.mdhs.mods.civilmagicks.client.ClientProxy
 import info.mdhs.mods.civilmagicks.common.apiimpl.API
+import info.mdhs.mods.civilmagicks.common.effect.EffectsHelper
 import info.mdhs.mods.civilmagicks.common.util.CProxy
 import info.mdhs.mods.civilmagicks.server.ServerProxy
 
@@ -44,13 +45,17 @@ class CivilMagicks {
   modBus.addGenericListener(classOf[Item], this.registerItem)
   modBus.addGenericListener(classOf[TileEntityType[_]], this.registerTileType)
   modBus.addGenericListener(classOf[ManaType], this.registerManaType)
-  modBus.addListener(clientSetup)
+  modBus.addListener(this.fmlLoadCompleted)
+//  modBus.addListener(clientSetup)
 
   private def registerBlocks(event: RegistryEvent.Register[Block]): Unit               = proxy.registerBlocks(event)
   private def registerTileType(event: RegistryEvent.Register[TileEntityType[_]]): Unit = proxy.registerTileType(event)
   private def registerItem(event: RegistryEvent.Register[Item]): Unit                  = proxy.registerItem(event)
   private def registerManaType(event: RegistryEvent.Register[ManaType]): Unit          = proxy.registerManaType(event)
-  private def clientSetup(event: FMLClientSetupEvent): Unit                            = proxy.clientSetup(event)
+  private def fmlLoadCompleted(event: FMLLoadCompleteEvent): Unit = {
+
+    EffectsHelper.init
+  }
 
   def getAPI: ICivilMagicksAPI = this.api
 }

@@ -27,5 +27,5 @@ class ServerProxy extends CProxy {
 
   override def registerTileType(event: RegistryEvent.Register[TileEntityType[_]]): Unit = super.registerTileType(event)
 
-  override def clientSetup(event: FMLClientSetupEvent): Unit = { "/* NO-OP*/" }
+  override def clientSetup(event: FMLClientSetupEvent): Unit = { /* NO-OP*/ }
 }

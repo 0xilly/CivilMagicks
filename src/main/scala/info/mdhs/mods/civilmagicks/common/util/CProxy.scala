@@ -19,7 +19,7 @@ trait CProxy {
     .setName(new ResourceLocation("civilmagicks:mana"))
     .setIDRange(0, Short.MaxValue)
     .setType(classOf[ManaType])
-    .create()
+    .create
 
   def registerBlocks(event: RegistryEvent.Register[Block]): Unit = {
     val ctx = event.getRegistry

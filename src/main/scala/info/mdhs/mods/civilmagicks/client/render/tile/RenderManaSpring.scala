@@ -1,5 +1,7 @@
 package info.mdhs.mods.civilmagicks.client.render.tile
 
+import net.minecraftforge.api.distmarker.{Dist, OnlyIn}
+
 import net.minecraft.client.renderer.Tessellator
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats
@@ -11,15 +13,16 @@ import org.apache.logging.log4j.LogManager
 import org.lwjgl.opengl.GL11
 import java.awt.Color
 
+@OnlyIn(Dist.CLIENT)
 class RenderManaSpring extends TileEntityRenderer[TileManaSpring] {
 
-  private val LOGGGER = LogManager.getLogger("CivilMagicks")
+  private val LOGGER  = LogManager.getLogger("CivilMagicks")
   private val TEXTURE = new ResourceLocation("civilmagicks:textures/fx/manasigil.png")
 
   override def render(te: TileManaSpring, x: Double, y: Double, z: Double, tick: Float, destroyStage: Int): Unit = {
     super.render(te, x, y, z, tick, destroyStage)
 
-    LOGGGER.info("BEEEES")
+    LOGGER.info("BEEEES")
 
     val _color = new Color(0xff3030)
     val tes    = Tessellator.getInstance

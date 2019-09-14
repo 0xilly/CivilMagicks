@@ -13,6 +13,10 @@ import info.mdhs.mods.civilmagicks.api.effect.IEffectRegistry
 import info.mdhs.mods.civilmagicks.common.apiimpl.brew.BrewRegistry
 import info.mdhs.mods.civilmagicks.common.apiimpl.effect.EffectRegistry
 
+private[civilmagicks] object API {
+  def INSTANCE = new API
+}
+
 class API extends ICivilMagicksAPI {
 
   private val effectRegistry = new EffectRegistry
