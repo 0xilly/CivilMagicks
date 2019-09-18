@@ -110,3 +110,20 @@ jar {
     }
 }
 
+task sourcesJar(type: Jar){
+    group = 'build'
+    description = 'Assembles a jar archive containing the sources'
+    from sourceSets.main.java
+    from sourceSets.main.scala
+    classifier = 'sources'
+}
+
+publishing {
+    publications {
+        CivilMagicks(MavenPublication){
+            from components.java
+            artifact sourcesJar
+            //artifact apiJar
+        }
+    }
+}
