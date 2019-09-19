@@ -19,19 +19,55 @@ apply plugin: 'scala'
 
 
 version = '0.0.1'
-group = 'info.mdhs.mods.civilmagicks' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = 'info.mdhs.mods.civilmagicks'
 archivesBaseName = 'civilmagicks'
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+//set up source sets
+sourceSets {
+    api
+    generated
+}
+
+//Sorce set configureation
+configurations {
+    //API
+    apiImplementation.extendsFrom minecraft
+
+    //GENERATED
+    generatedImplementation.extendsFrom apiImplementation
+    generatedCompileOnly.extendsFrom apiCompileOnly
+    generatedCompileClasspath.extendsFrom apiCompileClasspath
+    generatedAnnotationProcessor.extendsFrom apiAnnotationProcessor
+    generatedRuntimeOnly.extendsFrom apiRuntimeOnly
+    generatedRuntimeClasspath.extendsFrom apiRuntimeClasspath
+
+    //MAIN
+    implementation.extendsFrom generatedImplementation
+    compileOnly.extendsFrom generatedCompileOnly
+    compileClasspath.extendsFrom generatedCompileClasspath
+    annotationProcessor.extendsFrom generatedAnnotationProcessor
+    runtimeOnly.extendsFrom generatedRuntimeOnly
+    runtimeClasspath.extendsFrom generatedRuntimeClasspath
+
+    //TEST
+    testImplementation.extendsFrom implementation
+    testCompileOnly.extendsFrom compileOnly
+    testCompileClasspath.extendsFrom compileClasspath
+    testAnnotationProcessor.extendsFrom annotationProcessor
+    testRuntimeOnly.extendsFrom runtimeOnly
+    testRuntimeClasspath.extendsFrom compileClasspath
+}
+
+dependencies {
+    generatedImplementation sourceSets.api.output
+    implementation sourceSets.generated.output
+    testImplementation sourceSets.main.output
+}
 
 minecraft {
     mappings channel: 'snapshot', version: '20190719-1.14.3'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
             workingDirectory project.file('run')
@@ -92,19 +128,36 @@ dependencies {
     implementation "org.scala-lang:scala-library:${scala_lib}"
     implementation "org.scala-lang.modules:scala-java8-compat_${java8_compact}"
 
-
 }
 
-// Example for how to get properties into the manifest for reading by the runtime..
+task apiJar(type: Jar) {
+    group 'build'
+    description jar.description.replace("main", "api")
+    classifier 'api'
+    from sourceSets.api.output
+}
+
+task sourcesJar(type: Jar){
+    group 'build'
+    description 'Assembles a jar archive containing the source files'
+    from sourceSets.api.allJava
+    from sourceSets.main.allJava
+    classifier 'sources'
+}
+
+artifacts {
+    archives apiJar
+    archives sourcesJar
+}
 jar {
     manifest {
         attributes([
-            "Specification-Title": "examplemod",
-            "Specification-Vendor": "examplemodsareus",
-            "Specification-Version": "1", // We are version 1 of ourselves
+            "Specification-Title": "civilmagicks",
+            "Specification-Vendor": "civilmagicks",
+            "Specification-Version": "1",
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
+            "Implementation-Vendor" :"civilmagicks",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
