@@ -25,18 +25,14 @@ import info.mdhs.mods.civilmagicks.common.apiimpl.API
 import info.mdhs.mods.civilmagicks.common.effect.EffectsHelper
 import info.mdhs.mods.civilmagicks.common.util.CProxy
 import info.mdhs.mods.civilmagicks.server.ServerProxy
-
-object CivilMagicks {
-  private val instance = new CivilMagicks
-
-  def INSTANCE: CivilMagicks = this.instance
-}
+import org.apache.logging.log4j.{LogManager, Logger}
 
 class CivilMagicks {
 
   private val modBus: IEventBus     = ScorgeModLoadingContext.get.getModEventBus
   val forgeBus: IEventBus           = MinecraftForge.EVENT_BUS
-  private val api: ICivilMagicksAPI = new API
+  private var api: ICivilMagicksAPI = _
+  val logger: Logger                = LogManager.getLogger("CivilMagicks")
 
   private val proxy: CProxy =
     DistExecutor.runForDist(() => () => (new ClientProxy: CProxy), () => () => (new ServerProxy: CProxy))
@@ -53,9 +49,9 @@ class CivilMagicks {
   private def registerItem(event: RegistryEvent.Register[Item]): Unit                  = proxy.registerItem(event)
   private def registerManaType(event: RegistryEvent.Register[ManaType]): Unit          = proxy.registerManaType(event)
   private def fmlLoadCompleted(event: FMLLoadCompleteEvent): Unit = {
-
-    EffectsHelper.init
+    api = new API
+    new EffectsHelper
+    logger.info("Blarg")
+    API.INSTANCE.getEffectsRegistry.getEffects.forEach(i => logger.info("Found effect " + i.getKey))
   }
-
-  def getAPI: ICivilMagicksAPI = this.api
 }

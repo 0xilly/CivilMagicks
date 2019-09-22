@@ -24,48 +24,6 @@ archivesBaseName = 'civilmagicks'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
-//set up source sets
-sourceSets {
-    api
-    generated
-}
-
-//Sorce set configureation
-configurations {
-    //API
-    apiImplementation.extendsFrom minecraft
-
-    //GENERATED
-    generatedImplementation.extendsFrom apiImplementation
-    generatedCompileOnly.extendsFrom apiCompileOnly
-    generatedCompileClasspath.extendsFrom apiCompileClasspath
-    generatedAnnotationProcessor.extendsFrom apiAnnotationProcessor
-    generatedRuntimeOnly.extendsFrom apiRuntimeOnly
-    generatedRuntimeClasspath.extendsFrom apiRuntimeClasspath
-
-    //MAIN
-    implementation.extendsFrom generatedImplementation
-    compileOnly.extendsFrom generatedCompileOnly
-    compileClasspath.extendsFrom generatedCompileClasspath
-    annotationProcessor.extendsFrom generatedAnnotationProcessor
-    runtimeOnly.extendsFrom generatedRuntimeOnly
-    runtimeClasspath.extendsFrom generatedRuntimeClasspath
-
-    //TEST
-    testImplementation.extendsFrom implementation
-    testCompileOnly.extendsFrom compileOnly
-    testCompileClasspath.extendsFrom compileClasspath
-    testAnnotationProcessor.extendsFrom annotationProcessor
-    testRuntimeOnly.extendsFrom runtimeOnly
-    testRuntimeClasspath.extendsFrom compileClasspath
-}
-
-dependencies {
-    generatedImplementation sourceSets.api.output
-    implementation sourceSets.generated.output
-    testImplementation sourceSets.main.output
-}
-
 minecraft {
     mappings channel: 'snapshot', version: '20190719-1.14.3'
     runs {
@@ -130,25 +88,6 @@ dependencies {
 
 }
 
-task apiJar(type: Jar) {
-    group 'build'
-    description jar.description.replace("main", "api")
-    classifier 'api'
-    from sourceSets.api.output
-}
-
-task sourcesJar(type: Jar){
-    group 'build'
-    description 'Assembles a jar archive containing the source files'
-    from sourceSets.api.allJava
-    from sourceSets.main.allJava
-    classifier 'sources'
-}
-
-artifacts {
-    archives apiJar
-    archives sourcesJar
-}
 jar {
     manifest {
         attributes([

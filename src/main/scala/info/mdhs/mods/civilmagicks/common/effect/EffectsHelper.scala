@@ -1,14 +1,12 @@
 package info.mdhs.mods.civilmagicks.common.effect
 
 import info.mdhs.mods.civilmagicks.api.effect.IEffect
-import info.mdhs.mods.civilmagicks.common.CivilMagicks
+import info.mdhs.mods.civilmagicks.common.apiimpl.API
 
-object EffectsHelper {
+class EffectsHelper {
 
-  def init: Unit = {
-    regEffect(new EffectLightning)
-    regEffect(new SpeedEffect)
-  }
+  regEffect(new EffectLightning())
+  regEffect(new SpeedEffect())
 
-  private def regEffect(effect: IEffect) = CivilMagicks.INSTANCE.getAPI.getEffectsRegistry.registerEffect(effect)
+  private def regEffect(effect: IEffect) = API.INSTANCE.getEffectsRegistry.getEffects.add(effect)
 }

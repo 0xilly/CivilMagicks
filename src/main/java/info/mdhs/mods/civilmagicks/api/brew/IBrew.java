@@ -3,10 +3,11 @@ package info.mdhs.mods.civilmagicks.api.brew;
 import info.mdhs.mods.civilmagicks.api.effect.IEffect;
 import info.mdhs.mods.civilmagicks.api.mana.ManaType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 
 public interface IBrew
 {
-    String getName();
+    ResourceLocation getKey();
 
     ItemStack getCatalyst();
 

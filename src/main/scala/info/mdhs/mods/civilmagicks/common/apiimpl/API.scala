@@ -13,14 +13,22 @@ import info.mdhs.mods.civilmagicks.api.effect.IEffectRegistry
 import info.mdhs.mods.civilmagicks.common.apiimpl.brew.BrewRegistry
 import info.mdhs.mods.civilmagicks.common.apiimpl.effect.EffectRegistry
 
-private[civilmagicks] object API {
-  def INSTANCE = new API
+object API {
+
+  private var instance: API = null
+
+  def INSTANCE: API = {
+    if (instance == null) {
+      instance = new API()
+    }
+    instance
+  }
 }
 
 class API extends ICivilMagicksAPI {
 
-  private val effectRegistry = new EffectRegistry
-  private val brewRegistry   = new BrewRegistry
+  private val effectRegistry: IEffectRegistry = new EffectRegistry
+  private val brewRegistry: IBrewRegistry     = new BrewRegistry
 
   override def getBrewRegistry: IBrewRegistry = this.brewRegistry
 

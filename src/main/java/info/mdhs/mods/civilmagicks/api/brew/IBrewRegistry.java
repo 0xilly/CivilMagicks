@@ -5,18 +5,16 @@
  *  file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-package info.mdhs.mods.civilmagicks.api.effect;
+package info.mdhs.mods.civilmagicks.api.brew;
 
 import net.minecraft.util.ResourceLocation;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface IEffectRegistry
+public interface IBrewRegistry
 {
-    List<IEffect> getEffects();
+    List<IBrew> getBrews();
 
-    void registerEffect(IEffect effect);
-
-    Optional<IEffect> getEffectByKey(ResourceLocation key);
+    Optional<IBrew> getBrewByKey(ResourceLocation resource);
 }
