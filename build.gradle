@@ -14,8 +14,9 @@ plugins {
 }
 
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'maven-publish'
 apply plugin: 'scala'
+apply from: 'https://raw.githubusercontent.com/DaemonUmbra/Gradle-Scripts/master/forge-1.14-sourcesets-slim.gradle'
+apply plugin: 'maven-publish'
 
 
 version = '0.0.1'
@@ -82,10 +83,9 @@ minecraft {
 dependencies {
 
     minecraft "net.minecraftforge:forge:1.14.4-28.1.0"
-    implementation 'net.minecraftforge:Scorge:1.0.4'
-    implementation "org.scala-lang:scala-library:${scala_lib}"
-    implementation "org.scala-lang.modules:scala-java8-compat_${java8_compact}"
-
+    apiImplementation 'net.minecraftforge:Scorge:1.0.4'
+    apiImplementation "org.scala-lang:scala-library:${scala_lib}"
+    apiImplementation "org.scala-lang.modules:scala-java8-compat_${java8_compat}"
 }
 
 jar {
