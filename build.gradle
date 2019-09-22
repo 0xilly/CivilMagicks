@@ -38,8 +38,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                civilmagicks {
+                    ideaModule "${project.name}.main"
                     source sourceSets.main
+                    source sourceSets.api
                 }
             }
         }
@@ -54,8 +56,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                civilmagicks {
+                    ideaModule "${project.name}.main"
                     source sourceSets.main
+                    source sourceSets.api
                 }
             }
         }
@@ -69,11 +73,13 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/')
+            args '--mod', 'civilmagicks', '--all', '--output', file('src/generated/resources/')
 
             mods {
-                examplemod {
+                civilmagicks {
+                    ideaModule "${project.name}.main"
                     source sourceSets.main
+                    source sourceSets.api
                 }
             }
         }
