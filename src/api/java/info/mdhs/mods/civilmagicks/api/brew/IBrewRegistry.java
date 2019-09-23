@@ -16,5 +16,7 @@ public interface IBrewRegistry
 {
     List<IBrew> getBrews();
 
-    Optional<IBrew> getBrewByKey(ResourceLocation resource);
+    void registerBrew(IBrew brew);
+
+    Optional<IBrew> getBrewByKey(ResourceLocation key);
 }

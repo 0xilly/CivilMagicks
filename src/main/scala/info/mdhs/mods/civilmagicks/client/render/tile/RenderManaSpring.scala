@@ -1,17 +1,15 @@
 package info.mdhs.mods.civilmagicks.client.render.tile
 
-import net.minecraftforge.api.distmarker.{Dist, OnlyIn}
-
+import com.mojang.blaze3d.platform.GlStateManager
+import info.mdhs.mods.civilmagicks.common.block.TileManaSpring
+import java.awt.Color
 import net.minecraft.client.renderer.Tessellator
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats
 import net.minecraft.util.ResourceLocation
-
-import com.mojang.blaze3d.platform.GlStateManager
-import info.mdhs.mods.civilmagicks.common.block.TileManaSpring
+import net.minecraftforge.api.distmarker.{Dist, OnlyIn}
 import org.apache.logging.log4j.LogManager
 import org.lwjgl.opengl.GL11
-import java.awt.Color
 
 @OnlyIn(Dist.CLIENT)
 class RenderManaSpring extends TileEntityRenderer[TileManaSpring] {

@@ -7,20 +7,19 @@
 
 package info.mdhs.mods.civilmagicks.common.block
 
+import info.mdhs.mods.civilmagicks.api.mana.ManaType
+import info.mdhs.mods.civilmagicks.common.tileentity.ModTileTypes
+import info.mdhs.mods.civilmagicks.common.util.BiomeManaLocator
 import net.minecraft.block.Block.Properties
-import net.minecraft.block.{Block, BlockRenderType, BlockState}
 import net.minecraft.block.material.Material
+import net.minecraft.block.{Block, BlockRenderType, BlockState}
 import net.minecraft.tileentity.{ITickableTileEntity, TileEntity}
 import net.minecraft.util.BlockRenderLayer
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.shapes.{ISelectionContext, VoxelShape}
 import net.minecraft.world.IBlockReader
 
-import info.mdhs.mods.civilmagicks.api.mana.ManaType
-import info.mdhs.mods.civilmagicks.common.util.{BiomeManaLocator, ModTileTypes}
-
-class BlockManaSpring()
-    extends BaseBlock("manaspring", Properties.create(Material.ROCK).tickRandomly.hardnessAndResistance(1)) {
+class BlockManaSpring(properties:Properties) extends Block(properties) {
 
   override def getShape(state: BlockState, world: IBlockReader, pos: BlockPos, context: ISelectionContext): VoxelShape =
     Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D)

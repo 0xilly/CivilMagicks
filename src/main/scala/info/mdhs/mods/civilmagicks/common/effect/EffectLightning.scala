@@ -9,7 +9,7 @@ package info.mdhs.mods.civilmagicks.common.effect
 import net.minecraft.entity.Entity
 import net.minecraft.util.{ActionResultType, DamageSource}
 
-class EffectLightning extends BaseEffect("lightning", "summons lightning", false) {
+class EffectLightning extends Effect("lightning", "summons lightning", false) {
   override def execute(caster: Entity, target: Entity): ActionResultType = {
     val world     = target.getEntityWorld
     val targetPos = target.getPosition

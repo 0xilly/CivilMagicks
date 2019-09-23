@@ -7,13 +7,14 @@
 
 package info.mdhs.mods.civilmagicks.common.block
 
+import info.mdhs.mods.civilmagicks.common.tileentity.ModTileTypes
+import net.minecraft.block.Block
 import net.minecraft.block.Block.Properties
-import net.minecraft.block.material.Material
 import net.minecraft.tileentity.{ITickableTileEntity, TileEntity}
 
-import info.mdhs.mods.civilmagicks.common.util.ModTileTypes
+class FireBox(properties:Properties) extends Block(properties) {
 
-class FireBox extends BaseBlock("firebox", Properties.create(Material.ROCK).harvestLevel(3).noDrops()) {}
+}
 
 class TileFireBox extends TileEntity(ModTileTypes.FIRE_BOX) with ITickableTileEntity {
   override def tick(): Unit = {}

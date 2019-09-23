@@ -7,33 +7,32 @@
 
 package info.mdhs.mods.civilmagicks.common.apiimpl.effect
 
-import net.minecraft.util.ResourceLocation
-
+import com.google.common.collect.ImmutableList
 import info.mdhs.mods.civilmagicks.api.effect.{IEffect, IEffectRegistry}
 import java.util
 import java.util.Optional
+import net.minecraft.util.ResourceLocation
 
 class EffectRegistry extends IEffectRegistry {
 
   private val effectRegistry: util.List[IEffect] = new util.ArrayList[IEffect]()
 
   // format: off
-  override def getEffects: util.List[IEffect] = this.effectRegistry
+  override def getEffects: util.List[IEffect] = ImmutableList.copyOf(this.effectRegistry);
 
+  override def registerEffect(effect: IEffect): Unit = {
+    effectRegistry.forEach(ef => {
+      if (ef.getKey == effect.getKey) {
+         //TODO nag or hard crash on conflicting effects also how would you do that these are resource locations!?!!?!?
+      } else {
+        effectRegistry.add(effect)
+      }
+    })
+  }
   
   override def getEffectByKey(key: ResourceLocation): Optional[IEffect] = {
-    
-    effectRegistry.forEach(effect => {if (effect.getKey.equals(key)) return Optional.of(effect)})
-    
+    effectRegistry.forEach(effect => { if (effect.getKey == key) return Optional.of(effect) })
     Optional.empty()
-  }
-  
-  def registerEffect(effect: IEffect): Unit = {
-    this.effectRegistry.add(effect)
-  }
-  
-  def sanitizeEffects(): Unit  = {
-    
   }
   // format: on
 }

@@ -1,5 +1,6 @@
 package info.mdhs.mods.civilmagicks.common.item
 
 import net.minecraft.item.Item
+import net.minecraft.item.Item.Properties
 
-class BrewItem extends BaseItem("brew", new Item.Properties().maxStackSize(1)) {}
+class BrewItem(properties:Properties) extends Item(properties) {}

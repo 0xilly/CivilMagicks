@@ -7,11 +7,9 @@
 
 package info.mdhs.mods.civilmagicks.common.mana
 
-import net.minecraftforge.common.BiomeDictionary.Type
-
-import net.minecraft.util.ResourceLocation
-
 import info.mdhs.mods.civilmagicks.api.mana.ManaType
+import net.minecraft.util.ResourceLocation
+import net.minecraftforge.common.BiomeDictionary.Type
 
 class BaseMana(name: String, color: Int, biomes: Array[Type]) extends ManaType(name, color, biomes) {
   this.setRegistryName(new ResourceLocation("civilmagicks:" + name.toLowerCase))

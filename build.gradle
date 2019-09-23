@@ -42,6 +42,7 @@ minecraft {
                     ideaModule "${project.name}.main"
                     source sourceSets.main
                     source sourceSets.api
+                    source sourceSets.generated
                 }
             }
         }
@@ -60,6 +61,7 @@ minecraft {
                     ideaModule "${project.name}.main"
                     source sourceSets.main
                     source sourceSets.api
+                    source sourceSets.generated
                 }
             }
         }
@@ -80,14 +82,60 @@ minecraft {
                     ideaModule "${project.name}.main"
                     source sourceSets.main
                     source sourceSets.api
+                    source sourceSets.generated
+                }
+            }
+        }
+
+        testClient {
+            parent runs.client
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                civilmagicks {
+                    ideaModule "${project.name}.test"
+                    source sourceSets.main
+                    source sourceSets.api
+                    source sourceSets.generated
+                    source sourceSets.test
+                }
+            }
+        }
+
+        testServer {
+            parent runs.server
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                civilmagicks {
+                    ideaModule "${project.name}.test"
+                    source sourceSets.main
+                    source sourceSets.api
+                    source sourceSets.generated
+                    source sourceSets.test
                 }
             }
         }
     }
 }
 
-dependencies {
+repositories {
+    mavenLocal()
+}
 
+dependencies {
     minecraft "net.minecraftforge:forge:1.14.4-28.1.0"
     apiImplementation 'net.minecraftforge:Scorge:1.0.4'
     apiImplementation "org.scala-lang:scala-library:${scala_lib}"
@@ -97,14 +145,13 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "civilmagicks",
-            "Specification-Vendor": "civilmagicks",
-            "Specification-Version": "1",
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"civilmagicks",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Specification-Title"     : "civilmagicks",
+                "Specification-Vendor"    : "civilmagicks",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : "${version}",
+                "Implementation-Vendor"   : "civilmagicks",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
 }
-

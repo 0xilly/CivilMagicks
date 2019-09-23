@@ -7,11 +7,10 @@
 
 package info.mdhs.mods.civilmagicks.common.effect
 
+import info.mdhs.mods.civilmagicks.api.effect.IEffect
 import net.minecraft.util.ResourceLocation
 
-import info.mdhs.mods.civilmagicks.api.effect.IEffect
-
-abstract class BaseEffect(key: String, description: String, isBottleAble: Boolean) extends IEffect {
+abstract class Effect(key: String, description: String, isBottleAble: Boolean) extends IEffect {
   override def getKey: ResourceLocation = new ResourceLocation("civilmagicks:effect_" + this.key)
 
   override def isBottleAble: Boolean = this.isBottleAble
