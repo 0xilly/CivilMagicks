@@ -9,5 +9,5 @@ object ModItems {
   private final val ITEM_REGISTRY :IForgeRegistry[Item] = RegistryManager.ACTIVE.getRegistry(classOf[Item])
   // format: on
   final val MANA_SPRING = ITEM_REGISTRY.getValue(new ResourceLocation("civilmagicks", "manaspring"))
-  final val FIRE_BOX = ITEM_REGISTRY.getValue(new ResourceLocation("civilmagicks", "firebox"))
+  final val FIRE_BOX    = ITEM_REGISTRY.getValue(new ResourceLocation("civilmagicks", "firebox"))
 }

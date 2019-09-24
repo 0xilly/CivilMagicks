@@ -12,9 +12,7 @@ import net.minecraft.block.Block
 import net.minecraft.block.Block.Properties
 import net.minecraft.tileentity.{ITickableTileEntity, TileEntity}
 
-class FireBox(properties:Properties) extends Block(properties) {
-
-}
+class FireBox(properties: Properties) extends Block(properties) {}
 
 class TileFireBox extends TileEntity(ModTileTypes.FIRE_BOX) with ITickableTileEntity {
   override def tick(): Unit = {}

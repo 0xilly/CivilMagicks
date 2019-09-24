@@ -19,7 +19,7 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.shapes.{ISelectionContext, VoxelShape}
 import net.minecraft.world.IBlockReader
 
-class BlockManaSpring(properties:Properties) extends Block(properties) {
+class BlockManaSpring(properties: Properties) extends Block(properties) {
 
   override def getShape(state: BlockState, world: IBlockReader, pos: BlockPos, context: ISelectionContext): VoxelShape =
     Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D)

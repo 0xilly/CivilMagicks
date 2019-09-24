@@ -19,9 +19,9 @@ object BiomeManaLocator {
   }
 
   def getManaTypes(biome: Biome): util.Set[ManaType] = {
-    val biomeTypes: util.Set[Type]  = BiomeDictionary.getTypes(biome)
+    val biomeTypes: util.Set[Type]          = BiomeDictionary.getTypes(biome)
     val manaTypes: IForgeRegistry[ManaType] = RegistryManager.ACTIVE.getRegistry(classOf[ManaType])
-    val manaSet: util.Set[ManaType] = new util.HashSet[ManaType]()
+    val manaSet: util.Set[ManaType]         = new util.HashSet[ManaType]()
 
     biomeTypes.forEach(bType =>
       manaTypes.forEach(mType =>

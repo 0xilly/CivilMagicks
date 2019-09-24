@@ -14,6 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+//TODO: Create a builder for effect registration
 public interface IEffect
 {
     ResourceLocation getKey();

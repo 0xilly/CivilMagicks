@@ -10,5 +10,5 @@ object EffectsHelper {
     regEffect(new SpeedEffect)
   }
 
-  private def regEffect(effect: IEffect) = CivilMagicks.INSTANCE.getAPI.getEffectsRegistry.registerEffect(effect)
+  private def regEffect(effect: IEffect) = CivilMagicks.INSTANCE.getAPI.getEffectsRegistry.getEffects.add(effect)
 }

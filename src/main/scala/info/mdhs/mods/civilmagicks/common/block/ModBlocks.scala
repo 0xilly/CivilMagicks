@@ -15,6 +15,6 @@ object ModBlocks {
   // format: off
   private final val BLOCK_REGISTRY: IForgeRegistry[Block] = RegistryManager.ACTIVE.getRegistry(classOf[Block])
   // format: on
-  final val FIRE_BOX = BLOCK_REGISTRY.getValue(new ResourceLocation("civilmagicks", "firebox"))
+  final val FIRE_BOX    = BLOCK_REGISTRY.getValue(new ResourceLocation("civilmagicks", "firebox"))
   final val MANA_SPRING = BLOCK_REGISTRY.getValue(new ResourceLocation("civilmagicks", "manaspring"))
 }

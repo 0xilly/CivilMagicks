@@ -16,7 +16,5 @@ public interface IEffectRegistry
 {
     List<IEffect> getEffects();
 
-    void registerEffect(IEffect effect);
-
     Optional<IEffect> getEffectByKey(ResourceLocation key);
 }

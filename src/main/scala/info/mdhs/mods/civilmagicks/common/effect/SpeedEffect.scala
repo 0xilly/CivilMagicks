@@ -7,13 +7,13 @@ class SpeedEffect extends Effect("speed", "Gota go fast", true) {
 
   override def execute(caster: Entity, target: Entity): ActionResultType = {
 
-    if (target.isInstanceOf[LivingEntity]) {
+    target match {
+      case entity: LivingEntity =>
+        Effects.SPEED.performEffect(entity, 3);
 
-      Effects.SPEED.performEffect(target.asInstanceOf[LivingEntity], 3);
-
-      ActionResultType.SUCCESS
-    } else {
-      ActionResultType.FAIL
+        ActionResultType.SUCCESS
+      case _ =>
+        ActionResultType.FAIL
     }
 
   }

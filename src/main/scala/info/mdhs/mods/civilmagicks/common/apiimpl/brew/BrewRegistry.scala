@@ -7,32 +7,20 @@
 
 package info.mdhs.mods.civilmagicks.common.apiimpl.brew
 
-import com.google.common.collect.ImmutableList
+import net.minecraft.util.ResourceLocation
+
 import info.mdhs.mods.civilmagicks.api.brew.{IBrew, IBrewRegistry}
 import java.util
 import java.util.Optional
-import net.minecraft.util.ResourceLocation
 
 class BrewRegistry extends IBrewRegistry {
 
   private val brewRegistry: util.List[IBrew] = new util.ArrayList[IBrew]()
 
-  // format: off
-  override def getBrews: util.List[IBrew] = ImmutableList.copyOf(this.brewRegistry)
-
-  override def registerBrew(brew: IBrew): Unit = {
-    brewRegistry.forEach(brew => {
-      if (brew.getKey == brew.getKey) {
-        //TODO really annoying nag
-      } else {
-        brewRegistry.add(brew)
-      }
-    })
-  }
+  override def getBrews: util.List[IBrew] = this.brewRegistry
 
   override def getBrewByKey(key: ResourceLocation): Optional[IBrew] = {
-    brewRegistry.forEach(brew => if(brew.getKey == key) return Optional.of(brew))
+    brewRegistry.forEach(brew => if (brew.getKey.equals(key)) return Optional.of(brew))
     Optional.empty()
   }
-  // format: on
 }

@@ -5,6 +5,7 @@ import net.minecraftforge.registries.{IForgeRegistry, RegistryManager}
 
 object ModEntityTypes {
   // format : off
-  private final val ENTITY_REGISTRY: IForgeRegistry[EntityType[_]] = RegistryManager.ACTIVE.getRegistry(classOf[EntityType[_]])
+  private final val ENTITY_REGISTRY: IForgeRegistry[EntityType[_]] =
+    RegistryManager.ACTIVE.getRegistry(classOf[EntityType[_]])
   // format: on
 }
