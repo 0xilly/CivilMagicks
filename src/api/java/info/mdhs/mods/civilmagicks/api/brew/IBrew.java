@@ -15,5 +15,7 @@ public interface IBrew
 
     ManaType[] getManaTypes();
 
+    int getColor();
+
     IEffect effect();
 }

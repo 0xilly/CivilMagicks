@@ -22,9 +22,9 @@ import info.mdhs.mods.civilmagicks.api.ICivilMagicksAPI
 import info.mdhs.mods.civilmagicks.api.mana.ManaType
 import info.mdhs.mods.civilmagicks.client.ClientRegistryListener
 import info.mdhs.mods.civilmagicks.common.apiimpl.API
-import info.mdhs.mods.civilmagicks.common.effect.EffectsHelper
 import info.mdhs.mods.civilmagicks.common.eventhandler.RegistryHandler
 import info.mdhs.mods.civilmagicks.common.item.ModItems
+import info.mdhs.mods.civilmagicks.common.util.helpers.{BrewHelper, EffectsHelper}
 import org.apache.logging.log4j.{LogManager, Logger}
 
 object CivilMagicks {
@@ -33,6 +33,9 @@ object CivilMagicks {
   def INSTANCE: CivilMagicks = instance
   final val ITEM_GROUP: ItemGroup = new ItemGroup("civilmagicks") {
     override def createIcon(): ItemStack = new ItemStack(ModItems.MANA_SPRING)
+  }
+  final val BREW_GROUP: ItemGroup = new ItemGroup("Brews") {
+    override def createIcon(): ItemStack = new ItemStack(ModItems.BREW)
   }
 }
 
@@ -56,6 +59,7 @@ class CivilMagicks {
 
   private def fmlLoadCompleted(event: FMLLoadCompleteEvent): Unit = {
     EffectsHelper.init
+    BrewHelper.init
     api.getEffectsRegistry.getEffects.forEach(ef => LOGGER.info("Registered effect {}" + ef.getKey))
   }
 

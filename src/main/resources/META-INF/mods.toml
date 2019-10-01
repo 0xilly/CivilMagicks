@@ -1,11 +1,11 @@
-modLoader="scorge" #mandatory
+modLcivilmagicksoader="scorge" #mandatory
 loaderVersion="[1,)"
 issueTrackerURL="https://github.com/illyohs/CivilMagicks/issues"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
     modId="civilmagicks"
     version="0.0.1"
-    entryObject="info.mdhs.mods.civilmagicks.common.CivilMagicks"
+    entryClass="info.mdhs.mods.civilmagicks.common.CivilMagicks"
 
 displayName="Civil Magicks" #mandatory
 logoFile="examplemod.png" #optional

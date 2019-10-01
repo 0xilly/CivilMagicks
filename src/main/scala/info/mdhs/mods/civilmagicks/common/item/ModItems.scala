@@ -6,8 +6,12 @@ import net.minecraftforge.registries.{IForgeRegistry, RegistryManager}
 
 object ModItems {
   // format: off
-  private final val ITEM_REGISTRY :IForgeRegistry[Item] = RegistryManager.ACTIVE.getRegistry(classOf[Item])
+  private final val ITEM_REGISTRY: IForgeRegistry[Item] = RegistryManager.ACTIVE.getRegistry(classOf[Item])
   // format: on
+
+  final val BREW = ITEM_REGISTRY.getValue(new ResourceLocation("civilmagicks:brew"))
+
+  //ITEM BLOCKS
   final val MANA_SPRING = ITEM_REGISTRY.getValue(new ResourceLocation("civilmagicks", "manaspring"))
   final val FIRE_BOX    = ITEM_REGISTRY.getValue(new ResourceLocation("civilmagicks", "firebox"))
 }

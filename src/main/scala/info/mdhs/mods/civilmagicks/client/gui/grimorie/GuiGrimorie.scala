@@ -7,6 +7,8 @@ import net.minecraft.client.gui.screen.Screen
 import net.minecraft.util.ResourceLocation
 import net.minecraft.util.text.StringTextComponent
 
+import com.mojang.blaze3d.platform.GlStateManager
+
 @OnlyIn(Dist.CLIENT)
 class GuiGrimorie extends Screen(new StringTextComponent("")) {
   private val TEXTURE: ResourceLocation = new ResourceLocation("civilmaigcks:textures/gui/grimore.png")
@@ -29,7 +31,10 @@ class GuiGrimorie extends Screen(new StringTextComponent("")) {
     left = width / 2 - guiWidth / 2
   }
 
-  override def render(p_render_1_ : Int, p_render_2_ : Int, p_render_3_ : Float): Unit = {
-    super.render(p_render_1_, p_render_2_, p_render_3_)
+  override def render(x: Int, y: Int, ticks: Float): Unit = {
+    super.render(x, y, ticks)
+    GlStateManager.pushMatrix()
+    mc.getTextureManager.bindTexture(TEXTURE)
+    GlStateManager.popMatrix()
   }
 }

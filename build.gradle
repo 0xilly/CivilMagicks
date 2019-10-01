@@ -137,7 +137,7 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:1.14.4-28.1.0"
-    apiImplementation 'net.minecraftforge:Scorge:1.0.4'
+    apiImplementation 'net.minecraftforge:Scorge:2.0.5'
     apiImplementation "org.scala-lang:scala-library:${scala_lib}"
     apiImplementation "org.scala-lang.modules:scala-java8-compat_${java8_compat}"
 }

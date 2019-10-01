@@ -15,6 +15,7 @@ import net.minecraft.util.ResourceLocation
 import info.mdhs.mods.civilmagicks.api.mana.ManaType
 import info.mdhs.mods.civilmagicks.common.CivilMagicks
 import info.mdhs.mods.civilmagicks.common.block._
+import info.mdhs.mods.civilmagicks.common.item.BrewItem
 import info.mdhs.mods.civilmagicks.common.mana._
 
 object RegistryHandler {
@@ -56,7 +57,9 @@ object RegistryHandler {
       new BlockItem(ModBlocks.MANA_SPRING,
                     new Item.Properties()
                       .group(CivilMagicks.ITEM_GROUP))
-        .setRegistryName(ModBlocks.MANA_SPRING.getRegistryName)
+        .setRegistryName(ModBlocks.MANA_SPRING.getRegistryName),
+      new BrewItem(new Item.Properties().maxStackSize(1).group(CivilMagicks.BREW_GROUP))
+        .setRegistryName("civilmagicks:brew")
     )
   }
 
