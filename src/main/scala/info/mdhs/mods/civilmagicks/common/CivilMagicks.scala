@@ -7,6 +7,7 @@
 
 package info.mdhs.mods.civilmagicks.common
 
+import net.minecraftforge.client.event.ColorHandlerEvent
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.event.RegistryEvent
 import net.minecraftforge.eventbus.api.IEventBus
@@ -48,14 +49,18 @@ class CivilMagicks {
   val forgeBus: IEventBus       = MinecraftForge.EVENT_BUS
   private val modBus: IEventBus = ScorgeModLoadingContext.get.getModEventBus
 
+  // format: off
   modBus.addListener(RegistryHandler.CreateRegistries(_: RegistryEvent.NewRegistry))
   modBus.addGenericListener(classOf[Block], RegistryHandler.RegisterBlocks(_: RegistryEvent.Register[Block]))
   modBus.addGenericListener(classOf[Item], RegistryHandler.RegisterItems(_: RegistryEvent.Register[Item]))
-  modBus.addGenericListener(classOf[TileEntityType[_]],
-                            RegistryHandler.RegisterTiles(_: RegistryEvent.Register[TileEntityType[_]]))
+  modBus.addGenericListener(classOf[TileEntityType[_]], RegistryHandler.RegisterTiles(_: RegistryEvent.Register[TileEntityType[_]]))
   modBus.addGenericListener(classOf[ManaType], RegistryHandler.RegisterManas(_: RegistryEvent.Register[ManaType]))
+  
+  //Client stuff
+  modBus.addListener(ClientRegistryListener.RegisterItemColorHandler(_:ColorHandlerEvent.Item))
   modBus.addListener(ClientRegistryListener.RegisterRenders(_: FMLClientSetupEvent))
   modBus.addListener(this.fmlLoadCompleted)
+  // format: on
 
   private def fmlLoadCompleted(event: FMLLoadCompleteEvent): Unit = {
     EffectsHelper.init

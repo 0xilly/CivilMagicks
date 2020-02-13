@@ -7,7 +7,6 @@
 
 package info.mdhs.mods.civilmagicks.common.block
 
-import info.mdhs.mods.civilmagicks.common.tileentity.ModTileTypes
 import net.minecraft.block.Block
 import net.minecraft.block.Block.Properties
 import net.minecraft.tileentity.{ITickableTileEntity, TileEntity}

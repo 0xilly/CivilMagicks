@@ -11,19 +11,24 @@ import info.mdhs.mods.civilmagicks.api.ICivilMagicksAPI
 import info.mdhs.mods.civilmagicks.api.brew.IBrewRegistry
 import info.mdhs.mods.civilmagicks.api.civil.ICivilRegistry
 import info.mdhs.mods.civilmagicks.api.effect.IEffectRegistry
+import info.mdhs.mods.civilmagicks.api.sigil.ISigilRegistry
 import info.mdhs.mods.civilmagicks.common.apiimpl.brew.BrewRegistry
 import info.mdhs.mods.civilmagicks.common.apiimpl.civil.CivilRegistry
 import info.mdhs.mods.civilmagicks.common.apiimpl.effect.EffectRegistry
+import info.mdhs.mods.civilmagicks.common.apiimpl.sigil.SigilRegistry
 
 class API extends ICivilMagicksAPI {
 
   private val effectRegistry = new EffectRegistry
   private val brewRegistry   = new BrewRegistry
   private val civilRegistry  = new CivilRegistry
+  private val sigilRegistry  = new SigilRegistry
 
   override def getBrewRegistry: IBrewRegistry = this.brewRegistry
 
   override def getEffectsRegistry: IEffectRegistry = this.effectRegistry
 
   override def getCivilRegistry: ICivilRegistry = this.civilRegistry
+
+  override def getSigilRegistry: ISigilRegistry = this.sigilRegistry
 }

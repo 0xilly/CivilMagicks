@@ -33,3 +33,24 @@ object HasteBrew
                  Array(ManaTypes.AIR.get()),
                  0xfcffb3,
                  new SpeedEffect)
+
+object FireWalking
+    extends Brew(
+      "firewalk",
+      Items.NETHERRACK.getDefaultInstance,
+      Array(Items.WATER_BUCKET.getDefaultInstance, Items.BLAZE_ROD.getDefaultInstance),
+      Array(ManaTypes.FIRE.get()),
+      0xff6666,
+      new SpeedEffect
+    )
+object WaterBreathing
+    extends Brew(
+      "waterbreath",
+      Items.TROPICAL_FISH.getDefaultInstance,
+      Array(Items.WATER_BUCKET.getDefaultInstance,
+            Items.BUCKET.getDefaultInstance,
+            Items.WATER_BUCKET.getDefaultInstance),
+      Array(ManaTypes.AIR.get(), ManaTypes.WATER.get()),
+      0xF1FFFE,
+      new SpeedEffect //TODO: CHANGE
+    )

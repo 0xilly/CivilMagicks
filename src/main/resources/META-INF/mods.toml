@@ -1,11 +1,11 @@
-modLcivilmagicksoader="scorge" #mandatory
+modLoader="scorge" #mandatory
 loaderVersion="[1,)"
 issueTrackerURL="https://github.com/illyohs/CivilMagicks/issues"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
     modId="civilmagicks"
     version="0.0.1"
-    entryClass="info.mdhs.mods.civilmagicks.common.CivilMagicks"
+    entryClass= "info.mdhs.mods.civilmagicks.common.CivilMagicks"
 
 displayName="Civil Magicks" #mandatory
 logoFile="examplemod.png" #optional
@@ -21,7 +21,7 @@ Only for the most civilized of sorcerers
     # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
     # The version range of the dependency
-    versionRange="[28.1,)" #mandatory
+    versionRange="[30,)" #mandatory
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="AFTER"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
@@ -30,6 +30,6 @@ Only for the most civilized of sorcerers
 [[dependencies.civilmagicks]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.14.4]"
+    versionRange="[1.15.1]"
     ordering="AFTER"
     side="BOTH"

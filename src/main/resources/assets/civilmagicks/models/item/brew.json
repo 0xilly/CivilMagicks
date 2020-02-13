@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "civilmagicks:items/brewbottle"
+    "layer0": "civilmagicks:items/brewbottle",
+    "layer1": "civilmagicks:items/masks/brewbottle_mask"
   }
 }

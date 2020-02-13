@@ -7,17 +7,15 @@
 
 package info.mdhs.mods.civilmagicks.common.block
 
-import info.mdhs.mods.civilmagicks.api.mana.ManaType
-import info.mdhs.mods.civilmagicks.common.tileentity.ModTileTypes
-import info.mdhs.mods.civilmagicks.common.util.BiomeManaLocator
 import net.minecraft.block.Block.Properties
-import net.minecraft.block.material.Material
 import net.minecraft.block.{Block, BlockRenderType, BlockState}
 import net.minecraft.tileentity.{ITickableTileEntity, TileEntity}
-import net.minecraft.util.BlockRenderLayer
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.shapes.{ISelectionContext, VoxelShape}
 import net.minecraft.world.IBlockReader
+
+import info.mdhs.mods.civilmagicks.api.mana.ManaType
+import info.mdhs.mods.civilmagicks.common.util.BiomeManaLocator
 
 class BlockManaSpring(properties: Properties) extends Block(properties) {
 
@@ -29,7 +27,7 @@ class BlockManaSpring(properties: Properties) extends Block(properties) {
 
   override def isNormalCube(state: BlockState, worldIn: IBlockReader, pos: BlockPos): Boolean = false
 
-  override def getRenderLayer: BlockRenderLayer = BlockRenderLayer.TRANSLUCENT
+//  override def getRenderLayer: BlockRenderLayer = BlockRenderLayer.TRANSLUCENT
 
   override def createTileEntity(state: BlockState, world: IBlockReader): TileEntity = new TileManaSpring
 }
@@ -42,5 +40,5 @@ class TileManaSpring extends TileEntity(ModTileTypes.MANA_SPRING) with ITickable
     * Gets a random ManaType for the current biome
     * @return ManaType
     */
-  def getMana: ManaType = BiomeManaLocator.getRandomManaType(this.world.getBiome(this.pos))
+  def getMana: ManaType = BiomeManaLocator.getRandomManaType(getWorld, getPos)
 }

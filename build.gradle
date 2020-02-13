@@ -15,7 +15,7 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'scala'
-apply from: 'https://raw.githubusercontent.com/DaemonUmbra/Gradle-Scripts/master/forge-1.14-sourcesets-slim.gradle'
+apply from: 'https://raw.githubusercontent.com/DaemonUmbra/Gradle-Scripts/master/DaemonsSourceSets.gradle'
 apply plugin: 'maven-publish'
 
 
@@ -26,7 +26,7 @@ archivesBaseName = 'civilmagicks'
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
 minecraft {
-    mappings channel: 'snapshot', version: '20190719-1.14.3'
+    mappings channel: 'snapshot', version: '20200212-1.15.1'
     runs {
         client {
             workingDirectory project.file('run')
@@ -136,8 +136,8 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.14.4-28.1.0"
-    apiImplementation 'net.minecraftforge:Scorge:2.0.5'
+    minecraft "net.minecraftforge:forge:${mc_verison}-${forge_version}"
+    apiImplementation 'net.minecraftforge:Scorge:3.0.6'
     apiImplementation "org.scala-lang:scala-library:${scala_lib}"
     apiImplementation "org.scala-lang.modules:scala-java8-compat_${java8_compat}"
 }

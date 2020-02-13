@@ -1,11 +1,16 @@
 package info.mdhs.mods.civilmagicks.common.util
 
-import info.mdhs.mods.civilmagicks.api.mana.ManaType
-import java.util
-import net.minecraft.world.biome.Biome
 import net.minecraftforge.common.BiomeDictionary
 import net.minecraftforge.common.BiomeDictionary.Type
 import net.minecraftforge.registries.{IForgeRegistry, RegistryManager}
+
+import net.minecraft.util.math.BlockPos
+import net.minecraft.world.World
+import net.minecraft.world.biome.Biome
+
+import info.mdhs.mods.civilmagicks.api.mana.ManaType
+import java.util
+
 import scala.util.Random
 
 object BiomeManaLocator {
@@ -18,6 +23,13 @@ object BiomeManaLocator {
     mana.get(rand)
   }
 
+  def getRandomManaType(world: World, pos: BlockPos): ManaType = {
+    val getBiomeManager = world.getBiomeManager
+    val getBiome        = getBiomeManager.getBiome(pos)
+
+    getRandomManaType(getBiome)
+  }
+
   def getManaTypes(biome: Biome): util.Set[ManaType] = {
     val biomeTypes: util.Set[Type]          = BiomeDictionary.getTypes(biome)
     val manaTypes: IForgeRegistry[ManaType] = RegistryManager.ACTIVE.getRegistry(classOf[ManaType])
@@ -25,8 +37,8 @@ object BiomeManaLocator {
 
     biomeTypes.forEach(bType =>
       manaTypes.forEach(mType =>
-        mType.getBiomeTypes.foreach(mtbtype => {
-          if (bType == mtbtype) {
+        mType.getBiomeTypes.foreach(mtbType => {
+          if (bType == mtbType) {
             manaSet.add(mType)
           }
         })))
